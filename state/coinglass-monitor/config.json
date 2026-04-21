@@ -1,0 +1,19 @@
+{
+  "symbol": "BTC",
+  "price_symbol": "bitcoin",
+  "lookbacks": {
+    "fast": 12,
+    "medium": 48,
+    "slow": 168
+  },
+  "thresholds": {
+    "funding_hot": 0.03,
+    "funding_cold": -0.01,
+    "oi_1h_strong": 1.5,
+    "oi_4h_strong": 4.0,
+    "price_1h_strong": 1.2,
+    "price_4h_strong": 3.0,
+    "liquidation_cluster_near_pct": 1.5,
+    "squeeze_bias_ratio": 1.35
+  }
+}
