@@ -194,36 +194,45 @@ const DATA = ''' + json.dumps(graph_data, ensure_ascii=False) + ''';
 const catColors = ''' + json.dumps(cat_colors, ensure_ascii=False) + ''';
 const catOrder = ''' + json.dumps(cat_order, ensure_ascii=False) + ''';
 
-// Build adjacency
+// Build adjacency FIRST, before forceLink touches anything
 const outLinks = {};
 const inLinks = {};
 DATA.nodes.forEach(n => { outLinks[n.id] = []; inLinks[n.id] = []; });
 DATA.links.forEach(l => {
-  const s = DATA.nodes[l.source].id || l.source;
-  const t = DATA.nodes[l.target].id || l.target;
-  if (typeof l.source === 'object') l.source = l.source.id;
-  if (typeof l.target === 'object') l.target = l.target.id;
+  // Handle all three possible types of source/target: number (index), object (node), or string (id)
+  const s = typeof l.source === 'number' ? DATA.nodes[l.source]?.id : (l.source?.id || l.source);
+  const t = typeof l.target === 'number' ? DATA.nodes[l.target]?.id : (l.target?.id || l.target);
   outLinks[s] = outLinks[s] || [];
   inLinks[t] = inLinks[t] || [];
   outLinks[s].push(t);
   inLinks[t].push(s);
 });
 
+// Convert ALL link source/target to string IDs before simulation
+DATA.links.forEach(l => {
+  if (typeof l.source === 'object') l.source = l.source.id;
+  if (typeof l.target === 'object') l.target = l.target.id;
+  if (typeof l.source === 'number') l.source = DATA.nodes[l.source]?.id || l.source;
+  if (typeof l.target === 'number') l.target = DATA.nodes[l.target]?.id || l.target;
+});
+
 const container = document.getElementById('graph-container');
-const width = container.clientWidth;
-const height = container.clientHeight;
+const W = window.innerWidth;
+const H = window.innerHeight - 52;
+const width = W;
+const height = H;
 
 // Simulation
 const simulation = d3.forceSimulation(DATA.nodes)
   .force('link', d3.forceLink(DATA.links).id(d => d.id).distance(90).strength(0.4))
   .force('charge', d3.forceManyBody().strength(-280))
-  .force('center', d3.forceCenter(width / 2, height / 2))
+  .force('center', d3.forceCenter(W / 2, H / 2))
   .force('collision', d3.forceCollide(18))
   .alphaDecay(0.028);
 
 const svg = d3.select('#graph-container').append('svg')
-  .attr('width', width)
-  .attr('height', height);
+  .attr('width', W)
+  .attr('height', H);
 
 const g = svg.append('g');
 
