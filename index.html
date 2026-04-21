@@ -22,6 +22,8 @@ header { background: var(--sidebar-bg); border-bottom: 1px solid var(--border); 
 header h1 { font-size: 16px; color: var(--accent); font-weight: 600; }
 header .subtitle { color: var(--text-muted); font-size: 13px; }
 header .subtitle a { color: var(--accent); text-decoration: none; }
+.graph-btn { display: inline-block; background: linear-gradient(135deg, #e0c060, #c9a84c); color: #1a1a1a !important; font-weight: 600; font-size: 14px; padding: 6px 16px; border-radius: 20px; text-decoration: none; box-shadow: 0 2px 8px rgba(224,192,96,0.3); transition: all 0.2s; }
+.graph-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(224,192,96,0.4); background: linear-gradient(135deg, #e8cc78, #d4b455); }
 header .subtitle a:hover { text-decoration: underline; }
 .container { display: flex; flex: 1; overflow: hidden; height: calc(100vh - 45px); }
 .sidebar { width: 240px; background: var(--sidebar-bg); border-right: 1px solid var(--border); overflow-y: auto; padding: 16px 0; flex-shrink: 0; }
@@ -85,7 +87,8 @@ header .subtitle a:hover { text-decoration: underline; }
 <body>
 <header>
   <h1>P2PTalk Wiki</h1>
-  <span class="subtitle">知识图谱 · <a href="https://github.com/dapingzui/p2ptalk-wiki" target="_blank">50概念页</a> · 333条讨论 · <a href="graph.html" style="color:#e0c060;">🌐 动态图谱</a></span>
+  <span class="subtitle">知识图谱 · <a href="https://github.com/dapingzui/p2ptalk-wiki" target="_blank">50概念页</a> · 333条讨论</span>
+  <a href="graph.html" class="graph-btn">🌐 动态图谱</a>
 </header>
 <div class="container">
 <div class="sidebar">
