@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Structure Monitor</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <h1>Crypto Structure Monitor</h1>
+        <p class="sub">BTC 结构监控面板, AI state engine 版</p>
+      </div>
+      <div class="actions">
+        <button id="refreshBtn">刷新</button>
+        <span id="statusBadge" class="badge neutral">加载中</span>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card hero">
+        <div class="hero-main">
+          <div>
+            <div class="label">当前状态</div>
+            <div id="stateName" class="state">-</div>
+            <div id="actionBias" class="muted">-</div>
+          </div>
+          <div class="hero-stats">
+            <div><span class="label">风险</span><strong id="riskLevel">-</strong></div>
+            <div><span class="label">置信度</span><strong id="confidence">-</strong></div>
+            <div><span class="label">时间</span><strong id="timestamp">-</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Snapshot</h2>
+        <div class="metrics two-col">
+          <div class="metric"><span>Price</span><strong id="price">-</strong></div>
+          <div class="metric"><span>Open Interest</span><strong id="oi">-</strong></div>
+          <div class="metric"><span>Funding</span><strong id="funding">-</strong></div>
+          <div class="metric"><span>Long Liq 24h</span><strong id="longLiq">-</strong></div>
+          <div class="metric"><span>Short Liq 24h</span><strong id="shortLiq">-</strong></div>
+          <div class="metric"><span>Sources</span><strong id="sources">-</strong></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Structure Metrics</h2>
+        <div class="metrics three-col" id="structureMetrics"></div>
+      </section>
+
+      <section class="card">
+        <h2>Interpretation</h2>
+        <div id="tags" class="tags"></div>
+        <pre id="rawReport" class="report"></pre>
+      </section>
+    </main>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
