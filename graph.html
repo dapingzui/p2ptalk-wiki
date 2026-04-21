@@ -64,7 +64,9 @@ text { pointer-events: none; font-size: 10px; fill: #8b949e; }
   </div>
 </div>
 
-<div id="graph-container"></div>
+<div id="graph-container">
+  <div id="loading" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#8b949e;font-size:14px;">加载中...</div>
+</div>
 
 <div id="panel">
   <div id="panel-header">
@@ -115,8 +117,11 @@ DATA.links.forEach(l => {
 });
 
 const container = document.getElementById('graph-container');
-const width = container.clientWidth;
-const height = container.clientHeight;
+let width = container.clientWidth;
+let height = container.clientHeight;
+// Fallback if container has no dimensions yet
+if (width === 0) width = window.innerWidth;
+if (height === 0) height = window.innerHeight - 52;
 
 // Simulation
 const simulation = d3.forceSimulation(DATA.nodes)
@@ -193,7 +198,13 @@ node.on('click', (e, d) => {
 svg.on('click', () => closePanel());
 
 // Tick
+let firstTick = true;
 simulation.on('tick', () => {
+  if (firstTick) {
+    firstTick = false;
+    const loading = document.getElementById('loading');
+    if (loading) loading.style.display = 'none';
+  }
   link
     .attr('x1', d => d.source.x)
     .attr('y1', d => d.source.y)
@@ -323,7 +334,12 @@ document.getElementById('stat-nodes').textContent = DATA.nodes.length;
 document.getElementById('stat-links').textContent = DATA.links.length;
 
 // Center initially
-svg.call(zoom.transform, d3.zoomIdentity.translate(width*0.05, height*0.05).scale(0.85));
+// Center after a short delay to ensure DOM is ready
+setTimeout(() => {
+  const w = container.clientWidth || width;
+  const h = container.clientHeight || height;
+  svg.call(zoom.transform, d3.zoomIdentity.translate(w * 0.05, h * 0.05).scale(0.8));
+}, 100);
 </script>
 </body>
 </html>
