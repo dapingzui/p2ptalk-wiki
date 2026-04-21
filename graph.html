@@ -115,8 +115,10 @@ DATA.links.forEach(l => {
 });
 
 const container = document.getElementById('graph-container');
-const width = container.clientWidth;
-const height = container.clientHeight;
+const W = window.innerWidth;
+const H = window.innerHeight - 52;
+const width = W;
+const height = H;
 
 // Simulation
 const simulation = d3.forceSimulation(DATA.nodes)
