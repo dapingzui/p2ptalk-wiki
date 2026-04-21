@@ -13,7 +13,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; font-family: -apple-sy
 #toolbar .actions { margin-left: auto; display: flex; gap: 8px; }
 .btn { background: #21262d; border: 1px solid #30363d; color: #c9d1d9; font-size: 12px; padding: 5px 12px; border-radius: 6px; cursor: pointer; }
 .btn:hover { background: #30363d; border-color: #8b949e; }
-#graph-container { width: 100%; height: 100%; }
+#graph-container { width: 100%; height: calc(100vh - 52px); overflow: hidden; position: relative; }
 svg { width: 100%; height: 100%; }
 circle { cursor: pointer; stroke: rgba(255,255,255,0.2); stroke-width: 1.5px; transition: r 0.15s; }
 circle:hover { stroke: rgba(255,255,255,0.6); stroke-width: 2px; }
