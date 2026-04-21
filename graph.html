@@ -118,24 +118,22 @@ DATA.links.forEach(l => {
 
 const container = document.getElementById('graph-container');
 
-function getGraphDims() {
-  let w = container.clientWidth || window.innerWidth;
-  let h = container.clientHeight || (window.innerHeight - 52);
-  return { w, h };
-}
+// Use window dimensions, not container (container may be 0 if CSS not applied yet)
+const W = window.innerWidth;
+const H = window.innerHeight - 52;  // minus toolbar height
+const dims = { w: W, h: H };
 
 // Simulation
-const dims = getGraphDims();
 const simulation = d3.forceSimulation(DATA.nodes)
   .force('link', d3.forceLink(DATA.links).id(d => d.id).distance(90).strength(0.4))
   .force('charge', d3.forceManyBody().strength(-280))
-  .force('center', d3.forceCenter(dims.w / 2, dims.h / 2))
+  .force('center', d3.forceCenter(W / 2, H / 2))
   .force('collision', d3.forceCollide(18))
   .alphaDecay(0.028);
 
 const svg = d3.select('#graph-container').append('svg')
-  .attr('width', width)
-  .attr('height', height);
+  .attr('width', W)
+  .attr('height', H);
 
 const g = svg.append('g');
 
@@ -273,10 +271,9 @@ window.jumpTo = function(id) {
   const n = DATA.nodes.find(x => x.id === id);
   if (n) {
     openPanel(n);
-    const dims = getGraphDims();
     svg.transition().duration(500).call(
       zoom.transform,
-      d3.zoomIdentity.translate(dims.w/2 - n.x, dims.h/2 - n.y)
+      d3.zoomIdentity.translate(W/2 - n.x, H/2 - n.y)
     );
   }
 };
@@ -338,10 +335,9 @@ document.getElementById('stat-links').textContent = DATA.links.length;
 // Center initially
 // Center and zoom out after DOM + fonts ready
 setTimeout(() => {
-  const dims = getGraphDims();
-  const scale = Math.min(dims.w / 1200, dims.h / 800, 0.9);
-  const tx = (dims.w - dims.w * scale) / 2;
-  const ty = (dims.h - dims.h * scale) / 2;
+  const scale = Math.min(W / 1200, H / 800, 0.9);
+  const tx = (W - W * scale) / 2;
+  const ty = (H - H * scale) / 2;
   svg.call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
   simulation.alpha(0.5).restart();
 }, 200);
