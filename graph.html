@@ -117,17 +117,19 @@ DATA.links.forEach(l => {
 });
 
 const container = document.getElementById('graph-container');
-let width = container.clientWidth;
-let height = container.clientHeight;
-// Fallback if container has no dimensions yet
-if (width === 0) width = window.innerWidth;
-if (height === 0) height = window.innerHeight - 52;
+
+function getGraphDims() {
+  let w = container.clientWidth || window.innerWidth;
+  let h = container.clientHeight || (window.innerHeight - 52);
+  return { w, h };
+}
 
 // Simulation
+const dims = getGraphDims();
 const simulation = d3.forceSimulation(DATA.nodes)
   .force('link', d3.forceLink(DATA.links).id(d => d.id).distance(90).strength(0.4))
   .force('charge', d3.forceManyBody().strength(-280))
-  .force('center', d3.forceCenter(width / 2, height / 2))
+  .force('center', d3.forceCenter(dims.w / 2, dims.h / 2))
   .force('collision', d3.forceCollide(18))
   .alphaDecay(0.028);
 
@@ -271,10 +273,10 @@ window.jumpTo = function(id) {
   const n = DATA.nodes.find(x => x.id === id);
   if (n) {
     openPanel(n);
-    // Center view on node
+    const dims = getGraphDims();
     svg.transition().duration(500).call(
       zoom.transform,
-      d3.zoomIdentity.translate(width/2 - n.x, height/2 - n.y)
+      d3.zoomIdentity.translate(dims.w/2 - n.x, dims.h/2 - n.y)
     );
   }
 };
@@ -336,10 +338,9 @@ document.getElementById('stat-links').textContent = DATA.links.length;
 // Center initially
 // Center after a short delay to ensure DOM is ready
 setTimeout(() => {
-  const w = container.clientWidth || width;
-  const h = container.clientHeight || height;
-  svg.call(zoom.transform, d3.zoomIdentity.translate(w * 0.05, h * 0.05).scale(0.8));
-}, 100);
+  const dims = getGraphDims();
+  svg.call(zoom.transform, d3.zoomIdentity.translate(dims.w * 0.05, dims.h * 0.05).scale(0.8));
+}, 150);
 </script>
 </body>
 </html>
