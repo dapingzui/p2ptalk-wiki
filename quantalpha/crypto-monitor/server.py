@@ -55,6 +55,7 @@ class Handler(BaseHTTPRequestHandler):
         return self._send(404, b'Not found')
 
 if __name__ == '__main__':
-    server = HTTPServer(('127.0.0.1', 8765), Handler)
-    print('http://127.0.0.1:8765')
+    server = HTTPServer(('0.0.0.0', 8765), Handler)
+    print('listening on http://0.0.0.0:8765')
+    print('open from LAN via http://<your-mac-lan-ip>:8765')
     server.serve_forever()
