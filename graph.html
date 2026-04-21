@@ -336,11 +336,15 @@ document.getElementById('stat-nodes').textContent = DATA.nodes.length;
 document.getElementById('stat-links').textContent = DATA.links.length;
 
 // Center initially
-// Center after a short delay to ensure DOM is ready
+// Center and zoom out after DOM + fonts ready
 setTimeout(() => {
   const dims = getGraphDims();
-  svg.call(zoom.transform, d3.zoomIdentity.translate(dims.w * 0.05, dims.h * 0.05).scale(0.8));
-}, 150);
+  const scale = Math.min(dims.w / 1200, dims.h / 800, 0.9);
+  const tx = (dims.w - dims.w * scale) / 2;
+  const ty = (dims.h - dims.h * scale) / 2;
+  svg.call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
+  simulation.alpha(0.5).restart();
+}, 200);
 </script>
 </body>
 </html>
