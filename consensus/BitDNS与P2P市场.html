@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BitDNS与P2P市场 — P2PTalk Wiki</title>
+<style>
+:root {
+  --bg: #1a1a2e;
+  --sidebar-bg: #16213e;
+  --accent: #e94560;
+  --accent2: #0f3460;
+  --text: #eaeaea;
+  --text-muted: #a0a0a0;
+  --border: #2a2a4a;
+  --code-bg: #0d1117;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
+body { display: flex; flex-direction: column; }
+header { background: var(--sidebar-bg); border-bottom: 1px solid var(--border); padding: 12px 20px; display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+header h1 { font-size: 16px; color: var(--accent); font-weight: 600; }
+header .subtitle { color: var(--text-muted); font-size: 13px; }
+.container { display: flex; flex: 1; overflow: hidden; height: calc(100vh - 45px); }
+.sidebar { width: 240px; background: var(--sidebar-bg); border-right: 1px solid var(--border); overflow-y: auto; padding: 16px 0; flex-shrink: 0; }
+.sidebar h2 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-muted); padding: 10px 16px 4px; display: flex; justify-content: space-between; align-items: center; }
+.sidebar h2 .cat-count { color: var(--text-muted); font-size: 10px; }
+.sidebar a { display: block; padding: 4px 16px; color: var(--text); text-decoration: none; font-size: 12px; border-left: 2px solid transparent; }
+.sidebar a:hover, .sidebar a.active { background: var(--accent2); border-left-color: var(--accent); }
+.main { flex: 1; overflow-y: auto; padding: 32px 48px; }
+.page { max-width: 720px; }
+.page h1 { font-size: 22px; color: var(--accent); margin-bottom: 4px; }
+.page .subject { font-size: 12px; color: var(--text-muted); margin-bottom: 20px; }
+.page h2 { font-size: 15px; color: #fff; margin: 24px 0 10px; border-bottom: 1px solid var(--border); padding-bottom: 5px; }
+.page h3 { font-size: 14px; color: var(--accent); margin: 14px 0 8px; }
+.page p { font-size: 14px; line-height: 1.75; color: var(--text); margin: 8px 0; }
+.page blockquote { border-left: 3px solid var(--accent); padding: 8px 16px; margin: 14px 0; background: rgba(233,69,96,0.08); border-radius: 0 6px 6px 0; }
+.page blockquote p { margin: 3px 0; color: #ccc; font-size: 13px; }
+.page blockquote strong { color: var(--accent); }
+.page code { background: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-size: 12px; color: #f97583; }
+.page pre { background: var(--code-bg); padding: 14px; border-radius: 8px; overflow-x: auto; margin: 14px 0; }
+.page pre code { background: none; padding: 0; color: var(--text); font-size: 12px; }
+.page table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+.page th { background: var(--accent2); padding: 8px 12px; text-align: left; border: 1px solid var(--border); color: #fff; }
+.page td { padding: 7px 12px; border: 1px solid var(--border); }
+.page tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+.page a { color: var(--accent); text-decoration: none; }
+.page a:hover { text-decoration: underline; }
+.page ul, .page ol { padding-left: 24px; margin: 8px 0; }
+.page li { font-size: 14px; line-height: 1.7; margin: 3px 0; }
+.page hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+.page .tags { margin-top: 20px; }
+.page .tag { display: inline-block; background: var(--accent2); color: var(--text-muted); font-size: 11px; padding: 2px 8px; border-radius: 10px; margin: 2px; }
+.index-page h1 { font-size: 26px; color: var(--accent); margin-bottom: 8px; }
+.index-page .stats { display: flex; gap: 16px; margin: 16px 0 32px; flex-wrap: wrap; }
+.index-page .stat { background: var(--accent2); padding: 14px 20px; border-radius: 8px; text-align: center; min-width: 80px; }
+.index-page .stat .num { font-size: 26px; color: var(--accent); font-weight: 700; }
+.index-page .stat .label { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+.cat-section { margin: 28px 0; }
+.cat-section h2 { font-size: 15px; color: #fff; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.cat-section h2 .count { background: var(--accent2); color: var(--text-muted); font-size: 11px; padding: 2px 8px; border-radius: 10px; }
+.page-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.page-card { background: var(--accent2); border-radius: 8px; padding: 12px 14px; border: 1px solid var(--border); transition: border-color 0.15s; }
+.page-card:hover { border-color: var(--accent); }
+.page-card a { color: var(--text); text-decoration: none; display: block; }
+.page-card .card-title { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 3px; }
+.page-card .card-desc { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+.back-link { display: inline-block; margin-bottom: 16px; color: var(--accent); font-size: 12px; }
+.back-link:hover { text-decoration: underline; }
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .main { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>P2PTalk Wiki</h1>
+  <span class="subtitle">知识图谱 · 50概念页 · 333条讨论</span>
+</header>
+<div class="container">
+<div class="sidebar">
+<h2>ai <span class="cat-count">4</span></h2>
+<a href="ai/AI与女巫攻击.html" class="">AI与女巫攻击</a>
+<a href="ai/AI与生产关系.html" class="">AI与生产关系</a>
+<a href="ai/自驱系统.html" class="">自驱系统</a>
+<a href="ai/闪电贷模式.html" class="">闪电贷模式</a>
+<h2>atom <span class="cat-count">18</span></h2>
+<a href="atom/Atom与Bitcoin关系.html" class="">Atom与Bitcoin关系</a>
+<a href="atom/Atom与Mempool.html" class="">Atom与Mempool</a>
+<a href="atom/Atom数据结构.html" class="">Atom数据结构</a>
+<a href="atom/Atom是什么.html" class="">Atom是什么</a>
+<a href="atom/Atom流转机制.html" class="">Atom流转机制</a>
+<a href="atom/Atom的信号属性.html" class="">Atom的信号属性</a>
+<a href="atom/Atom的独立性.html" class="">Atom的独立性</a>
+<a href="atom/CUser与CReview数据结构.html" class="">CUser与CReview数据结构</a>
+<a href="atom/IP与品牌.html" class="">IP与品牌</a>
+<a href="atom/Mempool不是唯一业务来源.html" class="">Mempool不是唯一业务来源</a>
+<a href="atom/创世Atom与nonce.html" class="">创世Atom与nonce</a>
+<a href="atom/双花问题.html" class="">双花问题</a>
+<a href="atom/可组合与可复制.html" class="">可组合与可复制</a>
+<a href="atom/挖矿必然有Mempool.html" class="">挖矿必然有Mempool</a>
+<a href="atom/比特币块出块时间作为atom.html" class="">比特币块出块时间作为atom</a>
+<a href="atom/脚本是谓词.html" class="">脚本是谓词</a>
+<a href="atom/观测值与节点行为.html" class="">观测值与节点行为</a>
+<a href="atom/谓词.html" class="">谓词</a>
+<h2>broadcast <span class="cat-count">6</span></h2>
+<a href="broadcast/中间会面机制.html" class="">中间会面机制</a>
+<a href="broadcast/发布订阅机制.html" class="">发布订阅机制</a>
+<a href="broadcast/泛洪与5跳.html" class="">泛洪与5跳</a>
+<a href="broadcast/洪泛atom的激励问题.html" class="">洪泛atom的激励问题</a>
+<a href="broadcast/网络拓扑与衰减因子.html" class="">网络拓扑与衰减因子</a>
+<a href="broadcast/节点与SPV轻节点.html" class="">节点与SPV轻节点</a>
+<h2>consensus <span class="cat-count">11</span></h2>
+<a href="consensus/BitDNS与P2P市场.html" class="active">BitDNS与P2P市场</a>
+<a href="consensus/Bitcoin难度调整三问.html" class="">Bitcoin难度调整三问</a>
+<a href="consensus/hashcash与POW.html" class="">hashcash与POW</a>
+<a href="consensus/不可逆性与激励.html" class="">不可逆性与激励</a>
+<a href="consensus/中本聪共识原理.html" class="">中本聪共识原理</a>
+<a href="consensus/传播算法与生产关系.html" class="">传播算法与生产关系</a>
+<a href="consensus/元胞自动机.html" class="">元胞自动机</a>
+<a href="consensus/比特币升级参考.html" class="">比特币升级参考</a>
+<a href="consensus/研究推动与洞察迭代.html" class="">研究推动与洞察迭代</a>
+<a href="consensus/竞争与押注.html" class="">竞争与押注</a>
+<a href="consensus/难度调整.html" class="">难度调整</a>
+<h2>market <span class="cat-count">4</span></h2>
+<a href="market/匹配系统.html" class="">匹配系统</a>
+<a href="market/商品与声誉.html" class="">商品与声誉</a>
+<a href="market/声誉与市场.html" class="">声誉与市场</a>
+<a href="market/算力市场.html" class="">算力市场</a>
+<h2>math <span class="cat-count">2</span></h2>
+<a href="math/向量空间模型.html" class="">向量空间模型</a>
+<a href="math/图论与集聚性.html" class="">图论与集聚性</a>
+<h2>meeting <span class="cat-count">2</span></h2>
+<a href="meeting/会议共识.html" class="">会议共识</a>
+<a href="meeting/会议规则与激励闭环.html" class="">会议规则与激励闭环</a>
+<h2>security <span class="cat-count">3</span></h2>
+<a href="security/女巫攻击防护.html" class="">女巫攻击防护</a>
+<a href="security/时间锁与多签机制.html" class="">时间锁与多签机制</a>
+<a href="security/预信任节点.html" class="">预信任节点</a>
+</div>
+
+<div class="main">
+<div class="page">
+<a href="index.html" class="back-link">← 总览</a>
+<h1>BitDNS与P2P市场</h1>
+<div class="tags"><span class="tag">atom</span><span class="tag">p2ptalk</span><span class="tag">BitDNS</span><span class="tag">P2P市场</span><span class="tag">中本聪</span><span class="tag">反馈分数</span></div>
+<h1>BitDNS与P2P市场</h1>
+<h2>中本聪的原话</h2>
+<p>2010年 Bitcointalk 论坛：</p>
+<blockquote>
+<p>"P2P markets can be built on top. The nodes would just need to remember the feedback scores."
+"P2P 市场可以建立在上层……节点只需要记住评分反馈即可。"</p>
+</blockquote>
+<p>来源：https://bitcointalk.org/index.php?topic=195.msg1611#msg1611</p>
+<h2>中本聪的愿景</h2>
+<p>中本聪早在 2010 年就设想了：
+1. Bitcoin 作为底层
+2. P2P 市场建立在上面
+3. 节点自己记住反馈分数（声誉）</p>
+<h2>BitDNS 的含义</h2>
+<p>BitDNS = Bitcoin + DNS
+- 在 Bitcoin 基础上建立 DNS 类似系统
+- 节点自己维护声誉评分
+- 无需中心化权威</p>
+<h2>这条路线的重要性</h2>
+<blockquote>
+<p>"这个里面就在聊交易类型和脚本了，这就是我完整找到的路线。"</p>
+</blockquote>
+<p>Atom 系统继承的路线：
+- Bitcoin 底层（POW、时间戳）
+- P2P 市场（声誉、反馈）
+- 节点自主维护（去中心化）</p>
+<hr />
+<h2>相关概念</h2>
+<ul>
+<li>[[consensus/传播算法与生产关系]]</li>
+<li>[[market/声誉与市场]]</li>
+</ul>
+</div></div></div></body></html>
