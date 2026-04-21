@@ -48,6 +48,8 @@ header .subtitle a:hover { text-decoration: underline; }
 .page tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
 .page a.wiki-link { color: var(--accent); text-decoration: none; background: rgba(233,69,96,0.12); padding: 1px 5px; border-radius: 4px; font-size: 13px; }
 .page a.wiki-link:hover { background: rgba(233,69,96,0.25); text-decoration: none; }
+.btn-graph { background: linear-gradient(135deg, #e94560, #ff6b6b); color: #fff; padding: 7px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s; box-shadow: 0 2px 8px rgba(233,69,96,0.3); white-space: nowrap; }
+.btn-graph:hover { background: linear-gradient(135deg, #ff6b6b, #e94560); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(233,69,96,0.4); text-decoration: none; }
 .backlinks { margin-top: 32px; border-top: 1px solid var(--border); padding-top: 16px; }
 .backlinks h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px; }
 .backlink-list { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -86,6 +88,7 @@ header .subtitle a:hover { text-decoration: underline; }
 <header>
   <h1>P2PTalk Wiki</h1>
   <span class="subtitle">知识图谱 · <a href="https://github.com/dapingzui/p2ptalk-wiki" target="_blank">50概念页</a> · 333条讨论</span>
+  <a href="graph.html" class="btn-graph">🔮 动态图谱</a>
 </header>
 <div class="container">
 <div class="sidebar">
