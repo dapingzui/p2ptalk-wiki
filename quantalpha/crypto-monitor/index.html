@@ -12,7 +12,7 @@
     <header class="topbar">
       <div>
         <h1>Crypto Structure Terminal</h1>
-        <p class="sub">BTC 微观结构终端, K线 + 深度盘口 + 成交流 + OI/Funding + 市场画像 + State Engine</p>
+        <p class="sub">BTC 微观结构终端, 带本地调试与降级显示</p>
       </div>
       <div class="actions">
         <select id="symbolSelect"><option value="BTCUSDT" selected>BTCUSDT</option><option value="ETHUSDT">ETHUSDT</option><option value="SOLUSDT">SOLUSDT</option></select>
@@ -21,6 +21,11 @@
         <span id="statusBadge" class="badge neutral">加载中</span>
       </div>
     </header>
+
+    <section class="card debug-card">
+      <div class="section-head"><h2>Debug</h2><div id="debugSummary" class="inline-metrics">booting</div></div>
+      <pre id="debugPanel" class="debug-panel"></pre>
+    </section>
 
     <main class="terminal-grid-v2">
       <section class="card chart-card wide"><div class="section-head"><h2>K线</h2><div id="priceLine" class="inline-metrics"></div></div><div id="chart" class="chart"></div></section>
