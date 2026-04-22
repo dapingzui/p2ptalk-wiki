@@ -48,8 +48,6 @@ header .subtitle a:hover { text-decoration: underline; }
 .page tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
 .page a.wiki-link { color: var(--accent); text-decoration: none; background: rgba(233,69,96,0.12); padding: 1px 5px; border-radius: 4px; font-size: 13px; }
 .page a.wiki-link:hover { background: rgba(233,69,96,0.25); text-decoration: none; }
-.btn-graph { background: linear-gradient(135deg, #e94560, #ff6b6b); color: #fff; padding: 7px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s; box-shadow: 0 2px 8px rgba(233,69,96,0.3); white-space: nowrap; }
-.btn-graph:hover { background: linear-gradient(135deg, #ff6b6b, #e94560); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(233,69,96,0.4); text-decoration: none; }
 .backlinks { margin-top: 32px; border-top: 1px solid var(--border); padding-top: 16px; }
 .backlinks h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px; }
 .backlink-list { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -88,16 +86,16 @@ header .subtitle a:hover { text-decoration: underline; }
 <header>
   <h1>P2PTalk Wiki</h1>
   <span class="subtitle">知识图谱 · <a href="https://github.com/dapingzui/p2ptalk-wiki" target="_blank">50概念页</a> · 333条讨论</span>
-  <a href="graph.html" class="btn-graph">🔮 动态图谱</a>
 </header>
 <div class="container">
 <div class="sidebar">
-<h2>ai <span class="cat-count">4</span></h2>
+<h2>ai <span class="cat-count">5</span></h2>
 <a href="../ai/AI与女巫攻击.html" class="">AI与女巫攻击</a>
 <a href="../ai/AI与生产关系.html" class="">AI与生产关系</a>
+<a href="../ai/中国AI模型厂商.html" class="">中国AI模型厂商</a>
 <a href="../ai/自驱系统.html" class="">自驱系统</a>
 <a href="../ai/闪电贷模式.html" class="">闪电贷模式</a>
-<h2>atom <span class="cat-count">18</span></h2>
+<h2>atom <span class="cat-count">19</span></h2>
 <a href="../atom/Atom与Bitcoin关系.html" class="">Atom与Bitcoin关系</a>
 <a href="../atom/Atom与Mempool.html" class="">Atom与Mempool</a>
 <a href="../atom/Atom数据结构.html" class="">Atom数据结构</a>
@@ -109,6 +107,7 @@ header .subtitle a:hover { text-decoration: underline; }
 <a href="../atom/IP与品牌.html" class="">IP与品牌</a>
 <a href="../atom/Mempool不是唯一业务来源.html" class="">Mempool不是唯一业务来源</a>
 <a href="../atom/创世Atom与nonce.html" class="">创世Atom与nonce</a>
+<a href="../atom/半导体供需热力图.html" class="">半导体供需热力图</a>
 <a href="../atom/双花问题.html" class="">双花问题</a>
 <a href="../atom/可组合与可复制.html" class="">可组合与可复制</a>
 <a href="../atom/挖矿必然有Mempool.html" class="">挖矿必然有Mempool</a>
@@ -158,28 +157,30 @@ header .subtitle a:hover { text-decoration: underline; }
 <p style="color:#a0a0a0;font-size:13px;margin-top:4px;margin-bottom:20px;">基于真实讨论提炼的概念知识图谱。每个概念页含：核心引述 + 讨论要点 + 相关链接。</p>
 <div class="stats"><div class="stat"><div class="num">50</div><div class="label">概念页</div></div><div class="stat"><div class="num">333</div><div class="label">原始消息</div></div><div class="stat"><div class="num">68</div><div class="label">讨论线程</div></div><div class="stat"><div class="num">18</div><div class="label">参与者</div></div></div>
 <div class="cat-section">
-<h2>ai <span class="count">4</span></h2>
+<h2>ai <span class="count">5</span></h2>
 <div class="page-list">
 <div class="page-card"><a href="ai/AI与女巫攻击.html"><div class="card-title">AI与女巫攻击<span class="src-cat" style="margin-left:4px;">↩ 3</span></div><div class="card-desc">AI与女巫攻击</div></a></div>
 <div class="page-card"><a href="ai/AI与生产关系.html"><div class="card-title">AI与生产关系<span class="src-cat" style="margin-left:4px;">↩ 5</span></div><div class="card-desc">AI与生产关系</div></a></div>
+<div class="page-card"><a href="ai/中国AI模型厂商.html"><div class="card-title">中国AI模型厂商</div><div class="card-desc">中国AI模型厂商</div></a></div>
 <div class="page-card"><a href="ai/自驱系统.html"><div class="card-title">自驱系统</div><div class="card-desc">自驱系统</div></a></div>
 <div class="page-card"><a href="ai/闪电贷模式.html"><div class="card-title">闪电贷模式</div><div class="card-desc">闪电贷模式</div></a></div>
 </div>
 </div>
 <div class="cat-section">
-<h2>atom <span class="count">18</span></h2>
+<h2>atom <span class="count">19</span></h2>
 <div class="page-list">
 <div class="page-card"><a href="atom/Atom与Bitcoin关系.html"><div class="card-title">Atom与Bitcoin关系</div><div class="card-desc">Atom与Bitcoin关系</div></a></div>
 <div class="page-card"><a href="atom/Atom与Mempool.html"><div class="card-title">Atom与Mempool<span class="src-cat" style="margin-left:4px;">↩ 2</span></div><div class="card-desc">Atom与Mempool</div></a></div>
 <div class="page-card"><a href="atom/Atom数据结构.html"><div class="card-title">Atom数据结构<span class="src-cat" style="margin-left:4px;">↩ 5</span></div><div class="card-desc">Atom数据结构</div></a></div>
-<div class="page-card"><a href="atom/Atom是什么.html"><div class="card-title">Atom是什么<span class="src-cat" style="margin-left:4px;">↩ 6</span></div><div class="card-desc">Atom是什么</div></a></div>
-<div class="page-card"><a href="atom/Atom流转机制.html"><div class="card-title">Atom流转机制<span class="src-cat" style="margin-left:4px;">↩ 2</span></div><div class="card-desc">Atom流转机制</div></a></div>
-<div class="page-card"><a href="atom/Atom的信号属性.html"><div class="card-title">Atom的信号属性<span class="src-cat" style="margin-left:4px;">↩ 1</span></div><div class="card-desc">Atom的信号属性</div></a></div>
+<div class="page-card"><a href="atom/Atom是什么.html"><div class="card-title">Atom是什么<span class="src-cat" style="margin-left:4px;">↩ 7</span></div><div class="card-desc">Atom是什么</div></a></div>
+<div class="page-card"><a href="atom/Atom流转机制.html"><div class="card-title">Atom流转机制<span class="src-cat" style="margin-left:4px;">↩ 3</span></div><div class="card-desc">Atom流转机制</div></a></div>
+<div class="page-card"><a href="atom/Atom的信号属性.html"><div class="card-title">Atom的信号属性<span class="src-cat" style="margin-left:4px;">↩ 2</span></div><div class="card-desc">Atom的信号属性</div></a></div>
 <div class="page-card"><a href="atom/Atom的独立性.html"><div class="card-title">Atom的独立性</div><div class="card-desc">Atom的独立性</div></a></div>
 <div class="page-card"><a href="atom/CUser与CReview数据结构.html"><div class="card-title">CUser与CReview数据结构<span class="src-cat" style="margin-left:4px;">↩ 1</span></div><div class="card-desc">CUser与CReview数据结构</div></a></div>
 <div class="page-card"><a href="atom/IP与品牌.html"><div class="card-title">IP与品牌<span class="src-cat" style="margin-left:4px;">↩ 2</span></div><div class="card-desc">IP与品牌</div></a></div>
 <div class="page-card"><a href="atom/Mempool不是唯一业务来源.html"><div class="card-title">Mempool不是唯一业务来源</div><div class="card-desc">Mempool不是唯一业务来源</div></a></div>
 <div class="page-card"><a href="atom/创世Atom与nonce.html"><div class="card-title">创世Atom与nonce</div><div class="card-desc">创世Atom与nonce</div></a></div>
+<div class="page-card"><a href="atom/半导体供需热力图.html"><div class="card-title">半导体供需热力图</div><div class="card-desc">半导体供需热力图</div></a></div>
 <div class="page-card"><a href="atom/双花问题.html"><div class="card-title">双花问题</div><div class="card-desc">双花问题</div></a></div>
 <div class="page-card"><a href="atom/可组合与可复制.html"><div class="card-title">可组合与可复制<span class="src-cat" style="margin-left:4px;">↩ 3</span></div><div class="card-desc">可组合与可复制</div></a></div>
 <div class="page-card"><a href="atom/挖矿必然有Mempool.html"><div class="card-title">挖矿必然有Mempool</div><div class="card-desc">挖矿必然有Mempool</div></a></div>
@@ -222,7 +223,7 @@ header .subtitle a:hover { text-decoration: underline; }
 <div class="page-card"><a href="market/匹配系统.html"><div class="card-title">匹配系统<span class="src-cat" style="margin-left:4px;">↩ 2</span></div><div class="card-desc">匹配系统</div></a></div>
 <div class="page-card"><a href="market/商品与声誉.html"><div class="card-title">商品与声誉</div><div class="card-desc">商品与声誉</div></a></div>
 <div class="page-card"><a href="market/声誉与市场.html"><div class="card-title">声誉与市场<span class="src-cat" style="margin-left:4px;">↩ 6</span></div><div class="card-desc">声誉与市场</div></a></div>
-<div class="page-card"><a href="market/算力市场.html"><div class="card-title">算力市场<span class="src-cat" style="margin-left:4px;">↩ 1</span></div><div class="card-desc">算力市场</div></a></div>
+<div class="page-card"><a href="market/算力市场.html"><div class="card-title">算力市场<span class="src-cat" style="margin-left:4px;">↩ 2</span></div><div class="card-desc">算力市场</div></a></div>
 </div>
 </div>
 <div class="cat-section">
