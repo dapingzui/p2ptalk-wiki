@@ -12,71 +12,58 @@
     <header class="topbar">
       <div>
         <h1>Crypto Structure Terminal</h1>
-        <p class="sub">BTC 微观结构终端, K线 + 成交流 + OI/Funding + State Engine</p>
+        <p class="sub">BTC 微观结构终端, K线 + 深度盘口 + 成交流 + OI/Funding + State Engine</p>
       </div>
       <div class="actions">
-        <select id="intervalSelect">
-          <option value="1m">1m</option>
-          <option value="5m" selected>5m</option>
-          <option value="15m">15m</option>
-          <option value="1h">1h</option>
-        </select>
+        <select id="symbolSelect"><option value="BTCUSDT" selected>BTCUSDT</option><option value="ETHUSDT">ETHUSDT</option><option value="SOLUSDT">SOLUSDT</option></select>
+        <select id="intervalSelect"><option value="1m">1m</option><option value="5m" selected>5m</option><option value="15m">15m</option><option value="1h">1h</option></select>
         <button id="refreshBtn">刷新结构</button>
         <span id="statusBadge" class="badge neutral">加载中</span>
       </div>
     </header>
 
-    <main class="terminal-grid">
-      <section class="card chart-card">
-        <div class="section-head">
-          <h2>BTC K线</h2>
-          <div id="priceLine" class="inline-metrics"></div>
-        </div>
+    <main class="terminal-grid-v2">
+      <section class="card chart-card wide">
+        <div class="section-head"><h2>K线</h2><div id="priceLine" class="inline-metrics"></div></div>
         <div id="chart" class="chart"></div>
       </section>
 
-      <section class="card flow-card">
-        <div class="section-head">
-          <h2>订单流 / 最近成交</h2>
-          <div id="tapeStats" class="inline-metrics"></div>
+      <section class="card depth-card">
+        <div class="section-head"><h2>盘口深度</h2><div id="depthStats" class="inline-metrics"></div></div>
+        <div class="depth-grid">
+          <div><div class="mini-title">Bids</div><div id="bidsBook" class="book"></div></div>
+          <div><div class="mini-title">Asks</div><div id="asksBook" class="book"></div></div>
         </div>
+      </section>
+
+      <section class="card flow-card">
+        <div class="section-head"><h2>订单流 / 最近成交</h2><div id="tapeStats" class="inline-metrics"></div></div>
         <div id="tradeTape" class="trade-tape"></div>
       </section>
 
       <section class="card lower-card">
-        <div class="section-head">
-          <h2>OI / Funding</h2>
-          <div id="curveStats" class="inline-metrics"></div>
-        </div>
+        <div class="section-head"><h2>结构曲线</h2><div id="curveStats" class="inline-metrics"></div></div>
         <div class="mini-grid">
-          <div>
-            <div class="mini-title">Open Interest</div>
-            <div id="oiChart" class="mini-chart"></div>
-          </div>
-          <div>
-            <div class="mini-title">Funding</div>
-            <div id="fundingChart" class="mini-chart"></div>
-          </div>
+          <div><div class="mini-title">Open Interest</div><div id="oiChart" class="mini-chart"></div></div>
+          <div><div class="mini-title">Funding</div><div id="fundingChart" class="mini-chart"></div></div>
         </div>
       </section>
 
-      <section class="card state-card">
-        <div class="section-head">
-          <h2>结构判断</h2>
-          <div id="timestamp" class="inline-metrics"></div>
+      <section class="card market-card">
+        <div class="section-head"><h2>Market Profile</h2><div id="marketTimestamp" class="inline-metrics"></div></div>
+        <div class="metrics two-col compact">
+          <div class="metric"><span>24h Volume</span><strong id="marketVolume">-</strong></div>
+          <div class="metric"><span>Market Cap</span><strong id="marketCap">-</strong></div>
+          <div class="metric"><span>24h High</span><strong id="marketHigh">-</strong></div>
+          <div class="metric"><span>24h Low</span><strong id="marketLow">-</strong></div>
+          <div class="metric"><span>24h Change</span><strong id="marketChange">-</strong></div>
+          <div class="metric"><span>ATH Change</span><strong id="athChange">-</strong></div>
         </div>
-        <div class="state-box">
-          <div>
-            <div class="label">当前状态</div>
-            <div id="stateName" class="state">-</div>
-            <div id="actionBias" class="muted">-</div>
-          </div>
-          <div class="hero-stats">
-            <div><span class="label">风险</span><strong id="riskLevel">-</strong></div>
-            <div><span class="label">置信度</span><strong id="confidence">-</strong></div>
-          </div>
-        </div>
+      </section>
 
+      <section class="card state-card tall">
+        <div class="section-head"><h2>结构判断</h2><div id="timestamp" class="inline-metrics"></div></div>
+        <div class="state-box"><div><div class="label">当前状态</div><div id="stateName" class="state">-</div><div id="actionBias" class="muted">-</div></div><div class="hero-stats"><div><span class="label">风险</span><strong id="riskLevel">-</strong></div><div><span class="label">置信度</span><strong id="confidence">-</strong></div></div></div>
         <div class="metrics two-col compact">
           <div class="metric"><span>Price</span><strong id="price">-</strong></div>
           <div class="metric"><span>Funding</span><strong id="funding">-</strong></div>
@@ -85,21 +72,9 @@
           <div class="metric"><span>Long Liq 24h</span><strong id="longLiq">-</strong></div>
           <div class="metric"><span>Short Liq 24h</span><strong id="shortLiq">-</strong></div>
         </div>
-
-        <div class="panel-block">
-          <div class="mini-title">Structure Metrics</div>
-          <div class="metrics two-col compact" id="structureMetrics"></div>
-        </div>
-
-        <div class="panel-block">
-          <div class="mini-title">Tags</div>
-          <div id="tags" class="tags"></div>
-        </div>
-
-        <div class="panel-block">
-          <div class="mini-title">Raw Report</div>
-          <pre id="rawReport" class="report"></pre>
-        </div>
+        <div class="panel-block"><div class="mini-title">Structure Metrics</div><div class="metrics two-col compact" id="structureMetrics"></div></div>
+        <div class="panel-block"><div class="mini-title">Tags</div><div id="tags" class="tags"></div></div>
+        <div class="panel-block"><div class="mini-title">Raw Report</div><pre id="rawReport" class="report tall-report"></pre></div>
       </section>
     </main>
   </div>
