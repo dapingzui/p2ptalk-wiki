@@ -153,6 +153,78 @@ header .subtitle a:hover { text-decoration: underline; }
 .people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
 .people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
 .people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
 </style>
 </head>
 <body>
@@ -327,6 +399,309 @@ header .subtitle a:hover { text-decoration: underline; }
 </div>
 </div>
 </div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共9条，1个问题）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">文博</span>
+<span class="msg-q-badge">❓ 问</span>
+<span class="msg-date">2026-02-02</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?Q?Re:_2_=E6=9C=88_?= =?UTF-8?Q?2_=E6=97=A5=E4=BC=9A?=
+ =?UTF-8?Q?=E8=AE=AE=E5=89=8D=E7=BD=AE=E5=B7=A5=E4=BD=9C?=</div><div class="msg-full">1. 分析了atom 系统实际在比特币中新增的部分： 1. 拓展了比特币的消息类型用来传递 reviews 2. 增加本地数据库用来存储 reviews、linksout 和 atomIn、atomOut、atomNew 3. 增加发布订阅机制用来传递 product 4. 实际上 atom 的来源又将防女巫引向了 pow 2. 再依据中本聪对这个系统的描述，这里atom就是中本聪对于比特币应用的理解，或者说和比特币有所不同的一种产品形态，老史提出，需要从“ atom 系统和比特币系统的关系，这里是否可以任意做东西”的角度抽象，看看它和比特币类似的地方是哪里，共享的部分是什么。两者的前提都是p2p，共用了防女巫的思想，此外更像是独立的项目。 在2026年2月2日星期一 UTC+8 15:52:01&lt;icek...@gmail.com&gt; 写道： &gt; 来发邮件说明上次会议 &gt; &gt; -- &gt; gtalk: icek...@gmail.com &gt; blog: http://www.bulaoge.com/?icekernel &gt;</div>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-03</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">如何在比特币上面实现ebay那样的市场？ 这里把比特币作为一个互联互通的P2P网络来看，区块链就是比特币上面传递的相关消息，区块链可以当作是一种确定的消息，P2P网络上面还有一部分类似交易的信息，可以在网络上进行传递，但是可以不进块。 角色分布应该有:商品发布者，商品购买者。 商品发布者在网络上发布商品信息，用户可以在网络上查询获得商品信息，并与商品发布者联系购买商品，P2P网络不承担商品真实性相关检查。商品购买者可以对商品信息进行评价，最终评价会落实到商品发布者本人上面，这个应该就是atom的逻辑，给予商品发布者一定的信誉值。 问题: 1. 商品信息是否上链？ 商品发布信息个人建议是不上链，但是如何让矿工们接收并传递商品信息是一个问题 2. 成交信息是否上链？ 成交信息应该上链。 3. 成交信息是否和评论在一起？ 4. 是否使用比特币进行支付？ 5. 商品发布者如何进行约束？ 6. 如何验证成交信息是真实的？或者是否允许不真实的成交信息？ 以上问题需要慢慢思考 补充问题:发布订阅机制是否适用？ 如何订阅，是向矿工订阅还是向谁订阅？订阅是否需要付费？ 是否有一些特殊的矿工，可以向这些矿</div><div class="msg-rest" style="display:none;">工订阅商品信息？但会不会导致整个链分裂？ 最近需要计算的内容:在不修改比特币任何代码的情况下能否实现一版简易的可行的方案，大概2月4号给出初版方案。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年1月30日周五 13:18写道： &gt; 关于Atom在一个良好的网络拓扑中的传递机制分析。 &gt; &gt; Atom的传播机制。 &gt; &gt; 1. 收到Atom后会向每个vLinksOut中的地址进行传播。 &gt; 2. 流量控制，除了第一个收到Atom的CUser对象，其他对象收到Atom以后会进行减半传播。 &gt; &gt; &gt; Atom的传播主要受流量控制的影响，导致Atom的传播并不普遍和均匀，在随机信号源和随机Atom在全网传播时全网的Atom总量也呈现随机性，因为流量控制的影响，Atom的传播并不深入，也就是相距较远的CUser通常出现收不到Atom的情况。 &gt; &gt; &gt; 将流量控制视为衰减因子，Atom的衰减因子是0.5.将这个衰减因子修改为0.9以后全网的Atom的分布相对均匀且每个Atom的传播都很广泛，但是达不到全网一致的情况。 &gt; &gt; &gt; 修改网络结构，将网络结构修改为中心相对内聚但外围桥梁相对分散的情况，出现中心Cuser的Atom相对较多，外围Atom的持有较少，但外围User的Atom和外围User的Atom的差异较大，中心User和中心User的Atom差异较小。Atom很难跨区域传播。 &gt; &gt; 综上，Atom的传播主要受衰减因子影响导致其不适合在全网进行流转，调节衰减因子能显著改善全网流转情况，在分布不均的网络拓扑中更易形成区域不一致。 &gt; &gt; 所以流量控制的作用应该单独进行思考，接下来需要考虑的是局部共识和全域共识之间的关系，进一步探究Atom的使用场景。 &gt; &gt; 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; 于2026年1月28日周三 23:02写道： &gt; &gt;&gt; 这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 &gt;&gt; &gt;&gt; On Tue, Jan 27, 2026 at 5:57 PM 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; wrote: &gt;&gt; &gt;&gt;&gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt;&gt;&gt; &gt;&gt;&gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt;&gt;&gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt;&gt;&gt; &gt;&gt;&gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt;&gt;&gt; &gt;&gt;&gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt;&gt;&gt; &gt;&gt;&gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt;&gt;&gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt;&gt;&gt; 亚鹏可以看下它是怎么做的隔</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-04</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">在现有的比特币框架中嵌入一套ebay系统 首先是商品信息，这里不修改比特币的任何结构，结合外部信息的话可以使用类似NFT的框架。 构造一笔特殊的转账，金额可以很小，转账的信息里面有一个URL，URL上面就是具体的商品信息，价格，以及商家联系方式相关。转账需要有一个locktime,这个locktime就是一个商品公示期,也就是这个商品在链上能存续的最小时间。 外部计算，需要这个业务的服务器可以自行下载链上交易，获取商品URL并从URL上面下载商品信息来对用户提供服务，保证信息源来源于比特币，附属信息可以由外部提供。并对外提供商品信息页面促进商品成交。 用户在商品信息页面选择商品，根据商品上面的商家联系方式联系商家并成交。如果成交，商家需要在locktime结束以后将这个比特币转账给用户的，代表用户购买了相关商品并标识这个商品已经售出，不能二次销售。至于商品成交的最终价格，购买订单这些详细信息不宜在链上留下痕迹，链上仅有历史商品的比特币，哪个地址购买了这个比特币这两个信息。 用户在获得商品以后，如果想要对商品进行评价，需要将带有商品信息的这个比特币销毁，并在销毁的转账里面添加自己的评价信</div><div class="msg-rest" style="display:none;">息。商品不能被重复评价，已经被评价过的商品的比特币不能重复使用。如果用户没有对商品进行评价，该比特币可以重复使用，之前的商品买卖信息归为历史。 商品的评价信息和商家的绑定需要外围服务去做，但是如果商品信息的URL的内容被修改就无法溯源，所以商品评价是有窗口期的，过了这个窗口期则评价无效。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月3日周二 16:31写道： &gt; 如何在比特币上面实现ebay那样的市场？ &gt; &gt; &gt; 这里把比特币作为一个互联互通的P2P网络来看，区块链就是比特币上面传递的相关消息，区块链可以当作是一种确定的消息，P2P网络上面还有一部分类似交易的信息，可以在网络上进行传递，但是可以不进块。 &gt; &gt; 角色分布应该有:商品发布者，商品购买者。 &gt; &gt; &gt; 商品发布者在网络上发布商品信息，用户可以在网络上查询获得商品信息，并与商品发布者联系购买商品，P2P网络不承担商品真实性相关检查。商品购买者可以对商品信息进行评价，最终评价会落实到商品发布者本人上面，这个应该就是atom的逻辑，给予商品发布者一定的信誉值。 &gt; &gt; 问题: &gt; 1. 商品信息是否上链？ 商品发布信息个人建议是不上链，但是如何让矿工们接收并传递商品信息是一个问题 &gt; 2. 成交信息是否上链？ 成交信息应该上链。 &gt; 3. 成交信息是否和评论在一起？ &gt; 4. 是否使用比特币进行支付？ &gt; 5. 商品发布者如何进行约束？ &gt; 6. 如何验证成交信息是真实的？或者是否允许不真实的成交信息？ &gt; &gt; 以上问题需要慢慢思考 &gt; &gt; 补充问题:发布订阅机制是否适用？ 如何订阅，是向矿工订阅还是向谁订阅？订阅是否需要付费？ &gt; &gt; 是否有一些特殊的矿工，可以向这些矿工订阅商品信息？但会不会导致整个链分裂？ &gt; &gt; 最近需要计算的内容:在不修改比特币任何代码的情况下能否实现一版简易的可行的方案，大概2月4号给出初版方案。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年1月30日周五 13:18写道： &gt; &gt;&gt; 关于Atom在一个良好的网络拓扑中的传递机制分析。 &gt;&gt; &gt;&gt; Atom的传播机制。 &gt;&gt; &gt;&gt; 1. 收到Atom后会向每个vLinksOut中的地址进行传播。 &gt;&gt; 2. 流量控制，除了第一个收到Atom的CUser对象，其他对象收到Atom以后会进行减半传播。 &gt;&gt; &gt;&gt; &gt;&gt; Atom的传播主要受流量控制的影响，导致Atom的传播并不普遍和均匀，在随机信号源和随机Atom在全网传播时全网的Atom总量也呈现随机性，因为流量控制的影响，Atom的传播并不深入，也就是相距较远的CUser通常出现收不到Atom的情况。 &gt;&gt; &gt;&gt; &gt;&gt; 将流量控制视为衰减因子，Atom的衰减因子是0.5.将这个衰减因子修改为0.9以后全网的Atom的分布相对均匀且每个Atom的传播都很广泛，但是达不到全网一致的情况。 &gt;&gt; &gt;&gt; &gt;&gt; 修改网络结构，将网络结构修改为中心相对内聚但外围桥梁相对分散的情况，出现中心Cuser的Atom相对较多，外围Atom的持有较少，但外围User的Atom和外围User的Atom的差异较大，中心User和中心User的Atom差异较小。Atom很难跨区域传播。 &gt;&gt; &gt;&gt; 综上，Atom的传播主要受衰减因子影响导致其不适合在全网进行流转，调节衰减因子能显著改善全网流转情况，在分布不均的网络拓扑中更易形成区域不一致。 &gt;&gt; &gt;&gt; 所以流量控制的作用应该单独进行思考，接下来需要考虑的是局部共识和全域共识之间</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-06</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an interesting concept, but nothing remains that uses it. 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也就是没人用它了。 感觉这个地方值得研究一下。 首先就是publish/subscribe，订阅发布（Publish-Subscribe，简称Pub/Sub） 是一种消息传递模式，在这种模式中，消息的发送者（发布者）不直接将消息发送给特定的接收者（订阅者），而是将消息分类到不同的主题（topic）或频道（channel）。订阅者可以表达对一个或多个主题的兴趣，并接收相关消息，而不知道发布者的存在。 传统的pub/sub是异步的，非点对点的，一对多或者多对多的。这种消息传递模式有很多优点。 1. 松耦合，这个</div><div class="msg-rest" style="display:none;">特性很像我们通过邮件进行沟通，我不需要知道你在哪儿，是否在线，我都可以发送邮件，什么时候你们上线了就收到邮件了。 2. 可扩展。邮件的主题可以扩展，我们这里就是为新的主题新开一个邮件，参与人也随时可以添加或减少。 3. 灵活，支持一对多或多对多，支持消息过滤。 pub/sub的实现模式有2种，一种是推模式，也就是消息发布者主动广播消息，这种情况下实时性高，但是作为被动接收的订阅者需要实时在线，而且消息过多可能来不及处理。 第二种是拉模式，也就是订阅者去拉取消息，这种模式实时性差，但是订阅者掌握节奏，对于发布者来说负担更小，因为发布者一般会将消息放到一个中间件里面供订阅者拉取。但是订阅者通常会轮询消息，导致中间件负载过大。 一般实现会采用混合模式，即可以推，也可以拉。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月4日周三 16:18写道： &gt; 在现有的比特币框架中嵌入一套ebay系统 &gt; &gt; 首先是商品信息，这里不修改比特币的任何结构，结合外部信息的话可以使用类似NFT的框架。 &gt; &gt; &gt; 构造一笔特殊的转账，金额可以很小，转账的信息里面有一个URL，URL上面就是具体的商品信息，价格，以及商家联系方式相关。转账需要有一个locktime,这个locktime就是一个商品公示期,也就是这个商品在链上能存续的最小时间。 &gt; &gt; &gt; 外部计算，需要这个业务的服务器可以自行下载链上交易，获取商品URL并从URL上面下载商品信息来对用户提供服务，保证信息源来源于比特币，附属信息可以由外部提供。并对外提供商品信息页面促进商品成交。 &gt; &gt; &gt; 用户在商品信息页面选择商品，根据商品上面的商家联系方式联系商家并成交。如果成交，商家需要在locktime结束以后将这个比特币转账给用户的，代表用户购买了相关商品并标识这个商品已经售出，不能二次销售。至于商品成交的最终价格，购买订单这些详细信息不宜在链上留下痕迹，链上仅有历史商品的比特币，哪个地址购买了这个比特币这两个信息。 &gt; &gt; &gt; 用户在获得商品以后，如果想要对商品进行评价，需要将带有商品信息的这个比特币销毁，并在销毁的转账里面添加自己的评价信息。商品不能被重复评价，已经被评价过的商品的比特币不能重复使用。如果用户没有对商品进行评价，该比特币可以重复使用，之前的商品买卖信息归为历史。 &gt; &gt; 商品的评价信息和商家的绑定需要外围服务去做，但是如果商品信息的URL的内容被修改就无法溯源，所以商品评价是有窗口期的，过了这个窗口期则评价无效。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月3日周二 16:31写道： &gt; &gt;&gt; 如何在比特币上面实现ebay那样的市场？ &gt;&gt; &gt;&gt; &gt;&gt; 这里把比特币作为一个互联互通的P2P网络来看，区块链就是比特币上面传递的相关消息，区块链可以当作是一种确定的消息，P2P网络上面还有一部分类似交易的信息，可以在网络上进行传递，但是可以不进块。 &gt;&gt; &gt;&gt; 角色分布应该有:商品发布者，商品购买者。 &gt;&gt; &gt;&gt; &gt;&gt; 商品发布者在网络上发布商品信息，用户可以在网络上查询获得商品信息，并与商品发布者联系购买商品，P2P网络不承担商品真实性相关检查。商品购买者可以对商品信息进行评价，最终评价会落实到商品发布者本人上面，这个应该就是atom的逻辑，给予商品发布者一定的信誉值。 &gt;&gt; &gt;&gt; 问题: &gt;&gt; 1. 商品信息是否上链？ 商品发布信息个人建议是不上链，但是如何让矿工们接收并传递商品信息是一个问题 &gt;&gt; 2. 成交信息是否上链？ 成交</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-07</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IFByaXZhdGUgbWVzc2FnZSByZWdhcmRpbmc6IOWFs+S6jmF0b23nmoTmlbDmja4=?=
+	=?UTF-8?B?57uT5p6E5LmL5ZCO5oCO5LmI5aSE55CG?=</div><div class="msg-full">Woo &lt;godfrey9802@gmail.com&gt; 于 2026年2月7日周六 01:37写道： &gt; 这个邮件是单独会给亚鹏你的，这部分里面还有很多值得研究展开的东西。 &gt; &gt; 首先这个meet in the middle &gt; 策略是一个很中本聪式的操作，简单来说就是我要向全网广播信息，并不需要向所有节点都发送一次信息，而是像你说的一样，这个策略里面既有推的部分，也有拉的部分，通过一个非线性，跟根号有关的算法，推拉的次数之需要达到全网的1%左右就可以做到几乎不遗漏掉任何节点推送的信息，作为发送者来说，只要执行这个共识，也几乎不用担心你的信息会遗漏掉任何一个极点。我认为这里就是Atom系统的共识所在。在我们会议里面就是只要订阅三个节点，然后向三个节点广播就可以做到小心触达全网。 &gt; &gt; 订阅系统的传播分两段，第一段泛洪传播，泛洪传播五跳之后，才走订阅系统 &gt; 第二个是订阅系统，订阅系统需要纠正的一个地方是，并非节点对节点进行订阅，而是节点对频道进行订阅，节点向频道发送消息，这里面的频道包含五个，同消息类型，tx，block，product，review，table，其中tx，bloc</div><div class="msg-rest" style="display:none;">k不走订阅系统，节点强制接收这两个频道的消息，后三个频道走订阅频道，可以选择性接收。在我们会议里面，其实这样的频道有很多，这是导致信息接收不了或者通道关闭的情况。但我们共有的频道其实是会议本身，在这个频道里面交流大家都是没有障碍的。在你们建立的这个工程频道，其他人没有订阅，我理解第一段是没走完的，所有没有进入订阅系统。在技术上是可以拒绝转发的， &gt; 就是会成为不诚实节点，其实是产生了不诚实节点，导致这些信息没有进入到订阅系统，这里的逻辑我是有点meme的可以讨论。 &gt; &gt; 这个链接是meet-in-the-middle详细解析。 &gt; &gt; https://docs.google.com/document/d/148vWc0tjgJpIYMZ_hBFkJKdl4n5okJ5NNDE3u3YfMUs/edit?usp=drive_link &gt; &gt; &gt; &gt; &gt; On Friday, February 6, 2026 at 10:22:54 AM UTC+8 xuyapeng110 wrote: &gt; &gt; 中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an &gt; interesting concept, but nothing remains that uses it. &gt; &gt; 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the &gt; middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也就是没人用它了。 &gt; &gt; 感觉这个地方值得研究一下。 &gt; &gt; 首先就是publish/subscribe，订阅发布（Publish-Subscribe，简称Pub/Sub） &gt; 是一种消息传递模式，在这种模式中，消息的发送者（发布者）不直接将消息发送给特定的接收者（订阅者），而是将消息分类到不同的主题（topic）或频道（channel）。订阅者可以表达对一个或多个主题的兴趣，并接收相关消息，而不知道发布者的存在。 &gt; &gt; 传统的pub/sub是异步的，非点对点的，一对多或者多对多的。这种消息传递模式有很多优点。 &gt; &gt; 1. 松耦合，这个特性很像我们通过邮件进行沟通，我不需要知道你在哪儿，是否在线，我都可以发送邮件，什么时候你们上线了就收到邮件了。 &gt; 2. 可扩展。邮件的主题可以扩展，我们这里就是为新的主题新开一个邮件，参与人也随时可以添加或减少。 &gt; 3. 灵活，支持一对多或多对多，支持消息过滤。 &gt; &gt; &gt; pub/sub的实现模式有2种，一种是推模式，也就是消息发布者主动广播消息，这种情况下实时性高，但是作为被动接收的订阅者需要实时在线，而且消息过多可能来不及处理。 &gt; &gt; &gt; 第二种是拉模式，也就是订阅者去拉取消息，这种模式实时性差，但是订阅者掌握节奏，对于发布者来说负担更小，因为发布者一般会将消息放到一个中间件里面供订阅者拉取。但是订阅者通常会轮询消息，导致中间件负载过大。 &gt; &gt; 一般实现会采用混合模式，即可以推，也可以拉。 &gt; &gt; 胥亚朋 &lt;xuyap...@gmail.com&gt; 于2026年2月4日周三 16:18写道： &gt; &gt; 在现有的比特币框架中嵌入一套ebay系统 &gt; &gt; 首先是商品信息，这里不修改比特币的任何结构，结合外部信息的话可以使用类似NFT的框架。 &gt; &gt; &gt; 构造一笔特殊的转账，金额可以很小，转账的信息里面有一个URL，U</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-11</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">关于pub/sub的相关计算 pub/sub之前只有推消息的模式，后面引入了中间件，才有了频道和拉取的模式。中间件是pub/sub消息模型的一个很大的创新，直接让pub/sub从可用到好用。之前理解的中间会面机制一致绕不开这个中间件，所以也一直想不明白为什么中本聪说没人使用它，事实上中间件推出以后pub/sub得到了更加广泛的应用。 根据woo和文博的补充，中本聪代码中的中间会面机制是在比特币网络中可以使用少量的传播让频道里面的内容传递给订阅了该频道的节点，这个属于网络模型和传播方式的研究，和pub/sub中的中间件是没有太多关系的。 如果在比特币上面使用不同的频道传递不同的内容的话，听起来似乎很迷人，但是比特币是否会根据频道进行分裂呢？如果不同频道的提议都只对自己有利，如果对其他频道有害的话很可能会因为频道不同使网络有不同的小团体，导致网络的分裂。以此为meme去理解最后一句but nothing remains that uses it.也就能想通了，比特币的成功还是因为它的存粹和平等，消息层面节点是可以获取所有的消息而不会因为频道不同而丢失一部分消息的，所以这个网络才能一直健康的</div><div class="msg-rest" style="display:none;">发展下去。 关于中本聪中间会面机制的网络传播模型的计算需要稍后进行，但是还有一个meme就是区块这个数据类型是否就是中间会面机制的一个体现呢？ 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月6日周五 10:22写道： &gt; 中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an &gt; interesting concept, but nothing remains that uses it. &gt; &gt; 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the &gt; middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也就是没人用它了。 &gt; &gt; 感觉这个地方值得研究一下。 &gt; &gt; 首先就是publish/subscribe，订阅发布（Publish-Subscribe，简称Pub/Sub） &gt; 是一种消息传递模式，在这种模式中，消息的发送者（发布者）不直接将消息发送给特定的接收者（订阅者），而是将消息分类到不同的主题（topic）或频道（channel）。订阅者可以表达对一个或多个主题的兴趣，并接收相关消息，而不知道发布者的存在。 &gt; &gt; 传统的pub/sub是异步的，非点对点的，一对多或者多对多的。这种消息传递模式有很多优点。 &gt; &gt; 1. 松耦合，这个特性很像我们通过邮件进行沟通，我不需要知道你在哪儿，是否在线，我都可以发送邮件，什么时候你们上线了就收到邮件了。 &gt; 2. 可扩展。邮件的主题可以扩展，我们这里就是为新的主题新开一个邮件，参与人也随时可以添加或减少。 &gt; 3. 灵活，支持一对多或多对多，支持消息过滤。 &gt; &gt; &gt; pub/sub的实现模式有2种，一种是推模式，也就是消息发布者主动广播消息，这种情况下实时性高，但是作为被动接收的订阅者需要实时在线，而且消息过多可能来不及处理。 &gt; &gt; &gt; 第二种是拉模式，也就是订阅者去拉取消息，这种模式实时性差，但是订阅者掌握节奏，对于发布者来说负担更小，因为发布者一般会将消息放到一个中间件里面供订阅者拉取。但是订阅者通常会轮询消息，导致中间件负载过大。 &gt; &gt; 一般实现会采用混合模式，即可以推，也可以拉。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月4日周三 16:18写道： &gt; &gt;&gt; 在现有的比特币框架中嵌入一套ebay系统 &gt;&gt; &gt;&gt; 首先是商品信息，这里不修改比特币的任何结构，结合外部信息的话可以使用类似NFT的框架。 &gt;&gt; &gt;&gt; &gt;&gt; 构造一笔特殊的转账，金额可以很小，转账的信息里面有一个URL，URL上面就是具体的商品信息，价格，以及商家联系方式相关。转账需要有一个locktime,这个locktime就是一个商品公示期,也就是这个商品在链上能存续的最小时间。 &gt;&gt; &gt;&gt; &gt;&gt; 外部计算，需要这个业务的服务器可以自行下载链上交易，获取商品URL并从URL上面下载商品信息来对用户提供服务，保证信息源来源于比特币，附属信息可以由外部提供。并对外提供商品信息页面促进商品成交。 &gt;&gt; &gt;&gt; &gt;&gt; 用户在商品信息页面选择商品，根据商品上面的商家联系方式联系商家并成交。如果成交，商家需要在locktime结束以后将这个比特币转账给用户的，代表用户购买了相关商品并标识这个商品已经售出，不能二次销售。至于商品成交的最终价格，购买订单这些详细信</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-12</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">关于中间会面机制，我越来越觉得就是轻节点的机制。 我们把主动拉取消息的功能先忽略，那么轻节点在整个比特币网络里面就是转发消息的功能，就是之前文博提到的那个只转发不存储，轻节点除了做简单的支付验证以外不会做复杂的验证，这个和没有订阅该频道但是收到了洪泛传来的频道消息几乎一摸一样，这个时候轻节点只需要验证消息的正确性，然后转发给自己连接到的其他节点就可以了。 比特币网络中全节点和轻节点的占比大概是1:100，全节点大概一两万，轻节点几百万，也很符合中本聪最初设计的网络规模的，占比也和它的概率模型占比基本一致，比特币网络的运行也一直很高效。 在网络传播中，最开始的洪泛传播到后来不断优化，减少网络带宽这些东西，都和中本聪设计的中间会面机制很像，中本聪一定想到了存粹的洪泛传播机制未来肯定因为太过简单暴力而被优化，但是整个网络传播模型一定不会彻底抛弃洪泛传播，所以他在这里提前做了相关优化的测试，看在优化以后在概率上比特币的网络传播是否受到影响。 综上，我觉得这个中间会面机制和轻节点是存在很大关联的，这个机制很大概率就是测试了轻节点占多数的时候，洪泛传播被优化以后整个比特币网络的相关传播质量。 胥亚</div><div class="msg-rest" style="display:none;">朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月11日周三 13:59写道： &gt; 关于pub/sub的相关计算 &gt; &gt; &gt; pub/sub之前只有推消息的模式，后面引入了中间件，才有了频道和拉取的模式。中间件是pub/sub消息模型的一个很大的创新，直接让pub/sub从可用到好用。之前理解的中间会面机制一致绕不开这个中间件，所以也一直想不明白为什么中本聪说没人使用它，事实上中间件推出以后pub/sub得到了更加广泛的应用。 &gt; &gt; &gt; 根据woo和文博的补充，中本聪代码中的中间会面机制是在比特币网络中可以使用少量的传播让频道里面的内容传递给订阅了该频道的节点，这个属于网络模型和传播方式的研究，和pub/sub中的中间件是没有太多关系的。 &gt; &gt; 如果在比特币上面使用不同的频道传递不同的内容的话，听起来似乎很迷人，但是比特币是否会根据频道进行分裂呢？如果不同频道的提议都只对自己有利，如果对其他频道有害的话很可能会因为频道不同使网络有不同的小团体，导致网络的分裂。以此为meme去理解最后一句but &gt; nothing remains that uses &gt; it.也就能想通了，比特币的成功还是因为它的存粹和平等，消息层面节点是可以获取所有的消息而不会因为频道不同而丢失一部分消息的，所以这个网络才能一直健康的发展下去。 &gt; &gt; 关于中本聪中间会面机制的网络传播模型的计算需要稍后进行，但是还有一个meme就是区块这个数据类型是否就是中间会面机制的一个体现呢？ &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月6日周五 10:22写道： &gt; &gt;&gt; 中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an &gt;&gt; interesting concept, but nothing remains that uses it. &gt;&gt; &gt;&gt; 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the &gt;&gt; middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也就是没人用它了。 &gt;&gt; &gt;&gt; 感觉这个地方值得研究一下。 &gt;&gt; &gt;&gt; 首先就是publish/subscribe，订阅发布（Publish-Subscribe，简称Pub/Sub） &gt;&gt; 是一种消息传递模式，在这种模式中，消息的发送者（发布者）不直接将消息发送给特定的接收者（订阅者），而是将消息分类到不同的主题（topic）或频道（channel）。订阅者可以表达对一个或多个主题的兴趣，并接收相关消息，而不知道发布者的存在。 &gt;&gt; &gt;&gt; 传统的pub/sub是异步的，非点对点的，一对多或者多对多的。这种消息传递模式有很多优点。 &gt;&gt; &gt;&gt; 1. 松耦合，这个特性很像我们通过邮件进行沟通，我不需要知道你在哪儿，是否在线，我都可以发送邮件，什么时候你们上线了就收到邮件了。 &gt;&gt; 2. 可扩展。邮件的主题可以扩展，我们这里就是为新的主题新开一个邮件，参与人也随时可以添加或减少。 &gt;&gt; 3. 灵活，支持一对多或多对多，支持消息过滤。 &gt;&gt; &gt;&gt; &gt;&gt; pub/sub的实现模式有2种，一种是推模式，也就是消息发布者主动广播消息，这种情况下实时性高，但是作为被动接收的订阅者需要实时在线，而且消息过多可能来不及处理。 &gt;&gt; &gt;&gt; &gt;&gt; 第二种是拉模式，也就是订阅者去拉取消</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-25</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">听了昨天叶鹏的研究，我突然发现一个问题，atom的出现是要早于比特币的，然后在这个视角简单看下atom. 只从实现方式上面去分析，atom是的流转是通过review消息进行触发的。review消息中验证消息就只有签名和公钥，这种实现方式非常符合我个人早期的编码方式，就像是写死一个函数，你给我传参数我给你传结果，这种方式把函数的运行写死了。 比特币这个地方中本聪明确在论坛上说这是一个谓词逻辑，从谓词的角度去分析，上面那种方式也是一种谓词逻辑，验证签名和公钥最后是true即可，但是比特币不是这样的，个人认为比特币把谓词扩展了，谓词不再是一个布尔值的函数了，它是一个等式，就是中本聪把谓词拆开了，等式左边就是锁定脚本，等式右边就是解锁脚本，左边和右边的内容不再限定的比较死，而是根据需要去填，最终等式成立也就是谓词逻辑最终的结果为true就可以了。 从这个角度去计算，那么局部共识和全局共识也可以做一个对比，也许就是先有局部公司，最终需要达成全局共识，这个稍后计算吧。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月12日周四 13:23写道： &gt; 关于中间会面机制，我越来</div><div class="msg-rest" style="display:none;">越觉得就是轻节点的机制。 &gt; &gt; &gt; 我们把主动拉取消息的功能先忽略，那么轻节点在整个比特币网络里面就是转发消息的功能，就是之前文博提到的那个只转发不存储，轻节点除了做简单的支付验证以外不会做复杂的验证，这个和没有订阅该频道但是收到了洪泛传来的频道消息几乎一摸一样，这个时候轻节点只需要验证消息的正确性，然后转发给自己连接到的其他节点就可以了。 &gt; &gt; &gt; 比特币网络中全节点和轻节点的占比大概是1:100，全节点大概一两万，轻节点几百万，也很符合中本聪最初设计的网络规模的，占比也和它的概率模型占比基本一致，比特币网络的运行也一直很高效。 &gt; &gt; &gt; 在网络传播中，最开始的洪泛传播到后来不断优化，减少网络带宽这些东西，都和中本聪设计的中间会面机制很像，中本聪一定想到了存粹的洪泛传播机制未来肯定因为太过简单暴力而被优化，但是整个网络传播模型一定不会彻底抛弃洪泛传播，所以他在这里提前做了相关优化的测试，看在优化以后在概率上比特币的网络传播是否受到影响。 &gt; &gt; 综上，我觉得这个中间会面机制和轻节点是存在很大关联的，这个机制很大概率就是测试了轻节点占多数的时候，洪泛传播被优化以后整个比特币网络的相关传播质量。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月11日周三 13:59写道： &gt; &gt;&gt; 关于pub/sub的相关计算 &gt;&gt; &gt;&gt; &gt;&gt; pub/sub之前只有推消息的模式，后面引入了中间件，才有了频道和拉取的模式。中间件是pub/sub消息模型的一个很大的创新，直接让pub/sub从可用到好用。之前理解的中间会面机制一致绕不开这个中间件，所以也一直想不明白为什么中本聪说没人使用它，事实上中间件推出以后pub/sub得到了更加广泛的应用。 &gt;&gt; &gt;&gt; &gt;&gt; 根据woo和文博的补充，中本聪代码中的中间会面机制是在比特币网络中可以使用少量的传播让频道里面的内容传递给订阅了该频道的节点，这个属于网络模型和传播方式的研究，和pub/sub中的中间件是没有太多关系的。 &gt;&gt; &gt;&gt; 如果在比特币上面使用不同的频道传递不同的内容的话，听起来似乎很迷人，但是比特币是否会根据频道进行分裂呢？如果不同频道的提议都只对自己有利，如果对其他频道有害的话很可能会因为频道不同使网络有不同的小团体，导致网络的分裂。以此为meme去理解最后一句but &gt;&gt; nothing remains that uses &gt;&gt; it.也就能想通了，比特币的成功还是因为它的存粹和平等，消息层面节点是可以获取所有的消息而不会因为频道不同而丢失一部分消息的，所以这个网络才能一直健康的发展下去。 &gt;&gt; &gt;&gt; 关于中本聪中间会面机制的网络传播模型的计算需要稍后进行，但是还有一个meme就是区块这个数据类型是否就是中间会面机制的一个体现呢？ &gt;&gt; &gt;&gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月6日周五 10:22写道： &gt;&gt; &gt;&gt;&gt; 中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an &gt;&gt;&gt; interesting concept, but nothing remains that uses it. &gt;&gt;&gt; &gt;&gt;&gt; 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the &gt;&gt;&gt; middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">文博</span>
+
+<span class="msg-date">2026-02-26</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?Q?Re:_20260227=E4=BC=9A=E5=89=8D=E5=90=8C=E6=AD=A5?=</div><div class="msg-full">1. 流速控制是 market 中整个系统都执行的规则（它并不是唯一的这样的规则，除此之外还有，0 原子传播，根据 review 关系建立 vLinksOut，…），虽然这个规则并不唯一，但不妨碍其与难度调整机制进行类比，但缺少强对应性。 2. “*我们在市场中的成交，有没有可能是买家和卖家的关系网络在某一瞬间接触了，产生了一笔交易*”，以这个作为思考的前提来说，“ *买家和卖家的关系网络在某一瞬间接触了*”似乎是换了句话描述中本聪的中间会面机制，但是后面提到“*那在atom里，流速控制似乎在做这件事*”，这里又在讲因为 review 产生的 vLinksOut 信任图以及其中的 atom 传递，这里两个主体是不一样的，前者是发布订阅机制构成的商品传播关系，后者是在节点本地形成的信任图。 3. 后面提出基于前面两个观点而产生的具体行动，“用pow干扰流速控制获得奖励是不是就是一个比较好的闭环”，没看懂这个是什么意思，仔细拆分下这个类比： - pow —— 付出成本 - 广告商或者销售在做的事情 —— 付出成本“干扰”买卖家 - 流速控制 —— pow干预流速（ 存在问题类比，*买家和卖</div><div class="msg-rest" style="display:none;">家的关系网络在某一瞬间接触了，不在同一主体*） - 获得奖励，广告商或者销售付出成本使得买卖家接触，以此获利，但是在 atom 中这个奖励指什么，atom 本身？ “用pow干扰流速控制获得奖励”，这个过程是什么，首先矿工出块时产生nAtom，这个atom以fOrigin=true进入AddAtomsAndPropagate，fOrigin=true意味着它直接进vAtomsIn和vAtomsOut， *绕过了nFlowthroughRate的阈值判断* 。也就是说POW产生的atom不受流速控制约束，它是起点，流速控制管的是这个atom之后沿vLinksOut传播时在每个中间节点的稀释速度。 这里的“用pow干扰流速控制”干扰的哪部分的 **nFlowthroughRate**奖励又指什么，以及还是要回答上面的问题，成交的网络和 atom 的图实际上不是同一主体，前提并不成立。 在2026年2月27日星期五 UTC+8 00:35:59&lt;Woo&gt; 写道： &gt; 老史提到流速阈值应该类比于难度调整算法。 &gt; &gt; 流速阈值不应该是写死的，应该作为全网的共识，一条穿起review，pow，atom，匹配，频道，激励的线。 &gt; &gt; 流速阈值=2 相当于比特币将出块时间调整在十分钟左右，理应有一个上限下限。 &gt; &gt; &gt; 回到atom如何作为不同频道的共用function，这里的重点是竞争，可以收敛到算力竞争。举个例子，那天我跟小胖，亚鹏，文博在聊天，一开始各聊各的，知道后面我们在对一个东西出现分歧，开始吵架的时候才在同一个频道通讯。我将这个抽象为竞争。atom可以通过竞争在不同的频道通讯。 &gt; &gt; 将流速阈值类比于难度调整算法的时候，可以认为，我在竞争系统的写入权，影响系统的难度，这个是根据共识作为诚实节点的工作量证明。 &gt; &gt; 影响系统利于节点更好的做匹配。 &gt; &gt; 关于会议 &gt; &gt; 对于组织来说，我目前为止的工作量是推动老史的进度，我自认为并没有在推动组织的进度上有显著的工作量。 &gt; &gt; 老史跟老马是唯二会使用这个会议的人，老马在做主持人的时候有这个效果。 &gt; &gt; 老史可以从成员的停机找到对他有用的东西是理所应当的。 &gt; &gt; 他的停机里面成员都可以找到对自己有用的东西也是这样的。 &gt; &gt; 这里面涉及到审美，匹配，以及对难度的理解。 &gt; &gt; 这篇邮件也有分别对应其他成员可以引用的部分。 &gt; &gt; 共识是，节点在使用这个会议，同时在对会议作出工作量。 &gt; 节点应该找到一条类似于难度调整算法的线把“解决自己问题”跟“对会议作出工作量”串在一起，这样就不会丢掉难度了。 &gt; &gt; 我作为节点的基础工作量是对于网络的维护工作。 &gt; &gt; 共识的意思，我知道你知道，你也知道我知道的才算共识。 &gt; &gt; 同意扣1。不理解发起解释请求 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; 矢孤 &lt;shijin...@gmail.com&gt;于2026年2月27日 周五00:09写道： &gt; &gt;&gt; -- &gt;&gt; You received this message because you are subscribed to the Google Groups &gt;&gt; &quot;p2ptalk&quot; group. &gt;&gt; To unsubscribe from this group and stop receiving emails from it, send an &gt;&gt; email to p2ptalk+u...@googlegroups.com. &gt;&gt; To view this discussion visit &gt;&gt; htt</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共9条，1个问题）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">文博</span>
+<span class="msg-q-badge">❓ 问</span>
+<span class="msg-date">2026-02-02</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?Q?Re:_2_=E6=9C=88_?= =?UTF-8?Q?2_=E6=97=A5=E4=BC=9A?=
+ =?UTF-8?Q?=E8=AE=AE=E5=89=8D=E7=BD=AE=E5=B7=A5=E4=BD=9C?=</div><div class="msg-full">1. 分析了atom 系统实际在比特币中新增的部分： 1. 拓展了比特币的消息类型用来传递 reviews 2. 增加本地数据库用来存储 reviews、linksout 和 atomIn、atomOut、atomNew 3. 增加发布订阅机制用来传递 product 4. 实际上 atom 的来源又将防女巫引向了 pow 2. 再依据中本聪对这个系统的描述，这里atom就是中本聪对于比特币应用的理解，或者说和比特币有所不同的一种产品形态，老史提出，需要从“ atom 系统和比特币系统的关系，这里是否可以任意做东西”的角度抽象，看看它和比特币类似的地方是哪里，共享的部分是什么。两者的前提都是p2p，共用了防女巫的思想，此外更像是独立的项目。 在2026年2月2日星期一 UTC+8 15:52:01&lt;icek...@gmail.com&gt; 写道： &gt; 来发邮件说明上次会议 &gt; &gt; -- &gt; gtalk: icek...@gmail.com &gt; blog: http://www.bulaoge.com/?icekernel &gt;</div>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-03</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">如何在比特币上面实现ebay那样的市场？ 这里把比特币作为一个互联互通的P2P网络来看，区块链就是比特币上面传递的相关消息，区块链可以当作是一种确定的消息，P2P网络上面还有一部分类似交易的信息，可以在网络上进行传递，但是可以不进块。 角色分布应该有:商品发布者，商品购买者。 商品发布者在网络上发布商品信息，用户可以在网络上查询获得商品信息，并与商品发布者联系购买商品，P2P网络不承担商品真实性相关检查。商品购买者可以对商品信息进行评价，最终评价会落实到商品发布者本人上面，这个应该就是atom的逻辑，给予商品发布者一定的信誉值。 问题: 1. 商品信息是否上链？ 商品发布信息个人建议是不上链，但是如何让矿工们接收并传递商品信息是一个问题 2. 成交信息是否上链？ 成交信息应该上链。 3. 成交信息是否和评论在一起？ 4. 是否使用比特币进行支付？ 5. 商品发布者如何进行约束？ 6. 如何验证成交信息是真实的？或者是否允许不真实的成交信息？ 以上问题需要慢慢思考 补充问题:发布订阅机制是否适用？ 如何订阅，是向矿工订阅还是向谁订阅？订阅是否需要付费？ 是否有一些特殊的矿工，可以向这些矿</div><div class="msg-rest" style="display:none;">工订阅商品信息？但会不会导致整个链分裂？ 最近需要计算的内容:在不修改比特币任何代码的情况下能否实现一版简易的可行的方案，大概2月4号给出初版方案。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年1月30日周五 13:18写道： &gt; 关于Atom在一个良好的网络拓扑中的传递机制分析。 &gt; &gt; Atom的传播机制。 &gt; &gt; 1. 收到Atom后会向每个vLinksOut中的地址进行传播。 &gt; 2. 流量控制，除了第一个收到Atom的CUser对象，其他对象收到Atom以后会进行减半传播。 &gt; &gt; &gt; Atom的传播主要受流量控制的影响，导致Atom的传播并不普遍和均匀，在随机信号源和随机Atom在全网传播时全网的Atom总量也呈现随机性，因为流量控制的影响，Atom的传播并不深入，也就是相距较远的CUser通常出现收不到Atom的情况。 &gt; &gt; &gt; 将流量控制视为衰减因子，Atom的衰减因子是0.5.将这个衰减因子修改为0.9以后全网的Atom的分布相对均匀且每个Atom的传播都很广泛，但是达不到全网一致的情况。 &gt; &gt; &gt; 修改网络结构，将网络结构修改为中心相对内聚但外围桥梁相对分散的情况，出现中心Cuser的Atom相对较多，外围Atom的持有较少，但外围User的Atom和外围User的Atom的差异较大，中心User和中心User的Atom差异较小。Atom很难跨区域传播。 &gt; &gt; 综上，Atom的传播主要受衰减因子影响导致其不适合在全网进行流转，调节衰减因子能显著改善全网流转情况，在分布不均的网络拓扑中更易形成区域不一致。 &gt; &gt; 所以流量控制的作用应该单独进行思考，接下来需要考虑的是局部共识和全域共识之间的关系，进一步探究Atom的使用场景。 &gt; &gt; 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; 于2026年1月28日周三 23:02写道： &gt; &gt;&gt; 这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 &gt;&gt; &gt;&gt; On Tue, Jan 27, 2026 at 5:57 PM 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; wrote: &gt;&gt; &gt;&gt;&gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt;&gt;&gt; &gt;&gt;&gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt;&gt;&gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt;&gt;&gt; &gt;&gt;&gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt;&gt;&gt; &gt;&gt;&gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt;&gt;&gt; &gt;&gt;&gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt;&gt;&gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt;&gt;&gt; 亚鹏可以看下它是怎么做的隔</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-04</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">在现有的比特币框架中嵌入一套ebay系统 首先是商品信息，这里不修改比特币的任何结构，结合外部信息的话可以使用类似NFT的框架。 构造一笔特殊的转账，金额可以很小，转账的信息里面有一个URL，URL上面就是具体的商品信息，价格，以及商家联系方式相关。转账需要有一个locktime,这个locktime就是一个商品公示期,也就是这个商品在链上能存续的最小时间。 外部计算，需要这个业务的服务器可以自行下载链上交易，获取商品URL并从URL上面下载商品信息来对用户提供服务，保证信息源来源于比特币，附属信息可以由外部提供。并对外提供商品信息页面促进商品成交。 用户在商品信息页面选择商品，根据商品上面的商家联系方式联系商家并成交。如果成交，商家需要在locktime结束以后将这个比特币转账给用户的，代表用户购买了相关商品并标识这个商品已经售出，不能二次销售。至于商品成交的最终价格，购买订单这些详细信息不宜在链上留下痕迹，链上仅有历史商品的比特币，哪个地址购买了这个比特币这两个信息。 用户在获得商品以后，如果想要对商品进行评价，需要将带有商品信息的这个比特币销毁，并在销毁的转账里面添加自己的评价信</div><div class="msg-rest" style="display:none;">息。商品不能被重复评价，已经被评价过的商品的比特币不能重复使用。如果用户没有对商品进行评价，该比特币可以重复使用，之前的商品买卖信息归为历史。 商品的评价信息和商家的绑定需要外围服务去做，但是如果商品信息的URL的内容被修改就无法溯源，所以商品评价是有窗口期的，过了这个窗口期则评价无效。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月3日周二 16:31写道： &gt; 如何在比特币上面实现ebay那样的市场？ &gt; &gt; &gt; 这里把比特币作为一个互联互通的P2P网络来看，区块链就是比特币上面传递的相关消息，区块链可以当作是一种确定的消息，P2P网络上面还有一部分类似交易的信息，可以在网络上进行传递，但是可以不进块。 &gt; &gt; 角色分布应该有:商品发布者，商品购买者。 &gt; &gt; &gt; 商品发布者在网络上发布商品信息，用户可以在网络上查询获得商品信息，并与商品发布者联系购买商品，P2P网络不承担商品真实性相关检查。商品购买者可以对商品信息进行评价，最终评价会落实到商品发布者本人上面，这个应该就是atom的逻辑，给予商品发布者一定的信誉值。 &gt; &gt; 问题: &gt; 1. 商品信息是否上链？ 商品发布信息个人建议是不上链，但是如何让矿工们接收并传递商品信息是一个问题 &gt; 2. 成交信息是否上链？ 成交信息应该上链。 &gt; 3. 成交信息是否和评论在一起？ &gt; 4. 是否使用比特币进行支付？ &gt; 5. 商品发布者如何进行约束？ &gt; 6. 如何验证成交信息是真实的？或者是否允许不真实的成交信息？ &gt; &gt; 以上问题需要慢慢思考 &gt; &gt; 补充问题:发布订阅机制是否适用？ 如何订阅，是向矿工订阅还是向谁订阅？订阅是否需要付费？ &gt; &gt; 是否有一些特殊的矿工，可以向这些矿工订阅商品信息？但会不会导致整个链分裂？ &gt; &gt; 最近需要计算的内容:在不修改比特币任何代码的情况下能否实现一版简易的可行的方案，大概2月4号给出初版方案。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年1月30日周五 13:18写道： &gt; &gt;&gt; 关于Atom在一个良好的网络拓扑中的传递机制分析。 &gt;&gt; &gt;&gt; Atom的传播机制。 &gt;&gt; &gt;&gt; 1. 收到Atom后会向每个vLinksOut中的地址进行传播。 &gt;&gt; 2. 流量控制，除了第一个收到Atom的CUser对象，其他对象收到Atom以后会进行减半传播。 &gt;&gt; &gt;&gt; &gt;&gt; Atom的传播主要受流量控制的影响，导致Atom的传播并不普遍和均匀，在随机信号源和随机Atom在全网传播时全网的Atom总量也呈现随机性，因为流量控制的影响，Atom的传播并不深入，也就是相距较远的CUser通常出现收不到Atom的情况。 &gt;&gt; &gt;&gt; &gt;&gt; 将流量控制视为衰减因子，Atom的衰减因子是0.5.将这个衰减因子修改为0.9以后全网的Atom的分布相对均匀且每个Atom的传播都很广泛，但是达不到全网一致的情况。 &gt;&gt; &gt;&gt; &gt;&gt; 修改网络结构，将网络结构修改为中心相对内聚但外围桥梁相对分散的情况，出现中心Cuser的Atom相对较多，外围Atom的持有较少，但外围User的Atom和外围User的Atom的差异较大，中心User和中心User的Atom差异较小。Atom很难跨区域传播。 &gt;&gt; &gt;&gt; 综上，Atom的传播主要受衰减因子影响导致其不适合在全网进行流转，调节衰减因子能显著改善全网流转情况，在分布不均的网络拓扑中更易形成区域不一致。 &gt;&gt; &gt;&gt; 所以流量控制的作用应该单独进行思考，接下来需要考虑的是局部共识和全域共识之间</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-06</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an interesting concept, but nothing remains that uses it. 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也就是没人用它了。 感觉这个地方值得研究一下。 首先就是publish/subscribe，订阅发布（Publish-Subscribe，简称Pub/Sub） 是一种消息传递模式，在这种模式中，消息的发送者（发布者）不直接将消息发送给特定的接收者（订阅者），而是将消息分类到不同的主题（topic）或频道（channel）。订阅者可以表达对一个或多个主题的兴趣，并接收相关消息，而不知道发布者的存在。 传统的pub/sub是异步的，非点对点的，一对多或者多对多的。这种消息传递模式有很多优点。 1. 松耦合，这个</div><div class="msg-rest" style="display:none;">特性很像我们通过邮件进行沟通，我不需要知道你在哪儿，是否在线，我都可以发送邮件，什么时候你们上线了就收到邮件了。 2. 可扩展。邮件的主题可以扩展，我们这里就是为新的主题新开一个邮件，参与人也随时可以添加或减少。 3. 灵活，支持一对多或多对多，支持消息过滤。 pub/sub的实现模式有2种，一种是推模式，也就是消息发布者主动广播消息，这种情况下实时性高，但是作为被动接收的订阅者需要实时在线，而且消息过多可能来不及处理。 第二种是拉模式，也就是订阅者去拉取消息，这种模式实时性差，但是订阅者掌握节奏，对于发布者来说负担更小，因为发布者一般会将消息放到一个中间件里面供订阅者拉取。但是订阅者通常会轮询消息，导致中间件负载过大。 一般实现会采用混合模式，即可以推，也可以拉。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月4日周三 16:18写道： &gt; 在现有的比特币框架中嵌入一套ebay系统 &gt; &gt; 首先是商品信息，这里不修改比特币的任何结构，结合外部信息的话可以使用类似NFT的框架。 &gt; &gt; &gt; 构造一笔特殊的转账，金额可以很小，转账的信息里面有一个URL，URL上面就是具体的商品信息，价格，以及商家联系方式相关。转账需要有一个locktime,这个locktime就是一个商品公示期,也就是这个商品在链上能存续的最小时间。 &gt; &gt; &gt; 外部计算，需要这个业务的服务器可以自行下载链上交易，获取商品URL并从URL上面下载商品信息来对用户提供服务，保证信息源来源于比特币，附属信息可以由外部提供。并对外提供商品信息页面促进商品成交。 &gt; &gt; &gt; 用户在商品信息页面选择商品，根据商品上面的商家联系方式联系商家并成交。如果成交，商家需要在locktime结束以后将这个比特币转账给用户的，代表用户购买了相关商品并标识这个商品已经售出，不能二次销售。至于商品成交的最终价格，购买订单这些详细信息不宜在链上留下痕迹，链上仅有历史商品的比特币，哪个地址购买了这个比特币这两个信息。 &gt; &gt; &gt; 用户在获得商品以后，如果想要对商品进行评价，需要将带有商品信息的这个比特币销毁，并在销毁的转账里面添加自己的评价信息。商品不能被重复评价，已经被评价过的商品的比特币不能重复使用。如果用户没有对商品进行评价，该比特币可以重复使用，之前的商品买卖信息归为历史。 &gt; &gt; 商品的评价信息和商家的绑定需要外围服务去做，但是如果商品信息的URL的内容被修改就无法溯源，所以商品评价是有窗口期的，过了这个窗口期则评价无效。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月3日周二 16:31写道： &gt; &gt;&gt; 如何在比特币上面实现ebay那样的市场？ &gt;&gt; &gt;&gt; &gt;&gt; 这里把比特币作为一个互联互通的P2P网络来看，区块链就是比特币上面传递的相关消息，区块链可以当作是一种确定的消息，P2P网络上面还有一部分类似交易的信息，可以在网络上进行传递，但是可以不进块。 &gt;&gt; &gt;&gt; 角色分布应该有:商品发布者，商品购买者。 &gt;&gt; &gt;&gt; &gt;&gt; 商品发布者在网络上发布商品信息，用户可以在网络上查询获得商品信息，并与商品发布者联系购买商品，P2P网络不承担商品真实性相关检查。商品购买者可以对商品信息进行评价，最终评价会落实到商品发布者本人上面，这个应该就是atom的逻辑，给予商品发布者一定的信誉值。 &gt;&gt; &gt;&gt; 问题: &gt;&gt; 1. 商品信息是否上链？ 商品发布信息个人建议是不上链，但是如何让矿工们接收并传递商品信息是一个问题 &gt;&gt; 2. 成交信息是否上链？ 成交</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-07</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IFByaXZhdGUgbWVzc2FnZSByZWdhcmRpbmc6IOWFs+S6jmF0b23nmoTmlbDmja4=?=
+	=?UTF-8?B?57uT5p6E5LmL5ZCO5oCO5LmI5aSE55CG?=</div><div class="msg-full">Woo &lt;godfrey9802@gmail.com&gt; 于 2026年2月7日周六 01:37写道： &gt; 这个邮件是单独会给亚鹏你的，这部分里面还有很多值得研究展开的东西。 &gt; &gt; 首先这个meet in the middle &gt; 策略是一个很中本聪式的操作，简单来说就是我要向全网广播信息，并不需要向所有节点都发送一次信息，而是像你说的一样，这个策略里面既有推的部分，也有拉的部分，通过一个非线性，跟根号有关的算法，推拉的次数之需要达到全网的1%左右就可以做到几乎不遗漏掉任何节点推送的信息，作为发送者来说，只要执行这个共识，也几乎不用担心你的信息会遗漏掉任何一个极点。我认为这里就是Atom系统的共识所在。在我们会议里面就是只要订阅三个节点，然后向三个节点广播就可以做到小心触达全网。 &gt; &gt; 订阅系统的传播分两段，第一段泛洪传播，泛洪传播五跳之后，才走订阅系统 &gt; 第二个是订阅系统，订阅系统需要纠正的一个地方是，并非节点对节点进行订阅，而是节点对频道进行订阅，节点向频道发送消息，这里面的频道包含五个，同消息类型，tx，block，product，review，table，其中tx，bloc</div><div class="msg-rest" style="display:none;">k不走订阅系统，节点强制接收这两个频道的消息，后三个频道走订阅频道，可以选择性接收。在我们会议里面，其实这样的频道有很多，这是导致信息接收不了或者通道关闭的情况。但我们共有的频道其实是会议本身，在这个频道里面交流大家都是没有障碍的。在你们建立的这个工程频道，其他人没有订阅，我理解第一段是没走完的，所有没有进入订阅系统。在技术上是可以拒绝转发的， &gt; 就是会成为不诚实节点，其实是产生了不诚实节点，导致这些信息没有进入到订阅系统，这里的逻辑我是有点meme的可以讨论。 &gt; &gt; 这个链接是meet-in-the-middle详细解析。 &gt; &gt; https://docs.google.com/document/d/148vWc0tjgJpIYMZ_hBFkJKdl4n5okJ5NNDE3u3YfMUs/edit?usp=drive_link &gt; &gt; &gt; &gt; &gt; On Friday, February 6, 2026 at 10:22:54 AM UTC+8 xuyapeng110 wrote: &gt; &gt; 中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an &gt; interesting concept, but nothing remains that uses it. &gt; &gt; 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the &gt; middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也就是没人用它了。 &gt; &gt; 感觉这个地方值得研究一下。 &gt; &gt; 首先就是publish/subscribe，订阅发布（Publish-Subscribe，简称Pub/Sub） &gt; 是一种消息传递模式，在这种模式中，消息的发送者（发布者）不直接将消息发送给特定的接收者（订阅者），而是将消息分类到不同的主题（topic）或频道（channel）。订阅者可以表达对一个或多个主题的兴趣，并接收相关消息，而不知道发布者的存在。 &gt; &gt; 传统的pub/sub是异步的，非点对点的，一对多或者多对多的。这种消息传递模式有很多优点。 &gt; &gt; 1. 松耦合，这个特性很像我们通过邮件进行沟通，我不需要知道你在哪儿，是否在线，我都可以发送邮件，什么时候你们上线了就收到邮件了。 &gt; 2. 可扩展。邮件的主题可以扩展，我们这里就是为新的主题新开一个邮件，参与人也随时可以添加或减少。 &gt; 3. 灵活，支持一对多或多对多，支持消息过滤。 &gt; &gt; &gt; pub/sub的实现模式有2种，一种是推模式，也就是消息发布者主动广播消息，这种情况下实时性高，但是作为被动接收的订阅者需要实时在线，而且消息过多可能来不及处理。 &gt; &gt; &gt; 第二种是拉模式，也就是订阅者去拉取消息，这种模式实时性差，但是订阅者掌握节奏，对于发布者来说负担更小，因为发布者一般会将消息放到一个中间件里面供订阅者拉取。但是订阅者通常会轮询消息，导致中间件负载过大。 &gt; &gt; 一般实现会采用混合模式，即可以推，也可以拉。 &gt; &gt; 胥亚朋 &lt;xuyap...@gmail.com&gt; 于2026年2月4日周三 16:18写道： &gt; &gt; 在现有的比特币框架中嵌入一套ebay系统 &gt; &gt; 首先是商品信息，这里不修改比特币的任何结构，结合外部信息的话可以使用类似NFT的框架。 &gt; &gt; &gt; 构造一笔特殊的转账，金额可以很小，转账的信息里面有一个URL，U</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-11</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">关于pub/sub的相关计算 pub/sub之前只有推消息的模式，后面引入了中间件，才有了频道和拉取的模式。中间件是pub/sub消息模型的一个很大的创新，直接让pub/sub从可用到好用。之前理解的中间会面机制一致绕不开这个中间件，所以也一直想不明白为什么中本聪说没人使用它，事实上中间件推出以后pub/sub得到了更加广泛的应用。 根据woo和文博的补充，中本聪代码中的中间会面机制是在比特币网络中可以使用少量的传播让频道里面的内容传递给订阅了该频道的节点，这个属于网络模型和传播方式的研究，和pub/sub中的中间件是没有太多关系的。 如果在比特币上面使用不同的频道传递不同的内容的话，听起来似乎很迷人，但是比特币是否会根据频道进行分裂呢？如果不同频道的提议都只对自己有利，如果对其他频道有害的话很可能会因为频道不同使网络有不同的小团体，导致网络的分裂。以此为meme去理解最后一句but nothing remains that uses it.也就能想通了，比特币的成功还是因为它的存粹和平等，消息层面节点是可以获取所有的消息而不会因为频道不同而丢失一部分消息的，所以这个网络才能一直健康的</div><div class="msg-rest" style="display:none;">发展下去。 关于中本聪中间会面机制的网络传播模型的计算需要稍后进行，但是还有一个meme就是区块这个数据类型是否就是中间会面机制的一个体现呢？ 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月6日周五 10:22写道： &gt; 中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an &gt; interesting concept, but nothing remains that uses it. &gt; &gt; 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the &gt; middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也就是没人用它了。 &gt; &gt; 感觉这个地方值得研究一下。 &gt; &gt; 首先就是publish/subscribe，订阅发布（Publish-Subscribe，简称Pub/Sub） &gt; 是一种消息传递模式，在这种模式中，消息的发送者（发布者）不直接将消息发送给特定的接收者（订阅者），而是将消息分类到不同的主题（topic）或频道（channel）。订阅者可以表达对一个或多个主题的兴趣，并接收相关消息，而不知道发布者的存在。 &gt; &gt; 传统的pub/sub是异步的，非点对点的，一对多或者多对多的。这种消息传递模式有很多优点。 &gt; &gt; 1. 松耦合，这个特性很像我们通过邮件进行沟通，我不需要知道你在哪儿，是否在线，我都可以发送邮件，什么时候你们上线了就收到邮件了。 &gt; 2. 可扩展。邮件的主题可以扩展，我们这里就是为新的主题新开一个邮件，参与人也随时可以添加或减少。 &gt; 3. 灵活，支持一对多或多对多，支持消息过滤。 &gt; &gt; &gt; pub/sub的实现模式有2种，一种是推模式，也就是消息发布者主动广播消息，这种情况下实时性高，但是作为被动接收的订阅者需要实时在线，而且消息过多可能来不及处理。 &gt; &gt; &gt; 第二种是拉模式，也就是订阅者去拉取消息，这种模式实时性差，但是订阅者掌握节奏，对于发布者来说负担更小，因为发布者一般会将消息放到一个中间件里面供订阅者拉取。但是订阅者通常会轮询消息，导致中间件负载过大。 &gt; &gt; 一般实现会采用混合模式，即可以推，也可以拉。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月4日周三 16:18写道： &gt; &gt;&gt; 在现有的比特币框架中嵌入一套ebay系统 &gt;&gt; &gt;&gt; 首先是商品信息，这里不修改比特币的任何结构，结合外部信息的话可以使用类似NFT的框架。 &gt;&gt; &gt;&gt; &gt;&gt; 构造一笔特殊的转账，金额可以很小，转账的信息里面有一个URL，URL上面就是具体的商品信息，价格，以及商家联系方式相关。转账需要有一个locktime,这个locktime就是一个商品公示期,也就是这个商品在链上能存续的最小时间。 &gt;&gt; &gt;&gt; &gt;&gt; 外部计算，需要这个业务的服务器可以自行下载链上交易，获取商品URL并从URL上面下载商品信息来对用户提供服务，保证信息源来源于比特币，附属信息可以由外部提供。并对外提供商品信息页面促进商品成交。 &gt;&gt; &gt;&gt; &gt;&gt; 用户在商品信息页面选择商品，根据商品上面的商家联系方式联系商家并成交。如果成交，商家需要在locktime结束以后将这个比特币转账给用户的，代表用户购买了相关商品并标识这个商品已经售出，不能二次销售。至于商品成交的最终价格，购买订单这些详细信</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-12</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">关于中间会面机制，我越来越觉得就是轻节点的机制。 我们把主动拉取消息的功能先忽略，那么轻节点在整个比特币网络里面就是转发消息的功能，就是之前文博提到的那个只转发不存储，轻节点除了做简单的支付验证以外不会做复杂的验证，这个和没有订阅该频道但是收到了洪泛传来的频道消息几乎一摸一样，这个时候轻节点只需要验证消息的正确性，然后转发给自己连接到的其他节点就可以了。 比特币网络中全节点和轻节点的占比大概是1:100，全节点大概一两万，轻节点几百万，也很符合中本聪最初设计的网络规模的，占比也和它的概率模型占比基本一致，比特币网络的运行也一直很高效。 在网络传播中，最开始的洪泛传播到后来不断优化，减少网络带宽这些东西，都和中本聪设计的中间会面机制很像，中本聪一定想到了存粹的洪泛传播机制未来肯定因为太过简单暴力而被优化，但是整个网络传播模型一定不会彻底抛弃洪泛传播，所以他在这里提前做了相关优化的测试，看在优化以后在概率上比特币的网络传播是否受到影响。 综上，我觉得这个中间会面机制和轻节点是存在很大关联的，这个机制很大概率就是测试了轻节点占多数的时候，洪泛传播被优化以后整个比特币网络的相关传播质量。 胥亚</div><div class="msg-rest" style="display:none;">朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月11日周三 13:59写道： &gt; 关于pub/sub的相关计算 &gt; &gt; &gt; pub/sub之前只有推消息的模式，后面引入了中间件，才有了频道和拉取的模式。中间件是pub/sub消息模型的一个很大的创新，直接让pub/sub从可用到好用。之前理解的中间会面机制一致绕不开这个中间件，所以也一直想不明白为什么中本聪说没人使用它，事实上中间件推出以后pub/sub得到了更加广泛的应用。 &gt; &gt; &gt; 根据woo和文博的补充，中本聪代码中的中间会面机制是在比特币网络中可以使用少量的传播让频道里面的内容传递给订阅了该频道的节点，这个属于网络模型和传播方式的研究，和pub/sub中的中间件是没有太多关系的。 &gt; &gt; 如果在比特币上面使用不同的频道传递不同的内容的话，听起来似乎很迷人，但是比特币是否会根据频道进行分裂呢？如果不同频道的提议都只对自己有利，如果对其他频道有害的话很可能会因为频道不同使网络有不同的小团体，导致网络的分裂。以此为meme去理解最后一句but &gt; nothing remains that uses &gt; it.也就能想通了，比特币的成功还是因为它的存粹和平等，消息层面节点是可以获取所有的消息而不会因为频道不同而丢失一部分消息的，所以这个网络才能一直健康的发展下去。 &gt; &gt; 关于中本聪中间会面机制的网络传播模型的计算需要稍后进行，但是还有一个meme就是区块这个数据类型是否就是中间会面机制的一个体现呢？ &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月6日周五 10:22写道： &gt; &gt;&gt; 中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an &gt;&gt; interesting concept, but nothing remains that uses it. &gt;&gt; &gt;&gt; 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the &gt;&gt; middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也就是没人用它了。 &gt;&gt; &gt;&gt; 感觉这个地方值得研究一下。 &gt;&gt; &gt;&gt; 首先就是publish/subscribe，订阅发布（Publish-Subscribe，简称Pub/Sub） &gt;&gt; 是一种消息传递模式，在这种模式中，消息的发送者（发布者）不直接将消息发送给特定的接收者（订阅者），而是将消息分类到不同的主题（topic）或频道（channel）。订阅者可以表达对一个或多个主题的兴趣，并接收相关消息，而不知道发布者的存在。 &gt;&gt; &gt;&gt; 传统的pub/sub是异步的，非点对点的，一对多或者多对多的。这种消息传递模式有很多优点。 &gt;&gt; &gt;&gt; 1. 松耦合，这个特性很像我们通过邮件进行沟通，我不需要知道你在哪儿，是否在线，我都可以发送邮件，什么时候你们上线了就收到邮件了。 &gt;&gt; 2. 可扩展。邮件的主题可以扩展，我们这里就是为新的主题新开一个邮件，参与人也随时可以添加或减少。 &gt;&gt; 3. 灵活，支持一对多或多对多，支持消息过滤。 &gt;&gt; &gt;&gt; &gt;&gt; pub/sub的实现模式有2种，一种是推模式，也就是消息发布者主动广播消息，这种情况下实时性高，但是作为被动接收的订阅者需要实时在线，而且消息过多可能来不及处理。 &gt;&gt; &gt;&gt; &gt;&gt; 第二种是拉模式，也就是订阅者去拉取消</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-25</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">听了昨天叶鹏的研究，我突然发现一个问题，atom的出现是要早于比特币的，然后在这个视角简单看下atom. 只从实现方式上面去分析，atom是的流转是通过review消息进行触发的。review消息中验证消息就只有签名和公钥，这种实现方式非常符合我个人早期的编码方式，就像是写死一个函数，你给我传参数我给你传结果，这种方式把函数的运行写死了。 比特币这个地方中本聪明确在论坛上说这是一个谓词逻辑，从谓词的角度去分析，上面那种方式也是一种谓词逻辑，验证签名和公钥最后是true即可，但是比特币不是这样的，个人认为比特币把谓词扩展了，谓词不再是一个布尔值的函数了，它是一个等式，就是中本聪把谓词拆开了，等式左边就是锁定脚本，等式右边就是解锁脚本，左边和右边的内容不再限定的比较死，而是根据需要去填，最终等式成立也就是谓词逻辑最终的结果为true就可以了。 从这个角度去计算，那么局部共识和全局共识也可以做一个对比，也许就是先有局部公司，最终需要达成全局共识，这个稍后计算吧。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月12日周四 13:23写道： &gt; 关于中间会面机制，我越来</div><div class="msg-rest" style="display:none;">越觉得就是轻节点的机制。 &gt; &gt; &gt; 我们把主动拉取消息的功能先忽略，那么轻节点在整个比特币网络里面就是转发消息的功能，就是之前文博提到的那个只转发不存储，轻节点除了做简单的支付验证以外不会做复杂的验证，这个和没有订阅该频道但是收到了洪泛传来的频道消息几乎一摸一样，这个时候轻节点只需要验证消息的正确性，然后转发给自己连接到的其他节点就可以了。 &gt; &gt; &gt; 比特币网络中全节点和轻节点的占比大概是1:100，全节点大概一两万，轻节点几百万，也很符合中本聪最初设计的网络规模的，占比也和它的概率模型占比基本一致，比特币网络的运行也一直很高效。 &gt; &gt; &gt; 在网络传播中，最开始的洪泛传播到后来不断优化，减少网络带宽这些东西，都和中本聪设计的中间会面机制很像，中本聪一定想到了存粹的洪泛传播机制未来肯定因为太过简单暴力而被优化，但是整个网络传播模型一定不会彻底抛弃洪泛传播，所以他在这里提前做了相关优化的测试，看在优化以后在概率上比特币的网络传播是否受到影响。 &gt; &gt; 综上，我觉得这个中间会面机制和轻节点是存在很大关联的，这个机制很大概率就是测试了轻节点占多数的时候，洪泛传播被优化以后整个比特币网络的相关传播质量。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月11日周三 13:59写道： &gt; &gt;&gt; 关于pub/sub的相关计算 &gt;&gt; &gt;&gt; &gt;&gt; pub/sub之前只有推消息的模式，后面引入了中间件，才有了频道和拉取的模式。中间件是pub/sub消息模型的一个很大的创新，直接让pub/sub从可用到好用。之前理解的中间会面机制一致绕不开这个中间件，所以也一直想不明白为什么中本聪说没人使用它，事实上中间件推出以后pub/sub得到了更加广泛的应用。 &gt;&gt; &gt;&gt; &gt;&gt; 根据woo和文博的补充，中本聪代码中的中间会面机制是在比特币网络中可以使用少量的传播让频道里面的内容传递给订阅了该频道的节点，这个属于网络模型和传播方式的研究，和pub/sub中的中间件是没有太多关系的。 &gt;&gt; &gt;&gt; 如果在比特币上面使用不同的频道传递不同的内容的话，听起来似乎很迷人，但是比特币是否会根据频道进行分裂呢？如果不同频道的提议都只对自己有利，如果对其他频道有害的话很可能会因为频道不同使网络有不同的小团体，导致网络的分裂。以此为meme去理解最后一句but &gt;&gt; nothing remains that uses &gt;&gt; it.也就能想通了，比特币的成功还是因为它的存粹和平等，消息层面节点是可以获取所有的消息而不会因为频道不同而丢失一部分消息的，所以这个网络才能一直健康的发展下去。 &gt;&gt; &gt;&gt; 关于中本聪中间会面机制的网络传播模型的计算需要稍后进行，但是还有一个meme就是区块这个数据类型是否就是中间会面机制的一个体现呢？ &gt;&gt; &gt;&gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月6日周五 10:22写道： &gt;&gt; &gt;&gt;&gt; 中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an &gt;&gt;&gt; interesting concept, but nothing remains that uses it. &gt;&gt;&gt; &gt;&gt;&gt; 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the &gt;&gt;&gt; middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">文博</span>
+
+<span class="msg-date">2026-02-26</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?Q?Re:_20260227=E4=BC=9A=E5=89=8D=E5=90=8C=E6=AD=A5?=</div><div class="msg-full">1. 流速控制是 market 中整个系统都执行的规则（它并不是唯一的这样的规则，除此之外还有，0 原子传播，根据 review 关系建立 vLinksOut，…），虽然这个规则并不唯一，但不妨碍其与难度调整机制进行类比，但缺少强对应性。 2. “*我们在市场中的成交，有没有可能是买家和卖家的关系网络在某一瞬间接触了，产生了一笔交易*”，以这个作为思考的前提来说，“ *买家和卖家的关系网络在某一瞬间接触了*”似乎是换了句话描述中本聪的中间会面机制，但是后面提到“*那在atom里，流速控制似乎在做这件事*”，这里又在讲因为 review 产生的 vLinksOut 信任图以及其中的 atom 传递，这里两个主体是不一样的，前者是发布订阅机制构成的商品传播关系，后者是在节点本地形成的信任图。 3. 后面提出基于前面两个观点而产生的具体行动，“用pow干扰流速控制获得奖励是不是就是一个比较好的闭环”，没看懂这个是什么意思，仔细拆分下这个类比： - pow —— 付出成本 - 广告商或者销售在做的事情 —— 付出成本“干扰”买卖家 - 流速控制 —— pow干预流速（ 存在问题类比，*买家和卖</div><div class="msg-rest" style="display:none;">家的关系网络在某一瞬间接触了，不在同一主体*） - 获得奖励，广告商或者销售付出成本使得买卖家接触，以此获利，但是在 atom 中这个奖励指什么，atom 本身？ “用pow干扰流速控制获得奖励”，这个过程是什么，首先矿工出块时产生nAtom，这个atom以fOrigin=true进入AddAtomsAndPropagate，fOrigin=true意味着它直接进vAtomsIn和vAtomsOut， *绕过了nFlowthroughRate的阈值判断* 。也就是说POW产生的atom不受流速控制约束，它是起点，流速控制管的是这个atom之后沿vLinksOut传播时在每个中间节点的稀释速度。 这里的“用pow干扰流速控制”干扰的哪部分的 **nFlowthroughRate**奖励又指什么，以及还是要回答上面的问题，成交的网络和 atom 的图实际上不是同一主体，前提并不成立。 在2026年2月27日星期五 UTC+8 00:35:59&lt;Woo&gt; 写道： &gt; 老史提到流速阈值应该类比于难度调整算法。 &gt; &gt; 流速阈值不应该是写死的，应该作为全网的共识，一条穿起review，pow，atom，匹配，频道，激励的线。 &gt; &gt; 流速阈值=2 相当于比特币将出块时间调整在十分钟左右，理应有一个上限下限。 &gt; &gt; &gt; 回到atom如何作为不同频道的共用function，这里的重点是竞争，可以收敛到算力竞争。举个例子，那天我跟小胖，亚鹏，文博在聊天，一开始各聊各的，知道后面我们在对一个东西出现分歧，开始吵架的时候才在同一个频道通讯。我将这个抽象为竞争。atom可以通过竞争在不同的频道通讯。 &gt; &gt; 将流速阈值类比于难度调整算法的时候，可以认为，我在竞争系统的写入权，影响系统的难度，这个是根据共识作为诚实节点的工作量证明。 &gt; &gt; 影响系统利于节点更好的做匹配。 &gt; &gt; 关于会议 &gt; &gt; 对于组织来说，我目前为止的工作量是推动老史的进度，我自认为并没有在推动组织的进度上有显著的工作量。 &gt; &gt; 老史跟老马是唯二会使用这个会议的人，老马在做主持人的时候有这个效果。 &gt; &gt; 老史可以从成员的停机找到对他有用的东西是理所应当的。 &gt; &gt; 他的停机里面成员都可以找到对自己有用的东西也是这样的。 &gt; &gt; 这里面涉及到审美，匹配，以及对难度的理解。 &gt; &gt; 这篇邮件也有分别对应其他成员可以引用的部分。 &gt; &gt; 共识是，节点在使用这个会议，同时在对会议作出工作量。 &gt; 节点应该找到一条类似于难度调整算法的线把“解决自己问题”跟“对会议作出工作量”串在一起，这样就不会丢掉难度了。 &gt; &gt; 我作为节点的基础工作量是对于网络的维护工作。 &gt; &gt; 共识的意思，我知道你知道，你也知道我知道的才算共识。 &gt; &gt; 同意扣1。不理解发起解释请求 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; 矢孤 &lt;shijin...@gmail.com&gt;于2026年2月27日 周五00:09写道： &gt; &gt;&gt; -- &gt;&gt; You received this message because you are subscribed to the Google Groups &gt;&gt; &quot;p2ptalk&quot; group. &gt;&gt; To unsubscribe from this group and stop receiving emails from it, send an &gt;&gt; email to p2ptalk+u...@googlegroups.com. &gt;&gt; To view this discussion visit &gt;&gt; htt</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共9条，1个问题）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">文博</span>
+<span class="msg-q-badge">❓ 问</span>
+<span class="msg-date">2026-02-02</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?Q?Re:_2_=E6=9C=88_?= =?UTF-8?Q?2_=E6=97=A5=E4=BC=9A?=
+ =?UTF-8?Q?=E8=AE=AE=E5=89=8D=E7=BD=AE=E5=B7=A5=E4=BD=9C?=</div><div class="msg-full">1. 分析了atom 系统实际在比特币中新增的部分： 1. 拓展了比特币的消息类型用来传递 reviews 2. 增加本地数据库用来存储 reviews、linksout 和 atomIn、atomOut、atomNew 3. 增加发布订阅机制用来传递 product 4. 实际上 atom 的来源又将防女巫引向了 pow 2. 再依据中本聪对这个系统的描述，这里atom就是中本聪对于比特币应用的理解，或者说和比特币有所不同的一种产品形态，老史提出，需要从“ atom 系统和比特币系统的关系，这里是否可以任意做东西”的角度抽象，看看它和比特币类似的地方是哪里，共享的部分是什么。两者的前提都是p2p，共用了防女巫的思想，此外更像是独立的项目。 在2026年2月2日星期一 UTC+8 15:52:01&lt;icek...@gmail.com&gt; 写道： &gt; 来发邮件说明上次会议 &gt; &gt; -- &gt; gtalk: icek...@gmail.com &gt; blog: http://www.bulaoge.com/?icekernel &gt;</div>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-03</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">如何在比特币上面实现ebay那样的市场？ 这里把比特币作为一个互联互通的P2P网络来看，区块链就是比特币上面传递的相关消息，区块链可以当作是一种确定的消息，P2P网络上面还有一部分类似交易的信息，可以在网络上进行传递，但是可以不进块。 角色分布应该有:商品发布者，商品购买者。 商品发布者在网络上发布商品信息，用户可以在网络上查询获得商品信息，并与商品发布者联系购买商品，P2P网络不承担商品真实性相关检查。商品购买者可以对商品信息进行评价，最终评价会落实到商品发布者本人上面，这个应该就是atom的逻辑，给予商品发布者一定的信誉值。 问题: 1. 商品信息是否上链？ 商品发布信息个人建议是不上链，但是如何让矿工们接收并传递商品信息是一个问题 2. 成交信息是否上链？ 成交信息应该上链。 3. 成交信息是否和评论在一起？ 4. 是否使用比特币进行支付？ 5. 商品发布者如何进行约束？ 6. 如何验证成交信息是真实的？或者是否允许不真实的成交信息？ 以上问题需要慢慢思考 补充问题:发布订阅机制是否适用？ 如何订阅，是向矿工订阅还是向谁订阅？订阅是否需要付费？ 是否有一些特殊的矿工，可以向这些矿</div><div class="msg-rest" style="display:none;">工订阅商品信息？但会不会导致整个链分裂？ 最近需要计算的内容:在不修改比特币任何代码的情况下能否实现一版简易的可行的方案，大概2月4号给出初版方案。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年1月30日周五 13:18写道： &gt; 关于Atom在一个良好的网络拓扑中的传递机制分析。 &gt; &gt; Atom的传播机制。 &gt; &gt; 1. 收到Atom后会向每个vLinksOut中的地址进行传播。 &gt; 2. 流量控制，除了第一个收到Atom的CUser对象，其他对象收到Atom以后会进行减半传播。 &gt; &gt; &gt; Atom的传播主要受流量控制的影响，导致Atom的传播并不普遍和均匀，在随机信号源和随机Atom在全网传播时全网的Atom总量也呈现随机性，因为流量控制的影响，Atom的传播并不深入，也就是相距较远的CUser通常出现收不到Atom的情况。 &gt; &gt; &gt; 将流量控制视为衰减因子，Atom的衰减因子是0.5.将这个衰减因子修改为0.9以后全网的Atom的分布相对均匀且每个Atom的传播都很广泛，但是达不到全网一致的情况。 &gt; &gt; &gt; 修改网络结构，将网络结构修改为中心相对内聚但外围桥梁相对分散的情况，出现中心Cuser的Atom相对较多，外围Atom的持有较少，但外围User的Atom和外围User的Atom的差异较大，中心User和中心User的Atom差异较小。Atom很难跨区域传播。 &gt; &gt; 综上，Atom的传播主要受衰减因子影响导致其不适合在全网进行流转，调节衰减因子能显著改善全网流转情况，在分布不均的网络拓扑中更易形成区域不一致。 &gt; &gt; 所以流量控制的作用应该单独进行思考，接下来需要考虑的是局部共识和全域共识之间的关系，进一步探究Atom的使用场景。 &gt; &gt; 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; 于2026年1月28日周三 23:02写道： &gt; &gt;&gt; 这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 &gt;&gt; &gt;&gt; On Tue, Jan 27, 2026 at 5:57 PM 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; wrote: &gt;&gt; &gt;&gt;&gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt;&gt;&gt; &gt;&gt;&gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt;&gt;&gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt;&gt;&gt; &gt;&gt;&gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt;&gt;&gt; &gt;&gt;&gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt;&gt;&gt; &gt;&gt;&gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt;&gt;&gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt;&gt;&gt; 亚鹏可以看下它是怎么做的隔</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-04</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">在现有的比特币框架中嵌入一套ebay系统 首先是商品信息，这里不修改比特币的任何结构，结合外部信息的话可以使用类似NFT的框架。 构造一笔特殊的转账，金额可以很小，转账的信息里面有一个URL，URL上面就是具体的商品信息，价格，以及商家联系方式相关。转账需要有一个locktime,这个locktime就是一个商品公示期,也就是这个商品在链上能存续的最小时间。 外部计算，需要这个业务的服务器可以自行下载链上交易，获取商品URL并从URL上面下载商品信息来对用户提供服务，保证信息源来源于比特币，附属信息可以由外部提供。并对外提供商品信息页面促进商品成交。 用户在商品信息页面选择商品，根据商品上面的商家联系方式联系商家并成交。如果成交，商家需要在locktime结束以后将这个比特币转账给用户的，代表用户购买了相关商品并标识这个商品已经售出，不能二次销售。至于商品成交的最终价格，购买订单这些详细信息不宜在链上留下痕迹，链上仅有历史商品的比特币，哪个地址购买了这个比特币这两个信息。 用户在获得商品以后，如果想要对商品进行评价，需要将带有商品信息的这个比特币销毁，并在销毁的转账里面添加自己的评价信</div><div class="msg-rest" style="display:none;">息。商品不能被重复评价，已经被评价过的商品的比特币不能重复使用。如果用户没有对商品进行评价，该比特币可以重复使用，之前的商品买卖信息归为历史。 商品的评价信息和商家的绑定需要外围服务去做，但是如果商品信息的URL的内容被修改就无法溯源，所以商品评价是有窗口期的，过了这个窗口期则评价无效。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月3日周二 16:31写道： &gt; 如何在比特币上面实现ebay那样的市场？ &gt; &gt; &gt; 这里把比特币作为一个互联互通的P2P网络来看，区块链就是比特币上面传递的相关消息，区块链可以当作是一种确定的消息，P2P网络上面还有一部分类似交易的信息，可以在网络上进行传递，但是可以不进块。 &gt; &gt; 角色分布应该有:商品发布者，商品购买者。 &gt; &gt; &gt; 商品发布者在网络上发布商品信息，用户可以在网络上查询获得商品信息，并与商品发布者联系购买商品，P2P网络不承担商品真实性相关检查。商品购买者可以对商品信息进行评价，最终评价会落实到商品发布者本人上面，这个应该就是atom的逻辑，给予商品发布者一定的信誉值。 &gt; &gt; 问题: &gt; 1. 商品信息是否上链？ 商品发布信息个人建议是不上链，但是如何让矿工们接收并传递商品信息是一个问题 &gt; 2. 成交信息是否上链？ 成交信息应该上链。 &gt; 3. 成交信息是否和评论在一起？ &gt; 4. 是否使用比特币进行支付？ &gt; 5. 商品发布者如何进行约束？ &gt; 6. 如何验证成交信息是真实的？或者是否允许不真实的成交信息？ &gt; &gt; 以上问题需要慢慢思考 &gt; &gt; 补充问题:发布订阅机制是否适用？ 如何订阅，是向矿工订阅还是向谁订阅？订阅是否需要付费？ &gt; &gt; 是否有一些特殊的矿工，可以向这些矿工订阅商品信息？但会不会导致整个链分裂？ &gt; &gt; 最近需要计算的内容:在不修改比特币任何代码的情况下能否实现一版简易的可行的方案，大概2月4号给出初版方案。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年1月30日周五 13:18写道： &gt; &gt;&gt; 关于Atom在一个良好的网络拓扑中的传递机制分析。 &gt;&gt; &gt;&gt; Atom的传播机制。 &gt;&gt; &gt;&gt; 1. 收到Atom后会向每个vLinksOut中的地址进行传播。 &gt;&gt; 2. 流量控制，除了第一个收到Atom的CUser对象，其他对象收到Atom以后会进行减半传播。 &gt;&gt; &gt;&gt; &gt;&gt; Atom的传播主要受流量控制的影响，导致Atom的传播并不普遍和均匀，在随机信号源和随机Atom在全网传播时全网的Atom总量也呈现随机性，因为流量控制的影响，Atom的传播并不深入，也就是相距较远的CUser通常出现收不到Atom的情况。 &gt;&gt; &gt;&gt; &gt;&gt; 将流量控制视为衰减因子，Atom的衰减因子是0.5.将这个衰减因子修改为0.9以后全网的Atom的分布相对均匀且每个Atom的传播都很广泛，但是达不到全网一致的情况。 &gt;&gt; &gt;&gt; &gt;&gt; 修改网络结构，将网络结构修改为中心相对内聚但外围桥梁相对分散的情况，出现中心Cuser的Atom相对较多，外围Atom的持有较少，但外围User的Atom和外围User的Atom的差异较大，中心User和中心User的Atom差异较小。Atom很难跨区域传播。 &gt;&gt; &gt;&gt; 综上，Atom的传播主要受衰减因子影响导致其不适合在全网进行流转，调节衰减因子能显著改善全网流转情况，在分布不均的网络拓扑中更易形成区域不一致。 &gt;&gt; &gt;&gt; 所以流量控制的作用应该单独进行思考，接下来需要考虑的是局部共识和全域共识之间</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-06</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an interesting concept, but nothing remains that uses it. 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也就是没人用它了。 感觉这个地方值得研究一下。 首先就是publish/subscribe，订阅发布（Publish-Subscribe，简称Pub/Sub） 是一种消息传递模式，在这种模式中，消息的发送者（发布者）不直接将消息发送给特定的接收者（订阅者），而是将消息分类到不同的主题（topic）或频道（channel）。订阅者可以表达对一个或多个主题的兴趣，并接收相关消息，而不知道发布者的存在。 传统的pub/sub是异步的，非点对点的，一对多或者多对多的。这种消息传递模式有很多优点。 1. 松耦合，这个</div><div class="msg-rest" style="display:none;">特性很像我们通过邮件进行沟通，我不需要知道你在哪儿，是否在线，我都可以发送邮件，什么时候你们上线了就收到邮件了。 2. 可扩展。邮件的主题可以扩展，我们这里就是为新的主题新开一个邮件，参与人也随时可以添加或减少。 3. 灵活，支持一对多或多对多，支持消息过滤。 pub/sub的实现模式有2种，一种是推模式，也就是消息发布者主动广播消息，这种情况下实时性高，但是作为被动接收的订阅者需要实时在线，而且消息过多可能来不及处理。 第二种是拉模式，也就是订阅者去拉取消息，这种模式实时性差，但是订阅者掌握节奏，对于发布者来说负担更小，因为发布者一般会将消息放到一个中间件里面供订阅者拉取。但是订阅者通常会轮询消息，导致中间件负载过大。 一般实现会采用混合模式，即可以推，也可以拉。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月4日周三 16:18写道： &gt; 在现有的比特币框架中嵌入一套ebay系统 &gt; &gt; 首先是商品信息，这里不修改比特币的任何结构，结合外部信息的话可以使用类似NFT的框架。 &gt; &gt; &gt; 构造一笔特殊的转账，金额可以很小，转账的信息里面有一个URL，URL上面就是具体的商品信息，价格，以及商家联系方式相关。转账需要有一个locktime,这个locktime就是一个商品公示期,也就是这个商品在链上能存续的最小时间。 &gt; &gt; &gt; 外部计算，需要这个业务的服务器可以自行下载链上交易，获取商品URL并从URL上面下载商品信息来对用户提供服务，保证信息源来源于比特币，附属信息可以由外部提供。并对外提供商品信息页面促进商品成交。 &gt; &gt; &gt; 用户在商品信息页面选择商品，根据商品上面的商家联系方式联系商家并成交。如果成交，商家需要在locktime结束以后将这个比特币转账给用户的，代表用户购买了相关商品并标识这个商品已经售出，不能二次销售。至于商品成交的最终价格，购买订单这些详细信息不宜在链上留下痕迹，链上仅有历史商品的比特币，哪个地址购买了这个比特币这两个信息。 &gt; &gt; &gt; 用户在获得商品以后，如果想要对商品进行评价，需要将带有商品信息的这个比特币销毁，并在销毁的转账里面添加自己的评价信息。商品不能被重复评价，已经被评价过的商品的比特币不能重复使用。如果用户没有对商品进行评价，该比特币可以重复使用，之前的商品买卖信息归为历史。 &gt; &gt; 商品的评价信息和商家的绑定需要外围服务去做，但是如果商品信息的URL的内容被修改就无法溯源，所以商品评价是有窗口期的，过了这个窗口期则评价无效。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月3日周二 16:31写道： &gt; &gt;&gt; 如何在比特币上面实现ebay那样的市场？ &gt;&gt; &gt;&gt; &gt;&gt; 这里把比特币作为一个互联互通的P2P网络来看，区块链就是比特币上面传递的相关消息，区块链可以当作是一种确定的消息，P2P网络上面还有一部分类似交易的信息，可以在网络上进行传递，但是可以不进块。 &gt;&gt; &gt;&gt; 角色分布应该有:商品发布者，商品购买者。 &gt;&gt; &gt;&gt; &gt;&gt; 商品发布者在网络上发布商品信息，用户可以在网络上查询获得商品信息，并与商品发布者联系购买商品，P2P网络不承担商品真实性相关检查。商品购买者可以对商品信息进行评价，最终评价会落实到商品发布者本人上面，这个应该就是atom的逻辑，给予商品发布者一定的信誉值。 &gt;&gt; &gt;&gt; 问题: &gt;&gt; 1. 商品信息是否上链？ 商品发布信息个人建议是不上链，但是如何让矿工们接收并传递商品信息是一个问题 &gt;&gt; 2. 成交信息是否上链？ 成交</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-07</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IFByaXZhdGUgbWVzc2FnZSByZWdhcmRpbmc6IOWFs+S6jmF0b23nmoTmlbDmja4=?=
+	=?UTF-8?B?57uT5p6E5LmL5ZCO5oCO5LmI5aSE55CG?=</div><div class="msg-full">Woo &lt;godfrey9802@gmail.com&gt; 于 2026年2月7日周六 01:37写道： &gt; 这个邮件是单独会给亚鹏你的，这部分里面还有很多值得研究展开的东西。 &gt; &gt; 首先这个meet in the middle &gt; 策略是一个很中本聪式的操作，简单来说就是我要向全网广播信息，并不需要向所有节点都发送一次信息，而是像你说的一样，这个策略里面既有推的部分，也有拉的部分，通过一个非线性，跟根号有关的算法，推拉的次数之需要达到全网的1%左右就可以做到几乎不遗漏掉任何节点推送的信息，作为发送者来说，只要执行这个共识，也几乎不用担心你的信息会遗漏掉任何一个极点。我认为这里就是Atom系统的共识所在。在我们会议里面就是只要订阅三个节点，然后向三个节点广播就可以做到小心触达全网。 &gt; &gt; 订阅系统的传播分两段，第一段泛洪传播，泛洪传播五跳之后，才走订阅系统 &gt; 第二个是订阅系统，订阅系统需要纠正的一个地方是，并非节点对节点进行订阅，而是节点对频道进行订阅，节点向频道发送消息，这里面的频道包含五个，同消息类型，tx，block，product，review，table，其中tx，bloc</div><div class="msg-rest" style="display:none;">k不走订阅系统，节点强制接收这两个频道的消息，后三个频道走订阅频道，可以选择性接收。在我们会议里面，其实这样的频道有很多，这是导致信息接收不了或者通道关闭的情况。但我们共有的频道其实是会议本身，在这个频道里面交流大家都是没有障碍的。在你们建立的这个工程频道，其他人没有订阅，我理解第一段是没走完的，所有没有进入订阅系统。在技术上是可以拒绝转发的， &gt; 就是会成为不诚实节点，其实是产生了不诚实节点，导致这些信息没有进入到订阅系统，这里的逻辑我是有点meme的可以讨论。 &gt; &gt; 这个链接是meet-in-the-middle详细解析。 &gt; &gt; https://docs.google.com/document/d/148vWc0tjgJpIYMZ_hBFkJKdl4n5okJ5NNDE3u3YfMUs/edit?usp=drive_link &gt; &gt; &gt; &gt; &gt; On Friday, February 6, 2026 at 10:22:54 AM UTC+8 xuyapeng110 wrote: &gt; &gt; 中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an &gt; interesting concept, but nothing remains that uses it. &gt; &gt; 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the &gt; middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也就是没人用它了。 &gt; &gt; 感觉这个地方值得研究一下。 &gt; &gt; 首先就是publish/subscribe，订阅发布（Publish-Subscribe，简称Pub/Sub） &gt; 是一种消息传递模式，在这种模式中，消息的发送者（发布者）不直接将消息发送给特定的接收者（订阅者），而是将消息分类到不同的主题（topic）或频道（channel）。订阅者可以表达对一个或多个主题的兴趣，并接收相关消息，而不知道发布者的存在。 &gt; &gt; 传统的pub/sub是异步的，非点对点的，一对多或者多对多的。这种消息传递模式有很多优点。 &gt; &gt; 1. 松耦合，这个特性很像我们通过邮件进行沟通，我不需要知道你在哪儿，是否在线，我都可以发送邮件，什么时候你们上线了就收到邮件了。 &gt; 2. 可扩展。邮件的主题可以扩展，我们这里就是为新的主题新开一个邮件，参与人也随时可以添加或减少。 &gt; 3. 灵活，支持一对多或多对多，支持消息过滤。 &gt; &gt; &gt; pub/sub的实现模式有2种，一种是推模式，也就是消息发布者主动广播消息，这种情况下实时性高，但是作为被动接收的订阅者需要实时在线，而且消息过多可能来不及处理。 &gt; &gt; &gt; 第二种是拉模式，也就是订阅者去拉取消息，这种模式实时性差，但是订阅者掌握节奏，对于发布者来说负担更小，因为发布者一般会将消息放到一个中间件里面供订阅者拉取。但是订阅者通常会轮询消息，导致中间件负载过大。 &gt; &gt; 一般实现会采用混合模式，即可以推，也可以拉。 &gt; &gt; 胥亚朋 &lt;xuyap...@gmail.com&gt; 于2026年2月4日周三 16:18写道： &gt; &gt; 在现有的比特币框架中嵌入一套ebay系统 &gt; &gt; 首先是商品信息，这里不修改比特币的任何结构，结合外部信息的话可以使用类似NFT的框架。 &gt; &gt; &gt; 构造一笔特殊的转账，金额可以很小，转账的信息里面有一个URL，U</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-11</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">关于pub/sub的相关计算 pub/sub之前只有推消息的模式，后面引入了中间件，才有了频道和拉取的模式。中间件是pub/sub消息模型的一个很大的创新，直接让pub/sub从可用到好用。之前理解的中间会面机制一致绕不开这个中间件，所以也一直想不明白为什么中本聪说没人使用它，事实上中间件推出以后pub/sub得到了更加广泛的应用。 根据woo和文博的补充，中本聪代码中的中间会面机制是在比特币网络中可以使用少量的传播让频道里面的内容传递给订阅了该频道的节点，这个属于网络模型和传播方式的研究，和pub/sub中的中间件是没有太多关系的。 如果在比特币上面使用不同的频道传递不同的内容的话，听起来似乎很迷人，但是比特币是否会根据频道进行分裂呢？如果不同频道的提议都只对自己有利，如果对其他频道有害的话很可能会因为频道不同使网络有不同的小团体，导致网络的分裂。以此为meme去理解最后一句but nothing remains that uses it.也就能想通了，比特币的成功还是因为它的存粹和平等，消息层面节点是可以获取所有的消息而不会因为频道不同而丢失一部分消息的，所以这个网络才能一直健康的</div><div class="msg-rest" style="display:none;">发展下去。 关于中本聪中间会面机制的网络传播模型的计算需要稍后进行，但是还有一个meme就是区块这个数据类型是否就是中间会面机制的一个体现呢？ 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月6日周五 10:22写道： &gt; 中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an &gt; interesting concept, but nothing remains that uses it. &gt; &gt; 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the &gt; middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也就是没人用它了。 &gt; &gt; 感觉这个地方值得研究一下。 &gt; &gt; 首先就是publish/subscribe，订阅发布（Publish-Subscribe，简称Pub/Sub） &gt; 是一种消息传递模式，在这种模式中，消息的发送者（发布者）不直接将消息发送给特定的接收者（订阅者），而是将消息分类到不同的主题（topic）或频道（channel）。订阅者可以表达对一个或多个主题的兴趣，并接收相关消息，而不知道发布者的存在。 &gt; &gt; 传统的pub/sub是异步的，非点对点的，一对多或者多对多的。这种消息传递模式有很多优点。 &gt; &gt; 1. 松耦合，这个特性很像我们通过邮件进行沟通，我不需要知道你在哪儿，是否在线，我都可以发送邮件，什么时候你们上线了就收到邮件了。 &gt; 2. 可扩展。邮件的主题可以扩展，我们这里就是为新的主题新开一个邮件，参与人也随时可以添加或减少。 &gt; 3. 灵活，支持一对多或多对多，支持消息过滤。 &gt; &gt; &gt; pub/sub的实现模式有2种，一种是推模式，也就是消息发布者主动广播消息，这种情况下实时性高，但是作为被动接收的订阅者需要实时在线，而且消息过多可能来不及处理。 &gt; &gt; &gt; 第二种是拉模式，也就是订阅者去拉取消息，这种模式实时性差，但是订阅者掌握节奏，对于发布者来说负担更小，因为发布者一般会将消息放到一个中间件里面供订阅者拉取。但是订阅者通常会轮询消息，导致中间件负载过大。 &gt; &gt; 一般实现会采用混合模式，即可以推，也可以拉。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月4日周三 16:18写道： &gt; &gt;&gt; 在现有的比特币框架中嵌入一套ebay系统 &gt;&gt; &gt;&gt; 首先是商品信息，这里不修改比特币的任何结构，结合外部信息的话可以使用类似NFT的框架。 &gt;&gt; &gt;&gt; &gt;&gt; 构造一笔特殊的转账，金额可以很小，转账的信息里面有一个URL，URL上面就是具体的商品信息，价格，以及商家联系方式相关。转账需要有一个locktime,这个locktime就是一个商品公示期,也就是这个商品在链上能存续的最小时间。 &gt;&gt; &gt;&gt; &gt;&gt; 外部计算，需要这个业务的服务器可以自行下载链上交易，获取商品URL并从URL上面下载商品信息来对用户提供服务，保证信息源来源于比特币，附属信息可以由外部提供。并对外提供商品信息页面促进商品成交。 &gt;&gt; &gt;&gt; &gt;&gt; 用户在商品信息页面选择商品，根据商品上面的商家联系方式联系商家并成交。如果成交，商家需要在locktime结束以后将这个比特币转账给用户的，代表用户购买了相关商品并标识这个商品已经售出，不能二次销售。至于商品成交的最终价格，购买订单这些详细信</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-12</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">关于中间会面机制，我越来越觉得就是轻节点的机制。 我们把主动拉取消息的功能先忽略，那么轻节点在整个比特币网络里面就是转发消息的功能，就是之前文博提到的那个只转发不存储，轻节点除了做简单的支付验证以外不会做复杂的验证，这个和没有订阅该频道但是收到了洪泛传来的频道消息几乎一摸一样，这个时候轻节点只需要验证消息的正确性，然后转发给自己连接到的其他节点就可以了。 比特币网络中全节点和轻节点的占比大概是1:100，全节点大概一两万，轻节点几百万，也很符合中本聪最初设计的网络规模的，占比也和它的概率模型占比基本一致，比特币网络的运行也一直很高效。 在网络传播中，最开始的洪泛传播到后来不断优化，减少网络带宽这些东西，都和中本聪设计的中间会面机制很像，中本聪一定想到了存粹的洪泛传播机制未来肯定因为太过简单暴力而被优化，但是整个网络传播模型一定不会彻底抛弃洪泛传播，所以他在这里提前做了相关优化的测试，看在优化以后在概率上比特币的网络传播是否受到影响。 综上，我觉得这个中间会面机制和轻节点是存在很大关联的，这个机制很大概率就是测试了轻节点占多数的时候，洪泛传播被优化以后整个比特币网络的相关传播质量。 胥亚</div><div class="msg-rest" style="display:none;">朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月11日周三 13:59写道： &gt; 关于pub/sub的相关计算 &gt; &gt; &gt; pub/sub之前只有推消息的模式，后面引入了中间件，才有了频道和拉取的模式。中间件是pub/sub消息模型的一个很大的创新，直接让pub/sub从可用到好用。之前理解的中间会面机制一致绕不开这个中间件，所以也一直想不明白为什么中本聪说没人使用它，事实上中间件推出以后pub/sub得到了更加广泛的应用。 &gt; &gt; &gt; 根据woo和文博的补充，中本聪代码中的中间会面机制是在比特币网络中可以使用少量的传播让频道里面的内容传递给订阅了该频道的节点，这个属于网络模型和传播方式的研究，和pub/sub中的中间件是没有太多关系的。 &gt; &gt; 如果在比特币上面使用不同的频道传递不同的内容的话，听起来似乎很迷人，但是比特币是否会根据频道进行分裂呢？如果不同频道的提议都只对自己有利，如果对其他频道有害的话很可能会因为频道不同使网络有不同的小团体，导致网络的分裂。以此为meme去理解最后一句but &gt; nothing remains that uses &gt; it.也就能想通了，比特币的成功还是因为它的存粹和平等，消息层面节点是可以获取所有的消息而不会因为频道不同而丢失一部分消息的，所以这个网络才能一直健康的发展下去。 &gt; &gt; 关于中本聪中间会面机制的网络传播模型的计算需要稍后进行，但是还有一个meme就是区块这个数据类型是否就是中间会面机制的一个体现呢？ &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月6日周五 10:22写道： &gt; &gt;&gt; 中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an &gt;&gt; interesting concept, but nothing remains that uses it. &gt;&gt; &gt;&gt; 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the &gt;&gt; middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也就是没人用它了。 &gt;&gt; &gt;&gt; 感觉这个地方值得研究一下。 &gt;&gt; &gt;&gt; 首先就是publish/subscribe，订阅发布（Publish-Subscribe，简称Pub/Sub） &gt;&gt; 是一种消息传递模式，在这种模式中，消息的发送者（发布者）不直接将消息发送给特定的接收者（订阅者），而是将消息分类到不同的主题（topic）或频道（channel）。订阅者可以表达对一个或多个主题的兴趣，并接收相关消息，而不知道发布者的存在。 &gt;&gt; &gt;&gt; 传统的pub/sub是异步的，非点对点的，一对多或者多对多的。这种消息传递模式有很多优点。 &gt;&gt; &gt;&gt; 1. 松耦合，这个特性很像我们通过邮件进行沟通，我不需要知道你在哪儿，是否在线，我都可以发送邮件，什么时候你们上线了就收到邮件了。 &gt;&gt; 2. 可扩展。邮件的主题可以扩展，我们这里就是为新的主题新开一个邮件，参与人也随时可以添加或减少。 &gt;&gt; 3. 灵活，支持一对多或多对多，支持消息过滤。 &gt;&gt; &gt;&gt; &gt;&gt; pub/sub的实现模式有2种，一种是推模式，也就是消息发布者主动广播消息，这种情况下实时性高，但是作为被动接收的订阅者需要实时在线，而且消息过多可能来不及处理。 &gt;&gt; &gt;&gt; &gt;&gt; 第二种是拉模式，也就是订阅者去拉取消</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-25</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">听了昨天叶鹏的研究，我突然发现一个问题，atom的出现是要早于比特币的，然后在这个视角简单看下atom. 只从实现方式上面去分析，atom是的流转是通过review消息进行触发的。review消息中验证消息就只有签名和公钥，这种实现方式非常符合我个人早期的编码方式，就像是写死一个函数，你给我传参数我给你传结果，这种方式把函数的运行写死了。 比特币这个地方中本聪明确在论坛上说这是一个谓词逻辑，从谓词的角度去分析，上面那种方式也是一种谓词逻辑，验证签名和公钥最后是true即可，但是比特币不是这样的，个人认为比特币把谓词扩展了，谓词不再是一个布尔值的函数了，它是一个等式，就是中本聪把谓词拆开了，等式左边就是锁定脚本，等式右边就是解锁脚本，左边和右边的内容不再限定的比较死，而是根据需要去填，最终等式成立也就是谓词逻辑最终的结果为true就可以了。 从这个角度去计算，那么局部共识和全局共识也可以做一个对比，也许就是先有局部公司，最终需要达成全局共识，这个稍后计算吧。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月12日周四 13:23写道： &gt; 关于中间会面机制，我越来</div><div class="msg-rest" style="display:none;">越觉得就是轻节点的机制。 &gt; &gt; &gt; 我们把主动拉取消息的功能先忽略，那么轻节点在整个比特币网络里面就是转发消息的功能，就是之前文博提到的那个只转发不存储，轻节点除了做简单的支付验证以外不会做复杂的验证，这个和没有订阅该频道但是收到了洪泛传来的频道消息几乎一摸一样，这个时候轻节点只需要验证消息的正确性，然后转发给自己连接到的其他节点就可以了。 &gt; &gt; &gt; 比特币网络中全节点和轻节点的占比大概是1:100，全节点大概一两万，轻节点几百万，也很符合中本聪最初设计的网络规模的，占比也和它的概率模型占比基本一致，比特币网络的运行也一直很高效。 &gt; &gt; &gt; 在网络传播中，最开始的洪泛传播到后来不断优化，减少网络带宽这些东西，都和中本聪设计的中间会面机制很像，中本聪一定想到了存粹的洪泛传播机制未来肯定因为太过简单暴力而被优化，但是整个网络传播模型一定不会彻底抛弃洪泛传播，所以他在这里提前做了相关优化的测试，看在优化以后在概率上比特币的网络传播是否受到影响。 &gt; &gt; 综上，我觉得这个中间会面机制和轻节点是存在很大关联的，这个机制很大概率就是测试了轻节点占多数的时候，洪泛传播被优化以后整个比特币网络的相关传播质量。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月11日周三 13:59写道： &gt; &gt;&gt; 关于pub/sub的相关计算 &gt;&gt; &gt;&gt; &gt;&gt; pub/sub之前只有推消息的模式，后面引入了中间件，才有了频道和拉取的模式。中间件是pub/sub消息模型的一个很大的创新，直接让pub/sub从可用到好用。之前理解的中间会面机制一致绕不开这个中间件，所以也一直想不明白为什么中本聪说没人使用它，事实上中间件推出以后pub/sub得到了更加广泛的应用。 &gt;&gt; &gt;&gt; &gt;&gt; 根据woo和文博的补充，中本聪代码中的中间会面机制是在比特币网络中可以使用少量的传播让频道里面的内容传递给订阅了该频道的节点，这个属于网络模型和传播方式的研究，和pub/sub中的中间件是没有太多关系的。 &gt;&gt; &gt;&gt; 如果在比特币上面使用不同的频道传递不同的内容的话，听起来似乎很迷人，但是比特币是否会根据频道进行分裂呢？如果不同频道的提议都只对自己有利，如果对其他频道有害的话很可能会因为频道不同使网络有不同的小团体，导致网络的分裂。以此为meme去理解最后一句but &gt;&gt; nothing remains that uses &gt;&gt; it.也就能想通了，比特币的成功还是因为它的存粹和平等，消息层面节点是可以获取所有的消息而不会因为频道不同而丢失一部分消息的，所以这个网络才能一直健康的发展下去。 &gt;&gt; &gt;&gt; 关于中本聪中间会面机制的网络传播模型的计算需要稍后进行，但是还有一个meme就是区块这个数据类型是否就是中间会面机制的一个体现呢？ &gt;&gt; &gt;&gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年2月6日周五 10:22写道： &gt;&gt; &gt;&gt;&gt; 中本聪的邮件里面有一句:The publish/subscribe &quot;meet in the middle&quot; mechanism was an &gt;&gt;&gt; interesting concept, but nothing remains that uses it. &gt;&gt;&gt; &gt;&gt;&gt; 这里有三个重点，第一个就是publish/subscribe，也就是发布订阅机制。第二个是meet in the &gt;&gt;&gt; middle。这个好像是分布式网络中才有的一个东西。第三个就是nothing remains that uses it，也</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">文博</span>
+
+<span class="msg-date">2026-02-26</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?Q?Re:_20260227=E4=BC=9A=E5=89=8D=E5=90=8C=E6=AD=A5?=</div><div class="msg-full">1. 流速控制是 market 中整个系统都执行的规则（它并不是唯一的这样的规则，除此之外还有，0 原子传播，根据 review 关系建立 vLinksOut，…），虽然这个规则并不唯一，但不妨碍其与难度调整机制进行类比，但缺少强对应性。 2. “*我们在市场中的成交，有没有可能是买家和卖家的关系网络在某一瞬间接触了，产生了一笔交易*”，以这个作为思考的前提来说，“ *买家和卖家的关系网络在某一瞬间接触了*”似乎是换了句话描述中本聪的中间会面机制，但是后面提到“*那在atom里，流速控制似乎在做这件事*”，这里又在讲因为 review 产生的 vLinksOut 信任图以及其中的 atom 传递，这里两个主体是不一样的，前者是发布订阅机制构成的商品传播关系，后者是在节点本地形成的信任图。 3. 后面提出基于前面两个观点而产生的具体行动，“用pow干扰流速控制获得奖励是不是就是一个比较好的闭环”，没看懂这个是什么意思，仔细拆分下这个类比： - pow —— 付出成本 - 广告商或者销售在做的事情 —— 付出成本“干扰”买卖家 - 流速控制 —— pow干预流速（ 存在问题类比，*买家和卖</div><div class="msg-rest" style="display:none;">家的关系网络在某一瞬间接触了，不在同一主体*） - 获得奖励，广告商或者销售付出成本使得买卖家接触，以此获利，但是在 atom 中这个奖励指什么，atom 本身？ “用pow干扰流速控制获得奖励”，这个过程是什么，首先矿工出块时产生nAtom，这个atom以fOrigin=true进入AddAtomsAndPropagate，fOrigin=true意味着它直接进vAtomsIn和vAtomsOut， *绕过了nFlowthroughRate的阈值判断* 。也就是说POW产生的atom不受流速控制约束，它是起点，流速控制管的是这个atom之后沿vLinksOut传播时在每个中间节点的稀释速度。 这里的“用pow干扰流速控制”干扰的哪部分的 **nFlowthroughRate**奖励又指什么，以及还是要回答上面的问题，成交的网络和 atom 的图实际上不是同一主体，前提并不成立。 在2026年2月27日星期五 UTC+8 00:35:59&lt;Woo&gt; 写道： &gt; 老史提到流速阈值应该类比于难度调整算法。 &gt; &gt; 流速阈值不应该是写死的，应该作为全网的共识，一条穿起review，pow，atom，匹配，频道，激励的线。 &gt; &gt; 流速阈值=2 相当于比特币将出块时间调整在十分钟左右，理应有一个上限下限。 &gt; &gt; &gt; 回到atom如何作为不同频道的共用function，这里的重点是竞争，可以收敛到算力竞争。举个例子，那天我跟小胖，亚鹏，文博在聊天，一开始各聊各的，知道后面我们在对一个东西出现分歧，开始吵架的时候才在同一个频道通讯。我将这个抽象为竞争。atom可以通过竞争在不同的频道通讯。 &gt; &gt; 将流速阈值类比于难度调整算法的时候，可以认为，我在竞争系统的写入权，影响系统的难度，这个是根据共识作为诚实节点的工作量证明。 &gt; &gt; 影响系统利于节点更好的做匹配。 &gt; &gt; 关于会议 &gt; &gt; 对于组织来说，我目前为止的工作量是推动老史的进度，我自认为并没有在推动组织的进度上有显著的工作量。 &gt; &gt; 老史跟老马是唯二会使用这个会议的人，老马在做主持人的时候有这个效果。 &gt; &gt; 老史可以从成员的停机找到对他有用的东西是理所应当的。 &gt; &gt; 他的停机里面成员都可以找到对自己有用的东西也是这样的。 &gt; &gt; 这里面涉及到审美，匹配，以及对难度的理解。 &gt; &gt; 这篇邮件也有分别对应其他成员可以引用的部分。 &gt; &gt; 共识是，节点在使用这个会议，同时在对会议作出工作量。 &gt; 节点应该找到一条类似于难度调整算法的线把“解决自己问题”跟“对会议作出工作量”串在一起，这样就不会丢掉难度了。 &gt; &gt; 我作为节点的基础工作量是对于网络的维护工作。 &gt; &gt; 共识的意思，我知道你知道，你也知道我知道的才算共识。 &gt; &gt; 同意扣1。不理解发起解释请求 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; 矢孤 &lt;shijin...@gmail.com&gt;于2026年2月27日 周五00:09写道： &gt; &gt;&gt; -- &gt;&gt; You received this message because you are subscribed to the Google Groups &gt;&gt; &quot;p2ptalk&quot; group. &gt;&gt; To unsubscribe from this group and stop receiving emails from it, send an &gt;&gt; email to p2ptalk+u...@googlegroups.com. &gt;&gt; To view this discussion visit &gt;&gt; htt</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
 </div>
 <h1>发布订阅机制</h1>
 <h2>Bitcoin 的发布订阅</h2>
@@ -363,7 +738,25 @@ header .subtitle a:hover { text-decoration: underline; }
 <a href="../person_胥亚朋.html" class="p-tag">胥亚朋<span class="p-msg-count">(7条)</span></a>
 <a href="../person_文博.html" class="p-tag">文博<span class="p-msg-count">(2条)</span></a>
 </div>
-<div class="person-block"><div class="person-header"><a href="../person_胥亚朋.html" class="person-name">胥亚朋</a><span class="person-count">7条</span><span class="person-months">2026-02</span></div><div class="person-msgs"><div class="p-preview">听了昨天叶鹏的研究，我突然发现一个问题，atom的出现是要早于比特币的，然后在这个视角简单看下atom. 只从实现方式上面去分析，atom是的流转是通过review消息进行触发的。review消息中验证消息就只有签名和公钥，这种实现方式非常...</div><div class="p-preview">关于中间会面机制，我越来越觉得就是轻节点的机制。 我们把主动拉取消息的功能先忽略，那么轻节点在整个比特币网络里面就是转发消息的功能，就是之前文博提到的那个只转发不存储，轻节点除了做简单的支付验证以外不会做复杂的验证，这个和没有订阅该频道但是...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_文博.html" class="person-name">文博</a><span class="person-count">2条</span><span class="person-months">2026-02</span></div><div class="person-msgs"><div class="p-preview">1. 流速控制是 market 中整个系统都执行的规则（它并不是唯一的这样的规则，除此之外还有，0 原子传播，根据 review 关系建立 vLinksOut，…），虽然这个规则并不唯一，但不妨碍其与难度调整机制进行类比，但缺少强对应性。 ...</div><div class="p-preview">1. 分析了atom 系统实际在比特币中新增的部分： 1. 拓展了比特币的消息类型用来传递 reviews 2. 增加本地数据库用来存储 reviews、linksout 和 atomIn、atomOut、atomNew 3. 增加发布订阅...</div></div></div></div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_胥亚朋.html" class="p-tag">胥亚朋<span class="p-msg-count">(7条)</span></a>
+<a href="../person_文博.html" class="p-tag">文博<span class="p-msg-count">(2条)</span></a>
+</div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_胥亚朋.html" class="p-tag">胥亚朋<span class="p-msg-count">(7条)</span></a>
+<a href="../person_文博.html" class="p-tag">文博<span class="p-msg-count">(2条)</span></a>
+</div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_胥亚朋.html" class="p-tag">胥亚朋<span class="p-msg-count">(7条)</span></a>
+<a href="../person_文博.html" class="p-tag">文博<span class="p-msg-count">(2条)</span></a>
+</div>
+<div class="person-block"><div class="person-header"><a href="../person_胥亚朋.html" class="person-name">胥亚朋</a><span class="person-count">7条</span><span class="person-months">2026-02</span></div><div class="person-msgs"><div class="p-preview">听了昨天叶鹏的研究，我突然发现一个问题，atom的出现是要早于比特币的，然后在这个视角简单看下atom. 只从实现方式上面去分析，atom是的流转是通过review消息进行触发的。review消息中验证消息就只有签名和公钥，这种实现方式非常…</div><div class="p-preview">关于中间会面机制，我越来越觉得就是轻节点的机制。 我们把主动拉取消息的功能先忽略，那么轻节点在整个比特币网络里面就是转发消息的功能，就是之前文博提到的那个只转发不存储，轻节点除了做简单的支付验证以外不会做复杂的验证，这个和没有订阅该频道但是…</div></div></div><div class="person-block"><div class="person-header"><a href="../person_文博.html" class="person-name">文博</a><span class="person-count">2条</span><span class="person-months">2026-02</span></div><div class="person-msgs"><div class="p-preview">1. 流速控制是 market 中整个系统都执行的规则（它并不是唯一的这样的规则，除此之外还有，0 原子传播，根据 review 关系建立 vLinksOut，…），虽然这个规则并不唯一，但不妨碍其与难度调整机制进行类比，但缺少强对应性。 …</div><div class="p-preview">1. 分析了atom 系统实际在比特币中新增的部分： 1. 拓展了比特币的消息类型用来传递 reviews 2. 增加本地数据库用来存储 reviews、linksout 和 atomIn、atomOut、atomNew 3. 增加发布订阅…</div></div></div></div>
 </div></div></div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
@@ -430,6 +823,78 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   var h=document.querySelector('.all-msgs-header');

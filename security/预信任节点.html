@@ -153,6 +153,78 @@ header .subtitle a:hover { text-decoration: underline; }
 .people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
 .people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
 .people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
 </style>
 </head>
 <body>
@@ -285,6 +357,183 @@ header .subtitle a:hover { text-decoration: underline; }
 </div>
 </div>
 </div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共5条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">沄涣</span>
+
+<span class="msg-date">2026-01-27</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实</div><div class="msg-rest" style="display:none;">现的少数诚实的种子节点，叶鹏 亚鹏可以看下它是怎么做的隔离女巫攻击的做一个参考。 文中提到了分布式计算“信任”，不需要中心化来计算信任矩阵，每个节点只需要跟自己的临近节点通信，迭代计算，最终全网会自动达成一致（收敛）。 文中比较meme的地方是，一个节点的全局信誉值，等同于一个随机游走者（Random Surfer）在这个信任网络中最终停留在该节点的概率。 On Tue, Jan 27, 2026 at 2:05 PM 胥亚朋 &lt;xuyapeng110@gmail.com&gt; wrote: &gt; 首先，根据market.h中对CUser的设计，里面的vector&lt;uint256&gt; vLinksOut;结构可以构成1个完整的网络拓扑。 &gt; &gt; 接下来我们研究这个网络拓扑，在这个网络拓扑中，每个用户都可以连接多个用户，用户也可以被多个用户连接。这样所有的用户构成的网络拓扑中，有这么几个节点: &gt; &gt; 1. 连接很多节点的节点 &gt; 2. 被很多节点连接的节点 &gt; 3. 桥梁节点 &gt; 4. 可达节点:到其他节点的平均距离比较短的节点。 &gt; &gt; &gt; 这些节点中的重要性分析，连接很多节点的节点可以主动传递信息，有利于信息的传播，被很多节点连接的节点只能被动接受信息，对信息的广播没有太多意义。桥梁节点很重要，没有它一部分区域就和整个网路断连了。到其他节点的平均距离比较短的节点最重要，消息的传递主要靠它，是最重要的节点 &gt; &gt; 加上Atom的传播机制，消息到节点后会减半传递给自己连接的节点。 &gt; &gt; &gt; 代入Atom的传播机制以后，桥梁节点依然重要，但是被桥梁节点连接的孤立区域接受到消息永远是减半的，所以要尽可能不让这些区域出现，也就是要减少桥梁节点，不要让孤立区域存在，需要一种完整的防范机制。到其他节点的平均距离比较短的节点会承担最多的消息传播的功能，因为平均距离最短，消息的平均损耗也就最小，对全网来说意义重大，所以需要大部分节点对其他节点的平均距离都要减少。 &gt; &gt; 再加入一个机制，假设节点可以主动连接的节点数量是有限的，那么这个网络又会是什么形态呢？ &gt; &gt; &gt; 节点的出度受限的情况下，连接高质量节点的需求更加重要，连接很多节点的节点重要度上升，桥梁节点更加重要，可达节点的节点数量直接关系着整个网络的消息传播度，整个网络需要增加可达节点。 &gt; &gt; &gt; 桥梁节点虽然重要，但是桥梁节点的出现本身就代表网络传播受限，有一部分节点随时有可能和整个网络断连，所以接下来需要考虑的是如何增加可达节点，如果绝大部分都是可达节点，那么网络的传播效率就是很高的。 &gt; &gt; shijingyao123 &lt;shijingyao123@gmail.com&gt; 于2026年1月23日周五 17:53写道： &gt; &gt;&gt; 几天还聊到一个关键问题，就是，你认为，是不是atom越多，就代表你的信誉越多，这个问题也可以回答一下。 &gt;&gt; &gt;&gt; 在2026年1月23日星期五 UTC+8 17:49:51&lt;shijingyao123&gt; 写道： &gt;&gt; &gt;&gt;&gt; 这个帖子可以持续返回计算直到我听懂为止，因为我觉得这里涉及到了我不懂的领域，我没法参与进来。 &gt;&gt;&gt; 当然，我们还可以先回答另外一个问题，中本聪设计比特币到这一步的时候，他老人家咋想的。 &gt;&gt;&gt; @文博 &gt;&gt;&gt; @叶鹏 &gt;&gt;&gt; @亚朋 &gt;&gt;&gt; &gt;&gt; -- &gt;&gt; You received this message because you are subscribed to the Google Groups &gt;&gt; &quot;p2ptalk&quot; group. &gt;&gt; To</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-01-28</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">首先考虑了一下网络拓扑的干预是在什么地方，在比特币和以太坊的方案中，每次启动节点都会到一个网址上请求可以连接的节点，我认为这个地方就是它们干预网络拓扑的地方。 初期的时候想要网络中的节点门互联的平均距离都很短，一般采用中心化的连接方法，即有一两个核心节点，其他节点都连接中心节点确保网络联通，和其他节点的连接不做要求。 随着网络规模的扩大，一两个核心节点是无法负荷整个网络的连接的，这个时候一般情况下给节点的链接对象都是和它物理相进的节点，这样的连接相对比较稳定，但时间久了以后会形成一个一个的小世界，即物理相近的节点互相连接，通过不同的区域相互级联来沟通整个网络。但这种连接模式有很大弊端，第一就是相对远的地址之间的通信很复杂，即中间需要经过的节点跳数比较多，而且很容易出现区域和区域产生整体分歧的情况。这种情况下需要一些优化，这个优化就是每个节点在连接网络的时候不能仅连接我所在区域的节点，还应该连接一两个外部区域的节点，理想情况下每个节点都会连接一两个外部区域的节点，作为该区域和外部区域的桥梁节点，这样本区域的信息在流转的时候就可以通过桥梁节点直接流转，而不需要区域级联一步步跳转过去，增加了</div><div class="msg-rest" style="display:none;">区域联通性的同时也更好的保障了网络的安全性。 小世界模型的优化依赖于实时的网络监测，网络拓扑模型的计算，另外还要有实时网络连接重定向的调整，但在一个良好的网络模型中，小世界优化的网络模式是一种很健壮且很高效的网络模型。 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; 于2026年1月27日周二 17:57写道： &gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt; &gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt; &gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt; &gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt; &gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt; 亚鹏可以看下它是怎么做的隔离女巫攻击的做一个参考。 &gt; &gt; 文中提到了分布式计算“信任”，不需要中心化来计算信任矩阵，每个节点只需要跟自己的临近节点通信，迭代计算，最终全网会自动达成一致（收敛）。 &gt; &gt; 文中比较meme的地方是，一个节点的全局信誉值，等同于一个随机游走者（Random Surfer）在这个信任网络中最终停留在该节点的概率。 &gt; &gt; &gt; On Tue, Jan 27, 2026 at 2:05 PM 胥亚朋 &lt;xuyapeng110@gmail.com&gt; wrote: &gt; &gt;&gt; 首先，根据market.h中对CUser的设计，里面的vector&lt;uint256&gt; vLinksOut;结构可以构成1个完整的网络拓扑。 &gt;&gt; &gt;&gt; 接下来我们研究这个网络拓扑，在这个网络拓扑中，每个用户都可以连接多个用户，用户也可以被多个用户连接。这样所有的用户构成的网络拓扑中，有这么几个节点: &gt;&gt; &gt;&gt; 1. 连接很多节点的节点 &gt;&gt; 2. 被很多节点连接的节点 &gt;&gt; 3. 桥梁节点 &gt;&gt; 4. 可达节点:到其他节点的平均距离比较短的节点。 &gt;&gt; &gt;&gt; &gt;&gt; 这些节点中的重要性分析，连接很多节点的节点可以主动传递信息，有利于信息的传播，被很多节点连接的节点只能被动接受信息，对信息的广播没有太多意义。桥梁节点很重要，没有它一部分区域就和整个网路断连了。到其他节点的平均距离比较短的节点最重要，消息的传递主要靠它，是最重要的节点 &gt;&gt; &gt;&gt; 加上Atom的传播机制，消息到节点后会减半传递给自己连接的节点。 &gt;&gt; &gt;&gt; &gt;&gt; 代入Atom的传播机制以后，桥梁节点依然重要，但是被桥梁节点连接的孤立区域接受到消息永远是减半的，所以要尽可能不让这些区域出现，也就是要减少桥梁节点，不要让孤立区域存在，需要一种完整的防范机制。到其他节点的平均距离比较短的节点会承担最多的消息传播的功能，因</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">沄涣</span>
+
+<span class="msg-date">2026-01-28</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 On Tue, Jan 27, 2026 at 5:57 PM 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; wrote: &gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt; &gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt; &gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt; &gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt; &gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）</div><div class="msg-rest" style="display:none;">也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt; 亚鹏可以看下它是怎么做的隔离女巫攻击的做一个参考。 &gt; &gt; 文中提到了分布式计算“信任”，不需要中心化来计算信任矩阵，每个节点只需要跟自己的临近节点通信，迭代计算，最终全网会自动达成一致（收敛）。 &gt; &gt; 文中比较meme的地方是，一个节点的全局信誉值，等同于一个随机游走者（Random Surfer）在这个信任网络中最终停留在该节点的概率。 &gt; &gt; &gt; On Tue, Jan 27, 2026 at 2:05 PM 胥亚朋 &lt;xuyapeng110@gmail.com&gt; wrote: &gt; &gt;&gt; 首先，根据market.h中对CUser的设计，里面的vector&lt;uint256&gt; vLinksOut;结构可以构成1个完整的网络拓扑。 &gt;&gt; &gt;&gt; 接下来我们研究这个网络拓扑，在这个网络拓扑中，每个用户都可以连接多个用户，用户也可以被多个用户连接。这样所有的用户构成的网络拓扑中，有这么几个节点: &gt;&gt; &gt;&gt; 1. 连接很多节点的节点 &gt;&gt; 2. 被很多节点连接的节点 &gt;&gt; 3. 桥梁节点 &gt;&gt; 4. 可达节点:到其他节点的平均距离比较短的节点。 &gt;&gt; &gt;&gt; &gt;&gt; 这些节点中的重要性分析，连接很多节点的节点可以主动传递信息，有利于信息的传播，被很多节点连接的节点只能被动接受信息，对信息的广播没有太多意义。桥梁节点很重要，没有它一部分区域就和整个网路断连了。到其他节点的平均距离比较短的节点最重要，消息的传递主要靠它，是最重要的节点 &gt;&gt; &gt;&gt; 加上Atom的传播机制，消息到节点后会减半传递给自己连接的节点。 &gt;&gt; &gt;&gt; &gt;&gt; 代入Atom的传播机制以后，桥梁节点依然重要，但是被桥梁节点连接的孤立区域接受到消息永远是减半的，所以要尽可能不让这些区域出现，也就是要减少桥梁节点，不要让孤立区域存在，需要一种完整的防范机制。到其他节点的平均距离比较短的节点会承担最多的消息传播的功能，因为平均距离最短，消息的平均损耗也就最小，对全网来说意义重大，所以需要大部分节点对其他节点的平均距离都要减少。 &gt;&gt; &gt;&gt; 再加入一个机制，假设节点可以主动连接的节点数量是有限的，那么这个网络又会是什么形态呢？ &gt;&gt; &gt;&gt; &gt;&gt; 节点的出度受限的情况下，连接高质量节点的需求更加重要，连接很多节点的节点重要度上升，桥梁节点更加重要，可达节点的节点数量直接关系着整个网络的消息传播度，整个网络需要增加可达节点。 &gt;&gt; &gt;&gt; &gt;&gt; 桥梁节点虽然重要，但是桥梁节点的出现本身就代表网络传播受限，有一部分节点随时有可能和整个网络断连，所以接下来需要考虑的是如何增加可达节点，如果绝大部分都是可达节点，那么网络的传播效率就是很高的。 &gt;&gt; &gt;&gt; shijingyao123 &lt;shijingyao123@gmail.com&gt; 于2026年1月23日周五 17:53写道： &gt;&gt; &gt;&gt;&gt; 几天还聊到一个关键问题，就是，你认为，是不是atom越多，就代表你的信誉越多，这个问题也可以回答一下。 &gt;&gt;&gt; &gt;&gt;&gt; 在2026年1月23日星期五 UTC+8 17:49:51&lt;shijingyao123&gt; 写道： &gt;&gt;&gt; &gt;&gt;&gt;&gt; 这个帖子可以持续返回计算直到我听懂为止，因为我觉得这里涉及到了我不懂的领域，我没法参与进来。 &gt;&gt;&gt;&gt; 当然，</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-01-30</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">关于Atom在一个良好的网络拓扑中的传递机制分析。 Atom的传播机制。 1. 收到Atom后会向每个vLinksOut中的地址进行传播。 2. 流量控制，除了第一个收到Atom的CUser对象，其他对象收到Atom以后会进行减半传播。 Atom的传播主要受流量控制的影响，导致Atom的传播并不普遍和均匀，在随机信号源和随机Atom在全网传播时全网的Atom总量也呈现随机性，因为流量控制的影响，Atom的传播并不深入，也就是相距较远的CUser通常出现收不到Atom的情况。 将流量控制视为衰减因子，Atom的衰减因子是0.5.将这个衰减因子修改为0.9以后全网的Atom的分布相对均匀且每个Atom的传播都很广泛，但是达不到全网一致的情况。 修改网络结构，将网络结构修改为中心相对内聚但外围桥梁相对分散的情况，出现中心Cuser的Atom相对较多，外围Atom的持有较少，但外围User的Atom和外围User的Atom的差异较大，中心User和中心User的Atom差异较小。Atom很难跨区域传播。 综上，Atom的传播主要受衰减因子影响导致其不适合在全网进行流转，调节衰减因子能显著改善全</div><div class="msg-rest" style="display:none;">网流转情况，在分布不均的网络拓扑中更易形成区域不一致。 所以流量控制的作用应该单独进行思考，接下来需要考虑的是局部共识和全域共识之间的关系，进一步探究Atom的使用场景。 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; 于2026年1月28日周三 23:02写道： &gt; 这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 &gt; &gt; On Tue, Jan 27, 2026 at 5:57 PM 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; wrote: &gt; &gt;&gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt;&gt; &gt;&gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt;&gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt;&gt; &gt;&gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt;&gt; &gt;&gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt;&gt; &gt;&gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt;&gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt;&gt; 亚鹏可以看下它是怎么做的隔离女巫攻击的做一个参考。 &gt;&gt; &gt;&gt; 文中提到了分布式计算“信任”，不需要中心化来计算信任矩阵，每个节点只需要跟自己的临近节点通信，迭代计算，最终全网会自动达成一致（收敛）。 &gt;&gt; &gt;&gt; 文中比较meme的地方是，一个节点的全局信誉值，等同于一个随机游走者（Random Surfer）在这个信任网络中最终停留在该节点的概率。 &gt;&gt; &gt;&gt; &gt;&gt; On Tue, Jan 27, 2026 at 2:05 PM 胥亚朋 &lt;xuyapeng110@gmail.com&gt; wrote: &gt;&gt; &gt;&gt;&gt; 首先，根据market.h中对CUser的设计，里面的vector&lt;uint256&gt; vLinksOut;结构可以构成1个完整的网络拓扑。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 接下来我们研究这个网络拓扑，在这个网络拓扑中，每个用户都可以连接多个用户，用户也可以被多个用户连接。这样所有的用户构成的网络拓扑中，有这么几个节点: &gt;&gt;&gt; &gt;&gt;&gt; 1. 连接很多节点的节点 &gt;&gt;&gt; 2. 被很多节点连接的节点 &gt;&gt;&gt; 3. 桥梁节点 &gt;&gt;&gt; 4. 可达节点:到其他节点的平均距离比较短的节点。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 这些节点中的重要性分析，连接很多节点的节点可以主动传递信息，有利于信息的传播，被很多节点连接的节点只能被动接受信息，对信息的广播没有太多意义。桥梁节点很重要，没有它一部分区域就和整个网路断连了。到其他节点的平均距离比较短的节点最重要，消息的传递主要靠它，是最重要的节点 &gt;&gt;&gt; &gt;&gt;&gt; 加上Atom的传播机制，消息到节点后会减半传递给自己连接的节点。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 代</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-03</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">如何在比特币上面实现ebay那样的市场？ 这里把比特币作为一个互联互通的P2P网络来看，区块链就是比特币上面传递的相关消息，区块链可以当作是一种确定的消息，P2P网络上面还有一部分类似交易的信息，可以在网络上进行传递，但是可以不进块。 角色分布应该有:商品发布者，商品购买者。 商品发布者在网络上发布商品信息，用户可以在网络上查询获得商品信息，并与商品发布者联系购买商品，P2P网络不承担商品真实性相关检查。商品购买者可以对商品信息进行评价，最终评价会落实到商品发布者本人上面，这个应该就是atom的逻辑，给予商品发布者一定的信誉值。 问题: 1. 商品信息是否上链？ 商品发布信息个人建议是不上链，但是如何让矿工们接收并传递商品信息是一个问题 2. 成交信息是否上链？ 成交信息应该上链。 3. 成交信息是否和评论在一起？ 4. 是否使用比特币进行支付？ 5. 商品发布者如何进行约束？ 6. 如何验证成交信息是真实的？或者是否允许不真实的成交信息？ 以上问题需要慢慢思考 补充问题:发布订阅机制是否适用？ 如何订阅，是向矿工订阅还是向谁订阅？订阅是否需要付费？ 是否有一些特殊的矿工，可以向这些矿</div><div class="msg-rest" style="display:none;">工订阅商品信息？但会不会导致整个链分裂？ 最近需要计算的内容:在不修改比特币任何代码的情况下能否实现一版简易的可行的方案，大概2月4号给出初版方案。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年1月30日周五 13:18写道： &gt; 关于Atom在一个良好的网络拓扑中的传递机制分析。 &gt; &gt; Atom的传播机制。 &gt; &gt; 1. 收到Atom后会向每个vLinksOut中的地址进行传播。 &gt; 2. 流量控制，除了第一个收到Atom的CUser对象，其他对象收到Atom以后会进行减半传播。 &gt; &gt; &gt; Atom的传播主要受流量控制的影响，导致Atom的传播并不普遍和均匀，在随机信号源和随机Atom在全网传播时全网的Atom总量也呈现随机性，因为流量控制的影响，Atom的传播并不深入，也就是相距较远的CUser通常出现收不到Atom的情况。 &gt; &gt; &gt; 将流量控制视为衰减因子，Atom的衰减因子是0.5.将这个衰减因子修改为0.9以后全网的Atom的分布相对均匀且每个Atom的传播都很广泛，但是达不到全网一致的情况。 &gt; &gt; &gt; 修改网络结构，将网络结构修改为中心相对内聚但外围桥梁相对分散的情况，出现中心Cuser的Atom相对较多，外围Atom的持有较少，但外围User的Atom和外围User的Atom的差异较大，中心User和中心User的Atom差异较小。Atom很难跨区域传播。 &gt; &gt; 综上，Atom的传播主要受衰减因子影响导致其不适合在全网进行流转，调节衰减因子能显著改善全网流转情况，在分布不均的网络拓扑中更易形成区域不一致。 &gt; &gt; 所以流量控制的作用应该单独进行思考，接下来需要考虑的是局部共识和全域共识之间的关系，进一步探究Atom的使用场景。 &gt; &gt; 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; 于2026年1月28日周三 23:02写道： &gt; &gt;&gt; 这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 &gt;&gt; &gt;&gt; On Tue, Jan 27, 2026 at 5:57 PM 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; wrote: &gt;&gt; &gt;&gt;&gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt;&gt;&gt; &gt;&gt;&gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt;&gt;&gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt;&gt;&gt; &gt;&gt;&gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt;&gt;&gt; &gt;&gt;&gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt;&gt;&gt; &gt;&gt;&gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt;&gt;&gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt;&gt;&gt; 亚鹏可以看下它是怎么做的隔</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共5条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">沄涣</span>
+
+<span class="msg-date">2026-01-27</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实</div><div class="msg-rest" style="display:none;">现的少数诚实的种子节点，叶鹏 亚鹏可以看下它是怎么做的隔离女巫攻击的做一个参考。 文中提到了分布式计算“信任”，不需要中心化来计算信任矩阵，每个节点只需要跟自己的临近节点通信，迭代计算，最终全网会自动达成一致（收敛）。 文中比较meme的地方是，一个节点的全局信誉值，等同于一个随机游走者（Random Surfer）在这个信任网络中最终停留在该节点的概率。 On Tue, Jan 27, 2026 at 2:05 PM 胥亚朋 &lt;xuyapeng110@gmail.com&gt; wrote: &gt; 首先，根据market.h中对CUser的设计，里面的vector&lt;uint256&gt; vLinksOut;结构可以构成1个完整的网络拓扑。 &gt; &gt; 接下来我们研究这个网络拓扑，在这个网络拓扑中，每个用户都可以连接多个用户，用户也可以被多个用户连接。这样所有的用户构成的网络拓扑中，有这么几个节点: &gt; &gt; 1. 连接很多节点的节点 &gt; 2. 被很多节点连接的节点 &gt; 3. 桥梁节点 &gt; 4. 可达节点:到其他节点的平均距离比较短的节点。 &gt; &gt; &gt; 这些节点中的重要性分析，连接很多节点的节点可以主动传递信息，有利于信息的传播，被很多节点连接的节点只能被动接受信息，对信息的广播没有太多意义。桥梁节点很重要，没有它一部分区域就和整个网路断连了。到其他节点的平均距离比较短的节点最重要，消息的传递主要靠它，是最重要的节点 &gt; &gt; 加上Atom的传播机制，消息到节点后会减半传递给自己连接的节点。 &gt; &gt; &gt; 代入Atom的传播机制以后，桥梁节点依然重要，但是被桥梁节点连接的孤立区域接受到消息永远是减半的，所以要尽可能不让这些区域出现，也就是要减少桥梁节点，不要让孤立区域存在，需要一种完整的防范机制。到其他节点的平均距离比较短的节点会承担最多的消息传播的功能，因为平均距离最短，消息的平均损耗也就最小，对全网来说意义重大，所以需要大部分节点对其他节点的平均距离都要减少。 &gt; &gt; 再加入一个机制，假设节点可以主动连接的节点数量是有限的，那么这个网络又会是什么形态呢？ &gt; &gt; &gt; 节点的出度受限的情况下，连接高质量节点的需求更加重要，连接很多节点的节点重要度上升，桥梁节点更加重要，可达节点的节点数量直接关系着整个网络的消息传播度，整个网络需要增加可达节点。 &gt; &gt; &gt; 桥梁节点虽然重要，但是桥梁节点的出现本身就代表网络传播受限，有一部分节点随时有可能和整个网络断连，所以接下来需要考虑的是如何增加可达节点，如果绝大部分都是可达节点，那么网络的传播效率就是很高的。 &gt; &gt; shijingyao123 &lt;shijingyao123@gmail.com&gt; 于2026年1月23日周五 17:53写道： &gt; &gt;&gt; 几天还聊到一个关键问题，就是，你认为，是不是atom越多，就代表你的信誉越多，这个问题也可以回答一下。 &gt;&gt; &gt;&gt; 在2026年1月23日星期五 UTC+8 17:49:51&lt;shijingyao123&gt; 写道： &gt;&gt; &gt;&gt;&gt; 这个帖子可以持续返回计算直到我听懂为止，因为我觉得这里涉及到了我不懂的领域，我没法参与进来。 &gt;&gt;&gt; 当然，我们还可以先回答另外一个问题，中本聪设计比特币到这一步的时候，他老人家咋想的。 &gt;&gt;&gt; @文博 &gt;&gt;&gt; @叶鹏 &gt;&gt;&gt; @亚朋 &gt;&gt;&gt; &gt;&gt; -- &gt;&gt; You received this message because you are subscribed to the Google Groups &gt;&gt; &quot;p2ptalk&quot; group. &gt;&gt; To</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-01-28</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">首先考虑了一下网络拓扑的干预是在什么地方，在比特币和以太坊的方案中，每次启动节点都会到一个网址上请求可以连接的节点，我认为这个地方就是它们干预网络拓扑的地方。 初期的时候想要网络中的节点门互联的平均距离都很短，一般采用中心化的连接方法，即有一两个核心节点，其他节点都连接中心节点确保网络联通，和其他节点的连接不做要求。 随着网络规模的扩大，一两个核心节点是无法负荷整个网络的连接的，这个时候一般情况下给节点的链接对象都是和它物理相进的节点，这样的连接相对比较稳定，但时间久了以后会形成一个一个的小世界，即物理相近的节点互相连接，通过不同的区域相互级联来沟通整个网络。但这种连接模式有很大弊端，第一就是相对远的地址之间的通信很复杂，即中间需要经过的节点跳数比较多，而且很容易出现区域和区域产生整体分歧的情况。这种情况下需要一些优化，这个优化就是每个节点在连接网络的时候不能仅连接我所在区域的节点，还应该连接一两个外部区域的节点，理想情况下每个节点都会连接一两个外部区域的节点，作为该区域和外部区域的桥梁节点，这样本区域的信息在流转的时候就可以通过桥梁节点直接流转，而不需要区域级联一步步跳转过去，增加了</div><div class="msg-rest" style="display:none;">区域联通性的同时也更好的保障了网络的安全性。 小世界模型的优化依赖于实时的网络监测，网络拓扑模型的计算，另外还要有实时网络连接重定向的调整，但在一个良好的网络模型中，小世界优化的网络模式是一种很健壮且很高效的网络模型。 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; 于2026年1月27日周二 17:57写道： &gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt; &gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt; &gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt; &gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt; &gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt; 亚鹏可以看下它是怎么做的隔离女巫攻击的做一个参考。 &gt; &gt; 文中提到了分布式计算“信任”，不需要中心化来计算信任矩阵，每个节点只需要跟自己的临近节点通信，迭代计算，最终全网会自动达成一致（收敛）。 &gt; &gt; 文中比较meme的地方是，一个节点的全局信誉值，等同于一个随机游走者（Random Surfer）在这个信任网络中最终停留在该节点的概率。 &gt; &gt; &gt; On Tue, Jan 27, 2026 at 2:05 PM 胥亚朋 &lt;xuyapeng110@gmail.com&gt; wrote: &gt; &gt;&gt; 首先，根据market.h中对CUser的设计，里面的vector&lt;uint256&gt; vLinksOut;结构可以构成1个完整的网络拓扑。 &gt;&gt; &gt;&gt; 接下来我们研究这个网络拓扑，在这个网络拓扑中，每个用户都可以连接多个用户，用户也可以被多个用户连接。这样所有的用户构成的网络拓扑中，有这么几个节点: &gt;&gt; &gt;&gt; 1. 连接很多节点的节点 &gt;&gt; 2. 被很多节点连接的节点 &gt;&gt; 3. 桥梁节点 &gt;&gt; 4. 可达节点:到其他节点的平均距离比较短的节点。 &gt;&gt; &gt;&gt; &gt;&gt; 这些节点中的重要性分析，连接很多节点的节点可以主动传递信息，有利于信息的传播，被很多节点连接的节点只能被动接受信息，对信息的广播没有太多意义。桥梁节点很重要，没有它一部分区域就和整个网路断连了。到其他节点的平均距离比较短的节点最重要，消息的传递主要靠它，是最重要的节点 &gt;&gt; &gt;&gt; 加上Atom的传播机制，消息到节点后会减半传递给自己连接的节点。 &gt;&gt; &gt;&gt; &gt;&gt; 代入Atom的传播机制以后，桥梁节点依然重要，但是被桥梁节点连接的孤立区域接受到消息永远是减半的，所以要尽可能不让这些区域出现，也就是要减少桥梁节点，不要让孤立区域存在，需要一种完整的防范机制。到其他节点的平均距离比较短的节点会承担最多的消息传播的功能，因</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">沄涣</span>
+
+<span class="msg-date">2026-01-28</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 On Tue, Jan 27, 2026 at 5:57 PM 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; wrote: &gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt; &gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt; &gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt; &gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt; &gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）</div><div class="msg-rest" style="display:none;">也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt; 亚鹏可以看下它是怎么做的隔离女巫攻击的做一个参考。 &gt; &gt; 文中提到了分布式计算“信任”，不需要中心化来计算信任矩阵，每个节点只需要跟自己的临近节点通信，迭代计算，最终全网会自动达成一致（收敛）。 &gt; &gt; 文中比较meme的地方是，一个节点的全局信誉值，等同于一个随机游走者（Random Surfer）在这个信任网络中最终停留在该节点的概率。 &gt; &gt; &gt; On Tue, Jan 27, 2026 at 2:05 PM 胥亚朋 &lt;xuyapeng110@gmail.com&gt; wrote: &gt; &gt;&gt; 首先，根据market.h中对CUser的设计，里面的vector&lt;uint256&gt; vLinksOut;结构可以构成1个完整的网络拓扑。 &gt;&gt; &gt;&gt; 接下来我们研究这个网络拓扑，在这个网络拓扑中，每个用户都可以连接多个用户，用户也可以被多个用户连接。这样所有的用户构成的网络拓扑中，有这么几个节点: &gt;&gt; &gt;&gt; 1. 连接很多节点的节点 &gt;&gt; 2. 被很多节点连接的节点 &gt;&gt; 3. 桥梁节点 &gt;&gt; 4. 可达节点:到其他节点的平均距离比较短的节点。 &gt;&gt; &gt;&gt; &gt;&gt; 这些节点中的重要性分析，连接很多节点的节点可以主动传递信息，有利于信息的传播，被很多节点连接的节点只能被动接受信息，对信息的广播没有太多意义。桥梁节点很重要，没有它一部分区域就和整个网路断连了。到其他节点的平均距离比较短的节点最重要，消息的传递主要靠它，是最重要的节点 &gt;&gt; &gt;&gt; 加上Atom的传播机制，消息到节点后会减半传递给自己连接的节点。 &gt;&gt; &gt;&gt; &gt;&gt; 代入Atom的传播机制以后，桥梁节点依然重要，但是被桥梁节点连接的孤立区域接受到消息永远是减半的，所以要尽可能不让这些区域出现，也就是要减少桥梁节点，不要让孤立区域存在，需要一种完整的防范机制。到其他节点的平均距离比较短的节点会承担最多的消息传播的功能，因为平均距离最短，消息的平均损耗也就最小，对全网来说意义重大，所以需要大部分节点对其他节点的平均距离都要减少。 &gt;&gt; &gt;&gt; 再加入一个机制，假设节点可以主动连接的节点数量是有限的，那么这个网络又会是什么形态呢？ &gt;&gt; &gt;&gt; &gt;&gt; 节点的出度受限的情况下，连接高质量节点的需求更加重要，连接很多节点的节点重要度上升，桥梁节点更加重要，可达节点的节点数量直接关系着整个网络的消息传播度，整个网络需要增加可达节点。 &gt;&gt; &gt;&gt; &gt;&gt; 桥梁节点虽然重要，但是桥梁节点的出现本身就代表网络传播受限，有一部分节点随时有可能和整个网络断连，所以接下来需要考虑的是如何增加可达节点，如果绝大部分都是可达节点，那么网络的传播效率就是很高的。 &gt;&gt; &gt;&gt; shijingyao123 &lt;shijingyao123@gmail.com&gt; 于2026年1月23日周五 17:53写道： &gt;&gt; &gt;&gt;&gt; 几天还聊到一个关键问题，就是，你认为，是不是atom越多，就代表你的信誉越多，这个问题也可以回答一下。 &gt;&gt;&gt; &gt;&gt;&gt; 在2026年1月23日星期五 UTC+8 17:49:51&lt;shijingyao123&gt; 写道： &gt;&gt;&gt; &gt;&gt;&gt;&gt; 这个帖子可以持续返回计算直到我听懂为止，因为我觉得这里涉及到了我不懂的领域，我没法参与进来。 &gt;&gt;&gt;&gt; 当然，</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-01-30</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">关于Atom在一个良好的网络拓扑中的传递机制分析。 Atom的传播机制。 1. 收到Atom后会向每个vLinksOut中的地址进行传播。 2. 流量控制，除了第一个收到Atom的CUser对象，其他对象收到Atom以后会进行减半传播。 Atom的传播主要受流量控制的影响，导致Atom的传播并不普遍和均匀，在随机信号源和随机Atom在全网传播时全网的Atom总量也呈现随机性，因为流量控制的影响，Atom的传播并不深入，也就是相距较远的CUser通常出现收不到Atom的情况。 将流量控制视为衰减因子，Atom的衰减因子是0.5.将这个衰减因子修改为0.9以后全网的Atom的分布相对均匀且每个Atom的传播都很广泛，但是达不到全网一致的情况。 修改网络结构，将网络结构修改为中心相对内聚但外围桥梁相对分散的情况，出现中心Cuser的Atom相对较多，外围Atom的持有较少，但外围User的Atom和外围User的Atom的差异较大，中心User和中心User的Atom差异较小。Atom很难跨区域传播。 综上，Atom的传播主要受衰减因子影响导致其不适合在全网进行流转，调节衰减因子能显著改善全</div><div class="msg-rest" style="display:none;">网流转情况，在分布不均的网络拓扑中更易形成区域不一致。 所以流量控制的作用应该单独进行思考，接下来需要考虑的是局部共识和全域共识之间的关系，进一步探究Atom的使用场景。 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; 于2026年1月28日周三 23:02写道： &gt; 这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 &gt; &gt; On Tue, Jan 27, 2026 at 5:57 PM 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; wrote: &gt; &gt;&gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt;&gt; &gt;&gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt;&gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt;&gt; &gt;&gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt;&gt; &gt;&gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt;&gt; &gt;&gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt;&gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt;&gt; 亚鹏可以看下它是怎么做的隔离女巫攻击的做一个参考。 &gt;&gt; &gt;&gt; 文中提到了分布式计算“信任”，不需要中心化来计算信任矩阵，每个节点只需要跟自己的临近节点通信，迭代计算，最终全网会自动达成一致（收敛）。 &gt;&gt; &gt;&gt; 文中比较meme的地方是，一个节点的全局信誉值，等同于一个随机游走者（Random Surfer）在这个信任网络中最终停留在该节点的概率。 &gt;&gt; &gt;&gt; &gt;&gt; On Tue, Jan 27, 2026 at 2:05 PM 胥亚朋 &lt;xuyapeng110@gmail.com&gt; wrote: &gt;&gt; &gt;&gt;&gt; 首先，根据market.h中对CUser的设计，里面的vector&lt;uint256&gt; vLinksOut;结构可以构成1个完整的网络拓扑。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 接下来我们研究这个网络拓扑，在这个网络拓扑中，每个用户都可以连接多个用户，用户也可以被多个用户连接。这样所有的用户构成的网络拓扑中，有这么几个节点: &gt;&gt;&gt; &gt;&gt;&gt; 1. 连接很多节点的节点 &gt;&gt;&gt; 2. 被很多节点连接的节点 &gt;&gt;&gt; 3. 桥梁节点 &gt;&gt;&gt; 4. 可达节点:到其他节点的平均距离比较短的节点。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 这些节点中的重要性分析，连接很多节点的节点可以主动传递信息，有利于信息的传播，被很多节点连接的节点只能被动接受信息，对信息的广播没有太多意义。桥梁节点很重要，没有它一部分区域就和整个网路断连了。到其他节点的平均距离比较短的节点最重要，消息的传递主要靠它，是最重要的节点 &gt;&gt;&gt; &gt;&gt;&gt; 加上Atom的传播机制，消息到节点后会减半传递给自己连接的节点。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 代</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-03</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">如何在比特币上面实现ebay那样的市场？ 这里把比特币作为一个互联互通的P2P网络来看，区块链就是比特币上面传递的相关消息，区块链可以当作是一种确定的消息，P2P网络上面还有一部分类似交易的信息，可以在网络上进行传递，但是可以不进块。 角色分布应该有:商品发布者，商品购买者。 商品发布者在网络上发布商品信息，用户可以在网络上查询获得商品信息，并与商品发布者联系购买商品，P2P网络不承担商品真实性相关检查。商品购买者可以对商品信息进行评价，最终评价会落实到商品发布者本人上面，这个应该就是atom的逻辑，给予商品发布者一定的信誉值。 问题: 1. 商品信息是否上链？ 商品发布信息个人建议是不上链，但是如何让矿工们接收并传递商品信息是一个问题 2. 成交信息是否上链？ 成交信息应该上链。 3. 成交信息是否和评论在一起？ 4. 是否使用比特币进行支付？ 5. 商品发布者如何进行约束？ 6. 如何验证成交信息是真实的？或者是否允许不真实的成交信息？ 以上问题需要慢慢思考 补充问题:发布订阅机制是否适用？ 如何订阅，是向矿工订阅还是向谁订阅？订阅是否需要付费？ 是否有一些特殊的矿工，可以向这些矿</div><div class="msg-rest" style="display:none;">工订阅商品信息？但会不会导致整个链分裂？ 最近需要计算的内容:在不修改比特币任何代码的情况下能否实现一版简易的可行的方案，大概2月4号给出初版方案。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年1月30日周五 13:18写道： &gt; 关于Atom在一个良好的网络拓扑中的传递机制分析。 &gt; &gt; Atom的传播机制。 &gt; &gt; 1. 收到Atom后会向每个vLinksOut中的地址进行传播。 &gt; 2. 流量控制，除了第一个收到Atom的CUser对象，其他对象收到Atom以后会进行减半传播。 &gt; &gt; &gt; Atom的传播主要受流量控制的影响，导致Atom的传播并不普遍和均匀，在随机信号源和随机Atom在全网传播时全网的Atom总量也呈现随机性，因为流量控制的影响，Atom的传播并不深入，也就是相距较远的CUser通常出现收不到Atom的情况。 &gt; &gt; &gt; 将流量控制视为衰减因子，Atom的衰减因子是0.5.将这个衰减因子修改为0.9以后全网的Atom的分布相对均匀且每个Atom的传播都很广泛，但是达不到全网一致的情况。 &gt; &gt; &gt; 修改网络结构，将网络结构修改为中心相对内聚但外围桥梁相对分散的情况，出现中心Cuser的Atom相对较多，外围Atom的持有较少，但外围User的Atom和外围User的Atom的差异较大，中心User和中心User的Atom差异较小。Atom很难跨区域传播。 &gt; &gt; 综上，Atom的传播主要受衰减因子影响导致其不适合在全网进行流转，调节衰减因子能显著改善全网流转情况，在分布不均的网络拓扑中更易形成区域不一致。 &gt; &gt; 所以流量控制的作用应该单独进行思考，接下来需要考虑的是局部共识和全域共识之间的关系，进一步探究Atom的使用场景。 &gt; &gt; 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; 于2026年1月28日周三 23:02写道： &gt; &gt;&gt; 这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 &gt;&gt; &gt;&gt; On Tue, Jan 27, 2026 at 5:57 PM 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; wrote: &gt;&gt; &gt;&gt;&gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt;&gt;&gt; &gt;&gt;&gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt;&gt;&gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt;&gt;&gt; &gt;&gt;&gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt;&gt;&gt; &gt;&gt;&gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt;&gt;&gt; &gt;&gt;&gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt;&gt;&gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt;&gt;&gt; 亚鹏可以看下它是怎么做的隔</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共5条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">沄涣</span>
+
+<span class="msg-date">2026-01-27</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实</div><div class="msg-rest" style="display:none;">现的少数诚实的种子节点，叶鹏 亚鹏可以看下它是怎么做的隔离女巫攻击的做一个参考。 文中提到了分布式计算“信任”，不需要中心化来计算信任矩阵，每个节点只需要跟自己的临近节点通信，迭代计算，最终全网会自动达成一致（收敛）。 文中比较meme的地方是，一个节点的全局信誉值，等同于一个随机游走者（Random Surfer）在这个信任网络中最终停留在该节点的概率。 On Tue, Jan 27, 2026 at 2:05 PM 胥亚朋 &lt;xuyapeng110@gmail.com&gt; wrote: &gt; 首先，根据market.h中对CUser的设计，里面的vector&lt;uint256&gt; vLinksOut;结构可以构成1个完整的网络拓扑。 &gt; &gt; 接下来我们研究这个网络拓扑，在这个网络拓扑中，每个用户都可以连接多个用户，用户也可以被多个用户连接。这样所有的用户构成的网络拓扑中，有这么几个节点: &gt; &gt; 1. 连接很多节点的节点 &gt; 2. 被很多节点连接的节点 &gt; 3. 桥梁节点 &gt; 4. 可达节点:到其他节点的平均距离比较短的节点。 &gt; &gt; &gt; 这些节点中的重要性分析，连接很多节点的节点可以主动传递信息，有利于信息的传播，被很多节点连接的节点只能被动接受信息，对信息的广播没有太多意义。桥梁节点很重要，没有它一部分区域就和整个网路断连了。到其他节点的平均距离比较短的节点最重要，消息的传递主要靠它，是最重要的节点 &gt; &gt; 加上Atom的传播机制，消息到节点后会减半传递给自己连接的节点。 &gt; &gt; &gt; 代入Atom的传播机制以后，桥梁节点依然重要，但是被桥梁节点连接的孤立区域接受到消息永远是减半的，所以要尽可能不让这些区域出现，也就是要减少桥梁节点，不要让孤立区域存在，需要一种完整的防范机制。到其他节点的平均距离比较短的节点会承担最多的消息传播的功能，因为平均距离最短，消息的平均损耗也就最小，对全网来说意义重大，所以需要大部分节点对其他节点的平均距离都要减少。 &gt; &gt; 再加入一个机制，假设节点可以主动连接的节点数量是有限的，那么这个网络又会是什么形态呢？ &gt; &gt; &gt; 节点的出度受限的情况下，连接高质量节点的需求更加重要，连接很多节点的节点重要度上升，桥梁节点更加重要，可达节点的节点数量直接关系着整个网络的消息传播度，整个网络需要增加可达节点。 &gt; &gt; &gt; 桥梁节点虽然重要，但是桥梁节点的出现本身就代表网络传播受限，有一部分节点随时有可能和整个网络断连，所以接下来需要考虑的是如何增加可达节点，如果绝大部分都是可达节点，那么网络的传播效率就是很高的。 &gt; &gt; shijingyao123 &lt;shijingyao123@gmail.com&gt; 于2026年1月23日周五 17:53写道： &gt; &gt;&gt; 几天还聊到一个关键问题，就是，你认为，是不是atom越多，就代表你的信誉越多，这个问题也可以回答一下。 &gt;&gt; &gt;&gt; 在2026年1月23日星期五 UTC+8 17:49:51&lt;shijingyao123&gt; 写道： &gt;&gt; &gt;&gt;&gt; 这个帖子可以持续返回计算直到我听懂为止，因为我觉得这里涉及到了我不懂的领域，我没法参与进来。 &gt;&gt;&gt; 当然，我们还可以先回答另外一个问题，中本聪设计比特币到这一步的时候，他老人家咋想的。 &gt;&gt;&gt; @文博 &gt;&gt;&gt; @叶鹏 &gt;&gt;&gt; @亚朋 &gt;&gt;&gt; &gt;&gt; -- &gt;&gt; You received this message because you are subscribed to the Google Groups &gt;&gt; &quot;p2ptalk&quot; group. &gt;&gt; To</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-01-28</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">首先考虑了一下网络拓扑的干预是在什么地方，在比特币和以太坊的方案中，每次启动节点都会到一个网址上请求可以连接的节点，我认为这个地方就是它们干预网络拓扑的地方。 初期的时候想要网络中的节点门互联的平均距离都很短，一般采用中心化的连接方法，即有一两个核心节点，其他节点都连接中心节点确保网络联通，和其他节点的连接不做要求。 随着网络规模的扩大，一两个核心节点是无法负荷整个网络的连接的，这个时候一般情况下给节点的链接对象都是和它物理相进的节点，这样的连接相对比较稳定，但时间久了以后会形成一个一个的小世界，即物理相近的节点互相连接，通过不同的区域相互级联来沟通整个网络。但这种连接模式有很大弊端，第一就是相对远的地址之间的通信很复杂，即中间需要经过的节点跳数比较多，而且很容易出现区域和区域产生整体分歧的情况。这种情况下需要一些优化，这个优化就是每个节点在连接网络的时候不能仅连接我所在区域的节点，还应该连接一两个外部区域的节点，理想情况下每个节点都会连接一两个外部区域的节点，作为该区域和外部区域的桥梁节点，这样本区域的信息在流转的时候就可以通过桥梁节点直接流转，而不需要区域级联一步步跳转过去，增加了</div><div class="msg-rest" style="display:none;">区域联通性的同时也更好的保障了网络的安全性。 小世界模型的优化依赖于实时的网络监测，网络拓扑模型的计算，另外还要有实时网络连接重定向的调整，但在一个良好的网络模型中，小世界优化的网络模式是一种很健壮且很高效的网络模型。 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; 于2026年1月27日周二 17:57写道： &gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt; &gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt; &gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt; &gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt; &gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt; 亚鹏可以看下它是怎么做的隔离女巫攻击的做一个参考。 &gt; &gt; 文中提到了分布式计算“信任”，不需要中心化来计算信任矩阵，每个节点只需要跟自己的临近节点通信，迭代计算，最终全网会自动达成一致（收敛）。 &gt; &gt; 文中比较meme的地方是，一个节点的全局信誉值，等同于一个随机游走者（Random Surfer）在这个信任网络中最终停留在该节点的概率。 &gt; &gt; &gt; On Tue, Jan 27, 2026 at 2:05 PM 胥亚朋 &lt;xuyapeng110@gmail.com&gt; wrote: &gt; &gt;&gt; 首先，根据market.h中对CUser的设计，里面的vector&lt;uint256&gt; vLinksOut;结构可以构成1个完整的网络拓扑。 &gt;&gt; &gt;&gt; 接下来我们研究这个网络拓扑，在这个网络拓扑中，每个用户都可以连接多个用户，用户也可以被多个用户连接。这样所有的用户构成的网络拓扑中，有这么几个节点: &gt;&gt; &gt;&gt; 1. 连接很多节点的节点 &gt;&gt; 2. 被很多节点连接的节点 &gt;&gt; 3. 桥梁节点 &gt;&gt; 4. 可达节点:到其他节点的平均距离比较短的节点。 &gt;&gt; &gt;&gt; &gt;&gt; 这些节点中的重要性分析，连接很多节点的节点可以主动传递信息，有利于信息的传播，被很多节点连接的节点只能被动接受信息，对信息的广播没有太多意义。桥梁节点很重要，没有它一部分区域就和整个网路断连了。到其他节点的平均距离比较短的节点最重要，消息的传递主要靠它，是最重要的节点 &gt;&gt; &gt;&gt; 加上Atom的传播机制，消息到节点后会减半传递给自己连接的节点。 &gt;&gt; &gt;&gt; &gt;&gt; 代入Atom的传播机制以后，桥梁节点依然重要，但是被桥梁节点连接的孤立区域接受到消息永远是减半的，所以要尽可能不让这些区域出现，也就是要减少桥梁节点，不要让孤立区域存在，需要一种完整的防范机制。到其他节点的平均距离比较短的节点会承担最多的消息传播的功能，因</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">沄涣</span>
+
+<span class="msg-date">2026-01-28</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 On Tue, Jan 27, 2026 at 5:57 PM 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; wrote: &gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt; &gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt; &gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt; &gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt; &gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）</div><div class="msg-rest" style="display:none;">也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt; 亚鹏可以看下它是怎么做的隔离女巫攻击的做一个参考。 &gt; &gt; 文中提到了分布式计算“信任”，不需要中心化来计算信任矩阵，每个节点只需要跟自己的临近节点通信，迭代计算，最终全网会自动达成一致（收敛）。 &gt; &gt; 文中比较meme的地方是，一个节点的全局信誉值，等同于一个随机游走者（Random Surfer）在这个信任网络中最终停留在该节点的概率。 &gt; &gt; &gt; On Tue, Jan 27, 2026 at 2:05 PM 胥亚朋 &lt;xuyapeng110@gmail.com&gt; wrote: &gt; &gt;&gt; 首先，根据market.h中对CUser的设计，里面的vector&lt;uint256&gt; vLinksOut;结构可以构成1个完整的网络拓扑。 &gt;&gt; &gt;&gt; 接下来我们研究这个网络拓扑，在这个网络拓扑中，每个用户都可以连接多个用户，用户也可以被多个用户连接。这样所有的用户构成的网络拓扑中，有这么几个节点: &gt;&gt; &gt;&gt; 1. 连接很多节点的节点 &gt;&gt; 2. 被很多节点连接的节点 &gt;&gt; 3. 桥梁节点 &gt;&gt; 4. 可达节点:到其他节点的平均距离比较短的节点。 &gt;&gt; &gt;&gt; &gt;&gt; 这些节点中的重要性分析，连接很多节点的节点可以主动传递信息，有利于信息的传播，被很多节点连接的节点只能被动接受信息，对信息的广播没有太多意义。桥梁节点很重要，没有它一部分区域就和整个网路断连了。到其他节点的平均距离比较短的节点最重要，消息的传递主要靠它，是最重要的节点 &gt;&gt; &gt;&gt; 加上Atom的传播机制，消息到节点后会减半传递给自己连接的节点。 &gt;&gt; &gt;&gt; &gt;&gt; 代入Atom的传播机制以后，桥梁节点依然重要，但是被桥梁节点连接的孤立区域接受到消息永远是减半的，所以要尽可能不让这些区域出现，也就是要减少桥梁节点，不要让孤立区域存在，需要一种完整的防范机制。到其他节点的平均距离比较短的节点会承担最多的消息传播的功能，因为平均距离最短，消息的平均损耗也就最小，对全网来说意义重大，所以需要大部分节点对其他节点的平均距离都要减少。 &gt;&gt; &gt;&gt; 再加入一个机制，假设节点可以主动连接的节点数量是有限的，那么这个网络又会是什么形态呢？ &gt;&gt; &gt;&gt; &gt;&gt; 节点的出度受限的情况下，连接高质量节点的需求更加重要，连接很多节点的节点重要度上升，桥梁节点更加重要，可达节点的节点数量直接关系着整个网络的消息传播度，整个网络需要增加可达节点。 &gt;&gt; &gt;&gt; &gt;&gt; 桥梁节点虽然重要，但是桥梁节点的出现本身就代表网络传播受限，有一部分节点随时有可能和整个网络断连，所以接下来需要考虑的是如何增加可达节点，如果绝大部分都是可达节点，那么网络的传播效率就是很高的。 &gt;&gt; &gt;&gt; shijingyao123 &lt;shijingyao123@gmail.com&gt; 于2026年1月23日周五 17:53写道： &gt;&gt; &gt;&gt;&gt; 几天还聊到一个关键问题，就是，你认为，是不是atom越多，就代表你的信誉越多，这个问题也可以回答一下。 &gt;&gt;&gt; &gt;&gt;&gt; 在2026年1月23日星期五 UTC+8 17:49:51&lt;shijingyao123&gt; 写道： &gt;&gt;&gt; &gt;&gt;&gt;&gt; 这个帖子可以持续返回计算直到我听懂为止，因为我觉得这里涉及到了我不懂的领域，我没法参与进来。 &gt;&gt;&gt;&gt; 当然，</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-01-30</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">关于Atom在一个良好的网络拓扑中的传递机制分析。 Atom的传播机制。 1. 收到Atom后会向每个vLinksOut中的地址进行传播。 2. 流量控制，除了第一个收到Atom的CUser对象，其他对象收到Atom以后会进行减半传播。 Atom的传播主要受流量控制的影响，导致Atom的传播并不普遍和均匀，在随机信号源和随机Atom在全网传播时全网的Atom总量也呈现随机性，因为流量控制的影响，Atom的传播并不深入，也就是相距较远的CUser通常出现收不到Atom的情况。 将流量控制视为衰减因子，Atom的衰减因子是0.5.将这个衰减因子修改为0.9以后全网的Atom的分布相对均匀且每个Atom的传播都很广泛，但是达不到全网一致的情况。 修改网络结构，将网络结构修改为中心相对内聚但外围桥梁相对分散的情况，出现中心Cuser的Atom相对较多，外围Atom的持有较少，但外围User的Atom和外围User的Atom的差异较大，中心User和中心User的Atom差异较小。Atom很难跨区域传播。 综上，Atom的传播主要受衰减因子影响导致其不适合在全网进行流转，调节衰减因子能显著改善全</div><div class="msg-rest" style="display:none;">网流转情况，在分布不均的网络拓扑中更易形成区域不一致。 所以流量控制的作用应该单独进行思考，接下来需要考虑的是局部共识和全域共识之间的关系，进一步探究Atom的使用场景。 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; 于2026年1月28日周三 23:02写道： &gt; 这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 &gt; &gt; On Tue, Jan 27, 2026 at 5:57 PM 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; wrote: &gt; &gt;&gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt;&gt; &gt;&gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt;&gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt;&gt; &gt;&gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt;&gt; &gt;&gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt;&gt; &gt;&gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt;&gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt;&gt; 亚鹏可以看下它是怎么做的隔离女巫攻击的做一个参考。 &gt;&gt; &gt;&gt; 文中提到了分布式计算“信任”，不需要中心化来计算信任矩阵，每个节点只需要跟自己的临近节点通信，迭代计算，最终全网会自动达成一致（收敛）。 &gt;&gt; &gt;&gt; 文中比较meme的地方是，一个节点的全局信誉值，等同于一个随机游走者（Random Surfer）在这个信任网络中最终停留在该节点的概率。 &gt;&gt; &gt;&gt; &gt;&gt; On Tue, Jan 27, 2026 at 2:05 PM 胥亚朋 &lt;xuyapeng110@gmail.com&gt; wrote: &gt;&gt; &gt;&gt;&gt; 首先，根据market.h中对CUser的设计，里面的vector&lt;uint256&gt; vLinksOut;结构可以构成1个完整的网络拓扑。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 接下来我们研究这个网络拓扑，在这个网络拓扑中，每个用户都可以连接多个用户，用户也可以被多个用户连接。这样所有的用户构成的网络拓扑中，有这么几个节点: &gt;&gt;&gt; &gt;&gt;&gt; 1. 连接很多节点的节点 &gt;&gt;&gt; 2. 被很多节点连接的节点 &gt;&gt;&gt; 3. 桥梁节点 &gt;&gt;&gt; 4. 可达节点:到其他节点的平均距离比较短的节点。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 这些节点中的重要性分析，连接很多节点的节点可以主动传递信息，有利于信息的传播，被很多节点连接的节点只能被动接受信息，对信息的广播没有太多意义。桥梁节点很重要，没有它一部分区域就和整个网路断连了。到其他节点的平均距离比较短的节点最重要，消息的传递主要靠它，是最重要的节点 &gt;&gt;&gt; &gt;&gt;&gt; 加上Atom的传播机制，消息到节点后会减半传递给自己连接的节点。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 代</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-02-03</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div><div class="msg-full">如何在比特币上面实现ebay那样的市场？ 这里把比特币作为一个互联互通的P2P网络来看，区块链就是比特币上面传递的相关消息，区块链可以当作是一种确定的消息，P2P网络上面还有一部分类似交易的信息，可以在网络上进行传递，但是可以不进块。 角色分布应该有:商品发布者，商品购买者。 商品发布者在网络上发布商品信息，用户可以在网络上查询获得商品信息，并与商品发布者联系购买商品，P2P网络不承担商品真实性相关检查。商品购买者可以对商品信息进行评价，最终评价会落实到商品发布者本人上面，这个应该就是atom的逻辑，给予商品发布者一定的信誉值。 问题: 1. 商品信息是否上链？ 商品发布信息个人建议是不上链，但是如何让矿工们接收并传递商品信息是一个问题 2. 成交信息是否上链？ 成交信息应该上链。 3. 成交信息是否和评论在一起？ 4. 是否使用比特币进行支付？ 5. 商品发布者如何进行约束？ 6. 如何验证成交信息是真实的？或者是否允许不真实的成交信息？ 以上问题需要慢慢思考 补充问题:发布订阅机制是否适用？ 如何订阅，是向矿工订阅还是向谁订阅？订阅是否需要付费？ 是否有一些特殊的矿工，可以向这些矿</div><div class="msg-rest" style="display:none;">工订阅商品信息？但会不会导致整个链分裂？ 最近需要计算的内容:在不修改比特币任何代码的情况下能否实现一版简易的可行的方案，大概2月4号给出初版方案。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年1月30日周五 13:18写道： &gt; 关于Atom在一个良好的网络拓扑中的传递机制分析。 &gt; &gt; Atom的传播机制。 &gt; &gt; 1. 收到Atom后会向每个vLinksOut中的地址进行传播。 &gt; 2. 流量控制，除了第一个收到Atom的CUser对象，其他对象收到Atom以后会进行减半传播。 &gt; &gt; &gt; Atom的传播主要受流量控制的影响，导致Atom的传播并不普遍和均匀，在随机信号源和随机Atom在全网传播时全网的Atom总量也呈现随机性，因为流量控制的影响，Atom的传播并不深入，也就是相距较远的CUser通常出现收不到Atom的情况。 &gt; &gt; &gt; 将流量控制视为衰减因子，Atom的衰减因子是0.5.将这个衰减因子修改为0.9以后全网的Atom的分布相对均匀且每个Atom的传播都很广泛，但是达不到全网一致的情况。 &gt; &gt; &gt; 修改网络结构，将网络结构修改为中心相对内聚但外围桥梁相对分散的情况，出现中心Cuser的Atom相对较多，外围Atom的持有较少，但外围User的Atom和外围User的Atom的差异较大，中心User和中心User的Atom差异较小。Atom很难跨区域传播。 &gt; &gt; 综上，Atom的传播主要受衰减因子影响导致其不适合在全网进行流转，调节衰减因子能显著改善全网流转情况，在分布不均的网络拓扑中更易形成区域不一致。 &gt; &gt; 所以流量控制的作用应该单独进行思考，接下来需要考虑的是局部共识和全域共识之间的关系，进一步探究Atom的使用场景。 &gt; &gt; 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; 于2026年1月28日周三 23:02写道： &gt; &gt;&gt; 这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 &gt;&gt; &gt;&gt; On Tue, Jan 27, 2026 at 5:57 PM 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; wrote: &gt;&gt; &gt;&gt;&gt; 论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 &gt;&gt;&gt; &gt;&gt;&gt; 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 &gt;&gt;&gt; atom与btc的传播方式有点相似，所以根据这个思路，我去找到了一篇关于传播方式中，通过节点之间局部信任，计算出全网每个节点的全局信任值。 &gt;&gt;&gt; &gt;&gt;&gt; 论文中提到信任的传递性，如果我信任我的临近节点，我给他发送Atom，或者接收，那你们则互相信任（现阶段）。 &gt;&gt;&gt; &gt;&gt;&gt; 论文算法通过不断让节点询问朋友的朋友（矩阵算法），将这些局部的算法收集汇聚起来，经过多轮计算，每个节点都会获得0-1之间的分数，和这个分数，就是全网对该节点的“公认信誉”的计算（信任矩阵的主特征向量）） &gt;&gt;&gt; &gt;&gt;&gt; 信任本身是可以计算和流转的，不仅仅是一种心理状态，可以量化成数学数值，通过网络拓扑进行传递。论文在抵御（女巫攻击）也着重讲解了，p2p网络中，攻击者可以制造100万账号互相刷好评，这篇论文中引入了“Pre-trusted &gt;&gt;&gt; Peers（预信任节点）的概念。”只要少数的种子节点是诚实的，信任就会在诚实节点中流动，恶意节点刷分会被数学隔离，这部分我没看懂它是怎么实现的少数诚实的种子节点，叶鹏 &gt;&gt;&gt; 亚鹏可以看下它是怎么做的隔</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
 </div>
 <h1>预信任节点（Pre-trusted Peers）</h1>
 <h2>论文引用</h2>
@@ -329,7 +578,25 @@ header .subtitle a:hover { text-decoration: underline; }
 <a href="../person_胥亚朋.html" class="p-tag">胥亚朋<span class="p-msg-count">(3条)</span></a>
 <a href="../person_沄涣.html" class="p-tag">沄涣<span class="p-msg-count">(2条)</span></a>
 </div>
-<div class="person-block"><div class="person-header"><a href="../person_胥亚朋.html" class="person-name">胥亚朋</a><span class="person-count">3条</span><span class="person-months">2026-02, 2026-01</span></div><div class="person-msgs"><div class="p-preview">如何在比特币上面实现ebay那样的市场？ 这里把比特币作为一个互联互通的P2P网络来看，区块链就是比特币上面传递的相关消息，区块链可以当作是一种确定的消息，P2P网络上面还有一部分类似交易的信息，可以在网络上进行传递，但是可以不进块。 角色...</div><div class="p-preview">关于Atom在一个良好的网络拓扑中的传递机制分析。 Atom的传播机制。 1. 收到Atom后会向每个vLinksOut中的地址进行传播。 2. 流量控制，除了第一个收到Atom的CUser对象，其他对象收到Atom以后会进行减半传播。 A...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_沄涣.html" class="person-name">沄涣</a><span class="person-count">2条</span><span class="person-months">2026-01</span></div><div class="person-msgs"><div class="p-preview">这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 On Tue, Jan 27, 2026 at 5:57 PM 沄涣 <jiyeyulie4b310@gmail.com> wrote: > 论文推荐EigenTrust，...</div><div class="p-preview">论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 atom与btc的传播方式有点相似，所以根据这个思路...</div></div></div></div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_胥亚朋.html" class="p-tag">胥亚朋<span class="p-msg-count">(3条)</span></a>
+<a href="../person_沄涣.html" class="p-tag">沄涣<span class="p-msg-count">(2条)</span></a>
+</div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_胥亚朋.html" class="p-tag">胥亚朋<span class="p-msg-count">(3条)</span></a>
+<a href="../person_沄涣.html" class="p-tag">沄涣<span class="p-msg-count">(2条)</span></a>
+</div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_胥亚朋.html" class="p-tag">胥亚朋<span class="p-msg-count">(3条)</span></a>
+<a href="../person_沄涣.html" class="p-tag">沄涣<span class="p-msg-count">(2条)</span></a>
+</div>
+<div class="person-block"><div class="person-header"><a href="../person_胥亚朋.html" class="person-name">胥亚朋</a><span class="person-count">3条</span><span class="person-months">2026-02, 2026-01</span></div><div class="person-msgs"><div class="p-preview">如何在比特币上面实现ebay那样的市场？ 这里把比特币作为一个互联互通的P2P网络来看，区块链就是比特币上面传递的相关消息，区块链可以当作是一种确定的消息，P2P网络上面还有一部分类似交易的信息，可以在网络上进行传递，但是可以不进块。 角色…</div><div class="p-preview">关于Atom在一个良好的网络拓扑中的传递机制分析。 Atom的传播机制。 1. 收到Atom后会向每个vLinksOut中的地址进行传播。 2. 流量控制，除了第一个收到Atom的CUser对象，其他对象收到Atom以后会进行减半传播。 A…</div></div></div><div class="person-block"><div class="person-header"><a href="../person_沄涣.html" class="person-name">沄涣</a><span class="person-count">2条</span><span class="person-months">2026-01</span></div><div class="person-msgs"><div class="p-preview">这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 On Tue, Jan 27, 2026 at 5:57 PM 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; wrote: &gt; 论文推荐EigenTrust，…</div><div class="p-preview">论文推荐EigenTrust，主要论点是，在p2p网络中，谁是真正的老大（全局信誉度量的计算），谁有信用，谁的信誉高，怎么计算和怎么传播。 推荐理由：在叶鹏讲到向量产生的网络拓扑后，好像 atom与btc的传播方式有点相似，所以根据这个思路…</div><div class="p-preview">这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 On Tue, Jan 27, 2026 at 5:57 PM 沄涣 <jiyeyulie4b310@gmail.com> wrote: > 论文推荐EigenTrust，...</div></div></div></div>
 </div></div></div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
@@ -396,6 +663,78 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   var h=document.querySelector('.all-msgs-header');

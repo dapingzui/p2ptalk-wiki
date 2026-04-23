@@ -133,6 +133,78 @@ header .subtitle a:hover { text-decoration: underline; }
 .people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
 .people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
 .people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
 </style>
 </head>
 <body>
@@ -372,6 +444,195 @@ header .subtitle a:hover { text-decoration: underline; }
 </div>
 </div>
 </div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共5条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-02-02</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77yaMiDmnIggMiDml6XkvJrorq7liY3nva7lt6XkvZw=?=</div><div class="msg-full">上次零散参加了3次会议，这里做统一总结。 0、上周我几乎没有工作量，心态浮躁、缺乏自信，过渡追求项目结果。“愿力”不够、不稳。 1、关于比特币、atom的拓扑结构大家基本有了共识，但这是静态数据结构，至于使用矩阵来表示计算过程，是存在重大难度的。涉及到存储空间、线性/非线性转化、 2、得到一个结论，设计一个系统时，不应该直接考虑共识，而是应该考虑系统本身可能遭遇的攻击面。攻击面的解决方式有多种，但无论何种方式解决，最终得到的就是共识。因此共识不是一个过程，而是一个结果，是减少攻击面后的结果。 3、我重新开始思考比特币系统、atom系统与计算模型的关系，我发现p2p拓扑结构与元胞自动机的计算模型有天然相似之处。既然先考虑矩阵计算不合时宜，还不如先从计算模型出发，用元宝自动机重构比特币。之前尝试过一次，但并没有对p2p结构有所理解，这次加上了对p2p的理解，我需要对比特币的计算模型做一个新的映射。不同于常规的图灵机和lambda演算，这种计算模型似乎有全新的开发空间。 ---- 回复的原邮件 ---- 发件人 icekernel icekernel@gmail.com 发送日期 &lt;td c</div><div class="msg-rest" style="display:none;">lass=&quot;mail-date&quot; valign=&quot;top&quot; style=&quot; font-size:</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-02-07</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77yaMjAyNjAyMDflkIzmraXmnKzkvJrorq7liY3kuKo=?=
+ =?utf-8?B?5Lq655qE5pyA5paw6L+b5bGV5Y+K5LiK5LiL5paH?=</div><div class="msg-full">和woo聊了会面机制，我觉得传播机制和计算还是分不开的，之前我认为传播不等于计算是站在图灵机视角下的理解，这个理解应该是错误的。我应该从元胞自动机的思路下去理解传播和计算，在这个模型下，传播机制是计算的一部分。因此我在用代码模拟，使用元胞自动机模型，推演比特币的传播机制和atom的传播机制。同时我在补习计算模型和复杂度相关的知识。 ---- 回复的原邮件 ---- 发件人 shijingyao123 shijingyao123@gmail.com 发送日期 2026年02月7日 14:45 收件人 &lt;a class=&quot;mail-to&quot; style=&quot;colo</div><div class="msg-rest" style="display:none;"></div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">Woo</span>
+
+<span class="msg-date">2026-02-07</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IDIwMjYwMjA35ZCM5q2l5pys5Lya6K6u5YmN5Liq5Lq655qE5pyA5paw6L+b5bGV?=
+	=?UTF-8?B?5Y+K5LiK5LiL5paH?=</div><div class="msg-full">新会议链接 https://meet.google.com/mie-yvhk-mqo On Sat, Feb 7, 2026 at 3:10 PM initsysctrl &lt;initsysctrl@gmail.com&gt; wrote: &gt; &gt; 和woo聊了会面机制，我觉得传播机制和计算还是分不开的，之前我认为传播不等于计算是站在图灵机视角下的理解，这个理解应该是错误的。我应该从元胞自动机的思路下去理解传播和计算，在这个模型下，传播机制是计算的一部分。因此我在用代码模拟，使用元胞自动机模型，推演比特币的传播机制和atom的传播机制。同时我在补习计算模型和复杂度相关的知识。 &gt; &gt; ---- 回复的原邮件 ---- &gt; 发件人 shijingyao123&lt;shijingyao123@gmail.com&gt; &lt;shijingyao123@gmail.com&gt; &gt; 发送日期 2026年02月7日 14:45 &gt; 收件人 p2ptalk&lt;p2ptalk@googlegroups.com&gt; &lt;p2ptalk@googlegroups.com&gt; &gt; 主题 20260207同步本会议前个人的最新进展及上下</div><div class="msg-rest" style="display:none;">文 &gt; 改一下这个会前同步的逻辑 &gt; 由于我们会有不同的小会，大会只在周一，因此这个同步需要在小会前也执行一下，确保没有参与小会的人也能get到重点。 &gt; 同步内容也改成个人最新进展和该进展的上下文 &gt; &gt; -- &gt; You received this message because you are subscribed to the Google Groups &gt; &quot;p2ptalk&quot; group. &gt; To unsubscribe from this group and stop receiving emails from it, send an &gt; email to p2ptalk+unsubscribe@googlegroups.com. &gt; To view this discussion visit &gt; https://groups.google.com/d/msgid/p2ptalk/5b949d00-e3af-4acf-a151-343e56e98308n%40googlegroups.com &gt; &lt;https://groups.google.com/d/msgid/p2ptalk/5b949d00-e3af-4acf-a151-343e56e98308n%40googlegroups.com?utm_medium=email&amp;utm_source=footer&gt; &gt; . &gt; For more options, visit https://groups.google.com/d/optout. &gt; &gt; -- &gt; You received this message because you are subscribed to the Google Groups &gt; &quot;p2ptalk&quot; group. &gt; To unsubscribe from this group and stop receiving emails from it, send an &gt; email to p2ptalk+unsubscribe@googlegroups.com. &gt; To view this discussion visit &gt; https://groups.google.com/d/msgid/p2ptalk/6F2CB341-24EA-4FEA-A5D8-D89E7C265C07%40gmail.com &gt; &lt;https://groups.google.com/d/msgid/p2ptalk/6F2CB341-24EA-4FEA-A5D8-D89E7C265C07%40gmail.com?utm_medium=email&amp;utm_source=footer&gt; &gt; . &gt; For more options, visit https://groups.google.com/d/optout. &gt;</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-03-18</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77yaIOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYs=?=
+ =?utf-8?B?5ZCO5oCO5LmI5aSE55CG?=</div><div class="msg-full">这的确是两个方面的内容。 1、请忽略第一方面 第一个方面的内容，在流转过程中，随机挑选 atom 产生不确定性，而某种工作量证明使得多个节点的随机运算结果达成统一，移除了前面的不确定性，并依据这个机制分配激励。这种思想很简单、很传统、很浅薄，也很区块链，这里不再赘述，应该也不需要了。 2、第二个方面的经验和直觉来源 第二个方面的内容来自上周以来的读书、思考，以及和老史的讨论，这里我将详细描述整个过程。 问题的起源是“atom 之后该怎么处理”。传统的思路认为，每个 user 里面包含了 atom 的相关信息，就可以直接使用了。哪个 user 的 atomIn 中包含的 atom 数量最高就是信誉高。实际上中本聪也的确是这样设计的，在 ui 层面，评论的排序是通过评论者 (user) 的 atom 数量高低排序的。但这种思路的确不大令人满意，因为这其实是延续区块链的通用思想，一个有共识的分布式数据库，甚至还是账户模型的。 穷则变，变则通。我们需要敢于想象，勇于创新，打破常规。但人是无法想象自己没见过的东西的，所谓创新，大概率也是依据个人的经验和直觉，照猫画虎，新瓶装旧酒，这我并不否认。团</div><div class="msg-rest" style="display:none;">队内部的交流应该坦诚，我可以啰嗦一下，坦白这种经验和直觉的来源： 如果我们需要做的项目是一个简化版的以太坊，甚至还更垃圾，那还不如不做了。此经验来自老史 区块链可以不要，但 p2p 是必须要有，没有 p2p 的项目就好像没有灵魂的躯壳。此经验来自老史 激励不要落入到货币的叙事中去，尽管者这听起来和发币自相矛盾。此直觉来自老史 atom 系统的基础结构是 user 和单向的 linkOut 构成的有向图，atom 通过 review 触发 (或原点触发)，通过链接一级级的传递下去，这种方式让我天然联想到神经元的连接和信号传递。user 就是神经元，atom 就是电脉冲，linkout 就是轴突，流动阈值就是树突与轴突之间的神经递质浓度。这部分经验来自《脑机接口》，《终极算法》以及高中生物。 人类总是先抽象，再创造，然后解决各种各样的问题。这个世界有两种问题，一种是可以规约的，可以用严谨的数学来表达或证明。另一种问题是无法规约的，或者规约的成本极其高昂。前一种问题的抽象方式是形式化计算，创造出来解决问题的典型工具是图灵机和 lambda 演算。第二种问题的抽象方式之一是元胞自动机，创造出来的典型工具之一是机器学习之神经网络，这种抽象放弃了严格的数学证明，转而通过训练的方式得到一个复杂到无法看懂的计算模型，但是它能用，而且还挺好用。这部分很美妙无法用简短的语言来描述，他们基本上来自于： 《终极算法》第三章联结学派 B 站王木头 https://space.bilibili.com/504715181/lists/284254?type=season B 站 Yjango 的学习观系列 https://space.bilibili.com/34484903</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-03-23</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77yaIOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYs=?=
+ =?utf-8?B?5ZCO5oCO5LmI5aSE55CG?=</div><div class="msg-full">我试图从比特币中抽象出一套模型出来，这个模型能完美解释比特币系统的过去，也能指导atom系统的未来，还能与当代神经网络紧密相连。 我从神经网络往前推演，从图灵机往后推演，它们在“元胞自动机”上面得到了交叉。在《图灵的秘密》的倒数第二章中我获得了直接的灵感： 1、元胞自动机是由多个元胞构成的离散时空网络，通过简单局部规则的驱动演化，模拟复杂系统行为。它具有如下几个基本特征（经典CA模型）： - 离散性：空间时间的状态均为离散，不连续 - 同步性：所有元胞同时更新 - 局部性：状态变化仅仅依赖于领域 - 同质性：所有元胞都服从相同的规则 虽然根据CA模型也有许多变种，同步和同质不一定会满足，但离散和局部这两个基本特征不变！ 2、之前我们bitcoin认为是用bit给coin盖戳，这种说法并无问题。但我想提供一种新的解释，这种解释的重点不在分布式的工程环境，而是直接考虑其核心：货币。换言之，我想如何用计算模型，来模拟比特币（作为货币）的状态变化，货币(全局意义上的)是如何从一个状态变成另一个状态的。因此，bitcoin的意思是原子化的coin的信息熵是1比特，即coin有两种状态0和1。 3</div><div class="msg-rest" style="display:none;">、以元胞自动机抽象比特币系统的计算模型，元胞本质上是Txo（交易输出），Txo分两种，已花费和未花费，对应Txo的状态0和1，即元胞的状态集为{0，1} 4、Txo与Txo之间是离散的，Txo的计算过程是局部的，不和全局相关 5、元胞的局部规则本质上一个有限状态自动机，在比特币系统中被比特币脚本语言描述 6、元胞空间，可以建模为三维空间，x轴是交易顺序编码、y轴是交易输出顺序编码，z是有限状态自动机的编码 7、同步和同质，还需要进一步解释，如果不行，那就是在经典CA上改良的基于工程需要的变种 8、甲苯冲说的比特币是图灵完备的，以元胞自动机的抽象模型，是理论上真可行的，因为可以自由设计局部规则，让整个系统模拟图灵机的效果，或者模拟真实计算机的继电器 ---- 回复的原邮件 ---- &lt;td valign=&quot;top&quot; style=&quot; width: 4.25</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共5条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-02-02</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77yaMiDmnIggMiDml6XkvJrorq7liY3nva7lt6XkvZw=?=</div><div class="msg-full">上次零散参加了3次会议，这里做统一总结。 0、上周我几乎没有工作量，心态浮躁、缺乏自信，过渡追求项目结果。“愿力”不够、不稳。 1、关于比特币、atom的拓扑结构大家基本有了共识，但这是静态数据结构，至于使用矩阵来表示计算过程，是存在重大难度的。涉及到存储空间、线性/非线性转化、 2、得到一个结论，设计一个系统时，不应该直接考虑共识，而是应该考虑系统本身可能遭遇的攻击面。攻击面的解决方式有多种，但无论何种方式解决，最终得到的就是共识。因此共识不是一个过程，而是一个结果，是减少攻击面后的结果。 3、我重新开始思考比特币系统、atom系统与计算模型的关系，我发现p2p拓扑结构与元胞自动机的计算模型有天然相似之处。既然先考虑矩阵计算不合时宜，还不如先从计算模型出发，用元宝自动机重构比特币。之前尝试过一次，但并没有对p2p结构有所理解，这次加上了对p2p的理解，我需要对比特币的计算模型做一个新的映射。不同于常规的图灵机和lambda演算，这种计算模型似乎有全新的开发空间。 ---- 回复的原邮件 ---- 发件人 icekernel icekernel@gmail.com 发送日期 &lt;td c</div><div class="msg-rest" style="display:none;">lass=&quot;mail-date&quot; valign=&quot;top&quot; style=&quot; font-size:</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-02-07</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77yaMjAyNjAyMDflkIzmraXmnKzkvJrorq7liY3kuKo=?=
+ =?utf-8?B?5Lq655qE5pyA5paw6L+b5bGV5Y+K5LiK5LiL5paH?=</div><div class="msg-full">和woo聊了会面机制，我觉得传播机制和计算还是分不开的，之前我认为传播不等于计算是站在图灵机视角下的理解，这个理解应该是错误的。我应该从元胞自动机的思路下去理解传播和计算，在这个模型下，传播机制是计算的一部分。因此我在用代码模拟，使用元胞自动机模型，推演比特币的传播机制和atom的传播机制。同时我在补习计算模型和复杂度相关的知识。 ---- 回复的原邮件 ---- 发件人 shijingyao123 shijingyao123@gmail.com 发送日期 2026年02月7日 14:45 收件人 &lt;a class=&quot;mail-to&quot; style=&quot;colo</div><div class="msg-rest" style="display:none;"></div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">Woo</span>
+
+<span class="msg-date">2026-02-07</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IDIwMjYwMjA35ZCM5q2l5pys5Lya6K6u5YmN5Liq5Lq655qE5pyA5paw6L+b5bGV?=
+	=?UTF-8?B?5Y+K5LiK5LiL5paH?=</div><div class="msg-full">新会议链接 https://meet.google.com/mie-yvhk-mqo On Sat, Feb 7, 2026 at 3:10 PM initsysctrl &lt;initsysctrl@gmail.com&gt; wrote: &gt; &gt; 和woo聊了会面机制，我觉得传播机制和计算还是分不开的，之前我认为传播不等于计算是站在图灵机视角下的理解，这个理解应该是错误的。我应该从元胞自动机的思路下去理解传播和计算，在这个模型下，传播机制是计算的一部分。因此我在用代码模拟，使用元胞自动机模型，推演比特币的传播机制和atom的传播机制。同时我在补习计算模型和复杂度相关的知识。 &gt; &gt; ---- 回复的原邮件 ---- &gt; 发件人 shijingyao123&lt;shijingyao123@gmail.com&gt; &lt;shijingyao123@gmail.com&gt; &gt; 发送日期 2026年02月7日 14:45 &gt; 收件人 p2ptalk&lt;p2ptalk@googlegroups.com&gt; &lt;p2ptalk@googlegroups.com&gt; &gt; 主题 20260207同步本会议前个人的最新进展及上下</div><div class="msg-rest" style="display:none;">文 &gt; 改一下这个会前同步的逻辑 &gt; 由于我们会有不同的小会，大会只在周一，因此这个同步需要在小会前也执行一下，确保没有参与小会的人也能get到重点。 &gt; 同步内容也改成个人最新进展和该进展的上下文 &gt; &gt; -- &gt; You received this message because you are subscribed to the Google Groups &gt; &quot;p2ptalk&quot; group. &gt; To unsubscribe from this group and stop receiving emails from it, send an &gt; email to p2ptalk+unsubscribe@googlegroups.com. &gt; To view this discussion visit &gt; https://groups.google.com/d/msgid/p2ptalk/5b949d00-e3af-4acf-a151-343e56e98308n%40googlegroups.com &gt; &lt;https://groups.google.com/d/msgid/p2ptalk/5b949d00-e3af-4acf-a151-343e56e98308n%40googlegroups.com?utm_medium=email&amp;utm_source=footer&gt; &gt; . &gt; For more options, visit https://groups.google.com/d/optout. &gt; &gt; -- &gt; You received this message because you are subscribed to the Google Groups &gt; &quot;p2ptalk&quot; group. &gt; To unsubscribe from this group and stop receiving emails from it, send an &gt; email to p2ptalk+unsubscribe@googlegroups.com. &gt; To view this discussion visit &gt; https://groups.google.com/d/msgid/p2ptalk/6F2CB341-24EA-4FEA-A5D8-D89E7C265C07%40gmail.com &gt; &lt;https://groups.google.com/d/msgid/p2ptalk/6F2CB341-24EA-4FEA-A5D8-D89E7C265C07%40gmail.com?utm_medium=email&amp;utm_source=footer&gt; &gt; . &gt; For more options, visit https://groups.google.com/d/optout. &gt;</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-03-18</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77yaIOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYs=?=
+ =?utf-8?B?5ZCO5oCO5LmI5aSE55CG?=</div><div class="msg-full">这的确是两个方面的内容。 1、请忽略第一方面 第一个方面的内容，在流转过程中，随机挑选 atom 产生不确定性，而某种工作量证明使得多个节点的随机运算结果达成统一，移除了前面的不确定性，并依据这个机制分配激励。这种思想很简单、很传统、很浅薄，也很区块链，这里不再赘述，应该也不需要了。 2、第二个方面的经验和直觉来源 第二个方面的内容来自上周以来的读书、思考，以及和老史的讨论，这里我将详细描述整个过程。 问题的起源是“atom 之后该怎么处理”。传统的思路认为，每个 user 里面包含了 atom 的相关信息，就可以直接使用了。哪个 user 的 atomIn 中包含的 atom 数量最高就是信誉高。实际上中本聪也的确是这样设计的，在 ui 层面，评论的排序是通过评论者 (user) 的 atom 数量高低排序的。但这种思路的确不大令人满意，因为这其实是延续区块链的通用思想，一个有共识的分布式数据库，甚至还是账户模型的。 穷则变，变则通。我们需要敢于想象，勇于创新，打破常规。但人是无法想象自己没见过的东西的，所谓创新，大概率也是依据个人的经验和直觉，照猫画虎，新瓶装旧酒，这我并不否认。团</div><div class="msg-rest" style="display:none;">队内部的交流应该坦诚，我可以啰嗦一下，坦白这种经验和直觉的来源： 如果我们需要做的项目是一个简化版的以太坊，甚至还更垃圾，那还不如不做了。此经验来自老史 区块链可以不要，但 p2p 是必须要有，没有 p2p 的项目就好像没有灵魂的躯壳。此经验来自老史 激励不要落入到货币的叙事中去，尽管者这听起来和发币自相矛盾。此直觉来自老史 atom 系统的基础结构是 user 和单向的 linkOut 构成的有向图，atom 通过 review 触发 (或原点触发)，通过链接一级级的传递下去，这种方式让我天然联想到神经元的连接和信号传递。user 就是神经元，atom 就是电脉冲，linkout 就是轴突，流动阈值就是树突与轴突之间的神经递质浓度。这部分经验来自《脑机接口》，《终极算法》以及高中生物。 人类总是先抽象，再创造，然后解决各种各样的问题。这个世界有两种问题，一种是可以规约的，可以用严谨的数学来表达或证明。另一种问题是无法规约的，或者规约的成本极其高昂。前一种问题的抽象方式是形式化计算，创造出来解决问题的典型工具是图灵机和 lambda 演算。第二种问题的抽象方式之一是元胞自动机，创造出来的典型工具之一是机器学习之神经网络，这种抽象放弃了严格的数学证明，转而通过训练的方式得到一个复杂到无法看懂的计算模型，但是它能用，而且还挺好用。这部分很美妙无法用简短的语言来描述，他们基本上来自于： 《终极算法》第三章联结学派 B 站王木头 https://space.bilibili.com/504715181/lists/284254?type=season B 站 Yjango 的学习观系列 https://space.bilibili.com/34484903</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-03-23</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77yaIOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYs=?=
+ =?utf-8?B?5ZCO5oCO5LmI5aSE55CG?=</div><div class="msg-full">我试图从比特币中抽象出一套模型出来，这个模型能完美解释比特币系统的过去，也能指导atom系统的未来，还能与当代神经网络紧密相连。 我从神经网络往前推演，从图灵机往后推演，它们在“元胞自动机”上面得到了交叉。在《图灵的秘密》的倒数第二章中我获得了直接的灵感： 1、元胞自动机是由多个元胞构成的离散时空网络，通过简单局部规则的驱动演化，模拟复杂系统行为。它具有如下几个基本特征（经典CA模型）： - 离散性：空间时间的状态均为离散，不连续 - 同步性：所有元胞同时更新 - 局部性：状态变化仅仅依赖于领域 - 同质性：所有元胞都服从相同的规则 虽然根据CA模型也有许多变种，同步和同质不一定会满足，但离散和局部这两个基本特征不变！ 2、之前我们bitcoin认为是用bit给coin盖戳，这种说法并无问题。但我想提供一种新的解释，这种解释的重点不在分布式的工程环境，而是直接考虑其核心：货币。换言之，我想如何用计算模型，来模拟比特币（作为货币）的状态变化，货币(全局意义上的)是如何从一个状态变成另一个状态的。因此，bitcoin的意思是原子化的coin的信息熵是1比特，即coin有两种状态0和1。 3</div><div class="msg-rest" style="display:none;">、以元胞自动机抽象比特币系统的计算模型，元胞本质上是Txo（交易输出），Txo分两种，已花费和未花费，对应Txo的状态0和1，即元胞的状态集为{0，1} 4、Txo与Txo之间是离散的，Txo的计算过程是局部的，不和全局相关 5、元胞的局部规则本质上一个有限状态自动机，在比特币系统中被比特币脚本语言描述 6、元胞空间，可以建模为三维空间，x轴是交易顺序编码、y轴是交易输出顺序编码，z是有限状态自动机的编码 7、同步和同质，还需要进一步解释，如果不行，那就是在经典CA上改良的基于工程需要的变种 8、甲苯冲说的比特币是图灵完备的，以元胞自动机的抽象模型，是理论上真可行的，因为可以自由设计局部规则，让整个系统模拟图灵机的效果，或者模拟真实计算机的继电器 ---- 回复的原邮件 ---- &lt;td valign=&quot;top&quot; style=&quot; width: 4.25</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共5条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-02-02</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77yaMiDmnIggMiDml6XkvJrorq7liY3nva7lt6XkvZw=?=</div><div class="msg-full">上次零散参加了3次会议，这里做统一总结。 0、上周我几乎没有工作量，心态浮躁、缺乏自信，过渡追求项目结果。“愿力”不够、不稳。 1、关于比特币、atom的拓扑结构大家基本有了共识，但这是静态数据结构，至于使用矩阵来表示计算过程，是存在重大难度的。涉及到存储空间、线性/非线性转化、 2、得到一个结论，设计一个系统时，不应该直接考虑共识，而是应该考虑系统本身可能遭遇的攻击面。攻击面的解决方式有多种，但无论何种方式解决，最终得到的就是共识。因此共识不是一个过程，而是一个结果，是减少攻击面后的结果。 3、我重新开始思考比特币系统、atom系统与计算模型的关系，我发现p2p拓扑结构与元胞自动机的计算模型有天然相似之处。既然先考虑矩阵计算不合时宜，还不如先从计算模型出发，用元宝自动机重构比特币。之前尝试过一次，但并没有对p2p结构有所理解，这次加上了对p2p的理解，我需要对比特币的计算模型做一个新的映射。不同于常规的图灵机和lambda演算，这种计算模型似乎有全新的开发空间。 ---- 回复的原邮件 ---- 发件人 icekernel icekernel@gmail.com 发送日期 &lt;td c</div><div class="msg-rest" style="display:none;">lass=&quot;mail-date&quot; valign=&quot;top&quot; style=&quot; font-size:</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-02-07</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77yaMjAyNjAyMDflkIzmraXmnKzkvJrorq7liY3kuKo=?=
+ =?utf-8?B?5Lq655qE5pyA5paw6L+b5bGV5Y+K5LiK5LiL5paH?=</div><div class="msg-full">和woo聊了会面机制，我觉得传播机制和计算还是分不开的，之前我认为传播不等于计算是站在图灵机视角下的理解，这个理解应该是错误的。我应该从元胞自动机的思路下去理解传播和计算，在这个模型下，传播机制是计算的一部分。因此我在用代码模拟，使用元胞自动机模型，推演比特币的传播机制和atom的传播机制。同时我在补习计算模型和复杂度相关的知识。 ---- 回复的原邮件 ---- 发件人 shijingyao123 shijingyao123@gmail.com 发送日期 2026年02月7日 14:45 收件人 &lt;a class=&quot;mail-to&quot; style=&quot;colo</div><div class="msg-rest" style="display:none;"></div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">Woo</span>
+
+<span class="msg-date">2026-02-07</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IDIwMjYwMjA35ZCM5q2l5pys5Lya6K6u5YmN5Liq5Lq655qE5pyA5paw6L+b5bGV?=
+	=?UTF-8?B?5Y+K5LiK5LiL5paH?=</div><div class="msg-full">新会议链接 https://meet.google.com/mie-yvhk-mqo On Sat, Feb 7, 2026 at 3:10 PM initsysctrl &lt;initsysctrl@gmail.com&gt; wrote: &gt; &gt; 和woo聊了会面机制，我觉得传播机制和计算还是分不开的，之前我认为传播不等于计算是站在图灵机视角下的理解，这个理解应该是错误的。我应该从元胞自动机的思路下去理解传播和计算，在这个模型下，传播机制是计算的一部分。因此我在用代码模拟，使用元胞自动机模型，推演比特币的传播机制和atom的传播机制。同时我在补习计算模型和复杂度相关的知识。 &gt; &gt; ---- 回复的原邮件 ---- &gt; 发件人 shijingyao123&lt;shijingyao123@gmail.com&gt; &lt;shijingyao123@gmail.com&gt; &gt; 发送日期 2026年02月7日 14:45 &gt; 收件人 p2ptalk&lt;p2ptalk@googlegroups.com&gt; &lt;p2ptalk@googlegroups.com&gt; &gt; 主题 20260207同步本会议前个人的最新进展及上下</div><div class="msg-rest" style="display:none;">文 &gt; 改一下这个会前同步的逻辑 &gt; 由于我们会有不同的小会，大会只在周一，因此这个同步需要在小会前也执行一下，确保没有参与小会的人也能get到重点。 &gt; 同步内容也改成个人最新进展和该进展的上下文 &gt; &gt; -- &gt; You received this message because you are subscribed to the Google Groups &gt; &quot;p2ptalk&quot; group. &gt; To unsubscribe from this group and stop receiving emails from it, send an &gt; email to p2ptalk+unsubscribe@googlegroups.com. &gt; To view this discussion visit &gt; https://groups.google.com/d/msgid/p2ptalk/5b949d00-e3af-4acf-a151-343e56e98308n%40googlegroups.com &gt; &lt;https://groups.google.com/d/msgid/p2ptalk/5b949d00-e3af-4acf-a151-343e56e98308n%40googlegroups.com?utm_medium=email&amp;utm_source=footer&gt; &gt; . &gt; For more options, visit https://groups.google.com/d/optout. &gt; &gt; -- &gt; You received this message because you are subscribed to the Google Groups &gt; &quot;p2ptalk&quot; group. &gt; To unsubscribe from this group and stop receiving emails from it, send an &gt; email to p2ptalk+unsubscribe@googlegroups.com. &gt; To view this discussion visit &gt; https://groups.google.com/d/msgid/p2ptalk/6F2CB341-24EA-4FEA-A5D8-D89E7C265C07%40gmail.com &gt; &lt;https://groups.google.com/d/msgid/p2ptalk/6F2CB341-24EA-4FEA-A5D8-D89E7C265C07%40gmail.com?utm_medium=email&amp;utm_source=footer&gt; &gt; . &gt; For more options, visit https://groups.google.com/d/optout. &gt;</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-03-18</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77yaIOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYs=?=
+ =?utf-8?B?5ZCO5oCO5LmI5aSE55CG?=</div><div class="msg-full">这的确是两个方面的内容。 1、请忽略第一方面 第一个方面的内容，在流转过程中，随机挑选 atom 产生不确定性，而某种工作量证明使得多个节点的随机运算结果达成统一，移除了前面的不确定性，并依据这个机制分配激励。这种思想很简单、很传统、很浅薄，也很区块链，这里不再赘述，应该也不需要了。 2、第二个方面的经验和直觉来源 第二个方面的内容来自上周以来的读书、思考，以及和老史的讨论，这里我将详细描述整个过程。 问题的起源是“atom 之后该怎么处理”。传统的思路认为，每个 user 里面包含了 atom 的相关信息，就可以直接使用了。哪个 user 的 atomIn 中包含的 atom 数量最高就是信誉高。实际上中本聪也的确是这样设计的，在 ui 层面，评论的排序是通过评论者 (user) 的 atom 数量高低排序的。但这种思路的确不大令人满意，因为这其实是延续区块链的通用思想，一个有共识的分布式数据库，甚至还是账户模型的。 穷则变，变则通。我们需要敢于想象，勇于创新，打破常规。但人是无法想象自己没见过的东西的，所谓创新，大概率也是依据个人的经验和直觉，照猫画虎，新瓶装旧酒，这我并不否认。团</div><div class="msg-rest" style="display:none;">队内部的交流应该坦诚，我可以啰嗦一下，坦白这种经验和直觉的来源： 如果我们需要做的项目是一个简化版的以太坊，甚至还更垃圾，那还不如不做了。此经验来自老史 区块链可以不要，但 p2p 是必须要有，没有 p2p 的项目就好像没有灵魂的躯壳。此经验来自老史 激励不要落入到货币的叙事中去，尽管者这听起来和发币自相矛盾。此直觉来自老史 atom 系统的基础结构是 user 和单向的 linkOut 构成的有向图，atom 通过 review 触发 (或原点触发)，通过链接一级级的传递下去，这种方式让我天然联想到神经元的连接和信号传递。user 就是神经元，atom 就是电脉冲，linkout 就是轴突，流动阈值就是树突与轴突之间的神经递质浓度。这部分经验来自《脑机接口》，《终极算法》以及高中生物。 人类总是先抽象，再创造，然后解决各种各样的问题。这个世界有两种问题，一种是可以规约的，可以用严谨的数学来表达或证明。另一种问题是无法规约的，或者规约的成本极其高昂。前一种问题的抽象方式是形式化计算，创造出来解决问题的典型工具是图灵机和 lambda 演算。第二种问题的抽象方式之一是元胞自动机，创造出来的典型工具之一是机器学习之神经网络，这种抽象放弃了严格的数学证明，转而通过训练的方式得到一个复杂到无法看懂的计算模型，但是它能用，而且还挺好用。这部分很美妙无法用简短的语言来描述，他们基本上来自于： 《终极算法》第三章联结学派 B 站王木头 https://space.bilibili.com/504715181/lists/284254?type=season B 站 Yjango 的学习观系列 https://space.bilibili.com/34484903</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-03-23</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77yaIOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYs=?=
+ =?utf-8?B?5ZCO5oCO5LmI5aSE55CG?=</div><div class="msg-full">我试图从比特币中抽象出一套模型出来，这个模型能完美解释比特币系统的过去，也能指导atom系统的未来，还能与当代神经网络紧密相连。 我从神经网络往前推演，从图灵机往后推演，它们在“元胞自动机”上面得到了交叉。在《图灵的秘密》的倒数第二章中我获得了直接的灵感： 1、元胞自动机是由多个元胞构成的离散时空网络，通过简单局部规则的驱动演化，模拟复杂系统行为。它具有如下几个基本特征（经典CA模型）： - 离散性：空间时间的状态均为离散，不连续 - 同步性：所有元胞同时更新 - 局部性：状态变化仅仅依赖于领域 - 同质性：所有元胞都服从相同的规则 虽然根据CA模型也有许多变种，同步和同质不一定会满足，但离散和局部这两个基本特征不变！ 2、之前我们bitcoin认为是用bit给coin盖戳，这种说法并无问题。但我想提供一种新的解释，这种解释的重点不在分布式的工程环境，而是直接考虑其核心：货币。换言之，我想如何用计算模型，来模拟比特币（作为货币）的状态变化，货币(全局意义上的)是如何从一个状态变成另一个状态的。因此，bitcoin的意思是原子化的coin的信息熵是1比特，即coin有两种状态0和1。 3</div><div class="msg-rest" style="display:none;">、以元胞自动机抽象比特币系统的计算模型，元胞本质上是Txo（交易输出），Txo分两种，已花费和未花费，对应Txo的状态0和1，即元胞的状态集为{0，1} 4、Txo与Txo之间是离散的，Txo的计算过程是局部的，不和全局相关 5、元胞的局部规则本质上一个有限状态自动机，在比特币系统中被比特币脚本语言描述 6、元胞空间，可以建模为三维空间，x轴是交易顺序编码、y轴是交易输出顺序编码，z是有限状态自动机的编码 7、同步和同质，还需要进一步解释，如果不行，那就是在经典CA上改良的基于工程需要的变种 8、甲苯冲说的比特币是图灵完备的，以元胞自动机的抽象模型，是理论上真可行的，因为可以自由设计局部规则，让整个系统模拟图灵机的效果，或者模拟真实计算机的继电器 ---- 回复的原邮件 ---- &lt;td valign=&quot;top&quot; style=&quot; width: 4.25</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="people-section"><h3>👥 参与讨论的人</h3>
 <div class="people-summary">
@@ -379,7 +640,25 @@ header .subtitle a:hover { text-decoration: underline; }
 <a href="../person_叶鹏.html" class="p-tag">叶鹏<span class="p-msg-count">(4条)</span></a>
 <a href="../person_Woo.html" class="p-tag">Woo<span class="p-msg-count">(1条)</span></a>
 </div>
-<div class="person-block"><div class="person-header"><a href="../person_叶鹏.html" class="person-name">叶鹏</a><span class="person-count">4条</span><span class="person-months">2026-03, 2026-02</span></div><div class="person-msgs"><div class="p-preview"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-heig...</div><div class="p-preview"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-heig...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_Woo.html" class="person-name">Woo</a><span class="person-count">1条</span><span class="person-months">2026-02</span></div><div class="person-msgs"><div class="p-preview">新会议链接 https://meet.google.com/mie-yvhk-mqo On Sat, Feb 7, 2026 at 3:10 PM initsysctrl <initsysctrl@gmail.com> wrote: > >...</div></div></div></div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_叶鹏.html" class="p-tag">叶鹏<span class="p-msg-count">(4条)</span></a>
+<a href="../person_Woo.html" class="p-tag">Woo<span class="p-msg-count">(1条)</span></a>
+</div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_叶鹏.html" class="p-tag">叶鹏<span class="p-msg-count">(4条)</span></a>
+<a href="../person_Woo.html" class="p-tag">Woo<span class="p-msg-count">(1条)</span></a>
+</div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_叶鹏.html" class="p-tag">叶鹏<span class="p-msg-count">(4条)</span></a>
+<a href="../person_Woo.html" class="p-tag">Woo<span class="p-msg-count">(1条)</span></a>
+</div>
+<div class="person-block"><div class="person-header"><a href="../person_叶鹏.html" class="person-name">叶鹏</a><span class="person-count">4条</span><span class="person-months">2026-03, 2026-02</span></div><div class="person-msgs"><div class="p-preview">我试图从比特币中抽象出一套模型出来，这个模型能完美解释比特币系统的过去，也能指导atom系统的未来，还能与当代神经网络紧密相连。 我从神经网络往前推演，从图灵机往后推演，它们在“元胞自动机”上面得到了交叉。在《图灵的秘密》的倒数第二章中我获…</div><div class="p-preview">这的确是两个方面的内容。 1、请忽略第一方面 第一个方面的内容，在流转过程中，随机挑选 atom 产生不确定性，而某种工作量证明使得多个节点的随机运算结果达成统一，移除了前面的不确定性，并依据这个机制分配激励。这种思想很简单、很传统、很浅薄…</div><div class="p-preview"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-heig...</div><div class="p-preview"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-heig...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_Woo.html" class="person-name">Woo</a><span class="person-count">1条</span><span class="person-months">2026-02</span></div><div class="person-msgs"><div class="p-preview">新会议链接 https://meet.google.com/mie-yvhk-mqo On Sat, Feb 7, 2026 at 3:10 PM initsysctrl &lt;initsysctrl@gmail.com&gt; wrote: &gt; &gt;…</div><div class="p-preview">新会议链接 https://meet.google.com/mie-yvhk-mqo On Sat, Feb 7, 2026 at 3:10 PM initsysctrl <initsysctrl@gmail.com> wrote: > >...</div></div></div></div>
 </div></div></div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
@@ -413,6 +692,78 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   var h=document.querySelector('.all-msgs-header');

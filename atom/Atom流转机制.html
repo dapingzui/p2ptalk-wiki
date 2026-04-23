@@ -153,6 +153,78 @@ header .subtitle a:hover { text-decoration: underline; }
 .people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
 .people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
 .people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
 </style>
 </head>
 <body>
@@ -292,6 +364,93 @@ header .subtitle a:hover { text-decoration: underline; }
 </div>
 </div>
 </div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共2条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">Woo</span>
+
+<span class="msg-date">2026-01-16</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-full">阅读指南 灰色的是注释，黑色是正文，绿色是业务内容。红色是问题。 Atom=信用 信用在履约时产生，违约时销毁 无信用用户在需要信用时需要担保，担保人需要回报，被担保人需要成本。 以ATOM为锚的动态茶水费交易系统。 Atom=信用； Coin=面额； 交易应有周期性； 信用也应有周期性； 用户A和用户B需要建立交易的基础，矿工M（Miner）作为担保，A，B分别支付X茶水费给M，A，B，M获得ATOM。 完成交易AB Atom互相流转。支持多方交易。 矿工获取的X面额，应作为生产资料支持挖矿。 //点子在这里陷入了服务什么交易，周期性的服务，网络世界理应存在。同比特币为小交易服务。 *点对点动态茶水费算力租借系统* 消费者C（consumer）向生产者P（Producer）发起算力Ask 业务内容 { C发布订单，订单内容是，支付X个coin在t时间内租借T个Token。 P接受订单 P需要在t时间内为C提供T个Token(作为量化算力的单位）。C支付X个coin给P。 P向M支付算力/coin作为茶水费，C向M支付coin作为茶水费。 以上作为交易进入Mempool，字段固定所以可</div><div class="msg-rest" style="display:none;">以哈希，可以哈希代表可以进入mempool M将在MemPool挑选交易。向 PC发送review，AtomsOut自动流转 打包交易后开始挖矿。 //POW过程想不明白 //这里好像不需要广播，我们一直说可以没有链的概念，没有链怎么挖矿产生coin？除非pow链跟mempool业务分开。pow不作为业务的信用担保。 //这里我想到的方案是系统共用一套时间戳，挖矿计算nonce得时候需要带着时间戳，从交易开始到交易结束的时间为交易时间，这里有3种情况， 交易时间&lt;挖矿时间，用时间最接近的nonce生成atom 交易时间=挖矿时间，中大奖了 交易时间&gt;挖矿时间, 等这个节点下次出块的时候生产atom //ATOM好像依旧有共识问题，这里希望大家提供思路，我觉得这一套是可行的 以P，C互相发送review作为交易结束时间 出块后 M获得一组origin ATOM，origin atom直接发送给P，C进行atom流转机制 } M拥有的ATOM理应多于P，C的ATOM，否则将会获得更少的茶水费，但会产生更多的ATOM，算力的消耗作为ATOM产生的多少因子之一。 交易将进入MEMPOOL供矿工选择。作为业务的开始。 系统存在算力成本博弈，成本高的算力将会选择关机。 //框架已经完成，将尝试将中本聪版本ATOM功能一一代入完善系统。 Sub/Pub（订阅者/发布者）功能，其实是老客户和老商家的报价通道。 ATOM三个库直接代入使用没有问题 自动流转没有问题 矿工挖矿产生coin同时产生ATOM没问题 Review构成ATOM流转通道没问题。 主要内容结束，以下为发散 //还有点对点动态茶水费算法交易系统，和上面同理，向agent发布算法，agent收到算法并验证后算交易结束。 将这个系统用在会议上，以上问题作为我是一个consumer发出计算请求，在2个工作日内返回计算结果，验证标准以为我说有效为准。由于组织还没有代币，我将发送1000个$gas 作为成本，有计算者认领后，请联系我，我们找一个老史来作为矿工担保。 我把问题复制在下面 //POW过程想不明白 //这里好像不需要广播，我们一直说可以没有链的概念，没有链怎么挖矿产生coin？除非pow链跟mempool业务分开。pow不作为业务的信用担保。 //这里我想到的方案是系统共用一套时间戳，挖矿计算nonce得时候需要带着时间戳，从交易开始到交易结束的时间为交易时间，这里有3种情况， 交易时间&lt;挖矿时间，用时间最接近的nonce生成atom 交易时间=挖矿时间，中大奖了 交易时间&gt;挖矿时间, 等这个节点下次出块的时候生产atom //ATOM好像依旧有共识问题，这里希望大家提供思路，我觉得这一套是可行的 On Friday, January 16, 2026 at 5:29:35 PM UTC+8 胡志伟 wrote: &gt; 怎么设想使用atom，设计一套关于atom的场景 &gt; 既然是草稿，先拆分atom的基本属性 &gt; 1.声誉/注意力为载体，而不是货币，它只是有可能产生货币。 &gt; 2.必须是通过p2p、Pow产生，而不是收到货币或者权益产生。 &gt; &gt; 3.产生后具有共识，是否全局共识待定，但如果是像信号、订阅这种的话，那么全局共识得经过验证，也就是说要经过特定广播，根据代码或者规则自动选择，而不是人为的选择。 &gt; 4.“一币多花”的属性，像广播或者信号，而不是货币转移的方式。 &gt; &gt; &gt; 问题：加入使用atom来构建一个全新的btc系统，机器应该怎么使用atom，获得审美 &gt; 方案：激励层（btc）、信</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-01-20</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77ya6K+35rGC5ZCM5q2l5ZGo5LiA5Lya6K6u5YaF5a65?=</div><div class="msg-full">会议过程： 1、Yp根据老史的基本观点进行了拓展和表达： 1.1：重复了一遍atom机制，包括流转机制和atom种类 1.2: 提供了一个映射模型，从Tx——Atom的映射，将相对陌生的atom系统 映射到相对熟悉的Tx系统，并对其中相关的所有概念进行了说明 1.3：最后总结了一个框架，提供了一个残缺的atom系统，并提出如果要把atom系统完善，那么就从这个残缺的系统开始，完成前后两个方向的工作 2、胡志伟提供了一个新的想法，他觉得挖矿浪费算力，同时觉得atom需要用起来，所以他提出挖矿成功提供大atom，挖矿失败奖励小atom，并期望用交易绑定atom的方式解决区块分叉的问题。但大家一致觉得虽然逻辑存在巨大漏洞，但不失为一个针对atom如何使用，具有想象力的尝试。 3、woo 依据Yp的模版，提供了一套相对完整的atom应用方案。提出“atom的产生来自于履约”的基本观点，并设计了一套针对合约执行的方案，有点像OTC系统，但优势在于无抵押。这个模型胡志伟反应强烈，他认为这里不存在“无抵押”的情况。但Yp觉得，这个方案符合上述模版，且部分观点非常有亮点，比如挖矿成功，但发atom给交</div><div class="msg-rest" style="display:none;">易者，而不是矿工。 4、雷雷的反应非常快，他在Yp提出的框架基础上，瞬间提出Cuser作为执行单元并不局限在节点，或者用户，他提出Cuser的概念可以泛化，比如Ai Agent需要相互调用，那么在p2p网络中，ai agent 可以根据p2p 信誉系统进行关联。这个想法Yp觉得很有想象力，项目的成功率可能更高。 5、Yp在雷雷的思维方式下进一步发散，提出如果做公链要做evm，那技术难度太大，反而不如提出一套基础协议，做一个简单的p2p 关系图谱作为通用协议，提供SDK给其他p2p项目使用。 6、其他内容未知 ---- 回复的原邮件 ---- 发件人 &lt;td vali</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共2条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">Woo</span>
+
+<span class="msg-date">2026-01-16</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-full">阅读指南 灰色的是注释，黑色是正文，绿色是业务内容。红色是问题。 Atom=信用 信用在履约时产生，违约时销毁 无信用用户在需要信用时需要担保，担保人需要回报，被担保人需要成本。 以ATOM为锚的动态茶水费交易系统。 Atom=信用； Coin=面额； 交易应有周期性； 信用也应有周期性； 用户A和用户B需要建立交易的基础，矿工M（Miner）作为担保，A，B分别支付X茶水费给M，A，B，M获得ATOM。 完成交易AB Atom互相流转。支持多方交易。 矿工获取的X面额，应作为生产资料支持挖矿。 //点子在这里陷入了服务什么交易，周期性的服务，网络世界理应存在。同比特币为小交易服务。 *点对点动态茶水费算力租借系统* 消费者C（consumer）向生产者P（Producer）发起算力Ask 业务内容 { C发布订单，订单内容是，支付X个coin在t时间内租借T个Token。 P接受订单 P需要在t时间内为C提供T个Token(作为量化算力的单位）。C支付X个coin给P。 P向M支付算力/coin作为茶水费，C向M支付coin作为茶水费。 以上作为交易进入Mempool，字段固定所以可</div><div class="msg-rest" style="display:none;">以哈希，可以哈希代表可以进入mempool M将在MemPool挑选交易。向 PC发送review，AtomsOut自动流转 打包交易后开始挖矿。 //POW过程想不明白 //这里好像不需要广播，我们一直说可以没有链的概念，没有链怎么挖矿产生coin？除非pow链跟mempool业务分开。pow不作为业务的信用担保。 //这里我想到的方案是系统共用一套时间戳，挖矿计算nonce得时候需要带着时间戳，从交易开始到交易结束的时间为交易时间，这里有3种情况， 交易时间&lt;挖矿时间，用时间最接近的nonce生成atom 交易时间=挖矿时间，中大奖了 交易时间&gt;挖矿时间, 等这个节点下次出块的时候生产atom //ATOM好像依旧有共识问题，这里希望大家提供思路，我觉得这一套是可行的 以P，C互相发送review作为交易结束时间 出块后 M获得一组origin ATOM，origin atom直接发送给P，C进行atom流转机制 } M拥有的ATOM理应多于P，C的ATOM，否则将会获得更少的茶水费，但会产生更多的ATOM，算力的消耗作为ATOM产生的多少因子之一。 交易将进入MEMPOOL供矿工选择。作为业务的开始。 系统存在算力成本博弈，成本高的算力将会选择关机。 //框架已经完成，将尝试将中本聪版本ATOM功能一一代入完善系统。 Sub/Pub（订阅者/发布者）功能，其实是老客户和老商家的报价通道。 ATOM三个库直接代入使用没有问题 自动流转没有问题 矿工挖矿产生coin同时产生ATOM没问题 Review构成ATOM流转通道没问题。 主要内容结束，以下为发散 //还有点对点动态茶水费算法交易系统，和上面同理，向agent发布算法，agent收到算法并验证后算交易结束。 将这个系统用在会议上，以上问题作为我是一个consumer发出计算请求，在2个工作日内返回计算结果，验证标准以为我说有效为准。由于组织还没有代币，我将发送1000个$gas 作为成本，有计算者认领后，请联系我，我们找一个老史来作为矿工担保。 我把问题复制在下面 //POW过程想不明白 //这里好像不需要广播，我们一直说可以没有链的概念，没有链怎么挖矿产生coin？除非pow链跟mempool业务分开。pow不作为业务的信用担保。 //这里我想到的方案是系统共用一套时间戳，挖矿计算nonce得时候需要带着时间戳，从交易开始到交易结束的时间为交易时间，这里有3种情况， 交易时间&lt;挖矿时间，用时间最接近的nonce生成atom 交易时间=挖矿时间，中大奖了 交易时间&gt;挖矿时间, 等这个节点下次出块的时候生产atom //ATOM好像依旧有共识问题，这里希望大家提供思路，我觉得这一套是可行的 On Friday, January 16, 2026 at 5:29:35 PM UTC+8 胡志伟 wrote: &gt; 怎么设想使用atom，设计一套关于atom的场景 &gt; 既然是草稿，先拆分atom的基本属性 &gt; 1.声誉/注意力为载体，而不是货币，它只是有可能产生货币。 &gt; 2.必须是通过p2p、Pow产生，而不是收到货币或者权益产生。 &gt; &gt; 3.产生后具有共识，是否全局共识待定，但如果是像信号、订阅这种的话，那么全局共识得经过验证，也就是说要经过特定广播，根据代码或者规则自动选择，而不是人为的选择。 &gt; 4.“一币多花”的属性，像广播或者信号，而不是货币转移的方式。 &gt; &gt; &gt; 问题：加入使用atom来构建一个全新的btc系统，机器应该怎么使用atom，获得审美 &gt; 方案：激励层（btc）、信</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-01-20</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77ya6K+35rGC5ZCM5q2l5ZGo5LiA5Lya6K6u5YaF5a65?=</div><div class="msg-full">会议过程： 1、Yp根据老史的基本观点进行了拓展和表达： 1.1：重复了一遍atom机制，包括流转机制和atom种类 1.2: 提供了一个映射模型，从Tx——Atom的映射，将相对陌生的atom系统 映射到相对熟悉的Tx系统，并对其中相关的所有概念进行了说明 1.3：最后总结了一个框架，提供了一个残缺的atom系统，并提出如果要把atom系统完善，那么就从这个残缺的系统开始，完成前后两个方向的工作 2、胡志伟提供了一个新的想法，他觉得挖矿浪费算力，同时觉得atom需要用起来，所以他提出挖矿成功提供大atom，挖矿失败奖励小atom，并期望用交易绑定atom的方式解决区块分叉的问题。但大家一致觉得虽然逻辑存在巨大漏洞，但不失为一个针对atom如何使用，具有想象力的尝试。 3、woo 依据Yp的模版，提供了一套相对完整的atom应用方案。提出“atom的产生来自于履约”的基本观点，并设计了一套针对合约执行的方案，有点像OTC系统，但优势在于无抵押。这个模型胡志伟反应强烈，他认为这里不存在“无抵押”的情况。但Yp觉得，这个方案符合上述模版，且部分观点非常有亮点，比如挖矿成功，但发atom给交</div><div class="msg-rest" style="display:none;">易者，而不是矿工。 4、雷雷的反应非常快，他在Yp提出的框架基础上，瞬间提出Cuser作为执行单元并不局限在节点，或者用户，他提出Cuser的概念可以泛化，比如Ai Agent需要相互调用，那么在p2p网络中，ai agent 可以根据p2p 信誉系统进行关联。这个想法Yp觉得很有想象力，项目的成功率可能更高。 5、Yp在雷雷的思维方式下进一步发散，提出如果做公链要做evm，那技术难度太大，反而不如提出一套基础协议，做一个简单的p2p 关系图谱作为通用协议，提供SDK给其他p2p项目使用。 6、其他内容未知 ---- 回复的原邮件 ---- 发件人 &lt;td vali</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共2条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">Woo</span>
+
+<span class="msg-date">2026-01-16</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-full">阅读指南 灰色的是注释，黑色是正文，绿色是业务内容。红色是问题。 Atom=信用 信用在履约时产生，违约时销毁 无信用用户在需要信用时需要担保，担保人需要回报，被担保人需要成本。 以ATOM为锚的动态茶水费交易系统。 Atom=信用； Coin=面额； 交易应有周期性； 信用也应有周期性； 用户A和用户B需要建立交易的基础，矿工M（Miner）作为担保，A，B分别支付X茶水费给M，A，B，M获得ATOM。 完成交易AB Atom互相流转。支持多方交易。 矿工获取的X面额，应作为生产资料支持挖矿。 //点子在这里陷入了服务什么交易，周期性的服务，网络世界理应存在。同比特币为小交易服务。 *点对点动态茶水费算力租借系统* 消费者C（consumer）向生产者P（Producer）发起算力Ask 业务内容 { C发布订单，订单内容是，支付X个coin在t时间内租借T个Token。 P接受订单 P需要在t时间内为C提供T个Token(作为量化算力的单位）。C支付X个coin给P。 P向M支付算力/coin作为茶水费，C向M支付coin作为茶水费。 以上作为交易进入Mempool，字段固定所以可</div><div class="msg-rest" style="display:none;">以哈希，可以哈希代表可以进入mempool M将在MemPool挑选交易。向 PC发送review，AtomsOut自动流转 打包交易后开始挖矿。 //POW过程想不明白 //这里好像不需要广播，我们一直说可以没有链的概念，没有链怎么挖矿产生coin？除非pow链跟mempool业务分开。pow不作为业务的信用担保。 //这里我想到的方案是系统共用一套时间戳，挖矿计算nonce得时候需要带着时间戳，从交易开始到交易结束的时间为交易时间，这里有3种情况， 交易时间&lt;挖矿时间，用时间最接近的nonce生成atom 交易时间=挖矿时间，中大奖了 交易时间&gt;挖矿时间, 等这个节点下次出块的时候生产atom //ATOM好像依旧有共识问题，这里希望大家提供思路，我觉得这一套是可行的 以P，C互相发送review作为交易结束时间 出块后 M获得一组origin ATOM，origin atom直接发送给P，C进行atom流转机制 } M拥有的ATOM理应多于P，C的ATOM，否则将会获得更少的茶水费，但会产生更多的ATOM，算力的消耗作为ATOM产生的多少因子之一。 交易将进入MEMPOOL供矿工选择。作为业务的开始。 系统存在算力成本博弈，成本高的算力将会选择关机。 //框架已经完成，将尝试将中本聪版本ATOM功能一一代入完善系统。 Sub/Pub（订阅者/发布者）功能，其实是老客户和老商家的报价通道。 ATOM三个库直接代入使用没有问题 自动流转没有问题 矿工挖矿产生coin同时产生ATOM没问题 Review构成ATOM流转通道没问题。 主要内容结束，以下为发散 //还有点对点动态茶水费算法交易系统，和上面同理，向agent发布算法，agent收到算法并验证后算交易结束。 将这个系统用在会议上，以上问题作为我是一个consumer发出计算请求，在2个工作日内返回计算结果，验证标准以为我说有效为准。由于组织还没有代币，我将发送1000个$gas 作为成本，有计算者认领后，请联系我，我们找一个老史来作为矿工担保。 我把问题复制在下面 //POW过程想不明白 //这里好像不需要广播，我们一直说可以没有链的概念，没有链怎么挖矿产生coin？除非pow链跟mempool业务分开。pow不作为业务的信用担保。 //这里我想到的方案是系统共用一套时间戳，挖矿计算nonce得时候需要带着时间戳，从交易开始到交易结束的时间为交易时间，这里有3种情况， 交易时间&lt;挖矿时间，用时间最接近的nonce生成atom 交易时间=挖矿时间，中大奖了 交易时间&gt;挖矿时间, 等这个节点下次出块的时候生产atom //ATOM好像依旧有共识问题，这里希望大家提供思路，我觉得这一套是可行的 On Friday, January 16, 2026 at 5:29:35 PM UTC+8 胡志伟 wrote: &gt; 怎么设想使用atom，设计一套关于atom的场景 &gt; 既然是草稿，先拆分atom的基本属性 &gt; 1.声誉/注意力为载体，而不是货币，它只是有可能产生货币。 &gt; 2.必须是通过p2p、Pow产生，而不是收到货币或者权益产生。 &gt; &gt; 3.产生后具有共识，是否全局共识待定，但如果是像信号、订阅这种的话，那么全局共识得经过验证，也就是说要经过特定广播，根据代码或者规则自动选择，而不是人为的选择。 &gt; 4.“一币多花”的属性，像广播或者信号，而不是货币转移的方式。 &gt; &gt; &gt; 问题：加入使用atom来构建一个全新的btc系统，机器应该怎么使用atom，获得审美 &gt; 方案：激励层（btc）、信</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">叶鹏</span>
+
+<span class="msg-date">2026-01-20</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?utf-8?B?5Zue5aSN77ya6K+35rGC5ZCM5q2l5ZGo5LiA5Lya6K6u5YaF5a65?=</div><div class="msg-full">会议过程： 1、Yp根据老史的基本观点进行了拓展和表达： 1.1：重复了一遍atom机制，包括流转机制和atom种类 1.2: 提供了一个映射模型，从Tx——Atom的映射，将相对陌生的atom系统 映射到相对熟悉的Tx系统，并对其中相关的所有概念进行了说明 1.3：最后总结了一个框架，提供了一个残缺的atom系统，并提出如果要把atom系统完善，那么就从这个残缺的系统开始，完成前后两个方向的工作 2、胡志伟提供了一个新的想法，他觉得挖矿浪费算力，同时觉得atom需要用起来，所以他提出挖矿成功提供大atom，挖矿失败奖励小atom，并期望用交易绑定atom的方式解决区块分叉的问题。但大家一致觉得虽然逻辑存在巨大漏洞，但不失为一个针对atom如何使用，具有想象力的尝试。 3、woo 依据Yp的模版，提供了一套相对完整的atom应用方案。提出“atom的产生来自于履约”的基本观点，并设计了一套针对合约执行的方案，有点像OTC系统，但优势在于无抵押。这个模型胡志伟反应强烈，他认为这里不存在“无抵押”的情况。但Yp觉得，这个方案符合上述模版，且部分观点非常有亮点，比如挖矿成功，但发atom给交</div><div class="msg-rest" style="display:none;">易者，而不是矿工。 4、雷雷的反应非常快，他在Yp提出的框架基础上，瞬间提出Cuser作为执行单元并不局限在节点，或者用户，他提出Cuser的概念可以泛化，比如Ai Agent需要相互调用，那么在p2p网络中，ai agent 可以根据p2p 信誉系统进行关联。这个想法Yp觉得很有想象力，项目的成功率可能更高。 5、Yp在雷雷的思维方式下进一步发散，提出如果做公链要做evm，那技术难度太大，反而不如提出一套基础协议，做一个简单的p2p 关系图谱作为通用协议，提供SDK给其他p2p项目使用。 6、其他内容未知 ---- 回复的原邮件 ---- 发件人 &lt;td vali</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="people-section"><h3>👥 参与讨论的人</h3>
 <div class="people-summary">
@@ -299,7 +458,25 @@ header .subtitle a:hover { text-decoration: underline; }
 <a href="../person_Woo.html" class="p-tag">Woo<span class="p-msg-count">(1条)</span></a>
 <a href="../person_叶鹏.html" class="p-tag">叶鹏<span class="p-msg-count">(1条)</span></a>
 </div>
-<div class="person-block"><div class="person-header"><a href="../person_Woo.html" class="person-name">Woo</a><span class="person-count">1条</span><span class="person-months">2026-01</span></div><div class="person-msgs"><div class="p-preview">阅读指南 灰色的是注释，黑色是正文，绿色是业务内容。红色是问题。 Atom=信用 信用在履约时产生，违约时销毁 无信用用户在需要信用时需要担保，担保人需要回报，被担保人需要成本。 以ATOM为锚的动态茶水费交易系统。 Atom=信用； Co...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_叶鹏.html" class="person-name">叶鹏</a><span class="person-count">1条</span><span class="person-months">2026-01</span></div><div class="person-msgs"><div class="p-preview"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-heig...</div></div></div></div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_Woo.html" class="p-tag">Woo<span class="p-msg-count">(1条)</span></a>
+<a href="../person_叶鹏.html" class="p-tag">叶鹏<span class="p-msg-count">(1条)</span></a>
+</div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_Woo.html" class="p-tag">Woo<span class="p-msg-count">(1条)</span></a>
+<a href="../person_叶鹏.html" class="p-tag">叶鹏<span class="p-msg-count">(1条)</span></a>
+</div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_Woo.html" class="p-tag">Woo<span class="p-msg-count">(1条)</span></a>
+<a href="../person_叶鹏.html" class="p-tag">叶鹏<span class="p-msg-count">(1条)</span></a>
+</div>
+<div class="person-block"><div class="person-header"><a href="../person_Woo.html" class="person-name">Woo</a><span class="person-count">1条</span><span class="person-months">2026-01</span></div><div class="person-msgs"><div class="p-preview">阅读指南 灰色的是注释，黑色是正文，绿色是业务内容。红色是问题。 Atom=信用 信用在履约时产生，违约时销毁 无信用用户在需要信用时需要担保，担保人需要回报，被担保人需要成本。 以ATOM为锚的动态茶水费交易系统。 Atom=信用； Co…</div></div></div><div class="person-block"><div class="person-header"><a href="../person_叶鹏.html" class="person-name">叶鹏</a><span class="person-count">1条</span><span class="person-months">2026-01</span></div><div class="person-msgs"><div class="p-preview">会议过程： 1、Yp根据老史的基本观点进行了拓展和表达： 1.1：重复了一遍atom机制，包括流转机制和atom种类 1.2: 提供了一个映射模型，从Tx——Atom的映射，将相对陌生的atom系统 映射到相对熟悉的Tx系统，并对其中相关的…</div><div class="p-preview"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-heig...</div></div></div></div>
 </div></div></div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
@@ -366,6 +543,78 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   var h=document.querySelector('.all-msgs-header');
