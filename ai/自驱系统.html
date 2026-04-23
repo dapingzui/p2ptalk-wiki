@@ -89,6 +89,46 @@ header .subtitle a:hover { text-decoration: underline; }
   .sidebar { display: none; }
   .main { padding: 20px; }
 }
+
+/* Q→A Status Section */
+.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
+.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
+.qa-body{padding:0;}
+.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.qa-item:last-child{border-bottom:none;}
+.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
+.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
+.qa-item .qa-question.open{color:#ff6b6b;}
+.qa-item .qa-question.pending{color:#ffd93d;}
+.qa-item .qa-question.resolved{color:#6bcb77;}
+.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
+/* Expand/Collapse */
+.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
+.p-expand-btn:hover{text-decoration:underline;}
+.p-msg-wrapper{display:block;}
+.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
+
+
+/* Q→A Status Section */
+.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
+.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
+.qa-body{padding:0;}
+.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.qa-item:last-child{border-bottom:none;}
+.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
+.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
+.qa-item .qa-question.open{color:#ff6b6b;}
+.qa-item .qa-question.pending{color:#ffd93d;}
+.qa-item .qa-question.resolved{color:#6bcb77;}
+.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
+/* Expand/Collapse */
+.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
+.p-expand-btn:hover{text-decoration:underline;}
+.p-msg-wrapper{display:block;}
+.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
+
 </style>
 </head>
 <body>
@@ -190,4 +230,70 @@ header .subtitle a:hover { text-decoration: underline; }
 <ul>
 <li><a href="AI与生产关系.html" class="wiki-link">ai/AI与生产关系</a></li>
 </ul><div class="people-section"><h3>👥 参与讨论的人</h3><div class="person-block"><div class="person-header"><a href="../person_Woo.html" class="person-name">Woo</a><span class="person-count">1条</span><span class="person-months">2026-02</span></div><div class="person-msgs"><div class="p-preview">关于会议的难度更新重点还是在于广播。 雷雷今天对我产生了一个订阅行为，我作为桥梁节点，执行中间会面机制。 我的谓词是同步了历史的停机内容，还有更新雷雷的难度，nonce符合范围。 雷雷可以验证我的谓词为真。 可以讨论如何形式化“谓词” On...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_雷雷.html" class="person-name">雷雷</a><span class="person-count">1条</span><span class="person-months">2026-02</span></div><div class="person-msgs"><div class="p-preview">跟woo聊了下最近的想法。 1. 最近意识到Ai agent的爆发会带来新的生产关系的变革，这点跟woo从激励的角度分析Ai时代需要自驱系统的观点不谋而合。我们认为Ai时代的生产关系类似闪电贷那样有业务需求时，同时调用多个接口付费。（闪电贷...</div></div></div></div>
-</div></div></div></body></html>
+</div></div></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Expand/collapse for .p-preview
+  document.querySelectorAll('.p-preview').forEach(function(preview){
+    var wrapper=document.createElement('div');
+    wrapper.className='p-msg-wrapper';
+    preview.parentNode.insertBefore(wrapper,preview);
+    wrapper.appendChild(preview);
+    var btn=document.createElement('button');
+    btn.className='p-expand-btn';
+    btn.textContent='展开 ▾';
+    btn.style.display='inline-block';
+    preview.parentNode.insertBefore(btn,preview.nextSibling);
+    preview.style.maxHeight='60px';
+    preview.style.overflow='hidden';
+    preview.style.transition='max-height 0.3s ease';
+    btn.addEventListener('click',function(){
+      var isExpanded=preview.dataset.expanded==='1';
+      if(isExpanded){
+        preview.style.maxHeight='60px';
+        preview.dataset.expanded='0';
+        btn.textContent='展开 ▾';
+      }else{
+        preview.style.maxHeight='none';
+        preview.dataset.expanded='1';
+        btn.textContent='收起 ▴';
+      }
+    });
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Expand/collapse for .p-preview
+  document.querySelectorAll('.p-preview').forEach(function(preview){
+    var wrapper=document.createElement('div');
+    wrapper.className='p-msg-wrapper';
+    preview.parentNode.insertBefore(wrapper,preview);
+    wrapper.appendChild(preview);
+    var btn=document.createElement('button');
+    btn.className='p-expand-btn';
+    btn.textContent='展开 ▾';
+    btn.style.display='inline-block';
+    preview.parentNode.insertBefore(btn,preview.nextSibling);
+    preview.style.maxHeight='60px';
+    preview.style.overflow='hidden';
+    preview.style.transition='max-height 0.3s ease';
+    btn.addEventListener('click',function(){
+      var isExpanded=preview.dataset.expanded==='1';
+      if(isExpanded){
+        preview.style.maxHeight='60px';
+        preview.dataset.expanded='0';
+        btn.textContent='展开 ▾';
+      }else{
+        preview.style.maxHeight='none';
+        preview.dataset.expanded='1';
+        btn.textContent='收起 ▴';
+      }
+    });
+  });
+});
+</script>
+
+</body></html>

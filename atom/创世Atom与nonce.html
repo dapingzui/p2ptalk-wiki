@@ -89,6 +89,46 @@ header .subtitle a:hover { text-decoration: underline; }
   .sidebar { display: none; }
   .main { padding: 20px; }
 }
+
+/* Q→A Status Section */
+.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
+.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
+.qa-body{padding:0;}
+.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.qa-item:last-child{border-bottom:none;}
+.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
+.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
+.qa-item .qa-question.open{color:#ff6b6b;}
+.qa-item .qa-question.pending{color:#ffd93d;}
+.qa-item .qa-question.resolved{color:#6bcb77;}
+.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
+/* Expand/Collapse */
+.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
+.p-expand-btn:hover{text-decoration:underline;}
+.p-msg-wrapper{display:block;}
+.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
+
+
+/* Q→A Status Section */
+.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
+.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
+.qa-body{padding:0;}
+.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.qa-item:last-child{border-bottom:none;}
+.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
+.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
+.qa-item .qa-question.open{color:#ff6b6b;}
+.qa-item .qa-question.pending{color:#ffd93d;}
+.qa-item .qa-question.resolved{color:#6bcb77;}
+.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
+/* Expand/Collapse */
+.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
+.p-expand-btn:hover{text-decoration:underline;}
+.p-msg-wrapper{display:block;}
+.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
+
 </style>
 </head>
 <body>
@@ -197,4 +237,70 @@ header .subtitle a:hover { text-decoration: underline; }
 <li><a href="../consensus/hashcash与POW.html" class="wiki-link">consensus/hashcash与POW</a></li>
 <li><a href="Atom数据结构.html" class="wiki-link">atom/Atom数据结构</a></li>
 </ul><div class="people-section"><h3>👥 参与讨论的人</h3><div class="person-block"><div class="person-header"><a href="../person_胥亚朋.html" class="person-name">胥亚朋</a><span class="person-count">3条</span><span class="person-months">2026-03</span></div><div class="person-msgs"><div class="p-preview">不是叔块，叔块只有奖励，交易是不上链的，这里的交易是上链的。 initsysctrl <initsysctrl@gmail.com> 于2026年3月27日周五 13:05写道： > > > 像以太坊的“叔块”？是这意思吗 > ---- 回...</div><div class="p-preview">突然有一个很meme的想法哈，如果比特币上面有一个高度上同时挖出两个块，这两个块里面的所有transaction都不冲突，那么这样的两个块能不能同时被链给接纳？ 目前觉得这个方案也许是链上拓展的一个选项，关键是要保证同时出的两个块不产生任何...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_Woo.html" class="person-name">Woo</a><span class="person-count">1条</span><span class="person-months">2025-12</span></div><div class="person-msgs"><div class="p-preview">在p2pmarket里面找不到对应的广播激励是因为代码里面并没有声誉生产的机制。但是已经足够精彩。让人浮想联翩。 1. 在p2p market里面广播行为是针对与他人的行动，与自己激励无关。 广播自己并不会获得任何的atom。但是可以使用别...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_沄涣.html" class="person-name">沄涣</a><span class="person-count">1条</span><span class="person-months">2025-12</span></div><div class="person-msgs"><div class="p-preview">这里我已经看过了 我现在就是不太懂 这里的原子计算 为什么要 活跃度/信誉 ？ 他这里不是难度调整 ，只是计算原子的数量 “活跃度”是衡量用户接受和广播后新产生了多少“原子”，我理解这里是用户自己的参与度和影响力。 “信誉”是衡量一个用户发...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_文博.html" class="person-name">文博</a><span class="person-count">1条</span><span class="person-months">2025-12</span></div><div class="person-msgs"><div class="p-preview">比特币 market 部分代码，实际上存在一个因为随机的使用而带来的不一致问题，在第一次传播时，会产生进入 atomOut 原子不一致的问题，而第二次传播时，则会因为 atomOut 带来评价实际的影响力在不同节点表现不同的问题。 首先在 ...</div></div></div></div>
-</div></div></div></body></html>
+</div></div></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Expand/collapse for .p-preview
+  document.querySelectorAll('.p-preview').forEach(function(preview){
+    var wrapper=document.createElement('div');
+    wrapper.className='p-msg-wrapper';
+    preview.parentNode.insertBefore(wrapper,preview);
+    wrapper.appendChild(preview);
+    var btn=document.createElement('button');
+    btn.className='p-expand-btn';
+    btn.textContent='展开 ▾';
+    btn.style.display='inline-block';
+    preview.parentNode.insertBefore(btn,preview.nextSibling);
+    preview.style.maxHeight='60px';
+    preview.style.overflow='hidden';
+    preview.style.transition='max-height 0.3s ease';
+    btn.addEventListener('click',function(){
+      var isExpanded=preview.dataset.expanded==='1';
+      if(isExpanded){
+        preview.style.maxHeight='60px';
+        preview.dataset.expanded='0';
+        btn.textContent='展开 ▾';
+      }else{
+        preview.style.maxHeight='none';
+        preview.dataset.expanded='1';
+        btn.textContent='收起 ▴';
+      }
+    });
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Expand/collapse for .p-preview
+  document.querySelectorAll('.p-preview').forEach(function(preview){
+    var wrapper=document.createElement('div');
+    wrapper.className='p-msg-wrapper';
+    preview.parentNode.insertBefore(wrapper,preview);
+    wrapper.appendChild(preview);
+    var btn=document.createElement('button');
+    btn.className='p-expand-btn';
+    btn.textContent='展开 ▾';
+    btn.style.display='inline-block';
+    preview.parentNode.insertBefore(btn,preview.nextSibling);
+    preview.style.maxHeight='60px';
+    preview.style.overflow='hidden';
+    preview.style.transition='max-height 0.3s ease';
+    btn.addEventListener('click',function(){
+      var isExpanded=preview.dataset.expanded==='1';
+      if(isExpanded){
+        preview.style.maxHeight='60px';
+        preview.dataset.expanded='0';
+        btn.textContent='展开 ▾';
+      }else{
+        preview.style.maxHeight='none';
+        preview.dataset.expanded='1';
+        btn.textContent='收起 ▴';
+      }
+    });
+  });
+});
+</script>
+
+</body></html>

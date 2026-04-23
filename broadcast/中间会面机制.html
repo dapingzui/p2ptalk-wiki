@@ -89,6 +89,46 @@ header .subtitle a:hover { text-decoration: underline; }
   .sidebar { display: none; }
   .main { padding: 20px; }
 }
+
+/* Q→A Status Section */
+.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
+.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
+.qa-body{padding:0;}
+.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.qa-item:last-child{border-bottom:none;}
+.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
+.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
+.qa-item .qa-question.open{color:#ff6b6b;}
+.qa-item .qa-question.pending{color:#ffd93d;}
+.qa-item .qa-question.resolved{color:#6bcb77;}
+.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
+/* Expand/Collapse */
+.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
+.p-expand-btn:hover{text-decoration:underline;}
+.p-msg-wrapper{display:block;}
+.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
+
+
+/* Q→A Status Section */
+.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
+.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
+.qa-body{padding:0;}
+.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.qa-item:last-child{border-bottom:none;}
+.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
+.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
+.qa-item .qa-question.open{color:#ff6b6b;}
+.qa-item .qa-question.pending{color:#ffd93d;}
+.qa-item .qa-question.resolved{color:#6bcb77;}
+.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
+/* Expand/Collapse */
+.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
+.p-expand-btn:hover{text-decoration:underline;}
+.p-msg-wrapper{display:block;}
+.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
+
 </style>
 </head>
 <body>
@@ -231,4 +271,70 @@ header .subtitle a:hover { text-decoration: underline; }
 </div>
 </div>
 <div class="people-section"><h3>👥 参与讨论的人</h3><div class="person-block"><div class="person-header"><a href="../person_胥亚朋.html" class="person-name">胥亚朋</a><span class="person-count">10条</span><span class="person-months">2026-03, 2026-02</span></div><div class="person-msgs"><div class="p-preview">关于中间会面机制，我越来越觉得就是轻节点的机制。 我们把主动拉取消息的功能先忽略，那么轻节点在整个比特币网络里面就是转发消息的功能，就是之前文博提到的那个只转发不存储，轻节点除了做简单的支付验证以外不会做复杂的验证，这个和没有订阅该频道但是...</div><div class="p-preview">过完年第一天来上班，急需老史来帮忙找下工作状态。计算内容还需要一点时间来沉淀一下。 initsysctrl <initsysctrl@gmail.com> 于 2026年2月24日周二 15:48写道： > > *## 1. 不同的消息类型...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_矢孤.html" class="person-name">矢孤</a><span class="person-count">5条</span><span class="person-months">2026-03, 2026-02, 2026-01</span></div><div class="person-msgs"><div class="p-preview">好像确实光阅读我有点点没看懂，需要约个会议再听你讲一下 根据会议规则，你返回计算结果的时候就可以发起会议了。 在2026年1月13日星期二 UTC+8 14:07:47<文博> 写道： > 市场需要声誉，还是声誉需要市场，个人观点声誉还是需...</div><div class="p-preview">还有个问题是关于从多个频道，不同的消息类型，最后收敛到比特币今天的这个结构，是比特币将这个想法变成熟进化了还是说只是比特币和atom不一样而已。 根据文博的邮件另外想到一个问题就是节点洪泛atom的这些内容是不是没有激励，是根据什么决定我要...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_文博.html" class="person-name">文博</a><span class="person-count">5条</span><span class="person-months">2026-03, 2026-02, 2026-01</span></div><div class="person-msgs"><div class="p-preview">https://meet.google.com/qqk-jofm-vzb 在2026年1月13日星期二 UTC+8 21:24:51<shijingyao123> 写道： > 好像确实光阅读我有点点没看懂，需要约个会议再听你讲一下 > 根据...</div><div class="p-preview">市场需要声誉，还是声誉需要市场，个人观点声誉还是需要使用才能有价值，也就是需要依托于一个市场，首先市场（商品 offerbook）可以是不一致的点对点系统。但是声誉本身更需要一致性，于是关于商品 offerbook 的传播完全继承比特币的发...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_Woo.html" class="person-name">Woo</a><span class="person-count">3条</span><span class="person-months">2026-02, 2026-01</span></div><div class="person-msgs"><div class="p-preview">关于会议的难度更新重点还是在于广播。 雷雷今天对我产生了一个订阅行为，我作为桥梁节点，执行中间会面机制。 我的谓词是同步了历史的停机内容，还有更新雷雷的难度，nonce符合范围。 雷雷可以验证我的谓词为真。 可以讨论如何形式化“谓词” On...</div><div class="p-preview">同步了从激励层面来看社会结构的改变是来自于生产方式的改变。 中间会面机制 传播算法 这个会议的生产方式是一个极度类似于p2p自组织的组织结构。 雷雷认为现在社会结构已经迎来拐点。应该在这个时候对市场做出试验性输出。 从雷雷对于这个市场的审美...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_沄涣.html" class="person-name">沄涣</a><span class="person-count">2条</span><span class="person-months">2026-03, 2026-02</span></div><div class="person-msgs"><div class="p-preview">频道这里，刚跟雷雷 亚鹏 woo聊到全局共识和局部共识 对于btc来说 ，交易的“结果”，这一种 消息类型的数据结构，系统处理这一种结果就行，所以能够有全局共识 而对于atom中间会面机制来说，发布与订阅双方的交易是否能够达成是不一定的，而...</div><div class="p-preview">1.与woo建立了频道，对于woo说的中间会面机制同步了计算 2.同步了老史的最长链之后 ，需要先和文博同步一下计算和验证 3.对于老史的同步的最长链，使用atom的节点计算购买方和订阅方的atom需要什么样的激励措施来更新会议规则 孤 <...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_叶鹏.html" class="person-name">叶鹏</a><span class="person-count">2条</span><span class="person-months">2026-03, 2026-02</span></div><div class="person-msgs"><div class="p-preview"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-heig...</div><div class="p-preview"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-heig...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_雷雷.html" class="person-name">雷雷</a><span class="person-count">1条</span><span class="person-months">2026-02</span></div><div class="person-msgs"><div class="p-preview">跟woo聊了下最近的想法。 1. 最近意识到Ai agent的爆发会带来新的生产关系的变革，这点跟woo从激励的角度分析Ai时代需要自驱系统的观点不谋而合。我们认为Ai时代的生产关系类似闪电贷那样有业务需求时，同时调用多个接口付费。（闪电贷...</div></div></div></div>
-</div></div></div></body></html>
+</div></div></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Expand/collapse for .p-preview
+  document.querySelectorAll('.p-preview').forEach(function(preview){
+    var wrapper=document.createElement('div');
+    wrapper.className='p-msg-wrapper';
+    preview.parentNode.insertBefore(wrapper,preview);
+    wrapper.appendChild(preview);
+    var btn=document.createElement('button');
+    btn.className='p-expand-btn';
+    btn.textContent='展开 ▾';
+    btn.style.display='inline-block';
+    preview.parentNode.insertBefore(btn,preview.nextSibling);
+    preview.style.maxHeight='60px';
+    preview.style.overflow='hidden';
+    preview.style.transition='max-height 0.3s ease';
+    btn.addEventListener('click',function(){
+      var isExpanded=preview.dataset.expanded==='1';
+      if(isExpanded){
+        preview.style.maxHeight='60px';
+        preview.dataset.expanded='0';
+        btn.textContent='展开 ▾';
+      }else{
+        preview.style.maxHeight='none';
+        preview.dataset.expanded='1';
+        btn.textContent='收起 ▴';
+      }
+    });
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Expand/collapse for .p-preview
+  document.querySelectorAll('.p-preview').forEach(function(preview){
+    var wrapper=document.createElement('div');
+    wrapper.className='p-msg-wrapper';
+    preview.parentNode.insertBefore(wrapper,preview);
+    wrapper.appendChild(preview);
+    var btn=document.createElement('button');
+    btn.className='p-expand-btn';
+    btn.textContent='展开 ▾';
+    btn.style.display='inline-block';
+    preview.parentNode.insertBefore(btn,preview.nextSibling);
+    preview.style.maxHeight='60px';
+    preview.style.overflow='hidden';
+    preview.style.transition='max-height 0.3s ease';
+    btn.addEventListener('click',function(){
+      var isExpanded=preview.dataset.expanded==='1';
+      if(isExpanded){
+        preview.style.maxHeight='60px';
+        preview.dataset.expanded='0';
+        btn.textContent='展开 ▾';
+      }else{
+        preview.style.maxHeight='none';
+        preview.dataset.expanded='1';
+        btn.textContent='收起 ▴';
+      }
+    });
+  });
+});
+</script>
+
+</body></html>

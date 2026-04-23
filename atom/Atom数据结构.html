@@ -89,6 +89,46 @@ header .subtitle a:hover { text-decoration: underline; }
   .sidebar { display: none; }
   .main { padding: 20px; }
 }
+
+/* Q→A Status Section */
+.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
+.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
+.qa-body{padding:0;}
+.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.qa-item:last-child{border-bottom:none;}
+.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
+.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
+.qa-item .qa-question.open{color:#ff6b6b;}
+.qa-item .qa-question.pending{color:#ffd93d;}
+.qa-item .qa-question.resolved{color:#6bcb77;}
+.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
+/* Expand/Collapse */
+.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
+.p-expand-btn:hover{text-decoration:underline;}
+.p-msg-wrapper{display:block;}
+.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
+
+
+/* Q→A Status Section */
+.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
+.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
+.qa-body{padding:0;}
+.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.qa-item:last-child{border-bottom:none;}
+.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
+.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
+.qa-item .qa-question.open{color:#ff6b6b;}
+.qa-item .qa-question.pending{color:#ffd93d;}
+.qa-item .qa-question.resolved{color:#6bcb77;}
+.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
+/* Expand/Collapse */
+.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
+.p-expand-btn:hover{text-decoration:underline;}
+.p-msg-wrapper{display:block;}
+.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
+
 </style>
 </head>
 <body>
@@ -221,4 +261,70 @@ B 评论 C → B 的 atomsOut 复制给 C
 </div>
 </div>
 <div class="people-section"><h3>👥 参与讨论的人</h3><div class="person-block"><div class="person-header"><a href="../person_胥亚朋.html" class="person-name">胥亚朋</a><span class="person-count">6条</span><span class="person-months">2026-03, 2026-02, 2026-01</span></div><div class="person-msgs"><div class="p-preview">过完年第一天来上班，急需老史来帮忙找下工作状态。计算内容还需要一点时间来沉淀一下。 initsysctrl <initsysctrl@gmail.com> 于 2026年2月24日周二 15:48写道： > > *## 1. 不同的消息类型...</div><div class="p-preview">什么叫做等式，用等号连接的表达式。什么是等号，等号就是一个符号，就是一个操作符。 在C++里面有一个功能是覆写操作符，也就是同样的符号，在我这个场景下我可以给它一些额外的操作或功能。 基于此去理解比特币的谓词逻辑，它的锁定脚本和解锁脚本就是...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_矢孤.html" class="person-name">矢孤</a><span class="person-count">6条</span><span class="person-months">2026-03, 2026-01</span></div><div class="person-msgs"><div class="p-preview">按照马师傅的逻辑，那个pub/sub现在在处理什么业务呢。 另外如果与内存池无关，那怎么处理atom呢 矢孤 <shijingyao123@gmail.com>于2026年1月9日 周五20:31写道： > > @叶鹏”你是想假设atom需...</div><div class="p-preview">@叶鹏”你是想假设atom需要加入共识，也可能需要一个内存池，来作为atom相关的交易的缓存和转发，然后这个新的内存池中保持着多个与atom相关的交易。对吗？你其实是想知道与atom相关的交易，长什么样对吗？类似于比特币中 CTransac...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_沄涣.html" class="person-name">沄涣</a><span class="person-count">3条</span><span class="person-months">2026-03, 2026-01</span></div><div class="person-msgs"><div class="p-preview">首先 atom在memepool中呈现的不是utxo的交易类型，因为atom的数据状态，更像是一种“信号”，一种“声明”，所以atom不能被utxo的，模型所约束。所以在memepool中，atom像是一种特殊的、非金融信息、用来传递信号的...</div><div class="p-preview">这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 On Tue, Jan 27, 2026 at 5:57 PM 沄涣 <jiyeyulie4b310@gmail.com> wrote: > 论文推荐EigenTrust，...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_叶鹏.html" class="person-name">叶鹏</a><span class="person-count">3条</span><span class="person-months">2026-04, 2026-02</span></div><div class="person-msgs"><div class="p-preview"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-heig...</div><div class="p-preview"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-heig...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_Woo.html" class="person-name">Woo</a><span class="person-count">1条</span><span class="person-months">2026-01</span></div><div class="person-msgs"><div class="p-preview">周五聊了三位工程各自对atom的设计 文博的观点在周五没有发表，这里不提及 我对于叶鹏和亚鹏的观点理解上市有难度的，因为我在他们的观点里面没有找到我自己的逻辑链路去理解他们在表达什么。 后来跟亚鹏对话，发现难度在于我并不知道造锤子的逻辑，需...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_Bin Ma.html" class="person-name">Bin Ma</a><span class="person-count">1条</span><span class="person-months">2026-02</span></div><div class="person-msgs"><div class="p-preview">*一、共识之痛：当“强同步”成为效率枷锁* 回顾近期会议，我们共同经历了一种共识疲劳。 我们在会议上试图让所有人对深层技术细节达成实时理解，结果往往是认知的断层。精力被耗散在“强行同步”上，而非实质性的推进。 我意识到，我们当前的困境，与区...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_文博.html" class="person-name">文博</a><span class="person-count">1条</span><span class="person-months">2026-03</span></div><div class="person-msgs"><div class="p-preview">什么叫做等式，也就是左边和右边相等，又如何定义相等。例如 P2PKH 脚本， input script: PUSHDATA(Sig) // 将签名压入栈 PUSHDATA(PubKey) // 将公钥压入栈 output script: /...</div></div></div></div>
-</div></div></div></body></html>
+</div></div></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Expand/collapse for .p-preview
+  document.querySelectorAll('.p-preview').forEach(function(preview){
+    var wrapper=document.createElement('div');
+    wrapper.className='p-msg-wrapper';
+    preview.parentNode.insertBefore(wrapper,preview);
+    wrapper.appendChild(preview);
+    var btn=document.createElement('button');
+    btn.className='p-expand-btn';
+    btn.textContent='展开 ▾';
+    btn.style.display='inline-block';
+    preview.parentNode.insertBefore(btn,preview.nextSibling);
+    preview.style.maxHeight='60px';
+    preview.style.overflow='hidden';
+    preview.style.transition='max-height 0.3s ease';
+    btn.addEventListener('click',function(){
+      var isExpanded=preview.dataset.expanded==='1';
+      if(isExpanded){
+        preview.style.maxHeight='60px';
+        preview.dataset.expanded='0';
+        btn.textContent='展开 ▾';
+      }else{
+        preview.style.maxHeight='none';
+        preview.dataset.expanded='1';
+        btn.textContent='收起 ▴';
+      }
+    });
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Expand/collapse for .p-preview
+  document.querySelectorAll('.p-preview').forEach(function(preview){
+    var wrapper=document.createElement('div');
+    wrapper.className='p-msg-wrapper';
+    preview.parentNode.insertBefore(wrapper,preview);
+    wrapper.appendChild(preview);
+    var btn=document.createElement('button');
+    btn.className='p-expand-btn';
+    btn.textContent='展开 ▾';
+    btn.style.display='inline-block';
+    preview.parentNode.insertBefore(btn,preview.nextSibling);
+    preview.style.maxHeight='60px';
+    preview.style.overflow='hidden';
+    preview.style.transition='max-height 0.3s ease';
+    btn.addEventListener('click',function(){
+      var isExpanded=preview.dataset.expanded==='1';
+      if(isExpanded){
+        preview.style.maxHeight='60px';
+        preview.dataset.expanded='0';
+        btn.textContent='展开 ▾';
+      }else{
+        preview.style.maxHeight='none';
+        preview.dataset.expanded='1';
+        btn.textContent='收起 ▴';
+      }
+    });
+  });
+});
+</script>
+
+</body></html>

@@ -89,6 +89,46 @@ header .subtitle a:hover { text-decoration: underline; }
   .sidebar { display: none; }
   .main { padding: 20px; }
 }
+
+/* Q→A Status Section */
+.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
+.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
+.qa-body{padding:0;}
+.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.qa-item:last-child{border-bottom:none;}
+.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
+.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
+.qa-item .qa-question.open{color:#ff6b6b;}
+.qa-item .qa-question.pending{color:#ffd93d;}
+.qa-item .qa-question.resolved{color:#6bcb77;}
+.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
+/* Expand/Collapse */
+.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
+.p-expand-btn:hover{text-decoration:underline;}
+.p-msg-wrapper{display:block;}
+.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
+
+
+/* Q→A Status Section */
+.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
+.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
+.qa-body{padding:0;}
+.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.qa-item:last-child{border-bottom:none;}
+.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
+.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
+.qa-item .qa-question.open{color:#ff6b6b;}
+.qa-item .qa-question.pending{color:#ffd93d;}
+.qa-item .qa-question.resolved{color:#6bcb77;}
+.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
+/* Expand/Collapse */
+.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
+.p-expand-btn:hover{text-decoration:underline;}
+.p-msg-wrapper{display:block;}
+.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
+
 </style>
 </head>
 <body>
@@ -202,4 +242,70 @@ header .subtitle a:hover { text-decoration: underline; }
 <li><a href="中间会面机制.html" class="wiki-link">broadcast/中间会面机制</a></li>
 <li><a href="../market/声誉与市场.html" class="wiki-link">market/声誉与市场</a></li>
 </ul><div class="people-section"><h3>👥 参与讨论的人</h3><div class="person-block"><div class="person-header"><a href="../person_胥亚朋.html" class="person-name">胥亚朋</a><span class="person-count">6条</span><span class="person-months">2026-03, 2026-02, 2025-12</span></div><div class="person-msgs"><div class="p-preview">关于中间会面机制，我越来越觉得就是轻节点的机制。 我们把主动拉取消息的功能先忽略，那么轻节点在整个比特币网络里面就是转发消息的功能，就是之前文博提到的那个只转发不存储，轻节点除了做简单的支付验证以外不会做复杂的验证，这个和没有订阅该频道但是...</div><div class="p-preview">---------- Forwarded message --------- 发件人： shijingyao123 <shijingyao123@gmail.com> Date: 2026年2月25日周三 20:48 Subject: 与“...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_沄涣.html" class="person-name">沄涣</a><span class="person-count">3条</span><span class="person-months">2025-12</span></div><div class="person-msgs"><div class="p-preview">这里我已经看过了 我现在就是不太懂 这里的原子计算 为什么要 活跃度/信誉 ？ 他这里不是难度调整 ，只是计算原子的数量 “活跃度”是衡量用户接受和广播后新产生了多少“原子”，我理解这里是用户自己的参与度和影响力。 “信誉”是衡量一个用户发...</div><div class="p-preview">补充：p2p market 声誉积累的难度调整 1.如果说 激励的第一步是 通过广播获得了声誉积累，那么对于被广播的人进行广播同样获得了 声誉积累，那么问题是相同的声誉积累，怎么判断两个声誉积累的难度呢？怎么进行调整。 2.向离线的节点进行...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_Woo.html" class="person-name">Woo</a><span class="person-count">2条</span><span class="person-months">2025-12</span></div><div class="person-msgs"><div class="p-preview">在p2pmarket里面找不到对应的广播激励是因为代码里面并没有声誉生产的机制。但是已经足够精彩。让人浮想联翩。 1. 在p2p market里面广播行为是针对与他人的行动，与自己激励无关。 广播自己并不会获得任何的atom。但是可以使用别...</div><div class="p-preview">1. 跳变的形式化带来广播的重要性，引出广播是带激励的，老史一直在广播其他人的块，其实是把计算的一部分声誉分到到广播的人身上。 2. 难度调整在于组织内部个人觉得这个事情很难的时候出现新的难度。 3. p2pmarket的声誉传播机制有po...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_雷雷.html" class="person-name">雷雷</a><span class="person-count">1条</span><span class="person-months">2025-12</span></div><div class="person-msgs"><div class="p-preview">接受广播后的想法； 1. 快速广播行为本身包含着激励。比特币的节点之所以要快速广播，他们是为了保护当前区块已经投入的算力成本，因为如果被别人抢先广播了，即使他先算出来，也会成为孤块，当前投入的算力成本就会归零。这关于当前算力是否具备生存优势...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_矢孤.html" class="person-name">矢孤</a><span class="person-count">1条</span><span class="person-months">2026-02</span></div><div class="person-msgs"><div class="p-preview">还有个问题是关于从多个频道，不同的消息类型，最后收敛到比特币今天的这个结构，是比特币将这个想法变成熟进化了还是说只是比特币和atom不一样而已。 根据文博的邮件另外想到一个问题就是节点洪泛atom的这些内容是不是没有激励，是根据什么决定我要...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_叶鹏.html" class="person-name">叶鹏</a><span class="person-count">1条</span><span class="person-months">2025-12</span></div><div class="person-msgs"><div class="p-preview"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-heig...</div></div></div></div>
-</div></div></div></body></html>
+</div></div></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Expand/collapse for .p-preview
+  document.querySelectorAll('.p-preview').forEach(function(preview){
+    var wrapper=document.createElement('div');
+    wrapper.className='p-msg-wrapper';
+    preview.parentNode.insertBefore(wrapper,preview);
+    wrapper.appendChild(preview);
+    var btn=document.createElement('button');
+    btn.className='p-expand-btn';
+    btn.textContent='展开 ▾';
+    btn.style.display='inline-block';
+    preview.parentNode.insertBefore(btn,preview.nextSibling);
+    preview.style.maxHeight='60px';
+    preview.style.overflow='hidden';
+    preview.style.transition='max-height 0.3s ease';
+    btn.addEventListener('click',function(){
+      var isExpanded=preview.dataset.expanded==='1';
+      if(isExpanded){
+        preview.style.maxHeight='60px';
+        preview.dataset.expanded='0';
+        btn.textContent='展开 ▾';
+      }else{
+        preview.style.maxHeight='none';
+        preview.dataset.expanded='1';
+        btn.textContent='收起 ▴';
+      }
+    });
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Expand/collapse for .p-preview
+  document.querySelectorAll('.p-preview').forEach(function(preview){
+    var wrapper=document.createElement('div');
+    wrapper.className='p-msg-wrapper';
+    preview.parentNode.insertBefore(wrapper,preview);
+    wrapper.appendChild(preview);
+    var btn=document.createElement('button');
+    btn.className='p-expand-btn';
+    btn.textContent='展开 ▾';
+    btn.style.display='inline-block';
+    preview.parentNode.insertBefore(btn,preview.nextSibling);
+    preview.style.maxHeight='60px';
+    preview.style.overflow='hidden';
+    preview.style.transition='max-height 0.3s ease';
+    btn.addEventListener('click',function(){
+      var isExpanded=preview.dataset.expanded==='1';
+      if(isExpanded){
+        preview.style.maxHeight='60px';
+        preview.dataset.expanded='0';
+        btn.textContent='展开 ▾';
+      }else{
+        preview.style.maxHeight='none';
+        preview.dataset.expanded='1';
+        btn.textContent='收起 ▴';
+      }
+    });
+  });
+});
+</script>
+
+</body></html>

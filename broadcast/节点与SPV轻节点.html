@@ -89,6 +89,46 @@ header .subtitle a:hover { text-decoration: underline; }
   .sidebar { display: none; }
   .main { padding: 20px; }
 }
+
+/* Q→A Status Section */
+.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
+.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
+.qa-body{padding:0;}
+.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.qa-item:last-child{border-bottom:none;}
+.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
+.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
+.qa-item .qa-question.open{color:#ff6b6b;}
+.qa-item .qa-question.pending{color:#ffd93d;}
+.qa-item .qa-question.resolved{color:#6bcb77;}
+.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
+/* Expand/Collapse */
+.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
+.p-expand-btn:hover{text-decoration:underline;}
+.p-msg-wrapper{display:block;}
+.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
+
+
+/* Q→A Status Section */
+.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
+.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
+.qa-body{padding:0;}
+.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.qa-item:last-child{border-bottom:none;}
+.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
+.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
+.qa-item .qa-question.open{color:#ff6b6b;}
+.qa-item .qa-question.pending{color:#ffd93d;}
+.qa-item .qa-question.resolved{color:#6bcb77;}
+.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
+/* Expand/Collapse */
+.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
+.p-expand-btn:hover{text-decoration:underline;}
+.p-msg-wrapper{display:block;}
+.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
+
 </style>
 </head>
 <body>
@@ -222,4 +262,70 @@ header .subtitle a:hover { text-decoration: underline; }
 </div>
 </div>
 <div class="people-section"><h3>👥 参与讨论的人</h3><div class="person-block"><div class="person-header"><a href="../person_胥亚朋.html" class="person-name">胥亚朋</a><span class="person-count">6条</span><span class="person-months">2026-03, 2026-02</span></div><div class="person-msgs"><div class="p-preview">关于中间会面机制，我越来越觉得就是轻节点的机制。 我们把主动拉取消息的功能先忽略，那么轻节点在整个比特币网络里面就是转发消息的功能，就是之前文博提到的那个只转发不存储，轻节点除了做简单的支付验证以外不会做复杂的验证，这个和没有订阅该频道但是...</div><div class="p-preview">关于atom没有传递状态量的进一步思考。 首先还是比特币中的transaction，就是解锁之前的UTXO，生成新的UTXO，在比特币中UTXO是不可拆分的，这里解锁旧的UTXO生成多个新的UTXO不叫拆分，所以UTXO是比特币的一个原子载...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_沄涣.html" class="person-name">沄涣</a><span class="person-count">1条</span><span class="person-months">2026-04</span></div><div class="person-msgs"><div class="p-preview">btc中对于难度调整、符合难度与会议之间的联系 难度调整、符合难度，那什么叫符合难度？代码中怎么体现的 1.对于btc中难度调整相关的内容，由亚鹏通过代码与讲解，有代码提供证据，btc网络中，假设说现在有我和亚鹏两个节点，亚鹏出了一个块，首...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_矢孤.html" class="person-name">矢孤</a><span class="person-count">1条</span><span class="person-months">2025-11</span></div><div class="person-msgs"><div class="p-preview">我们会议中一直存在一个问题，那就是不同的专业，不同的爱好，不同的分工，如何互相理解。 我们回到比特币来看，一个轻节点，没有历史交易，只有最新的哈希，这个时候用户找他验证一笔交易，他要怎么做呢。他会向全节点访问，然后全节点会给出这个交易默克尔...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_叶鹏.html" class="person-name">叶鹏</a><span class="person-count">1条</span><span class="person-months">2026-03</span></div><div class="person-msgs"><div class="p-preview"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-heig...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_Bin Ma.html" class="person-name">Bin Ma</a><span class="person-count">1条</span><span class="person-months">2026-03</span></div><div class="person-msgs"><div class="p-preview">我看邮件内容就是这几天讨论分析，就是每个人的难度如何互相验证会议结果无法客观验证 老史与亚鹏开会讨论 Atom 系统 会议结束后: 老史视角: → 亚鹏提出了很有价值的见解 → 发 review:5 星好评 亚鹏视角: → 老史的问题很有深...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_文博.html" class="person-name">文博</a><span class="person-count">1条</span><span class="person-months">2026-03</span></div><div class="person-msgs"><div class="p-preview">什么叫做等式，也就是左边和右边相等，又如何定义相等。例如 P2PKH 脚本， input script: PUSHDATA(Sig) // 将签名压入栈 PUSHDATA(PubKey) // 将公钥压入栈 output script: /...</div></div></div></div>
-</div></div></div></body></html>
+</div></div></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Expand/collapse for .p-preview
+  document.querySelectorAll('.p-preview').forEach(function(preview){
+    var wrapper=document.createElement('div');
+    wrapper.className='p-msg-wrapper';
+    preview.parentNode.insertBefore(wrapper,preview);
+    wrapper.appendChild(preview);
+    var btn=document.createElement('button');
+    btn.className='p-expand-btn';
+    btn.textContent='展开 ▾';
+    btn.style.display='inline-block';
+    preview.parentNode.insertBefore(btn,preview.nextSibling);
+    preview.style.maxHeight='60px';
+    preview.style.overflow='hidden';
+    preview.style.transition='max-height 0.3s ease';
+    btn.addEventListener('click',function(){
+      var isExpanded=preview.dataset.expanded==='1';
+      if(isExpanded){
+        preview.style.maxHeight='60px';
+        preview.dataset.expanded='0';
+        btn.textContent='展开 ▾';
+      }else{
+        preview.style.maxHeight='none';
+        preview.dataset.expanded='1';
+        btn.textContent='收起 ▴';
+      }
+    });
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Expand/collapse for .p-preview
+  document.querySelectorAll('.p-preview').forEach(function(preview){
+    var wrapper=document.createElement('div');
+    wrapper.className='p-msg-wrapper';
+    preview.parentNode.insertBefore(wrapper,preview);
+    wrapper.appendChild(preview);
+    var btn=document.createElement('button');
+    btn.className='p-expand-btn';
+    btn.textContent='展开 ▾';
+    btn.style.display='inline-block';
+    preview.parentNode.insertBefore(btn,preview.nextSibling);
+    preview.style.maxHeight='60px';
+    preview.style.overflow='hidden';
+    preview.style.transition='max-height 0.3s ease';
+    btn.addEventListener('click',function(){
+      var isExpanded=preview.dataset.expanded==='1';
+      if(isExpanded){
+        preview.style.maxHeight='60px';
+        preview.dataset.expanded='0';
+        btn.textContent='展开 ▾';
+      }else{
+        preview.style.maxHeight='none';
+        preview.dataset.expanded='1';
+        btn.textContent='收起 ▴';
+      }
+    });
+  });
+});
+</script>
+
+</body></html>
