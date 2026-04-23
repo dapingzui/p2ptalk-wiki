@@ -4,7 +4,7 @@ P2PTalk Wiki - Person Page Enhancement
 1. Visual timeline grouped by month
 2. Interaction details: who they talked with about which concepts
 """
-import json, re, quopri
+import json, re, quopri, email.header
 from pathlib import Path
 from collections import defaultdict
 
@@ -19,7 +19,6 @@ person_monthly = data.get('person_monthly', {})
 person_concepts = data.get('person_concepts', {})
 all_msgs = data['all_messages']
 
-# Person slug mapping
 person_files = {}
 for f in REPO.glob('person_*.html'):
     name = f.stem.replace('person_', '')
@@ -30,13 +29,12 @@ NEW_CSS = """.person-timeline{margin:16px 0 24px 0;}
 .ptl-month-label{display:flex;align-items:center;gap:8px;margin-bottom:8px;color:var(--accent);font-size:12px;font-weight:600;}
 .ptl-month-label .ptl-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);}
 .ptl-month-label .ptl-year{color:var(--text-muted);font-size:10px;font-weight:400;margin-left:4px;}
+.ptl-month-label .ptl-msg-count{font-size:10px;color:var(--text-muted);margin-left:auto;}
 .ptl-msgs{margin-left:16px;border-left:2px solid var(--border);padding-left:14px;}
 .ptl-msg{margin-bottom:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px;border:1px solid var(--border);font-size:12px;line-height:1.5;}
 .ptl-msg:hover{border-color:var(--accent);}
 .ptl-msg-date{color:var(--text-muted);font-size:10px;margin-bottom:4px;}
 .ptl-msg-subject{color:var(--accent);margin-bottom:4px;font-weight:500;}
-.ptl-msg-subject a{color:var(--accent);text-decoration:none;}
-.ptl-msg-subject a:hover{text-decoration:underline;}
 .ptl-msg-body{color:var(--text);font-size:11px;line-height:1.5;display:none;}
 .ptl-msg-body.open{display:block;}
 .ptl-msg-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
@@ -50,6 +48,7 @@ NEW_CSS = """.person-timeline{margin:16px 0 24px 0;}
 .ita-person:hover{border-color:var(--accent);color:var(--accent);}
 .ita-person-name{font-weight:600;color:var(--accent);font-size:13px;}
 .ita-person-count{color:var(--text-muted);font-size:11px;}
+.ita-toggle{font-size:12px;color:var(--text-muted);margin-left:auto;}
 .ita-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
 .ita-concept-tag{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}"""
 
@@ -67,22 +66,30 @@ document.addEventListener('DOMContentLoaded',function(){
   });
   document.querySelectorAll('.ita-person').forEach(function(card){
     card.addEventListener('click',function(e){
+      e.preventDefault();
       var detail=card.nextElementSibling;
       if(detail&&detail.classList.contains('ita-detail')){
-        detail.style.display=detail.style.display?'':'none';
+        detail.style.display=detail.style.display?'none':'block';
         var toggle=card.querySelector('.ita-toggle');
-        if(toggle)toggle.textContent=detail.style.display?'▲':'▼';
+        if(toggle)toggle.textContent=detail.style.display?'▼':'▲';
       }
     });
   });
 });
 </script>"""
 
+def esc(s):
+    return s.replace('&','&amp;').replace('<','&lt;').replace('>','&gt;').replace('"','&quot;')
+
 def decode_subject(subject):
-    """Decode MIME encoded email subject (RFC 2047), handling base64 and QP."""
-    import email.header
+    """Decode MIME encoded email subject (RFC 2047), handling malformed and multi-line."""
+    if not subject or '=?' not in subject:
+        return subject.strip() if subject else ''
+    # Normalize: join soft line breaks, fix malformed endings
+    s = re.sub(r'\r?\n[ =]*\?=', '?', subject)
+    s = re.sub(r'=\?$', '?=', s)
     try:
-        parts = email.header.decode_header(subject)
+        parts = email.header.decode_header(s)
         result = []
         for part, charset in parts:
             if isinstance(part, bytes):
@@ -90,7 +97,7 @@ def decode_subject(subject):
             elif part:
                 result.append(part)
         decoded = ''.join(result).strip()
-        if decoded and decoded != subject:
+        if decoded:
             return decoded
     except Exception:
         pass
@@ -113,52 +120,44 @@ def clean_body(body):
         body = re.sub(r'\s+', ' ', body).strip()
     return body
 
-def esc(s):
-    return s.replace('&','&amp;').replace('<','&lt;').replace('>','&gt;').replace('"','&quot;')
-
 def build_timeline(person):
-    """Build visual timeline for a person."""
+    """Build visual timeline grouped by month."""
     monthly = person_monthly.get(person, {})
     if not monthly:
         return ''
-    
-    # Get person's messages sorted by date
     msgs = person_msgs.get(person, [])
     sorted_msgs = sorted(msgs, key=lambda m: m.get('date', ''), reverse=True)
-    
-    # Group by YYYY-MM
+
     by_month = defaultdict(list)
     for m in sorted_msgs:
-        month = m.get('month', '')[:7]  # YYYY-MM
+        month = m.get('month', '')[:7]
         if month:
             by_month[month].append(m)
-    
-    # Sort months descending
+
     sorted_months = sorted(by_month.keys(), reverse=True)
     max_count = max(len(v) for v in by_month.values()) if by_month else 1
-    
+
     html = '<div class="person-timeline">\n'
     for month in sorted_months:
         year, mon = month.split('-')
         count = len(by_month[month])
         bar_pct = int(count / max_count * 100)
-        
+
         html += f'<div class="ptl-month">\n'
         html += f'<div class="ptl-month-label">'
         html += f'<span class="ptl-dot"></span>'
         html += f'{year}年{mon}月'
-        html += f'<span class="ptl-year">{count}条</span>'
+        html += f'<span class="ptl-msg-count">{count}条消息</span>'
         html += '</div>\n'
         html += f'<div class="ptl-bar"><div class="ptl-bar-fill" style="width:{bar_pct}%"></div></div>\n'
         html += '<div class="ptl-msgs">\n'
-        
-        # Show up to 5 messages per month
+
         for m in by_month[month][:5]:
             date = m.get('date', '')[:10] if m.get('date') else ''
             subject = decode_subject(m.get('subject', ''))
             if subject.lower() in ['re:', '']:
                 subject = '(无主题)'
-            body_preview = clean_body(m.get('body_preview', '') or m.get('body', '')[:200])
+            body_preview = clean_body(m.get('body', '')[:300])
             if len(body_preview) > 100:
                 body_preview = body_preview[:100] + '\u2026'
             concepts = m.get('concepts', [])
@@ -168,9 +167,9 @@ def build_timeline(person):
                     concepts = ast.literal_eval(concepts)
                 except Exception:
                     concepts = []
-            
-            html += f'<div class="ptl-msg">\n'
-            html += f'<div class="ptl-msg-date">{date}</div>\n'
+
+            html += '<div class="ptl-msg">\n'
+            html += f'<div class="ptl-msg-date">{esc(date)}</div>\n'
             html += f'<div class="ptl-msg-subject">{esc(subject)}</div>\n'
             if concepts:
                 html += '<div class="ptl-msg-concepts">\n'
@@ -182,32 +181,30 @@ def build_timeline(person):
                 html += f'<div class="ptl-msg-body">{esc(body_preview)}</div>\n'
                 html += '<button class="ptl-expand">展开 ▾</button>\n'
             html += '</div>\n'
-        
+
         if len(by_month[month]) > 5:
             html += f'<div style="text-align:center;color:var(--text-muted);font-size:11px;padding:4px">还有{len(by_month[month])-5}条消息</div>\n'
-        
+
         html += '</div>\n</div>\n'
-    
+
     html += '</div>\n'
     return html
 
 
 def build_interactions(person):
     """Build interaction section using concept co-occurrence from all_messages."""
-    # Build concept -> set of people who discussed it
     concept_people = defaultdict(set)
-    person_concepts = defaultdict(set)  # person -> set of concepts
+    person_concept_set = defaultdict(set)
     for m in all_msgs:
         p = m.get('person')
         for c in m.get('concepts', []):
             concept_people[c].add(p)
-            person_concepts[p].add(c)
-    
-    # Find who shares concepts with this person
-    my_concepts = person_concepts.get(person, set())
+            person_concept_set[p].add(c)
+
+    my_concepts = person_concept_set.get(person, set())
     if not my_concepts:
         return ''
-    
+
     interactions = {}
     for concept in my_concepts:
         for other in concept_people.get(concept, []):
@@ -216,38 +213,34 @@ def build_interactions(person):
             if other not in interactions:
                 interactions[other] = {'concepts': set(), 'count': 0, 'last_date': ''}
             interactions[other]['concepts'].add(concept)
-    
-    # Count co-occurrences
+
     for m in all_msgs:
         if m.get('person') not in interactions:
             continue
         m_concepts = set(m.get('concepts', []))
-        shared = m_concepts & my_concepts
-        if shared:
+        if m_concepts & my_concepts:
             interactions[m.get('person')]['count'] += 1
             d = m.get('date', '')
             if d > interactions[m.get('person')]['last_date']:
                 interactions[m.get('person')]['last_date'] = d
-    
+
     sorted_interactions = sorted(
         interactions.items(),
         key=lambda x: len(x[1]['concepts']) * x[1]['count'],
         reverse=True
     )
-    
+
     if not sorted_interactions:
         return ''
-    
+
     html = '<div class="interaction-section">\n'
     for other_person, data in sorted_interactions[:10]:
         concepts = sorted(data['concepts'], key=lambda c: c.split('/')[-1])
         slug = other_person.replace(' ', '_')
         html += f'<a href="../person_{esc(slug)}.html" class="ita-person">\n'
-        html += f'<div>\n'
         html += f'<div class="ita-person-name">{esc(other_person)}</div>\n'
         html += f'<div class="ita-person-count">{data["count"]}条互动 · {len(data["concepts"])}个共同概念</div>\n'
-        html += '</div>\n'
-        html += '<span class="ita-toggle" style="margin-left:auto;font-size:12px;color:var(--text-muted)">▼</span>\n'
+        html += '<span class="ita-toggle">▼</span>\n'
         html += '</a>\n'
         html += '<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">\n'
         html += '<div class="ita-concepts">\n'
@@ -258,7 +251,7 @@ def build_interactions(person):
         if data['last_date']:
             html += f'<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: {data["last_date"][:10]}</div>\n'
         html += '</div>\n'
-    
+
     html += '</div>\n'
     return html
 
@@ -266,29 +259,24 @@ def build_interactions(person):
 def enhance_person_html(html_content, person):
     if '</style>' in html_content:
         html_content = html_content.replace('</style>', NEW_CSS + '\n</style>')
-    
-    # Replace existing timeline div with new one
+
     timeline_html = build_timeline(person)
     if timeline_html:
-        # Replace the existing <div class="timeline">...</div>
         pattern = re.compile(r'<div class="timeline">.*?</div>\s*</div>', re.DOTALL)
         html_content = pattern.sub(timeline_html.rstrip() + '\n', html_content)
-    
-    # Add interaction section after 参与者 links, before 概念 h2
+
     interaction_html = build_interactions(person)
     if interaction_html:
-        # Find 参与者 h2, then insert after its closing </h2> and following links
         marker = '<h2>\U0001f465 参与者</h2>'
         idx = html_content.find(marker)
         if idx >= 0:
-            # Find the next <h2> after this section
             next_h2 = html_content.find('<h2>', idx + len(marker))
             if next_h2 >= 0:
                 html_content = html_content[:next_h2] + interaction_html + html_content[next_h2:]
-    
+
     if '</body>' in html_content:
         html_content = html_content.replace('</body>', NEW_JS + '\n</body>')
-    
+
     return html_content
 
 
