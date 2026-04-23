@@ -154,7 +154,10 @@ def build_timeline(person):
 
         for m in by_month[month][:5]:
             date = m.get('date', '')[:10] if m.get('date') else ''
-            subject = decode_subject(m.get('subject', ''))
+            raw_subject = m.get('subject', "")
+            subject = decode_subject(raw_subject)
+            if person == "叶鹏" and "2026-04" in (m.get("date","")):
+                print(f"DEBUG: raw={repr(raw_subject[:60])}, dec={repr(subject)}", flush=True)
             if subject.lower() in ['re:', '']:
                 subject = '(无主题)'
             body_preview = clean_body(m.get('body', '')[:300])
@@ -262,7 +265,7 @@ def enhance_person_html(html_content, person):
 
     timeline_html = build_timeline(person)
     if timeline_html:
-        pattern = re.compile(r'<div class="person-timeline">.*?</div>\s*</div>', re.DOTALL)
+        pattern = re.compile(r'<div class="timeline">.*?</div>\s*</div>', re.DOTALL)
         html_content = pattern.sub(timeline_html.rstrip() + '\n', html_content)
 
     interaction_html = build_interactions(person)

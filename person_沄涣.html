@@ -320,6 +320,141 @@ header .sub{color:var(--muted);font-size:13px}
 .ita-toggle{font-size:12px;color:var(--text-muted);margin-left:auto;}
 .ita-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
 .ita-concept-tag{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
+.person-timeline{margin:16px 0 24px 0;}
+.ptl-month{margin-bottom:18px;}
+.ptl-month-label{display:flex;align-items:center;gap:8px;margin-bottom:8px;color:var(--accent);font-size:12px;font-weight:600;}
+.ptl-month-label .ptl-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);}
+.ptl-month-label .ptl-year{color:var(--text-muted);font-size:10px;font-weight:400;margin-left:4px;}
+.ptl-month-label .ptl-msg-count{font-size:10px;color:var(--text-muted);margin-left:auto;}
+.ptl-msgs{margin-left:16px;border-left:2px solid var(--border);padding-left:14px;}
+.ptl-msg{margin-bottom:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px;border:1px solid var(--border);font-size:12px;line-height:1.5;}
+.ptl-msg:hover{border-color:var(--accent);}
+.ptl-msg-date{color:var(--text-muted);font-size:10px;margin-bottom:4px;}
+.ptl-msg-subject{color:var(--accent);margin-bottom:4px;font-weight:500;}
+.ptl-msg-body{color:var(--text);font-size:11px;line-height:1.5;display:none;}
+.ptl-msg-body.open{display:block;}
+.ptl-msg-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ptl-msg-concept{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
+.ptl-expand{background:none;border:1px solid var(--accent);color:var(--accent);font-size:10px;cursor:pointer;padding:2px 8px;border-radius:5px;margin-top:4px;display:inline-block;}
+.ptl-expand:hover{background:rgba(233,69,96,0.1);}
+.ptl-bar{height:4px;background:var(--accent2);border-radius:2px;margin:4px 0 8px 0;overflow:hidden;}
+.ptl-bar-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.3s;}
+.interaction-section{margin:16px 0 24px 0;}
+.ita-person{display:flex;align-items:center;gap:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;cursor:pointer;text-decoration:none;color:var(--text);}
+.ita-person:hover{border-color:var(--accent);color:var(--accent);}
+.ita-person-name{font-weight:600;color:var(--accent);font-size:13px;}
+.ita-person-count{color:var(--text-muted);font-size:11px;}
+.ita-toggle{font-size:12px;color:var(--text-muted);margin-left:auto;}
+.ita-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ita-concept-tag{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
+.person-timeline{margin:16px 0 24px 0;}
+.ptl-month{margin-bottom:18px;}
+.ptl-month-label{display:flex;align-items:center;gap:8px;margin-bottom:8px;color:var(--accent);font-size:12px;font-weight:600;}
+.ptl-month-label .ptl-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);}
+.ptl-month-label .ptl-year{color:var(--text-muted);font-size:10px;font-weight:400;margin-left:4px;}
+.ptl-month-label .ptl-msg-count{font-size:10px;color:var(--text-muted);margin-left:auto;}
+.ptl-msgs{margin-left:16px;border-left:2px solid var(--border);padding-left:14px;}
+.ptl-msg{margin-bottom:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px;border:1px solid var(--border);font-size:12px;line-height:1.5;}
+.ptl-msg:hover{border-color:var(--accent);}
+.ptl-msg-date{color:var(--text-muted);font-size:10px;margin-bottom:4px;}
+.ptl-msg-subject{color:var(--accent);margin-bottom:4px;font-weight:500;}
+.ptl-msg-body{color:var(--text);font-size:11px;line-height:1.5;display:none;}
+.ptl-msg-body.open{display:block;}
+.ptl-msg-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ptl-msg-concept{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
+.ptl-expand{background:none;border:1px solid var(--accent);color:var(--accent);font-size:10px;cursor:pointer;padding:2px 8px;border-radius:5px;margin-top:4px;display:inline-block;}
+.ptl-expand:hover{background:rgba(233,69,96,0.1);}
+.ptl-bar{height:4px;background:var(--accent2);border-radius:2px;margin:4px 0 8px 0;overflow:hidden;}
+.ptl-bar-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.3s;}
+.interaction-section{margin:16px 0 24px 0;}
+.ita-person{display:flex;align-items:center;gap:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;cursor:pointer;text-decoration:none;color:var(--text);}
+.ita-person:hover{border-color:var(--accent);color:var(--accent);}
+.ita-person-name{font-weight:600;color:var(--accent);font-size:13px;}
+.ita-person-count{color:var(--text-muted);font-size:11px;}
+.ita-toggle{font-size:12px;color:var(--text-muted);margin-left:auto;}
+.ita-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ita-concept-tag{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
+.person-timeline{margin:16px 0 24px 0;}
+.ptl-month{margin-bottom:18px;}
+.ptl-month-label{display:flex;align-items:center;gap:8px;margin-bottom:8px;color:var(--accent);font-size:12px;font-weight:600;}
+.ptl-month-label .ptl-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);}
+.ptl-month-label .ptl-year{color:var(--text-muted);font-size:10px;font-weight:400;margin-left:4px;}
+.ptl-month-label .ptl-msg-count{font-size:10px;color:var(--text-muted);margin-left:auto;}
+.ptl-msgs{margin-left:16px;border-left:2px solid var(--border);padding-left:14px;}
+.ptl-msg{margin-bottom:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px;border:1px solid var(--border);font-size:12px;line-height:1.5;}
+.ptl-msg:hover{border-color:var(--accent);}
+.ptl-msg-date{color:var(--text-muted);font-size:10px;margin-bottom:4px;}
+.ptl-msg-subject{color:var(--accent);margin-bottom:4px;font-weight:500;}
+.ptl-msg-body{color:var(--text);font-size:11px;line-height:1.5;display:none;}
+.ptl-msg-body.open{display:block;}
+.ptl-msg-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ptl-msg-concept{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
+.ptl-expand{background:none;border:1px solid var(--accent);color:var(--accent);font-size:10px;cursor:pointer;padding:2px 8px;border-radius:5px;margin-top:4px;display:inline-block;}
+.ptl-expand:hover{background:rgba(233,69,96,0.1);}
+.ptl-bar{height:4px;background:var(--accent2);border-radius:2px;margin:4px 0 8px 0;overflow:hidden;}
+.ptl-bar-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.3s;}
+.interaction-section{margin:16px 0 24px 0;}
+.ita-person{display:flex;align-items:center;gap:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;cursor:pointer;text-decoration:none;color:var(--text);}
+.ita-person:hover{border-color:var(--accent);color:var(--accent);}
+.ita-person-name{font-weight:600;color:var(--accent);font-size:13px;}
+.ita-person-count{color:var(--text-muted);font-size:11px;}
+.ita-toggle{font-size:12px;color:var(--text-muted);margin-left:auto;}
+.ita-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ita-concept-tag{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
+.person-timeline{margin:16px 0 24px 0;}
+.ptl-month{margin-bottom:18px;}
+.ptl-month-label{display:flex;align-items:center;gap:8px;margin-bottom:8px;color:var(--accent);font-size:12px;font-weight:600;}
+.ptl-month-label .ptl-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);}
+.ptl-month-label .ptl-year{color:var(--text-muted);font-size:10px;font-weight:400;margin-left:4px;}
+.ptl-month-label .ptl-msg-count{font-size:10px;color:var(--text-muted);margin-left:auto;}
+.ptl-msgs{margin-left:16px;border-left:2px solid var(--border);padding-left:14px;}
+.ptl-msg{margin-bottom:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px;border:1px solid var(--border);font-size:12px;line-height:1.5;}
+.ptl-msg:hover{border-color:var(--accent);}
+.ptl-msg-date{color:var(--text-muted);font-size:10px;margin-bottom:4px;}
+.ptl-msg-subject{color:var(--accent);margin-bottom:4px;font-weight:500;}
+.ptl-msg-body{color:var(--text);font-size:11px;line-height:1.5;display:none;}
+.ptl-msg-body.open{display:block;}
+.ptl-msg-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ptl-msg-concept{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
+.ptl-expand{background:none;border:1px solid var(--accent);color:var(--accent);font-size:10px;cursor:pointer;padding:2px 8px;border-radius:5px;margin-top:4px;display:inline-block;}
+.ptl-expand:hover{background:rgba(233,69,96,0.1);}
+.ptl-bar{height:4px;background:var(--accent2);border-radius:2px;margin:4px 0 8px 0;overflow:hidden;}
+.ptl-bar-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.3s;}
+.interaction-section{margin:16px 0 24px 0;}
+.ita-person{display:flex;align-items:center;gap:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;cursor:pointer;text-decoration:none;color:var(--text);}
+.ita-person:hover{border-color:var(--accent);color:var(--accent);}
+.ita-person-name{font-weight:600;color:var(--accent);font-size:13px;}
+.ita-person-count{color:var(--text-muted);font-size:11px;}
+.ita-toggle{font-size:12px;color:var(--text-muted);margin-left:auto;}
+.ita-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ita-concept-tag{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
+.person-timeline{margin:16px 0 24px 0;}
+.ptl-month{margin-bottom:18px;}
+.ptl-month-label{display:flex;align-items:center;gap:8px;margin-bottom:8px;color:var(--accent);font-size:12px;font-weight:600;}
+.ptl-month-label .ptl-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);}
+.ptl-month-label .ptl-year{color:var(--text-muted);font-size:10px;font-weight:400;margin-left:4px;}
+.ptl-month-label .ptl-msg-count{font-size:10px;color:var(--text-muted);margin-left:auto;}
+.ptl-msgs{margin-left:16px;border-left:2px solid var(--border);padding-left:14px;}
+.ptl-msg{margin-bottom:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px;border:1px solid var(--border);font-size:12px;line-height:1.5;}
+.ptl-msg:hover{border-color:var(--accent);}
+.ptl-msg-date{color:var(--text-muted);font-size:10px;margin-bottom:4px;}
+.ptl-msg-subject{color:var(--accent);margin-bottom:4px;font-weight:500;}
+.ptl-msg-body{color:var(--text);font-size:11px;line-height:1.5;display:none;}
+.ptl-msg-body.open{display:block;}
+.ptl-msg-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ptl-msg-concept{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
+.ptl-expand{background:none;border:1px solid var(--accent);color:var(--accent);font-size:10px;cursor:pointer;padding:2px 8px;border-radius:5px;margin-top:4px;display:inline-block;}
+.ptl-expand:hover{background:rgba(233,69,96,0.1);}
+.ptl-bar{height:4px;background:var(--accent2);border-radius:2px;margin:4px 0 8px 0;overflow:hidden;}
+.ptl-bar-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.3s;}
+.interaction-section{margin:16px 0 24px 0;}
+.ita-person{display:flex;align-items:center;gap:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;cursor:pointer;text-decoration:none;color:var(--text);}
+.ita-person:hover{border-color:var(--accent);color:var(--accent);}
+.ita-person-name{font-weight:600;color:var(--accent);font-size:13px;}
+.ita-person-count{color:var(--text-muted);font-size:11px;}
+.ita-toggle{font-size:12px;color:var(--text-muted);margin-left:auto;}
+.ita-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ita-concept-tag{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
 </style>
 </head>
 <body>
@@ -1404,6 +1539,631 @@ function filterConcept(c) {
 <div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-03-16</div>
 </div>
 </div>
+<div class="interaction-section">
+<a href="../person_胥亚朋.html" class="ita-person">
+<div class="ita-person-name">胥亚朋</div>
+<div class="ita-person-count">43条互动 · 11个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-08</div>
+</div>
+<a href="../person_矢孤.html" class="ita-person">
+<div class="ita-person-name">矢孤</div>
+<div class="ita-person-count">34条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-03-16</div>
+</div>
+<a href="../person_Woo.html" class="ita-person">
+<div class="ita-person-name">Woo</div>
+<div class="ita-person-count">27条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-03</div>
+</div>
+<a href="../person_文博.html" class="ita-person">
+<div class="ita-person-name">文博</div>
+<div class="ita-person-count">26条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-16</div>
+</div>
+<a href="../person_雷雷.html" class="ita-person">
+<div class="ita-person-name">雷雷</div>
+<div class="ita-person-count">13条互动 · 7个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">谓词</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-19</div>
+</div>
+<a href="../person_叶鹏.html" class="ita-person">
+<div class="ita-person-name">叶鹏</div>
+<div class="ita-person-count">10条互动 · 8个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-12</div>
+</div>
+<a href="../person_Bin_Ma.html" class="ita-person">
+<div class="ita-person-name">Bin Ma</div>
+<div class="ita-person-count">13条互动 · 6个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-03-16</div>
+</div>
+</div>
+<div class="interaction-section">
+<a href="../person_胥亚朋.html" class="ita-person">
+<div class="ita-person-name">胥亚朋</div>
+<div class="ita-person-count">43条互动 · 11个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-08</div>
+</div>
+<a href="../person_矢孤.html" class="ita-person">
+<div class="ita-person-name">矢孤</div>
+<div class="ita-person-count">34条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-03-16</div>
+</div>
+<a href="../person_Woo.html" class="ita-person">
+<div class="ita-person-name">Woo</div>
+<div class="ita-person-count">27条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-03</div>
+</div>
+<a href="../person_文博.html" class="ita-person">
+<div class="ita-person-name">文博</div>
+<div class="ita-person-count">26条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-16</div>
+</div>
+<a href="../person_雷雷.html" class="ita-person">
+<div class="ita-person-name">雷雷</div>
+<div class="ita-person-count">13条互动 · 7个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">谓词</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-19</div>
+</div>
+<a href="../person_叶鹏.html" class="ita-person">
+<div class="ita-person-name">叶鹏</div>
+<div class="ita-person-count">10条互动 · 8个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-12</div>
+</div>
+<a href="../person_Bin_Ma.html" class="ita-person">
+<div class="ita-person-name">Bin Ma</div>
+<div class="ita-person-count">13条互动 · 6个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-03-16</div>
+</div>
+</div>
+<div class="interaction-section">
+<a href="../person_胥亚朋.html" class="ita-person">
+<div class="ita-person-name">胥亚朋</div>
+<div class="ita-person-count">43条互动 · 11个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-08</div>
+</div>
+<a href="../person_矢孤.html" class="ita-person">
+<div class="ita-person-name">矢孤</div>
+<div class="ita-person-count">34条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-03-16</div>
+</div>
+<a href="../person_Woo.html" class="ita-person">
+<div class="ita-person-name">Woo</div>
+<div class="ita-person-count">27条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-03</div>
+</div>
+<a href="../person_文博.html" class="ita-person">
+<div class="ita-person-name">文博</div>
+<div class="ita-person-count">26条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-16</div>
+</div>
+<a href="../person_雷雷.html" class="ita-person">
+<div class="ita-person-name">雷雷</div>
+<div class="ita-person-count">13条互动 · 7个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">谓词</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-19</div>
+</div>
+<a href="../person_叶鹏.html" class="ita-person">
+<div class="ita-person-name">叶鹏</div>
+<div class="ita-person-count">10条互动 · 8个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-12</div>
+</div>
+<a href="../person_Bin_Ma.html" class="ita-person">
+<div class="ita-person-name">Bin Ma</div>
+<div class="ita-person-count">13条互动 · 6个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-03-16</div>
+</div>
+</div>
+<div class="interaction-section">
+<a href="../person_胥亚朋.html" class="ita-person">
+<div class="ita-person-name">胥亚朋</div>
+<div class="ita-person-count">43条互动 · 11个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-08</div>
+</div>
+<a href="../person_矢孤.html" class="ita-person">
+<div class="ita-person-name">矢孤</div>
+<div class="ita-person-count">34条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-03-16</div>
+</div>
+<a href="../person_Woo.html" class="ita-person">
+<div class="ita-person-name">Woo</div>
+<div class="ita-person-count">27条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-03</div>
+</div>
+<a href="../person_文博.html" class="ita-person">
+<div class="ita-person-name">文博</div>
+<div class="ita-person-count">26条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-16</div>
+</div>
+<a href="../person_雷雷.html" class="ita-person">
+<div class="ita-person-name">雷雷</div>
+<div class="ita-person-count">13条互动 · 7个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">谓词</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-19</div>
+</div>
+<a href="../person_叶鹏.html" class="ita-person">
+<div class="ita-person-name">叶鹏</div>
+<div class="ita-person-count">10条互动 · 8个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-12</div>
+</div>
+<a href="../person_Bin_Ma.html" class="ita-person">
+<div class="ita-person-name">Bin Ma</div>
+<div class="ita-person-count">13条互动 · 6个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-03-16</div>
+</div>
+</div>
+<div class="interaction-section">
+<a href="../person_胥亚朋.html" class="ita-person">
+<div class="ita-person-name">胥亚朋</div>
+<div class="ita-person-count">43条互动 · 11个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-08</div>
+</div>
+<a href="../person_矢孤.html" class="ita-person">
+<div class="ita-person-name">矢孤</div>
+<div class="ita-person-count">34条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-03-16</div>
+</div>
+<a href="../person_Woo.html" class="ita-person">
+<div class="ita-person-name">Woo</div>
+<div class="ita-person-count">27条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-03</div>
+</div>
+<a href="../person_文博.html" class="ita-person">
+<div class="ita-person-name">文博</div>
+<div class="ita-person-count">26条互动 · 9个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">创世Atom与nonce</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-16</div>
+</div>
+<a href="../person_雷雷.html" class="ita-person">
+<div class="ita-person-name">雷雷</div>
+<div class="ita-person-count">13条互动 · 7个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">谓词</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-19</div>
+</div>
+<a href="../person_叶鹏.html" class="ita-person">
+<div class="ita-person-name">叶鹏</div>
+<div class="ita-person-count">10条互动 · 8个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">中间会面机制</span>
+<span class="ita-concept-tag">洪泛atom的激励问题</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">谓词</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-04-12</div>
+</div>
+<a href="../person_Bin_Ma.html" class="ita-person">
+<div class="ita-person-name">Bin Ma</div>
+<div class="ita-person-count">13条互动 · 6个共同概念</div>
+<span class="ita-toggle">▼</span>
+</a>
+<div class="ita-detail" style="display:none;padding:8px 10px 12px 10px;margin-bottom:12px;background:rgba(255,255,255,0.02);border-radius:6px;">
+<div class="ita-concepts">
+<span class="ita-concept-tag">Atom与Bitcoin关系</span>
+<span class="ita-concept-tag">Atom数据结构</span>
+<span class="ita-concept-tag">Atom是什么</span>
+<span class="ita-concept-tag">BitDNS与P2P市场</span>
+<span class="ita-concept-tag">节点与SPV轻节点</span>
+<span class="ita-concept-tag">难度调整</span>
+</div>
+<div style="font-size:10px;color:var(--text-muted);margin-top:6px;">最近互动: 2026-03-16</div>
+</div>
+</div>
 <h2>🗂️ 概念</h2><a href="index.html">← 概念总览</a></div>
 <div class="main">
   <div class="sec">
@@ -1418,8 +2178,240 @@ function filterConcept(c) {
     <h2>📊 注意力分布（按月）</h2>
     <div class="person-timeline">
 <div class="ptl-month">
-<div class="ptl-month-label"><span class="ptl-dot"></span>2026年04月<span class="ptl-year">3条</span></div>
+<div class="ptl-month-label"><span class="ptl-dot"></span>2026年04月<span class="ptl-msg-count">3条消息</span></div>
 <div class="ptl-bar"><div class="ptl-bar-fill" style="width:16%"></div></div>
+<div class="ptl-msgs">
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-04-16</div>
+<div class="ptl-msg-subject">(无主题)</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom是什么</span>
+</div>
+<div class="ptl-msg-body">会议规则分为必要规则和选用测试规则，会议的核心之一是组织的效率问题， 会议必要规则是需要每个节点遵守的，如果没有遵守则默认排除在了会议之外， 开启会议遵循必要规则后，如果觉得有自己的想法规则可以帮助提…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-04-14</div>
+<div class="ptl-msg-subject">btc中对于难度调整、符合难度与会议之间的联系</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">节点与SPV轻节点</span>
+<span class="ptl-msg-concept">难度调整</span>
+</div>
+<div class="ptl-msg-body">btc中对于难度调整、符合难度与会议之间的联系 难度调整、符合难度，那什么叫符合难度？代码中怎么体现的 1.对于btc中难度调整相关的内容，由亚鹏通过代码与讲解，有代码提供证据，btc网络中，假设说现…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-04-01</div>
+<div class="ptl-msg-subject">Re: 代码分享会</div>
+<div class="ptl-msg-body">邀请我下 矢孤 &lt;shijingyao123@gmail.com&gt;于2026年4月1日 周三16:57写道： &gt; 今天六点到9点在线交流代码阅读，有时间的的在邮件下面回复。 &gt; &gt; -- &gt; You …</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+</div>
+</div>
+<div class="ptl-month">
+<div class="ptl-month-label"><span class="ptl-dot"></span>2026年03月<span class="ptl-msg-count">7条消息</span></div>
+<div class="ptl-bar"><div class="ptl-bar-fill" style="width:38%"></div></div>
+<div class="ptl-msgs">
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-16</div>
+<div class="ptl-msg-subject">Re: 会前同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom与Bitcoin关系</span>
+</div>
+<div class="ptl-msg-body">老史：review三颗星 ：关于局部共识的 review之间建立的关系拓扑网 马师傅：不review 叶鹏：不review. 文博：不review woo：不review 老史：不review 小胖：…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-16</div>
+<div class="ptl-msg-subject">Re: 会前同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom与Bitcoin关系</span>
+</div>
+<div class="ptl-msg-body">老史：review三颗星 ：关于局部共识的 review之间建立的关系拓扑网 On Mon, Mar 16, 2026 at 4:37 PM 胥亚朋 &lt;xuyapeng110@gmail.com&gt; w…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-13</div>
+<div class="ptl-msg-subject">20260313 会前同步</div>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-12</div>
+<div class="ptl-msg-subject">Re: 孤矢个人最长链更新&amp;会议调整</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">难度调整</span>
+</div>
+<div class="ptl-msg-body">好的 小会讨论、计算都需要单独发一个会议链接给我 谢谢 shijingyao123 &lt;shijingyao123@gmail.com&gt;于2026年3月12日 周四20:37写道： &gt; 一：个人最长链更…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-04</div>
+<div class="ptl-msg-subject">Re: 关于atom的数据结构之后怎么处理</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">谓词</span>
+<span class="ptl-msg-concept">Atom与Bitcoin关系</span>
+</div>
+<div class="ptl-msg-body">通过文博与亚鹏的对话，发现两个人的难度好像是同一个难度， 亚鹏觉得比特币很纯粹，交易信息本身决定了（utxo状态），atom的消息与状态是分离的，导致atom只能是局部共识。 在聊到“谓词”与btc脚…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div style="text-align:center;color:var(--text-muted);font-size:11px;padding:4px">还有2条消息</div>
+</div>
+</div>
+<div class="ptl-month">
+<div class="ptl-month-label"><span class="ptl-dot"></span>2026年02月<span class="ptl-msg-count">15条消息</span></div>
+<div class="ptl-bar"><div class="ptl-bar-fill" style="width:83%"></div></div>
+<div class="ptl-msgs">
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-26</div>
+<div class="ptl-msg-subject">Re: 会前闲聊同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom是什么</span>
+<span class="ptl-msg-concept">Atom与Bitcoin关系</span>
+<span class="ptl-msg-concept">难度调整</span>
+<span class="ptl-msg-concept">谓词</span>
+</div>
+<div class="ptl-msg-body">1.Atom 产出后，并没有像比特币的 nonce 那样“回推”给系统进行难度调整。那么 Review 这个频道的存在意义（需求）到底是什么？ 2.执行本身是超越理性的，而难度是会议中找到的，btc中…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-25</div>
+<div class="ptl-msg-subject">20260225 匹配会议</div>
+<div class="ptl-msg-body">昨天新年第一天，沟通了话题“谁什么时候不想开会，谁什么这时候想开会，不想开会的时候就会出现难度”，而2025整年，其实会议中在找“难度”。 每个人都说了自己的开会情况，对我和woo、亚鹏昨天下午开会之…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-24</div>
+<div class="ptl-msg-subject">20260224 匹配会议消息广播</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">BitDNS与P2P市场</span>
+<span class="ptl-msg-concept">谓词</span>
+</div>
+<div class="ptl-msg-body">0213会议停机后的问题整理 1.atom是提供给买家与节点使用的，如果不是P2P市场则没有这些问题 2.用户与节点可以随时加入退出，节点只有长时间在线，对于atom的数量计算的越准确 3.对于卖方已…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-14</div>
+<div class="ptl-msg-subject">20260214 匹配会议消息广播</div>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-13</div>
+<div class="ptl-msg-subject">Re: 20260213会后总结</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">谓词</span>
+</div>
+<div class="ptl-msg-body">本聪哥说“谓词”=脚本，而交易类型 ，都需要特殊的代码和数据字段进行计算 谓词，它只是一个计算结果为真或假的等式。 那么对应到review/atom上来，订阅复制了atom给发布方，节点再来计算下一次…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div style="text-align:center;color:var(--text-muted);font-size:11px;padding:4px">还有10条消息</div>
+</div>
+</div>
+<div class="ptl-month">
+<div class="ptl-month-label"><span class="ptl-dot"></span>2026年01月<span class="ptl-msg-count">18条消息</span></div>
+<div class="ptl-bar"><div class="ptl-bar-fill" style="width:100%"></div></div>
+<div class="ptl-msgs">
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-30</div>
+<div class="ptl-msg-subject">Re: 周四会议同步</div>
+<div class="ptl-msg-body">昨天关于会议计算的内容我同步不了，我同步会议出现的问题 1.关于叶鹏、亚鹏、文博等相关计算同事的内容，出现了技术细节方向的问题，但也需要让参与不了计算的人能够听懂你们在争论什么，这部分需要说清楚。 2…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-29</div>
+<div class="ptl-msg-subject">Re: 强制返回计算结果</div>
+<div class="ptl-msg-body">从p2p或者说传播算法那个视角看比特币系统能不能兼容这一类的计算任务，这里我觉得无法完全对齐，因为问题本身可能需要描述清楚。因为有一个关键点，btc是“无状态”的资产，而atom本身到底是“有状态”还…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-28</div>
+<div class="ptl-msg-subject">Re: 关于atom的数据结构之后怎么处理</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom是什么</span>
+<span class="ptl-msg-concept">Atom与Bitcoin关系</span>
+<span class="ptl-msg-concept">预信任节点</span>
+<span class="ptl-msg-concept">Atom数据结构</span>
+</div>
+<div class="ptl-msg-body">这篇论文不重要 ，可以不用看，重点排除与atom的数据结构关系不大 On Tue, Jan 27, 2026 at 5:57 PM 沄涣 &lt;jiyeyulie4b310@gmail.com&gt; wrot…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-27</div>
+<div class="ptl-msg-subject">推荐必读读物</div>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-27</div>
+<div class="ptl-msg-subject">Re: 周一会议同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom与Bitcoin关系</span>
+</div>
+<div class="ptl-msg-body">从向量到网络拓扑，理解向量后，好像这里的atom与btc某种意义好像是同一种东西，所以这里回到了btc的传播算法和atom的传播算法 On Tue, Jan 27, 2026 at 8:26 PM W…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div style="text-align:center;color:var(--text-muted);font-size:11px;padding:4px">还有13条消息</div>
+</div>
+</div>
+<div class="ptl-month">
+<div class="ptl-month-label"><span class="ptl-dot"></span>2025年12月<span class="ptl-msg-count">10条消息</span></div>
+<div class="ptl-bar"><div class="ptl-bar-fill" style="width:55%"></div></div>
+<div class="ptl-msgs">
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-12-31</div>
+<div class="ptl-msg-subject">Re: 广播新nonce:广播和p2pmarket的关系</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom是什么</span>
+<span class="ptl-msg-concept">难度调整</span>
+</div>
+<div class="ptl-msg-body">亚鹏，woo的文档你看下哈 因为抹平声誉积累的优势，这里面同样是女巫的问题，广播如果不依靠pow来进行计算任务获得“广播权”，广播这件事 谁都可以，这里与btc不一样 On Wednesday, De…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-12-30</div>
+<div class="ptl-msg-subject">Re: 广播新nonce:广播和p2pmarket的关系</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom是什么</span>
+<span class="ptl-msg-concept">难度调整</span>
+<span class="ptl-msg-concept">Atom与Bitcoin关系</span>
+</div>
+<div class="ptl-msg-body">继续抽象 那么如果竞争“广播权”，需要计算任务，那么这个计算任务是什么样的？ On Wednesday, December 31, 2025 at 2:35:09 PM UTC+8 胡志伟 wrote…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-12-30</div>
+<div class="ptl-msg-subject">Re: 广播新nonce:广播和p2pmarket的关系</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom是什么</span>
+<span class="ptl-msg-concept">难度调整</span>
+<span class="ptl-msg-concept">Atom与Bitcoin关系</span>
+</div>
+<div class="ptl-msg-body">梳理一下逻辑链条，回复woo 1.出现的行为：广播，woo文档说的将“原子”产生和传播形式化为“跳变”，任何一个跳变产生的原子，都需要网络中的节点进行广播来获得声誉的积累（奖励）。 2.声誉作为一种奖…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-12-30</div>
+<div class="ptl-msg-subject">Re: 广播新nonce:广播和p2pmarket的关系</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom是什么</span>
+<span class="ptl-msg-concept">洪泛atom的激励问题</span>
+<span class="ptl-msg-concept">Atom与Bitcoin关系</span>
+</div>
+<div class="ptl-msg-body">1.从周一出nounce的过程，从“跳变”到“广播”上来，抽象到btc上来，为什么矿工出了“Nounce”之后为什么要快速的“广播”？这里的激励是什么？ 因为对于矿工来说，出了“nounce”之后进行…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-12-30</div>
+<div class="ptl-msg-subject">Re: NONCE 创世原子，Genesis Atom</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom是什么</span>
+<span class="ptl-msg-concept">Atom与Bitcoin关系</span>
+<span class="ptl-msg-concept">难度调整</span>
+<span class="ptl-msg-concept">洪泛atom的激励问题</span>
+</div>
+<div class="ptl-msg-body">这里我已经看过了 我现在就是不太懂 这里的原子计算 为什么要 活跃度/信誉 ？ 他这里不是难度调整 ，只是计算原子的数量 “活跃度”是衡量用户接受和广播后新产生了多少“原子”，我理解这里是用户自己的参…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div style="text-align:center;color:var(--text-muted);font-size:11px;padding:4px">还有5条消息</div>
+</div>
+</div>
+</div>
+
 <div class="ptl-msgs">
 <div class="ptl-msg">
 <div class="ptl-msg-date">2026-04-16</div>
@@ -2119,6 +3111,131 @@ document.addEventListener('DOMContentLoaded',function(){
         detail.style.display=detail.style.display?'':'none';
         var toggle=card.querySelector('.ita-toggle');
         if(toggle)toggle.textContent=detail.style.display?'▲':'▼';
+      }
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.ptl-msg').forEach(function(msg){
+    var btn=msg.querySelector('.ptl-expand');
+    var body=msg.querySelector('.ptl-msg-body');
+    if(btn&&body){
+      btn.addEventListener('click',function(e){e.stopPropagation();
+        body.classList.toggle('open');
+        btn.textContent=body.classList.contains('open')?'收起 ▲':'展开 ▾';
+      });
+    }
+  });
+  document.querySelectorAll('.ita-person').forEach(function(card){
+    card.addEventListener('click',function(e){
+      e.preventDefault();
+      var detail=card.nextElementSibling;
+      if(detail&&detail.classList.contains('ita-detail')){
+        detail.style.display=detail.style.display?'none':'block';
+        var toggle=card.querySelector('.ita-toggle');
+        if(toggle)toggle.textContent=detail.style.display?'▼':'▲';
+      }
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.ptl-msg').forEach(function(msg){
+    var btn=msg.querySelector('.ptl-expand');
+    var body=msg.querySelector('.ptl-msg-body');
+    if(btn&&body){
+      btn.addEventListener('click',function(e){e.stopPropagation();
+        body.classList.toggle('open');
+        btn.textContent=body.classList.contains('open')?'收起 ▲':'展开 ▾';
+      });
+    }
+  });
+  document.querySelectorAll('.ita-person').forEach(function(card){
+    card.addEventListener('click',function(e){
+      e.preventDefault();
+      var detail=card.nextElementSibling;
+      if(detail&&detail.classList.contains('ita-detail')){
+        detail.style.display=detail.style.display?'none':'block';
+        var toggle=card.querySelector('.ita-toggle');
+        if(toggle)toggle.textContent=detail.style.display?'▼':'▲';
+      }
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.ptl-msg').forEach(function(msg){
+    var btn=msg.querySelector('.ptl-expand');
+    var body=msg.querySelector('.ptl-msg-body');
+    if(btn&&body){
+      btn.addEventListener('click',function(e){e.stopPropagation();
+        body.classList.toggle('open');
+        btn.textContent=body.classList.contains('open')?'收起 ▲':'展开 ▾';
+      });
+    }
+  });
+  document.querySelectorAll('.ita-person').forEach(function(card){
+    card.addEventListener('click',function(e){
+      e.preventDefault();
+      var detail=card.nextElementSibling;
+      if(detail&&detail.classList.contains('ita-detail')){
+        detail.style.display=detail.style.display?'none':'block';
+        var toggle=card.querySelector('.ita-toggle');
+        if(toggle)toggle.textContent=detail.style.display?'▼':'▲';
+      }
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.ptl-msg').forEach(function(msg){
+    var btn=msg.querySelector('.ptl-expand');
+    var body=msg.querySelector('.ptl-msg-body');
+    if(btn&&body){
+      btn.addEventListener('click',function(e){e.stopPropagation();
+        body.classList.toggle('open');
+        btn.textContent=body.classList.contains('open')?'收起 ▲':'展开 ▾';
+      });
+    }
+  });
+  document.querySelectorAll('.ita-person').forEach(function(card){
+    card.addEventListener('click',function(e){
+      e.preventDefault();
+      var detail=card.nextElementSibling;
+      if(detail&&detail.classList.contains('ita-detail')){
+        detail.style.display=detail.style.display?'none':'block';
+        var toggle=card.querySelector('.ita-toggle');
+        if(toggle)toggle.textContent=detail.style.display?'▼':'▲';
+      }
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.ptl-msg').forEach(function(msg){
+    var btn=msg.querySelector('.ptl-expand');
+    var body=msg.querySelector('.ptl-msg-body');
+    if(btn&&body){
+      btn.addEventListener('click',function(e){e.stopPropagation();
+        body.classList.toggle('open');
+        btn.textContent=body.classList.contains('open')?'收起 ▲':'展开 ▾';
+      });
+    }
+  });
+  document.querySelectorAll('.ita-person').forEach(function(card){
+    card.addEventListener('click',function(e){
+      e.preventDefault();
+      var detail=card.nextElementSibling;
+      if(detail&&detail.classList.contains('ita-detail')){
+        detail.style.display=detail.style.display?'none':'block';
+        var toggle=card.querySelector('.ita-toggle');
+        if(toggle)toggle.textContent=detail.style.display?'▼':'▲';
       }
     });
   });
