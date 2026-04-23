@@ -193,45 +193,42 @@ def build_timeline(person):
 
 
 def build_interactions(person):
-    """Build interaction section: who did this person talk with about which concepts."""
-    msgs = person_msgs.get(person, [])
-    if not msgs:
+    """Build interaction section using concept co-occurrence from all_messages."""
+    # Build concept -> set of people who discussed it
+    concept_people = defaultdict(set)
+    person_concepts = defaultdict(set)  # person -> set of concepts
+    for m in all_msgs:
+        p = m.get('person')
+        for c in m.get('concepts', []):
+            concept_people[c].add(p)
+            person_concepts[p].add(c)
+    
+    # Find who shares concepts with this person
+    my_concepts = person_concepts.get(person, set())
+    if not my_concepts:
         return ''
     
-    # For each message, find other participants in the same concept
-    # Build a map: other_person -> {concepts: set, msg_count: int, last_date: str}
-    interactions = defaultdict(lambda: {'concepts': set(), 'count': 0, 'last_date': ''})
-    
-    for m in msgs:
-        concepts = m.get('concepts', [])
-        if isinstance(concepts, str):
-            try:
-                import ast
-                concepts = ast.literal_eval(concepts)
-            except Exception:
-                concepts = []
-        
-        date = m.get('date', '')
-        for other in all_msgs:
-            if other.get('person') == person:
+    interactions = {}
+    for concept in my_concepts:
+        for other in concept_people.get(concept, []):
+            if other == person:
                 continue
-            other_concepts = other.get('concepts', [])
-            if isinstance(other_concepts, str):
-                try:
-                    import ast
-                    other_concepts = ast.literal_eval(other_concepts)
-                except Exception:
-                    other_concepts = []
-            # If they share a concept, count as interaction
-            shared = set(c for c in concepts if c in other_concepts)
-            if shared:
-                interactions[other.get('person')]['concepts'].update(shared)
-                interactions[other.get('person')]['count'] += 1
-                od = other.get('date', '')
-                if od > interactions[other.get('person')]['last_date']:
-                    interactions[other.get('person')]['last_date'] = od
+            if other not in interactions:
+                interactions[other] = {'concepts': set(), 'count': 0, 'last_date': ''}
+            interactions[other]['concepts'].add(concept)
     
-    # Sort by interaction strength (shared concept count * msg count)
+    # Count co-occurrences
+    for m in all_msgs:
+        if m.get('person') not in interactions:
+            continue
+        m_concepts = set(m.get('concepts', []))
+        shared = m_concepts & my_concepts
+        if shared:
+            interactions[m.get('person')]['count'] += 1
+            d = m.get('date', '')
+            if d > interactions[m.get('person')]['last_date']:
+                interactions[m.get('person')]['last_date'] = d
+    
     sorted_interactions = sorted(
         interactions.items(),
         key=lambda x: len(x[1]['concepts']) * x[1]['count'],
@@ -242,7 +239,7 @@ def build_interactions(person):
         return ''
     
     html = '<div class="interaction-section">\n'
-    for other_person, data in sorted_interactions[:10]:  # Top 10 interactions
+    for other_person, data in sorted_interactions[:10]:
         concepts = sorted(data['concepts'], key=lambda c: c.split('/')[-1])
         slug = other_person.replace(' ', '_')
         html += f'<a href="../person_{esc(slug)}.html" class="ita-person">\n'
