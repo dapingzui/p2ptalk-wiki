@@ -5,47 +5,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>矢孤 — P2PTalk 人物</title>
 <style>
-:root {--bg:#1a1a2e;--sb:#16213e;--acc:#e94560;--acc2:#0f3460;--txt:#eaeaea;--muted:#a0a0a0;--bd:#2a2a4a;}
-* {box-sizing:border-box;margin:0;padding:0}
-html,body {height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--txt)}
-body {display:flex;flex-direction:column}
-.blink {color:var(--acc);font-size:12px;margin-bottom:16px;display:inline-block;text-decoration:none}
-.blink:hover {text-decoration:underline}
-header {background:var(--sb);border-bottom:1px solid var(--bd);padding:12px 20px}
-header h1 {font-size:18px;color:var(--acc);margin-bottom:4px}
-header .sub {color:var(--muted);font-size:13px}
-.container {display:flex;flex:1;overflow:hidden;height:calc(100vh - 52px)}
-.sidebar {width:200px;background:var(--sb);border-right:1px solid var(--bd);overflow-y:auto;padding:16px 0;flex-shrink:0}
-.sidebar h2 {font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);padding:10px 16px 4px}
-.sidebar a {display:block;padding:4px 16px;color:var(--txt);text-decoration:none;font-size:12px;border-left:2px solid transparent}
-.sidebar a:hover {background:var(--acc2);border-left-color:var(--acc)}
-.sidebar a.active {background:var(--acc2);border-left-color:var(--acc)}
-.main {flex:1;overflow-y:auto;padding:24px 32px;max-width:900px}
-.sec {margin-bottom:36px}
-.sec h2 {font-size:14px;color:var(--acc);margin-bottom:14px;border-bottom:1px solid var(--bd);padding-bottom:6px}
-.stats {display:flex;gap:16px;margin-bottom:20px;flex-wrap:wrap}
-.stat {background:var(--acc2);padding:10px 16px;border-radius:8px;border:1px solid var(--bd);min-width:80px}
-.stat .n {font-size:22px;color:var(--acc);font-weight:600}
-.stat .l {font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:2px}
-.tl-item {margin-bottom:14px}
-.tl-month {font-size:11px;color:var(--muted);margin-bottom:4px}
-.tl-count {color:var(--acc);margin-left:8px}
-.tl-bar {height:6px;background:var(--acc2);border-radius:3px;overflow:hidden}
-.tl-fill {height:100%;background:var(--acc);border-radius:3px}
-.bar-row {display:flex;align-items:center;margin:6px 0;font-size:12px}
-.bar-label {width:130px;color:var(--txt);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px}
-.bar-track {flex:1;height:6px;background:var(--acc2);border-radius:3px;margin:0 8px;overflow:hidden}
-.bar-fill {height:100%;background:var(--acc);border-radius:3px}
-.bar-count {width:30px;text-align:right;color:var(--muted);font-size:10px}
-.msg-item {background:var(--acc2);border:1px solid var(--bd);border-radius:8px;padding:10px 14px;margin-bottom:8px}
-.msg-date {font-size:10px;color:var(--muted);margin-bottom:4px}
-.msg-body {font-size:12px;color:var(--txt);line-height:1.6;max-height:72px;overflow:hidden}
-.msg-tags {margin-top:6px;display:flex;flex-wrap:wrap;gap:4px}
-.ctag {background:rgba(233,69,96,0.2);color:var(--acc);padding:1px 6px;border-radius:4px;font-size:10px;text-decoration:none}
-.ctag:hover {background:rgba(233,69,96,0.4);text-decoration:none}
+:root{--bg:#1a1a2e;--sb:#16213e;--acc:#e94560;--acc2:#0f3460;--txt:#eaeaea;--muted:#a0a0a0;--bd:#2a2a4a}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--txt)}
+body{display:flex;flex-direction:column}
+.blink{color:var(--acc);font-size:12px;margin-bottom:16px;display:inline-block;text-decoration:none}
+.blink:hover{text-decoration:underline}
+header{background:var(--sb);border-bottom:1px solid var(--bd);padding:12px 20px}
+header h1{font-size:18px;color:var(--acc);margin-bottom:4px}
+header .sub{color:var(--muted);font-size:13px}
+.container{display:flex;flex:1;overflow:hidden;height:calc(100vh - 52px)}
+.sidebar{width:200px;background:var(--sb);border-right:1px solid var(--bd);overflow-y:auto;padding:16px 0;flex-shrink:0}
+.sidebar h2{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);padding:10px 16px 4px}
+.sidebar a{display:block;padding:4px 16px;color:var(--txt);text-decoration:none;font-size:12px;border-left:2px solid transparent}
+.sidebar a:hover{background:var(--acc2);border-left-color:var(--acc)}
+.sidebar a.active{background:var(--acc2);border-left-color:var(--acc)}
+.main{flex:1;overflow-y:auto;padding:24px 32px;max-width:900px}
+.sec{margin-bottom:36px}
+.sec h2{font-size:14px;color:var(--acc);margin-bottom:14px;border-bottom:1px solid var(--bd);padding-bottom:6px}
+.stats{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.stat{background:var(--acc2);padding:8px 14px;border-radius:8px;border:1px solid var(--bd);min-width:70px}
+.stat .n{font-size:20px;color:var(--acc);font-weight:600}
+.stat .l{font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:2px}
+.bar-row{display:flex;align-items:center;margin:6px 0;font-size:12px}
+.bar-label{width:120px;color:var(--txt);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;cursor:pointer}
+.bar-label:hover{color:var(--acc)}
+.bar-label.active{color:var(--acc);font-weight:600}
+.bar-track{flex:1;height:5px;background:var(--acc2);border-radius:3px;margin:0 8px;overflow:hidden}
+.bar-fill{height:100%;background:var(--acc);border-radius:3px;transition:width .3s}
+.bar-count{width:28px;text-align:right;color:var(--muted);font-size:10px}
+.tl-item{margin-bottom:12px}
+.tl-month{font-size:11px;color:var(--muted);margin-bottom:4px}
+.tl-count{color:var(--acc);margin-left:8px}
+.tl-bar{height:5px;background:var(--acc2);border-radius:3px;overflow:hidden}
+.tl-fill{height:100%;background:var(--acc);border-radius:3px}
+.msg-item{background:var(--acc2);border:1px solid var(--bd);border-radius:8px;padding:10px 14px;margin-bottom:8px}
+.msg-date{font-size:10px;color:var(--muted);margin-bottom:4px}
+.msg-body{font-size:12px;color:var(--txt);line-height:1.6;max-height:72px;overflow:hidden}
+.msg-tags{margin-top:6px;display:flex;flex-wrap:wrap;gap:4px}
+.ctag{background:rgba(233,69,96,0.2);color:var(--acc);padding:1px 6px;border-radius:4px;font-size:10px;text-decoration:none;cursor:pointer}
+.ctag:hover,.ctag.active{background:rgba(233,69,96,0.5)}
+.ctag-filter{background:rgba(233,69,96,0.15);color:var(--acc);padding:4px 10px;border-radius:16px;font-size:11px;text-decoration:none;margin:3px 4px;display:inline-block}
+.ctag-filter:hover,.ctag-filter.active{background:rgba(233,69,96,0.4)}
+.filter-bar{margin-bottom:16px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.filter-bar span{font-size:11px;color:var(--muted);margin-right:4px}
+.hidden{display:none}
 </style>
 </head>
 <body>
+<script>
+function filterConcept(c) {
+  var msgs = document.querySelectorAll('.msg-item');
+  var tags = document.querySelectorAll('.ctag');
+  if (c === 'all') {
+    msgs.forEach(function(m){m.classList.remove('hidden')});
+    tags.forEach(function(t){t.classList.remove('active')});
+  } else {
+    msgs.forEach(function(m){
+      var cs = JSON.parse(m.getAttribute('data-concepts') || '[]');
+      m.classList.toggle('hidden', !cs.includes(c));
+    });
+    tags.forEach(function(t){
+      var tagConcept = t.getAttribute('data-concept');
+      t.classList.toggle('active', tagConcept === c);
+    });
+  }
+}
+</script>
 <header>
   <a href="index.html" class="blink">← P2PTalk 总览</a>
   <h1>矢孤</h1>
@@ -64,66 +90,429 @@ header .sub {color:var(--muted);font-size:13px}
   </div>
   <div class="sec">
     <h2>📊 注意力分布（按月）</h2>
-    <div class="timeline"><div class="tl-item"><div class="tl-month">2025-11 <span class="tl-count">5条</span></div>
-<div class="tl-bar"><div class="tl-fill" style="width:15.625%"></div></div></div><div class="tl-item"><div class="tl-month">2025-12 <span class="tl-count">12条</span></div>
-<div class="tl-bar"><div class="tl-fill" style="width:37.5%"></div></div></div><div class="tl-item"><div class="tl-month">2026-01 <span class="tl-count">32条</span></div>
-<div class="tl-bar"><div class="tl-fill" style="width:100.0%"></div></div></div><div class="tl-item"><div class="tl-month">2026-02 <span class="tl-count">18条</span></div>
-<div class="tl-bar"><div class="tl-fill" style="width:56.25%"></div></div></div><div class="tl-item"><div class="tl-month">2026-03 <span class="tl-count">5条</span></div>
-<div class="tl-bar"><div class="tl-fill" style="width:15.625%"></div></div></div><div class="tl-item"><div class="tl-month">2026-04 <span class="tl-count">1条</span></div>
-<div class="tl-bar"><div class="tl-fill" style="width:3.125%"></div></div></div></div>
+    <div class="timeline"><div class="tl-item"><div class="tl-month">2025-11 <span class="tl-count">5条</span></div><div class="tl-bar"><div class="tl-fill" style="width:15.625%"></div></div></div><div class="tl-item"><div class="tl-month">2025-12 <span class="tl-count">12条</span></div><div class="tl-bar"><div class="tl-fill" style="width:37.5%"></div></div></div><div class="tl-item"><div class="tl-month">2026-01 <span class="tl-count">32条</span></div><div class="tl-bar"><div class="tl-fill" style="width:100.0%"></div></div></div><div class="tl-item"><div class="tl-month">2026-02 <span class="tl-count">18条</span></div><div class="tl-bar"><div class="tl-fill" style="width:56.25%"></div></div></div><div class="tl-item"><div class="tl-month">2026-03 <span class="tl-count">5条</span></div><div class="tl-bar"><div class="tl-fill" style="width:15.625%"></div></div></div><div class="tl-item"><div class="tl-month">2026-04 <span class="tl-count">1条</span></div><div class="tl-bar"><div class="tl-fill" style="width:3.125%"></div></div></div></div>
   </div>
   <div class="sec">
-    <h2>🧠 关注概念分布</h2>
-    <div class="bars"><div class="bar-row"><div class="bar-label">Atom是什么</div>
-<div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div>
-<div class="bar-count">18</div></div><div class="bar-row"><div class="bar-label">Atom与Bitcoin关系</div>
-<div class="bar-track"><div class="bar-fill" style="width:94.44444444444444%"></div></div>
-<div class="bar-count">17</div></div><div class="bar-row"><div class="bar-label">难度调整</div>
-<div class="bar-track"><div class="bar-fill" style="width:44.44444444444444%"></div></div>
-<div class="bar-count">8</div></div><div class="bar-row"><div class="bar-label">BitDNS与P2P市场</div>
-<div class="bar-track"><div class="bar-fill" style="width:44.44444444444444%"></div></div>
-<div class="bar-count">8</div></div><div class="bar-row"><div class="bar-label">Atom数据结构</div>
-<div class="bar-track"><div class="bar-fill" style="width:33.33333333333333%"></div></div>
-<div class="bar-count">6</div></div><div class="bar-row"><div class="bar-label">中间会面机制</div>
-<div class="bar-track"><div class="bar-fill" style="width:27.77777777777778%"></div></div>
-<div class="bar-count">5</div></div><div class="bar-row"><div class="bar-label">谓词</div>
-<div class="bar-track"><div class="bar-fill" style="width:11.11111111111111%"></div></div>
-<div class="bar-count">2</div></div><div class="bar-row"><div class="bar-label">洪泛atom的激励问题</div>
-<div class="bar-track"><div class="bar-fill" style="width:5.555555555555555%"></div></div>
-<div class="bar-count">1</div></div><div class="bar-row"><div class="bar-label">节点与SPV轻节点</div>
-<div class="bar-track"><div class="bar-fill" style="width:5.555555555555555%"></div></div>
-<div class="bar-count">1</div></div><div class="bar-row"><div class="bar-label">匹配系统</div>
-<div class="bar-track"><div class="bar-fill" style="width:5.555555555555555%"></div></div>
-<div class="bar-count">1</div></div></div>
+    <h2>🧠 关注概念（点击筛选消息）</h2>
+    <div class="filter-bar"><span>筛选概念：</span><a class="ctag-filter active" onclick="filterConcept('all')">全部</a><a class="ctag-filter" onclick="filterConcept('atom/Atom是什么')">Atom是什么</a><a class="ctag-filter" onclick="filterConcept('consensus/难度调整')">难度调整</a><a class="ctag-filter" onclick="filterConcept('atom/Atom与Bitcoin关系')">Atom与Bitcoin关系</a><a class="ctag-filter" onclick="filterConcept('consensus/BitDNS与P2P市场')">BitDNS与P2P市场</a><a class="ctag-filter" onclick="filterConcept('broadcast/中间会面机制')">中间会面机制</a><a class="ctag-filter" onclick="filterConcept('atom/Atom数据结构')">Atom数据结构</a><a class="ctag-filter" onclick="filterConcept('broadcast/洪泛atom的激励问题')">洪泛atom的激励问题</a><a class="ctag-filter" onclick="filterConcept('broadcast/节点与SPV轻节点')">节点与SPV轻节点</a></div>
+    <div class="bars"><div class="bar-row">
+  <div class="bar-label" onclick="filterConcept('atom/Atom是什么')">Atom是什么</div>
+  <div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div>
+  <div class="bar-count">18</div>
+</div><div class="bar-row">
+  <div class="bar-label" onclick="filterConcept('atom/Atom与Bitcoin关系')">Atom与Bitcoin关系</div>
+  <div class="bar-track"><div class="bar-fill" style="width:94.44444444444444%"></div></div>
+  <div class="bar-count">17</div>
+</div><div class="bar-row">
+  <div class="bar-label" onclick="filterConcept('consensus/难度调整')">难度调整</div>
+  <div class="bar-track"><div class="bar-fill" style="width:44.44444444444444%"></div></div>
+  <div class="bar-count">8</div>
+</div><div class="bar-row">
+  <div class="bar-label" onclick="filterConcept('consensus/BitDNS与P2P市场')">BitDNS与P2P市场</div>
+  <div class="bar-track"><div class="bar-fill" style="width:44.44444444444444%"></div></div>
+  <div class="bar-count">8</div>
+</div><div class="bar-row">
+  <div class="bar-label" onclick="filterConcept('atom/Atom数据结构')">Atom数据结构</div>
+  <div class="bar-track"><div class="bar-fill" style="width:33.33333333333333%"></div></div>
+  <div class="bar-count">6</div>
+</div><div class="bar-row">
+  <div class="bar-label" onclick="filterConcept('broadcast/中间会面机制')">中间会面机制</div>
+  <div class="bar-track"><div class="bar-fill" style="width:27.77777777777778%"></div></div>
+  <div class="bar-count">5</div>
+</div><div class="bar-row">
+  <div class="bar-label" onclick="filterConcept('atom/谓词')">谓词</div>
+  <div class="bar-track"><div class="bar-fill" style="width:11.11111111111111%"></div></div>
+  <div class="bar-count">2</div>
+</div><div class="bar-row">
+  <div class="bar-label" onclick="filterConcept('broadcast/洪泛atom的激励问题')">洪泛atom的激励问题</div>
+  <div class="bar-track"><div class="bar-fill" style="width:5.555555555555555%"></div></div>
+  <div class="bar-count">1</div>
+</div><div class="bar-row">
+  <div class="bar-label" onclick="filterConcept('broadcast/节点与SPV轻节点')">节点与SPV轻节点</div>
+  <div class="bar-track"><div class="bar-fill" style="width:5.555555555555555%"></div></div>
+  <div class="bar-count">1</div>
+</div><div class="bar-row">
+  <div class="bar-label" onclick="filterConcept('market/匹配系统')">匹配系统</div>
+  <div class="bar-track"><div class="bar-fill" style="width:5.555555555555555%"></div></div>
+  <div class="bar-count">1</div>
+</div></div>
   </div>
   <div class="sec">
-    <h2>❓ 提出过的问题 <span style="color:var(--muted);font-size:12px">(8条)</span></h2>
-    <div class="msg-item"><div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOW8uuWItuWQjOatpeacgOmVv+mTvg==?=</div>
-<div class="msg-body">按照马师傅的逻辑，那个pub/sub现在在处理什么业务呢。 另外如果与内存池无关，那怎么处理atom呢 矢孤 <shijingyao123@gmail.com>于2026年1月9日 周五20:31写道： > > @叶鹏”你是想假设atom需要加入共识，也可能需要一个内存池，来作为atom相关的交易的缓存和转发，然后这个新的内存池中保持着多个与atom相关的交...</div><div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag">Atom是什么</a><a href="../atom/Atom数据结构.html" class="ctag">Atom数据结构</a></div></div><div class="msg-item"><div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOW8uuWItuWQjOatpeacgOmVv+mTvg==?=</div>
-<div class="msg-body">@叶鹏”你是想假设atom需要加入共识，也可能需要一个内存池，来作为atom相关的交易的缓存和转发，然后这个新的内存池中保持着多个与atom相关的交易。对吗？你其实是想知道与atom相关的交易，长什么样对吗？类似于比特币中 CTransaction这种结构” 是这个意思 矢孤 <shijingyao123@gmail.com>于2026年1月9日 周五20:...</div><div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag">Atom是什么</a><a href="../atom/Atom数据结构.html" class="ctag">Atom数据结构</a></div></div><div class="msg-item"><div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOS8muWJjeWQjOatpQ==?=</div>
-<div class="msg-body">请按照格式 在2026年3月16日星期一 UTC+8 16:37:39<xuyapeng110> 写道： > > 目前的计算引用文博的计算内容，是之前我看代码忽视的点，即atom在acceptblock的时候就已经开始传播了，这样atom的传播模型和之前了解到的已经不太一样了。目前个人有meme的点还是atom的区别以及atom在不同的传播途径中的流速控制是...</div><div class="msg-tags"></div></div><div class="msg-item"><div class="msg-date">2026-02 · =?UTF-8?B?UmU6IOS8muWJjemXsuiBiuWQjOatpQ==?=</div>
-<div class="msg-body">结合大家聊到的频道和我自己对于那个难度的理解，我想聊聊难度和频道的关系。 Atom和比特币是共用了一个难度体系的，具体来说指的都是矿工出的时候同时生产了nonce，比特币用来给自己盖戳，atom用来？ 而对于这个生产nonce的实际时间，也会成为下次难度调整的一个影响因子。 那atom这里出去之后并没有再反过来影响系统什么。 在区块这个频道里，大家是根据难度...</div><div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag">Atom是什么</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag">Atom与Bitcoin关系</a><a href="../consensus/难度调整.html" class="ctag">难度调整</a></div></div><div class="msg-item"><div class="msg-date">2026-02 · =?UTF-8?Q?Re:_202602?= =?UTF-8?Q?13_=E5=8C=B9=E9=85=8D?=
- =</div>
-<div class="msg-body">你说的这些内容从哪里来的 在2026年2月13日星期五 UTC+8 10:44:46<胡志伟> 写道： > 1.P2P 市场（Marketplace）的去中心化构想，中本聪在2010年曾经在论坛中讲过，P2P markets can be built > on top... The nodes would just need to remember the ...</div><div class="msg-tags"><a href="../consensus/BitDNS与P2P市场.html" class="ctag">BitDNS与P2P市场</a></div></div><div class="msg-item"><div class="msg-date">2026-02 · =?UTF-8?Q?Re:_202602?= =?UTF-8?Q?13_=E5=8C=B9=E9=85=8D?=
- =</div>
-<div class="msg-body">@文博@叶鹏@亚朋，看一下这个网页，半小时后我想基于小胖这个内容进行讨论， 会议链接：https://discord.com/channels/1376778894807400479/1376778895470104669 看完请现在这个邮件下进行回复 在2026年2月13日星期五 UTC+8 12:22:27<Woo> 写道： > 附上https://bi...</div><div class="msg-tags"><a href="../consensus/BitDNS与P2P市场.html" class="ctag">BitDNS与P2P市场</a><a href="../atom/Atom是什么.html" class="ctag">Atom是什么</a></div></div><div class="msg-item"><div class="msg-date">2026-03 · =?UTF-8?B?5a2k55+i5Liq5Lq65pyA6ZW/6ZO+5pu05pawJuS8muiuruiwg+</div>
-<div class="msg-body">一：个人最长链更新 atom是流速累积到二就触发，atom是不是在实时流动的，如何做到实时流动呢？ 实时流动这个特性导致，不能像比特币一样十分钟处理一次，当然我现在脑子里有个新的想法，就是每个用户实时流动的atom也可以像tx一样先进mempool，等到一个时钟或者一个周期统一处理，当然也可以实时处理，这里我想回到atom的设计里来看是怎么实时传播的。 我的...</div><div class="msg-tags"><a href="../consensus/难度调整.html" class="ctag">难度调整</a></div></div><div class="msg-item"><div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOaOqOiNkOW/heivu+ivu+eJqQ==?=</div>
-<div class="msg-body">推荐+1 为什么最初的小冲击会像滚雪球一样蔓延，影响或扰乱 过去在类似扰动下表现稳定的大型系统？ 为什么有些书籍、电影和专辑 从默默无闻到风靡一时，营销预算又少， 却能成为热门作品 (1)，而许多事先看起来毫不相干的作品 却无法脱颖而出？为什么股市 会出现一些无法追溯到 任何相应重要信息的出现 (2)？ 大型的草根社会运动如何在缺乏 中央控制或公共沟通的情况...</div><div class="msg-tags"></div></div>
-  </div>
-  <div class="sec">
-    <h2>📬 最新消息</h2>
-    <div class="msg-item"><div class="msg-date">2026-04 · =?UTF-8?B?5Luj56CB5YiG5Lqr5Lya?=</div>
-<div class="msg-body">今天六点到9点在线交流代码阅读，有时间的的在邮件下面回复。</div><div class="msg-tags"></div></div><div class="msg-item"><div class="msg-date">2026-03 · =?UTF-8?B?5Lya5YmN5ZCM5q2l?=</div>
-<div class="msg-body">今天的会议按照以下格式回复，你个人对其他人的引用情况，给了你什么启发。 马师傅：review四颗星：用atom来解决上下文记忆的问题。 叶鹏：review三颗星：关于用pow干预getrandom这个想法。 文博：review三颗星：google的那个pagerank的解释和atom的区别 woo：</div><div class="msg-tags"></div></div><div class="msg-item"><div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOS8muWJjeWQjOatpQ==?=</div>
-<div class="msg-body">请按照格式 在2026年3月16日星期一 UTC+8 16:37:39<xuyapeng110> 写道： > > 目前的计算引用文博的计算内容，是之前我看代码忽视的点，即atom在acceptblock的时候就已经开始传播了，这样atom的传播模型和之前了解到的已经不太一样了。目前个人有meme的点</div><div class="msg-tags"></div></div><div class="msg-item"><div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOS8muWJjeWQjOatpQ==?=</div>
-<div class="msg-body">马师傅：不review 叶鹏：review五颗星：关于atom的货币属性，用神经元的例子给我讲了一下整个p2pmarket的计算结构，我进一步会想到atom的货币设计，以及计算和激励的耦合，还有就是类比回比特币，中本聪脑子里的计算结构到底是个啥。 文博：review四颗星，关于我前面流速限制的mem</div><div class="msg-tags"><a href="../atom/Atom与Bitcoin关系.html" class="ctag">Atom与Bitcoin关系</a></div></div><div class="msg-item"><div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOWFs+S6jmF0b20=?=
+    <h2>💬 全部消息（按概念筛选）</h2>
+    <div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-04 · =?UTF-8?B?5Luj56CB5YiG5Lqr5Lya?=</div>
+  <div class="msg-body">今天六点到9点在线交流代码阅读，有时间的的在邮件下面回复。...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-03 · =?UTF-8?B?5Lya5YmN5ZCM5q2l?=</div>
+  <div class="msg-body">今天的会议按照以下格式回复，你个人对其他人的引用情况，给了你什么启发。 马师傅：review四颗星：用atom来解决上下文记忆的问题。 叶鹏：review三颗星：关于用pow干预getrandom这个想法。 文博：review三颗星：google的那个pagerank的解释和atom的区别 woo：review两颗星：关于流速控制类比到四年减半机制 亚朋：review一颗星：关于流速控制每个节点是...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body">请按照格式 在2026年3月16日星期一 UTC+8 16:37:39<xuyapeng110> 写道： > > 目前的计算引用文博的计算内容，是之前我看代码忽视的点，即atom在acceptblock的时候就已经开始传播了，这样atom的传播模型和之前了解到的已经不太一样了。目前个人有meme的点还是atom的区别以及atom在不同的传播途径中的流速控制是否应该不一样，是否初始广播的atom的流...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body">马师傅：不review 叶鹏：review五颗星：关于atom的货币属性，用神经元的例子给我讲了一下整个p2pmarket的计算结构，我进一步会想到atom的货币设计，以及计算和激励的耦合，还有就是类比回比特币，中本聪脑子里的计算结构到底是个啥。 文博：review四颗星，关于我前面流速限制的meme，文博纠正了我对于那个atom流转的理解，那个地方我的meme被迅速修正了。 woo：不revie...</div>
+  <div class="msg-tags"><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='["broadcast/\u4e2d\u95f4\u4f1a\u9762\u673a\u5236", "atom/Atom\u4e0eBitcoin\u5173\u7cfb", "atom/Atom\u6570\u636e\u7ed3\u6784"]'>
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOWFs+S6jmF0b20=?=
  =?UTF-8?B?55qE5pWw5o2u57uT5p6E5LmL5ZCO5oCO5Lm</div>
-<div class="msg-body">预约晚点开会展开讲讲你的1，你定个时间跟我讲 在2026年3月12日星期四 UTC+8 17:26:21<YePeng> 写道： > > 1、atom > 量化的对象是User，与product并无直接关系。全局atom的状态变更是由review触发的，review消息使用的是泛洪传播，即所有的节点</div><div class="msg-tags"><a href="../broadcast/中间会面机制.html" class="ctag">中间会面机制</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag">Atom与Bitcoin关系</a><a href="../atom/Atom数据结构.html" class="ctag">Atom数据结构</a></div></div><div class="msg-item"><div class="msg-date">2026-03 · =?UTF-8?B?5a2k55+i5Liq5Lq65pyA6ZW/6ZO+5pu05pawJuS8muiuruiwg+aVtA==?=</div>
-<div class="msg-body">一：个人最长链更新 atom是流速累积到二就触发，atom是不是在实时流动的，如何做到实时流动呢？ 实时流动这个特性导致，不能像比特币一样十分钟处理一次，当然我现在脑子里有个新的想法，就是每个用户实时流动的atom也可以像tx一样先进mempool，等到一个时钟或者一个周期统一处理，当然也可以实时处</div><div class="msg-tags"><a href="../consensus/难度调整.html" class="ctag">难度调整</a></div></div><div class="msg-item"><div class="msg-date">2026-02 · =?UTF-8?B?UmU6IDIwMjYwMjI35Lya5YmN5ZCM5q2l?=</div>
-<div class="msg-body">@文博@叶鹏 流速控制类比难度调整算法。 在讨论频道，全局一致性，难度调整算法和频道的关系时，想到什么规则是整个系统都是执行的规则。 那在atom里，流速控制就是这么个玩意儿，不管在线离线，不管atom在哪里，review进不进共识，流速控制必须执行。 区别在于，难度调整是动态的，流速控制是静态的。</div><div class="msg-tags"><a href="../consensus/BitDNS与P2P市场.html" class="ctag">BitDNS与P2P市场</a><a href="../consensus/难度调整.html" class="ctag">难度调整</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag">Atom与Bitcoin关系</a></div></div><div class="msg-item"><div class="msg-date">2026-02 · =?UTF-8?B?MjAyNjAyMjfkvJrliY3lkIzmraU=?=</div>
-<div class="msg-body"></div><div class="msg-tags"></div></div><div class="msg-item"><div class="msg-date">2026-02 · =?UTF-8?B?UmU6IOS8muWJjemXsuiBiuWQjOatpQ==?=</div>
-<div class="msg-body">结合大家聊到的频道和我自己对于那个难度的理解，我想聊聊难度和频道的关系。 Atom和比特币是共用了一个难度体系的，具体来说指的都是矿工出的时候同时生产了nonce，比特币用来给自己盖戳，atom用来？ 而对于这个生产nonce的实际时间，也会成为下次难度调整的一个影响因子。 那atom这里出去之后并</div><div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag">Atom是什么</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag">Atom与Bitcoin关系</a><a href="../consensus/难度调整.html" class="ctag">难度调整</a></div></div><div class="msg-item"><div class="msg-date">2026-02 · =?UTF-8?B?5Lya5YmN6Zey6IGK5ZCM5q2l?=</div>
-<div class="msg-body"></div><div class="msg-tags"></div></div>
+  <div class="msg-body">预约晚点开会展开讲讲你的1，你定个时间跟我讲 在2026年3月12日星期四 UTC+8 17:26:21<YePeng> 写道： > > 1、atom > 量化的对象是User，与product并无直接关系。全局atom的状态变更是由review触发的，review消息使用的是泛洪传播，即所有的节点都能收到。而product使用的是中间会面机制传播，这必将造成部分节点收不到product的消息。试...</div>
+  <div class="msg-tags"><a href="../broadcast/中间会面机制.html" class="ctag" data-concept="broadcast/中间会面机制">中间会面机制</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a><a href="../atom/Atom数据结构.html" class="ctag" data-concept="atom/Atom数据结构">Atom数据结构</a></div>
+</div>
+<div class="msg-item" data-concepts='["consensus/\u96be\u5ea6\u8c03\u6574"]'>
+  <div class="msg-date">2026-03 · =?UTF-8?B?5a2k55+i5Liq5Lq65pyA6ZW/6ZO+5pu05pawJuS8muiuruiwg+aVtA==?=</div>
+  <div class="msg-body">一：个人最长链更新 atom是流速累积到二就触发，atom是不是在实时流动的，如何做到实时流动呢？ 实时流动这个特性导致，不能像比特币一样十分钟处理一次，当然我现在脑子里有个新的想法，就是每个用户实时流动的atom也可以像tx一样先进mempool，等到一个时钟或者一个周期统一处理，当然也可以实时处理，这里我想回到atom的设计里来看是怎么实时传播的。 我的问题： 1这个事情atom里本来是怎么干...</div>
+  <div class="msg-tags"><a href="../consensus/难度调整.html" class="ctag" data-concept="consensus/难度调整">难度调整</a></div>
+</div>
+<div class="msg-item" data-concepts='["consensus/BitDNS\u4e0eP2P\u5e02\u573a", "consensus/\u96be\u5ea6\u8c03\u6574", "atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2026-02 · =?UTF-8?B?UmU6IDIwMjYwMjI35Lya5YmN5ZCM5q2l?=</div>
+  <div class="msg-body">@文博@叶鹏 流速控制类比难度调整算法。 在讨论频道，全局一致性，难度调整算法和频道的关系时，想到什么规则是整个系统都是执行的规则。 那在atom里，流速控制就是这么个玩意儿，不管在线离线，不管atom在哪里，review进不进共识，流速控制必须执行。 区别在于，难度调整是动态的，流速控制是静态的。 这里有个meme，就是我用pow来干预这个流速行不行。 或者我生产atom跟流速有关系行不行。 这...</div>
+  <div class="msg-tags"><a href="../consensus/BitDNS与P2P市场.html" class="ctag" data-concept="consensus/BitDNS与P2P市场">BitDNS与P2P市场</a><a href="../consensus/难度调整.html" class="ctag" data-concept="consensus/难度调整">难度调整</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-02 · =?UTF-8?B?MjAyNjAyMjfkvJrliY3lkIzmraU=?=</div>
+  <div class="msg-body">...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48", "atom/Atom\u4e0eBitcoin\u5173\u7cfb", "consensus/\u96be\u5ea6\u8c03\u6574", "atom/\u8c13\u8bcd"]'>
+  <div class="msg-date">2026-02 · =?UTF-8?B?UmU6IOS8muWJjemXsuiBiuWQjOatpQ==?=</div>
+  <div class="msg-body">结合大家聊到的频道和我自己对于那个难度的理解，我想聊聊难度和频道的关系。 Atom和比特币是共用了一个难度体系的，具体来说指的都是矿工出的时候同时生产了nonce，比特币用来给自己盖戳，atom用来？ 而对于这个生产nonce的实际时间，也会成为下次难度调整的一个影响因子。 那atom这里出去之后并没有再反过来影响系统什么。 在区块这个频道里，大家是根据难度进行协调或者说排序的。 在review这...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a><a href="../consensus/难度调整.html" class="ctag" data-concept="consensus/难度调整">难度调整</a><a href="../atom/谓词.html" class="ctag" data-concept="atom/谓词">谓词</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-02 · =?UTF-8?B?5Lya5YmN6Zey6IGK5ZCM5q2l?=</div>
+  <div class="msg-body">...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["consensus/BitDNS\u4e0eP2P\u5e02\u573a"]'>
+  <div class="msg-date">2026-02 · =?UTF-8?Q?Re:_20260213=E4=BC=9A=E5=90=8E=E6=80=BB=E7=BB=93?=</div>
+  <div class="msg-body">聪哥这个项目我称之为，互联网摆摊儿 在2026年2月13日星期五 UTC+8 14:33:09<shijingyao123> 写道： > 根据文博的反馈，atom是给节点自己使用的，具体来说是给买家使用的。这里看到一个p2p环境中的市场，如果不是p2p就没这些问题。 > > 用户跟节点都是随时加入和退出的，这有点像我去逛摊儿，我可以先不买，在旁边站一会儿，看看有没有其他用户购买，他们吃了以后什么感...</div>
+  <div class="msg-tags"><a href="../consensus/BitDNS与P2P市场.html" class="ctag" data-concept="consensus/BitDNS与P2P市场">BitDNS与P2P市场</a></div>
+</div>
+<div class="msg-item" data-concepts='["consensus/BitDNS\u4e0eP2P\u5e02\u573a"]'>
+  <div class="msg-date">2026-02 · =?UTF-8?Q?Re:_20260213=E4=BC=9A=E5=90=8E=E6=80=BB=E7=BB=93?=</div>
+  <div class="msg-body">根据文博的反馈，atom是给节点自己使用的，具体来说是给买家使用的。这里看到一个p2p环境中的市场，如果不是p2p就没这些问题。 用户跟节点都是随时加入和退出的，这有点像我去逛摊儿，我可以先不买，在旁边站一会儿，看看有没有其他用户购买，他们吃了以后什么感觉，因为摊那个市场也没有什么公共的频道来记录他们的信息。所以中本聪这里其实形式化了这个过程，用atom这套东西尝试来做这个事。 在2026年2月1...</div>
+  <div class="msg-tags"><a href="../consensus/BitDNS与P2P市场.html" class="ctag" data-concept="consensus/BitDNS与P2P市场">BitDNS与P2P市场</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-02 · =?UTF-8?Q?20260213=E4=BC=9A=E5=90=8E=E6=80=BB=E7=BB=93?=</div>
+  <div class="msg-body">大家在这里可以随便停个机...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["consensus/BitDNS\u4e0eP2P\u5e02\u573a", "atom/\u8c13\u8bcd"]'>
+  <div class="msg-date">2026-02 · =?UTF-8?Q?Re:_202602?= =?UTF-8?Q?13_=E5=8C=B9=E9=85=8D?=
+ =?UTF-8?Q?=E4=BC=9A=E</div>
+  <div class="msg-body">这部分内容是小胖ai的meme，这里我们不纠结邮件内容。 通过讨论我们把注意力放到了新的关键词上 1:中本聪说脚本本质上是一种谓词，过去我们没有对脚本这里抽象过，我觉得这个有点意思 2:亚朋前两天讲到bitdns的部分，我觉得这个bitdns的帖子也可以重新看一下。 在2026年2月13日星期五 UTC+8 10:44:46<胡志伟> 写道： > 1.P2P 市场（Marketplace）的去中心...</div>
+  <div class="msg-tags"><a href="../consensus/BitDNS与P2P市场.html" class="ctag" data-concept="consensus/BitDNS与P2P市场">BitDNS与P2P市场</a><a href="../atom/谓词.html" class="ctag" data-concept="atom/谓词">谓词</a></div>
+</div>
+<div class="msg-item" data-concepts='["consensus/BitDNS\u4e0eP2P\u5e02\u573a"]'>
+  <div class="msg-date">2026-02 · =?UTF-8?Q?Re:_202602?= =?UTF-8?Q?13_=E5=8C=B9=E9=85=8D?=
+ =?UTF-8?Q?=E4=BC=9A=E</div>
+  <div class="msg-body">你说的这些内容从哪里来的 在2026年2月13日星期五 UTC+8 10:44:46<胡志伟> 写道： > 1.P2P 市场（Marketplace）的去中心化构想，中本聪在2010年曾经在论坛中讲过，P2P markets can be built > on top... The nodes would just need to remember the feedback scores. （P2...</div>
+  <div class="msg-tags"><a href="../consensus/BitDNS与P2P市场.html" class="ctag" data-concept="consensus/BitDNS与P2P市场">BitDNS与P2P市场</a></div>
+</div>
+<div class="msg-item" data-concepts='["consensus/BitDNS\u4e0eP2P\u5e02\u573a", "atom/Atom\u662f\u4ec0\u4e48"]'>
+  <div class="msg-date">2026-02 · =?UTF-8?Q?Re:_202602?= =?UTF-8?Q?13_=E5=8C=B9=E9=85=8D?=
+ =?UTF-8?Q?=E4=BC=9A=E</div>
+  <div class="msg-body">@文博@叶鹏@亚朋，看一下这个网页，半小时后我想基于小胖这个内容进行讨论， 会议链接：https://discord.com/channels/1376778894807400479/1376778895470104669 看完请现在这个邮件下进行回复 在2026年2月13日星期五 UTC+8 12:22:27<Woo> 写道： > 附上https://bitcointalk.org/index....</div>
+  <div class="msg-tags"><a href="../consensus/BitDNS与P2P市场.html" class="ctag" data-concept="consensus/BitDNS与P2P市场">BitDNS与P2P市场</a><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-02 · =?UTF-8?B?UmU6IDIwMjYwMjEx5Lya5YmN5ZCM5q2l?=</div>
+  <div class="msg-body">我想要针对我之前的设想和文博的同步进行讨论 会议本身是p2p的，但会前同步是全网广播的。 参加会议的前提可以是先完成会前同步再来参与。 我上次会议是跟小胖讨论会议的问题。 想到两个大概的方案 一是我们过去的p2p只强调了节点和节点，没注意到频道。就是说不同的频道应该用于处理不同的事物，有些同步最长链是强共识的，有些属于计算讨论，那就是没那么强共识。还有计算返回的，可能算另外一种频道。 二是如何通过...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-02 · =?UTF-8?B?MjAyNjAyMTHkvJrliY3lkIzmraU=?=</div>
+  <div class="msg-body">...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48", "atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2026-02 · =?UTF-8?Q?Re:_20260211=E4=BC=9A=E5=89=8D=E5=90=8C=E6=AD=A5?=</div>
+  <div class="msg-body">第二次同步 刚才会议聊到这个频道订阅的东西是否是落后的，是不是比特币后来放弃了频道这个结构 再结合亚朋的meme，说区块是否就是中间会面这个东西。 会议中有一个共识是说关于atom是给节点用的这个meme并没有什么证据说中本聪就是这么想的，也没有证据说不是这么想的。 还有一部分就是关于计算内容匹配的计算。 就是说每个人有一定的计算结论想要广播的时候，可以先发一封邮件，表明自己的观点，然后看其他人的...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='["market/\u5339\u914d\u7cfb\u7edf", "atom/Atom\u662f\u4ec0\u4e48", "broadcast/\u4e2d\u95f4\u4f1a\u9762\u673a\u5236", "consensus/\u96be\u5ea6\u8c03\u6574"]'>
+  <div class="msg-date">2026-02 · =?UTF-8?B?UmU6IDIwMjYwMjAxOSDlsI/kvJrlkIzmraU=?=</div>
+  <div class="msg-body">尝试参加小胖和woo的会议 @文博 我通过上次会议，基于woo的关键计算内容返还，与叶鹏亚鹏的讨论，文博的基本知识补充，得到了一个新的结论:atom是给矿工用的，目的是在给发布方和订阅方做匹配的时候能根据atom多少决定要不要参与广播和计算。 woo给我讲明白了中间会面机制，这个对我是有关键的推动作用的，我尝试将这种推动作用的重要性抽象出来放到会议中，其次，亚鹏指出了一个问题，节点先广播再在本地进...</div>
+  <div class="msg-tags"><a href="../market/匹配系统.html" class="ctag" data-concept="market/匹配系统">匹配系统</a><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a><a href="../broadcast/中间会面机制.html" class="ctag" data-concept="broadcast/中间会面机制">中间会面机制</a><a href="../consensus/难度调整.html" class="ctag" data-concept="consensus/难度调整">难度调整</a></div>
+</div>
+<div class="msg-item" data-concepts='["broadcast/\u6d2a\u6cdbatom\u7684\u6fc0\u52b1\u95ee\u9898", "broadcast/\u4e2d\u95f4\u4f1a\u9762\u673a\u5236", "atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2026-02 · =?UTF-8?B?UmU6IDIwMjYwMjA35ZCM5q2l?=
+ =?UTF-8?B?5pys5Lya6K6u5YmN5Liq5Lq655qE5py</div>
+  <div class="msg-body">还有个问题是关于从多个频道，不同的消息类型，最后收敛到比特币今天的这个结构，是比特币将这个想法变成熟进化了还是说只是比特币和atom不一样而已。 根据文博的邮件另外想到一个问题就是节点洪泛atom的这些内容是不是没有激励，是根据什么决定我要不要洪泛这些消息呢 在2026年2月7日星期六 UTC+8 15:00:29<shijingyao123> 写道： > > 我想聊woo说的那个中间会面机制，以...</div>
+  <div class="msg-tags"><a href="../broadcast/洪泛atom的激励问题.html" class="ctag" data-concept="broadcast/洪泛atom的激励问题">洪泛atom的激励问题</a><a href="../broadcast/中间会面机制.html" class="ctag" data-concept="broadcast/中间会面机制">中间会面机制</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='["broadcast/\u4e2d\u95f4\u4f1a\u9762\u673a\u5236", "atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2026-02 · =?UTF-8?B?UmU6IDIwMjYwMjA35ZCM5q2l?=
+ =?UTF-8?B?5pys5Lya6K6u5YmN5Liq5Lq655qE5py</div>
+  <div class="msg-body">我想聊woo说的那个中间会面机制，以及抽象来看那几个频道，节点，用户，atom，review的关系，还有一个meme是关于比特币本身有没有atom，我觉得是有的，是每个块那个出块时间，最终被用于调整系统的难度了，只不过这个atom没有发出来给到出块节点，而是直接拿去调整系统的难度了。这里我理解系统其实要了一个nonce，对等的激励了矿工一个比特币，但其实矿工还给了一个东西，就是那个实际出块的时间，...</div>
+  <div class="msg-tags"><a href="../broadcast/中间会面机制.html" class="ctag" data-concept="broadcast/中间会面机制">中间会面机制</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-02 · =?UTF-8?B?MjAyNjAyMDflkIzmraXmnKzkvJo=?=
+ =?UTF-8?B?6K6u5YmN5Liq5Lq655qE5pyA5pa</div>
+  <div class="msg-body">改一下这个会前同步的逻辑 由于我们会有不同的小会，大会只在周一，因此这个同步需要在小会前也执行一下，确保没有参与小会的人也能get到重点。 同步内容也改成个人最新进展和该进展的上下文...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-02 · =?UTF-8?B?6K665paH5YiG5Lqr77ya5q+U54m55biB?=
+ =?UTF-8?B?55qE6auY5pWI5bim5a695Lq</div>
+  <div class="msg-body">https://arxiv.org/abs/1905.10518...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48", "atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOWRqOWbm+S8muiuruWQjOatpQ==?=</div>
+  <div class="msg-body">周四关于atom本身的设计有一个统一的共识，留下的问题就是这里到底是个啥，这个系统的设计角度是什么 我meme到一个东西，还没能很明确，就是会议的作用，我大概感觉会议的作用有一部分是社交，可能是类比于昨天说比特币只是atom的外部输入，当然昨天最后也有一个小疑问，就是关于atom从比特币获取输入，输出却跟比特币没啥关系。 然后就是关于这个会前同步这个会议规则，我觉得还是得用。其实文博说的有道理，会...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?5ZGo5Zub5Lya6K6u5ZCM5q2l?=</div>
+  <div class="msg-body">老规矩...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?5by65Yi26L+U5Zue6K6h566X57uT5p6c?=</div>
+  <div class="msg-body">周一统一的共识在于:从p2p或者说传播算法那个视角看看比特币系统能不能兼容这一类的计算任务，进一步抽象比特币这个图灵机的设计重点。(这个问题本身也需要更清晰的表达) 这里我需要明天下午三点前邮件返回计算结果(算多少同步多少)，并且开会进行讨论，会议需要全员参加。...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOaOqOiNkOW/heivu+ivu+eJqQ==?=</div>
+  <div class="msg-body">推荐+1 为什么最初的小冲击会像滚雪球一样蔓延，影响或扰乱 过去在类似扰动下表现稳定的大型系统？ 为什么有些书籍、电影和专辑 从默默无闻到风靡一时，营销预算又少， 却能成为热门作品 (1)，而许多事先看起来毫不相干的作品 却无法脱颖而出？为什么股市 会出现一些无法追溯到 任何相应重要信息的出现 (2)？ 大型的草根社会运动如何在缺乏 中央控制或公共沟通的情况下兴起 (3)？ 在2026年1月27日...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOWRqOS4gOS8muiuruWQjOatpQ==?=</div>
+  <div class="msg-body">我记得就是，研究传播算法。 大概逻辑就是，叶鹏更新了对比特币和atom关系的看法，从原来并行的系统，到认为atom类似于一种在比特币系统里运行的虚拟机，区别是从原来我预先觉得的mempool这里对比特币下手到对传播算法下手。具体可以看叶鹏的回复 我今天因为要跟文博聊会儿，所以我先回复了。 在2026年1月27日星期二 UTC+8 19:59:24<shijingyao123> 写道： > 老规矩...</div>
+  <div class="msg-tags"><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?5ZGo5LiA5Lya6K6u5ZCM5q2l?=</div>
+  <div class="msg-body">老规矩...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOWRqOS6lOS8muiuruWQjOatpQ==?=</div>
+  <div class="msg-body">另外一点就是关于这里有些技术上的讨论我参与不进去，所以这部分我不好评价 在2026年1月26日星期一 UTC+8 15:57:20<shijingyao123> 写道： > 老规矩...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOWRqOS6lOS8muiuruWQjOatpQ==?=</div>
+  <div class="msg-body">关于周一的会议，我想到两个问题，一是周一线下见面没有什么大的变动最好全员线下参加，开什么没那么重要，几点到也没那么重要。 二是即使线下开会，也需要严格执行会议规则。 这里出现一个新的问题，就是两个人开会的时候下次是否需要执行会议规则。如果需要的话那个多个人开会的时候下一次怎么同步，两个人开下一次怎么同步，因为目前我是以我的视角来要求大家同步的，其实未必所有的会大家都参加了。 那么比如雷雷跟叶鹏开了...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOWRqOS6lOS8muiuruWQjOatpQ==?=</div>
+  <div class="msg-body">我就记得一个，最后聊到关于叶鹏文博亚朋关于atom的看法的不同，我不知道这个为什么会有不同，所以我新发了个邮件请求三个人同步。 在2026年1月26日星期一 UTC+8 15:57:20<shijingyao123> 写道： > 老规矩...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?5ZGo5LqU5Lya6K6u5ZCM5q2l?=</div>
+  <div class="msg-body">老规矩...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOWRqOWbm+S8muiuruWQjOatpQ==?=</div>
+  <div class="msg-body">在我们会议改为会前同步后，发生了一个有趣的现象，就是，会对前一次的会议根据自己的经验和选择抽象重点进行表达，而表达的时候，我们可以很明确看到那个引用的链条，比如，小胖有一个引用排行榜，就是他自己排在第一，然后会实时更新那个榜单，你很明显能看到他引用的时候，除了，逻辑，经验，还有被他人影响的因素。 另外我们探讨了另外一个问题，关于跟他人交流的一些建议，比如别人在广播一个新的想法或者逻辑时，应该让他讲...</div>
+  <div class="msg-tags"><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?5ZGo5Zub5Lya6K6u5ZCM5q2l?=</div>
+  <div class="msg-body">老规矩...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOWFs+S6jmF0b20=?=
+ =?UTF-8?B?55qE5pWw5o2u57uT5p6E5LmL5ZCO5oCO5Lm</div>
+  <div class="msg-body">几天还聊到一个关键问题，就是，你认为，是不是atom越多，就代表你的信誉越多，这个问题也可以回答一下。 在2026年1月23日星期五 UTC+8 17:49:51<shijingyao123> 写道： > 这个帖子可以持续返回计算直到我听懂为止，因为我觉得这里涉及到了我不懂的领域，我没法参与进来。 > 当然，我们还可以先回答另外一个问题，中本聪设计比特币到这一步的时候，他老人家咋想的。 > @文博...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?5YWz5LqOYXRvbeeahOaVsOaNrue7k+aehOS5i+WQjuaAjuS5iOWkhOeQhg==?=</div>
+  <div class="msg-body">这个帖子可以持续返回计算直到我听懂为止，因为我觉得这里涉及到了我不懂的领域，我没法参与进来。 当然，我们还可以先回答另外一个问题，中本聪设计比特币到这一步的时候，他老人家咋想的。 @文博 @叶鹏 @亚朋...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOWRqOS6jOS8muiuruWQjOatpQ==?=</div>
+  <div class="msg-body">会议同步方式从会后停机改为下一次会议开始前同步，区别是原来的同步事无巨细但没有重点，而现在的同步会忽略一些细节，但是会把每个人听到的重点表达出来，就有点回复加atom的权重的意思了。 另外来说，讨论atom与bitcoin的区别，从不可分割性到不可组合性，再到叶鹏的观点，认为是可以组合的，具体指的是关系和权重的可组合。 这里大家观点不一致，就分开计算了。 我自己今天的灵感是不可重复性，这个又类比到...</div>
+  <div class="msg-tags"><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?5ZGo5LqM5Lya6K6u5ZCM5q2l?=</div>
+  <div class="msg-body">老规矩...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOivt+axguWQjOatpeWRqOS4gOS8muiuruWGheWuuQ==?=</div>
+  <div class="msg-body">我昨天只参与了前半场，后半场没参加。 我目前就是想聊聊atom和bitcoin的区别，灵感来源于我查atom的定义，我看到希腊文中对atom的定义是不可分割，我就想到了atom和bitcoin的一个关键区别，可分割性和不可分割性，进而想到了昨天我离开会议前的一个讨论，关于bitcoin本身的属性和atom本身属性的区别，引用半年前叶鹏的一个方法，当我们不知道这是个啥玩意儿的时候，我们就先看看这个玩...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?6K+35rGC5ZCM5q2l5ZGo5LiA5Lya6K6u5YaF5a65?=</div>
+  <div class="msg-body">请参会者在这封邮件下同步个人昨天会议的内容的理解 逻辑也可以，直觉也可以，结论也可以，推理过程也可以，跳变过程也可以...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["consensus/BitDNS\u4e0eP2P\u5e02\u573a", "broadcast/\u4e2d\u95f4\u4f1a\u9762\u673a\u5236", "atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOW8uuWItuWQjOatpeacgOmVv+mTvg==?=</div>
+  <div class="msg-body">好像确实光阅读我有点点没看懂，需要约个会议再听你讲一下 根据会议规则，你返回计算结果的时候就可以发起会议了。 在2026年1月13日星期二 UTC+8 14:07:47<文博> 写道： > 市场需要声誉，还是声誉需要市场，个人观点声誉还是需要使用才能有价值，也就是需要依托于一个市场，首先市场（商品 > offerbook）可以是不一致的点对点系统。但是声誉本身更需要一致性，于是关于商品 offer...</div>
+  <div class="msg-tags"><a href="../consensus/BitDNS与P2P市场.html" class="ctag" data-concept="consensus/BitDNS与P2P市场">BitDNS与P2P市场</a><a href="../broadcast/中间会面机制.html" class="ctag" data-concept="broadcast/中间会面机制">中间会面机制</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?5LuK5aSp5aSn5qaCMTLngrnkuInngrnlt6blj7PlvIDkvJo=?=</div>
+  <div class="msg-body">我今天起的早，你们起的早的话可以早点过来。...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48", "atom/Atom\u6570\u636e\u7ed3\u6784"]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOW8uuWItuWQjOatpeacgOmVv+mTvg==?=</div>
+  <div class="msg-body">按照马师傅的逻辑，那个pub/sub现在在处理什么业务呢。 另外如果与内存池无关，那怎么处理atom呢 矢孤 <shijingyao123@gmail.com>于2026年1月9日 周五20:31写道： > > @叶鹏”你是想假设atom需要加入共识，也可能需要一个内存池，来作为atom相关的交易的缓存和转发，然后这个新的内存池中保持着多个与atom相关的交易。对吗？你其实是想知道与atom相关的...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a><a href="../atom/Atom数据结构.html" class="ctag" data-concept="atom/Atom数据结构">Atom数据结构</a></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48", "atom/Atom\u6570\u636e\u7ed3\u6784"]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOW8uuWItuWQjOatpeacgOmVv+mTvg==?=</div>
+  <div class="msg-body">@叶鹏”你是想假设atom需要加入共识，也可能需要一个内存池，来作为atom相关的交易的缓存和转发，然后这个新的内存池中保持着多个与atom相关的交易。对吗？你其实是想知道与atom相关的交易，长什么样对吗？类似于比特币中 CTransaction这种结构” 是这个意思 矢孤 <shijingyao123@gmail.com>于2026年1月9日 周五20:29写道： > 叶鹏你这里的1脚本的说法...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a><a href="../atom/Atom数据结构.html" class="ctag" data-concept="atom/Atom数据结构">Atom数据结构</a></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48", "atom/Atom\u6570\u636e\u7ed3\u6784"]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOW8uuWItuWQjOatpeacgOmVv+mTvg==?=</div>
+  <div class="msg-body">叶鹏你这里的1脚本的说法展开讲讲 矢孤 <shijingyao123@gmail.com>于2026年1月9日 周五20:26写道： > 使用速战速决有意思 > 但这里无法引用的理由有问题，没有给出验证过程，只是因为基础知识不足以验证而已。 > > 矢孤 <shijingyao123@gmail.com>于2026年1月9日 周五20:23写道： > >> 小胖这个观点有点意思，一种信号，展开讲讲...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a><a href="../atom/Atom数据结构.html" class="ctag" data-concept="atom/Atom数据结构">Atom数据结构</a></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48", "atom/Atom\u6570\u636e\u7ed3\u6784"]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOW8uuWItuWQjOatpeacgOmVv+mTvg==?=</div>
+  <div class="msg-body">使用速战速决有意思 但这里无法引用的理由有问题，没有给出验证过程，只是因为基础知识不足以验证而已。 矢孤 <shijingyao123@gmail.com>于2026年1月9日 周五20:23写道： > 小胖这个观点有点意思，一种信号，展开讲讲 > 另外来说，软分叉提案是具体怎么部署，怎么投票，怎么激活的呢。 > > 沄涣 <jiyeyulie4b310@gmail.com>于2026年1月9日 ...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a><a href="../atom/Atom数据结构.html" class="ctag" data-concept="atom/Atom数据结构">Atom数据结构</a></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48", "atom/Atom\u6570\u636e\u7ed3\u6784"]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOW8uuWItuWQjOatpeacgOmVv+mTvg==?=</div>
+  <div class="msg-body">小胖这个观点有点意思，一种信号，展开讲讲 另外来说，软分叉提案是具体怎么部署，怎么投票，怎么激活的呢。 沄涣 <jiyeyulie4b310@gmail.com>于2026年1月9日 周五14:21写道： > 首先 > atom在memepool中呈现的不是utxo的交易类型，因为atom的数据状态，更像是一种“信号”，一种“声明”，所以atom不能被utxo的，模型所约束。所以在memepool...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a><a href="../atom/Atom数据结构.html" class="ctag" data-concept="atom/Atom数据结构">Atom数据结构</a></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48"]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOW8uuWItuWQjOatpeacgOmVv+mTvg==?=</div>
+  <div class="msg-body">小胖你这三个问题跟我的计算请求都不相关，我目前关心的是进入共识之前的atom在mempool里是什么形式，并不关心如何进入共识 矢孤 <shijingyao123@gmail.com>于2026年1月8日 周四15:45写道： > 亚鹏你的二三问题也可以不考虑 > > 矢孤 <shijingyao123@gmail.com>于2026年1月8日 周四15:44写道： > >> >> Yp你没听懂我...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48"]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOW8uuWItuWQjOatpeacgOmVv+mTvg==?=</div>
+  <div class="msg-body">亚鹏你的二三问题也可以不考虑 矢孤 <shijingyao123@gmail.com>于2026年1月8日 周四15:44写道： > > Yp你没听懂我的意思，我这个请求计算只关心一个部分，那就是atom这个机制本身，如果需要一个mempool来处理的话，这个mempool大概是什么结构，至于进不进入共识是下一步的问题。 > 这个阶段需要大家集中注意力一步一步解决问题，没必要发散。 > > ini...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48"]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOW8uuWItuWQjOatpeacgOmVv+mTvg==?=</div>
+  <div class="msg-body">Yp你没听懂我的意思，我这个请求计算只关心一个部分，那就是atom这个机制本身，如果需要一个mempool来处理的话，这个mempool大概是什么结构，至于进不进入共识是下一步的问题。 这个阶段需要大家集中注意力一步一步解决问题，没必要发散。 initsysctrl <initsysctrl@gmail.com>于2026年1月8日 周四15:32写道： > > > > ---- 回复的原邮件 -...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?5by65Yi25ZCM5q2l5pyA6ZW/6ZO+?=</div>
+  <div class="msg-body">一 我现在要大家同步这个nonce并进行计算（或者说这里是新的难度） mempool作为业务的来源，只考虑中本聪的atom机制如何在mempool这里呈现（引用文博觉得atom和mempool都不在共识中，都是一种插件一样的东西） 这里我需要计算重点在这里 步骤1：一个工作日内形式化问题在邮件后面进行回复 步骤2：计算有初步的成果后文字内容回复在邮件下 步骤3：跟我预约会议进行讨论1会议规则 二 ...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?6aKEbm9uY2U65Y+v6IO955qE56CU56m25a+56LGh77yM5q+U54m55biB5Y6G5qyh5Y2H?=</div>
+  <div class="msg-body">我今天看了比特币的开发提案和合并叙事，其中有一个叫速战速决的提议我觉得很有意思，就是说一个提案怎么被部署，有个开发者提出速战速决，要么快速升级，要么快速宣布升级失败，跟我们内部出nonce的感觉很像。我并没有具体的nonce，但是我觉得这里比特币社区研究的提案被社区接受需要一个好的方案，而segwit升级到taproot升级是有进步的。我把研究资料发出来，有兴趣可以一起看看。 第一个是系统讲比特币...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?5q+P5ZGo56ys5LiA5Liq5bel5L2c5pel77yM57q/5LiL6KeB6Z2i?=</div>
+  <div class="msg-body">今天大概是2点半到5点半线下开会，可以出发了。...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2026-01 · =?UTF-8?B?5bm/5pKtOnBvd+WSjGF0b23lpoLkvZXlhbHlrZg=?=</div>
+  <div class="msg-body">我先说结论，有可能是eos的质押获得资源模式。 在比特币和其他的区块链中，本质上是手续费模型，系统生产的是货币。 但是atom不同，atom是可以复制的，也就是说可以一币多花。那这里就不能再使用手续费模型了。 而是资源模型。 在atom这里，我们需要把货币的概念从脑子里抹掉，把atom看成某种权限之类的东西。 这样meme能解决，我既要投入工作量生产atom，又要这个atom可以复制，又要这个防女...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48", "atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2025-12 · =?UTF-8?B?5bm/5pKt5pawbm9uY2U65bm/5pKt5ZKMcDJwbWFya2V055qE5YWz57O7?=</div>
+  <div class="msg-body">我有点想明白中本聪的p2pmarket的设计原理了，想跟大家聊聊。 我先说说我的直觉。 我早上去吃馄饨摊儿，结果老板去准备中饭了人不在摊位上，我就问老板我可不可以自己煮。老板说可以。 我自己煮的时候又来了两个顾客，我就帮忙煮了，我边做边在推广老板的东西。 刚和老陶聊到这一段，我突然想到昨天woo说他感受到我的思维跳变后需要立马去广播，为什么呢，因为对于我们会议来说思维跳变就是出nonce，那么激励...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2025-12 · =?UTF-8?B?5Lya6K6u6ZO+5o6l5LuK5aSpMTLmnIgyNuaXpTEzOjM1LTE0OjM1?=</div>
+  <div class="msg-body">https://meet.google.com/xjn-rsqs-cii...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48", "consensus/\u96be\u5ea6\u8c03\u6574", "atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2025-12 · =?UTF-8?B?6K+35rGC6K6h566X?=</div>
+  <div class="msg-body">挖矿的感觉是什么，是你手里有一个验证的标准，但是，你没有算出来之前，你就是验证不成功，这里甚至都没有系统，在你没有算出来之前没有任何人知道答案是什么，但是三个人都觉得自己算出来了，且验证都通过，可是答案并不一样。系统会选择第一个广播到大多数节点并且被确认的那个来进行激励。所以这里我就很好奇，这个难度调整算法到底是怎么具体运行的，和哈希计算的关系是什么（meme一下，这个跟我现实中遇到问题解决问题的...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a><a href="../consensus/难度调整.html" class="ctag" data-concept="consensus/难度调整">难度调整</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48", "consensus/\u96be\u5ea6\u8c03\u6574", "atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2025-12 · =?UTF-8?B?77yI6KGl5YWF6LWE5paZ77yJUmU6IOmihuWPluiuoeeul+S7u+WKoQ==?=</div>
+  <div class="msg-body">一 hashcash是一种特定格式的文本字符串：这个意思是说，你得先有一个特定格式的文本字符串，再进行哈希计算。 我认为这里我们需要知道这个特定格式的字符串怎么来的，因为过去大家的重点在doublehash上。 引用：https://www.btcstudy.org/2021/10/26/bitcoin-is-an-idea-by-Gigi/#Hashcash-Adam-Back-1997 Has...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a><a href="../consensus/难度调整.html" class="ctag" data-concept="consensus/难度调整">难度调整</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48", "consensus/\u96be\u5ea6\u8c03\u6574", "atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2025-12 · =?UTF-8?B?77yI6KGl5YWF77yJUmU6IOmihuWPluiuoeeul+S7u+WKoQ==?=</div>
+  <div class="msg-body">我们现实中什么事情让你感觉是现实的，就是说原子性或者说不可逆性，举例说明，叶鹏生了个娃，他大概知道自己要生个娃，实际上生出来是啥样他不知道，但是，这个娃是符合预期的，且他这个娃回不去娘胎里。类比于比特币挖矿，你手里有个预期的检测标准，你并不知道答案是什么，在有人算出来之前没有任何人知道答案具体是什么，但是一旦这个nonce被找到，就成真的了，这个块就回不到没nonce的状态了。那这个感觉就和我们真...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a><a href="../consensus/难度调整.html" class="ctag" data-concept="consensus/难度调整">难度调整</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2025-12 · =?UTF-8?B?5Lya6K6u6KeE5YiZ5pS55Yqo77yM5ZGo5LiA5YWo5ZGY57q/5LiL5byA5Lya77yM5pS2?=</div>
+  <div class="msg-body">开会时间定在周一的下午三点到五点，其他时间大家可以自由安排。...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2025-12 · =?UTF-8?B?QOWPtum5j0DmlofljZo=?=</div>
+  <div class="msg-body">https://web.archive.org/web/20140406003811/http://szabo.best.vwh.net/bitgold.html 这篇是尼克萨博那个文章的完整版本...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2025-12 · =?UTF-8?B?6Zq+5bqm6LCD5pW055qE6ZiF6K+75p2Q5paZ?=</div>
+  <div class="msg-body">https://www.btcstudy.org/2021/10/26/bitcoin-is-an-idea-by-Gigi/ https://web.archive.org/web/20160717145748/http://szabo.best.vwh.net/intrapoly.html 这两篇结合起来看会比较好...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2025-12 · =?UTF-8?B?56CU56m26LWE5paZ?=</div>
+  <div class="msg-body">https://web.archive.org/web/20160717145748/http://szabo.best.vwh.net/intrapoly.html...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2025-12 · =?UTF-8?B?5Zyo57q/5a2m5Luj56CB?=</div>
+  <div class="msg-body">...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["atom/Atom\u662f\u4ec0\u4e48"]'>
+  <div class="msg-date">2025-12 · =?UTF-8?B?UmU6IOavlOeJueW4geS7o+eggeeglOivuw==?=</div>
+  <div class="msg-body">目前疑问就是这个区块链的树状结构这里，到底是不是树状，引用的哪篇论文。 当然，对于market这个地方我们也需要单独再过一遍。 initsysctrl <initsysctrl@gmail.com>于2025年12月2日 周二01:32写道： > > > 根据12.01的会议精神，本周的核心任务是研读比特币源代码(仅限中本聪版本)。按照中本聪在多个邮件组中发布比特币版本的顺序，我已经收集了从预览版...</div>
+  <div class="msg-tags"><a href="../atom/Atom是什么.html" class="ctag" data-concept="atom/Atom是什么">Atom是什么</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2025-12 · </div>
+  <div class="msg-body">今天谁要过来，大概几点，我今天又起早了...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["broadcast/\u8282\u70b9\u4e0eSPV\u8f7b\u8282\u70b9", "atom/Atom\u4e0eBitcoin\u5173\u7cfb"]'>
+  <div class="msg-date">2025-11 · =?UTF-8?B?6LaF57qnbm9uY2Xlub/mkq066buY5YWL5bCU6Lev5b6E5Zyo5q+U54m55biB5Lit55qE?=</div>
+  <div class="msg-body">我们会议中一直存在一个问题，那就是不同的专业，不同的爱好，不同的分工，如何互相理解。 我们回到比特币来看，一个轻节点，没有历史交易，只有最新的哈希，这个时候用户找他验证一笔交易，他要怎么做呢。他会向全节点访问，然后全节点会给出这个交易默克尔路径，然后给出那个路径的nonce，轻节点自己去验证就可以了。 这里的重点是为什么要选择默克尔树这个结构呢，参考比特币白皮书引用的论文，4和7。 有链状，树状和...</div>
+  <div class="msg-tags"><a href="../broadcast/节点与SPV轻节点.html" class="ctag" data-concept="broadcast/节点与SPV轻节点">节点与SPV轻节点</a><a href="../atom/Atom与Bitcoin关系.html" class="ctag" data-concept="atom/Atom与Bitcoin关系">Atom与Bitcoin关系</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2025-11 · =?UTF-8?B?RndkOiDkuI5ncmFwaOebuOWFs+eahOiuuuaWh+WOn+aWhw==?=</div>
+  <div class="msg-body">---------- 转发的邮件 --------- 发件人： Woo c <godfrey9802@gmail.com> 日期：2025年11月27日 周四00:53 主题：与graph相关的论文原文 收件人： <shijingyao123@gmail.com>...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='["consensus/BitDNS\u4e0eP2P\u5e02\u573a", "consensus/\u96be\u5ea6\u8c03\u6574"]'>
+  <div class="msg-date">2025-11 · =?UTF-8?B?UmU6IOS4gOS6m+WFs+S6jiBtYXJrZXQg6YOo5YiG55qE6YKu5Lu25LiK5LiL5paH6KGl?=</div>
+  <div class="msg-body">看懂了，重点不是这个市场多牛逼，重点是通过他设计这个市场来看他比特币的设计思路。 通过区块进行加权有点意思。 目前我理解防女巫的方法都是用cpupower找nonce，但面对不同的一致性需求时怎么处理nonce是另外一回事。比特币是通过难度调整算法在处理nonce的，因为这里要求全局一致，但声誉不同，所以这里需要一个别的什么算法来满足这个声誉的一致性的问题。 chenmoonmo <chenmoo...</div>
+  <div class="msg-tags"><a href="../consensus/BitDNS与P2P市场.html" class="ctag" data-concept="consensus/BitDNS与P2P市场">BitDNS与P2P市场</a><a href="../consensus/难度调整.html" class="ctag" data-concept="consensus/难度调整">难度调整</a></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2025-11 · Re: hi</div>
+  <div class="msg-body">会议链接 矢孤邀请你加入一场 Google Meet 视频会议。 加入会议：https://meet.google.com/ayi-nhfw-hrn 矢孤 <shijingyao123@gmail.com>于2025年11月13日 周四10:13写道： > 能不能用中文 > > Bin Ma <icekernel@gmail.com>于2025年11月13日 周四10:11写道： > >> thi...</div>
+  <div class="msg-tags"></div>
+</div>
+<div class="msg-item" data-concepts='[]'>
+  <div class="msg-date">2025-11 · Re: hi</div>
+  <div class="msg-body">能不能用中文 Bin Ma <icekernel@gmail.com>于2025年11月13日 周四10:11写道： > this is the p2ptalk first mail. > > -- > You received this message because you are subscribed to the Google Groups > p2ptalk group. > To un...</div>
+  <div class="msg-tags"></div>
+</div>
   </div>
 </div>
 </div>

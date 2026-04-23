@@ -49,6 +49,15 @@ header .subtitle a:hover { text-decoration: underline; }
 .page a.wiki-link { color: var(--accent); text-decoration: none; background: rgba(233,69,96,0.12); padding: 1px 5px; border-radius: 4px; font-size: 13px; }
 .page a.wiki-link:hover { background: rgba(233,69,96,0.25); text-decoration: none; }
 .backlinks { margin-top: 32px; border-top: 1px solid var(--border); padding-top: 16px; }
+.people-section { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 16px; }
+.people-section h3 { font-size: 13px; color: var(--accent); margin-bottom: 14px; }
+.person-block { background: var(--accent2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 10px; }
+.person-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.person-name { color: var(--accent); font-weight: 600; font-size: 13px; text-decoration: none; }
+.person-name:hover { text-decoration: underline; }
+.person-count { background: rgba(233,69,96,0.3); color: var(--accent); padding: 1px 6px; border-radius: 10px; font-size: 10px; }
+.person-months { font-size: 10px; color: var(--text-muted); margin-left: auto; }
+.p-preview { font-size: 11px; color: var(--text); line-height: 1.5; margin: 3px 0; padding-left: 8px; border-left: 2px solid var(--border); }
 .backlinks h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px; }
 .backlink-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .backlink-item { background: var(--accent2); padding: 6px 12px; border-radius: 6px; font-size: 12px; border: 1px solid var(--border); }
@@ -183,5 +192,5 @@ header .subtitle a:hover { text-decoration: underline; }
 <ul>
 <li><a href="中间会面机制.html" class="wiki-link">broadcast/中间会面机制</a></li>
 <li><a href="../market/匹配系统.html" class="wiki-link">market/匹配系统</a></li>
-</ul>
+</ul><div class="people-section"><h3>👥 参与讨论的人</h3><div class="person-block"><div class="person-header"><a href="../person_胥亚朋.html" class="person-name">胥亚朋</a><span class="person-count">7条</span><span class="person-months">2026-02</span></div><div class="person-msgs"><div class="p-preview">听了昨天叶鹏的研究，我突然发现一个问题，atom的出现是要早于比特币的，然后在这个视角简单看下atom. 只从实现方式上面去分析，atom是的流转是通过review消息进行触发的。review消息中验证消息就只有签名和公钥，这种实现方式非常...</div><div class="p-preview">关于中间会面机制，我越来越觉得就是轻节点的机制。 我们把主动拉取消息的功能先忽略，那么轻节点在整个比特币网络里面就是转发消息的功能，就是之前文博提到的那个只转发不存储，轻节点除了做简单的支付验证以外不会做复杂的验证，这个和没有订阅该频道但是...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_文博.html" class="person-name">文博</a><span class="person-count">2条</span><span class="person-months">2026-02</span></div><div class="person-msgs"><div class="p-preview">1. 流速控制是 market 中整个系统都执行的规则（它并不是唯一的这样的规则，除此之外还有，0 原子传播，根据 review 关系建立 vLinksOut，…），虽然这个规则并不唯一，但不妨碍其与难度调整机制进行类比，但缺少强对应性。 ...</div><div class="p-preview">1. 分析了atom 系统实际在比特币中新增的部分： 1. 拓展了比特币的消息类型用来传递 reviews 2. 增加本地数据库用来存储 reviews、linksout 和 atomIn、atomOut、atomNew 3. 增加发布订阅...</div></div></div></div>
 </div></div></div></body></html>
