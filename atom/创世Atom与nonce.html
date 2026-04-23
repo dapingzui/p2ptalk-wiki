@@ -129,6 +129,30 @@ header .subtitle a:hover { text-decoration: underline; }
 .p-msg-wrapper{display:block;}
 .p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
 
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
 </style>
 </head>
 <body>
@@ -202,7 +226,85 @@ header .subtitle a:hover { text-decoration: underline; }
 <div class="page">
 <a href="../index.html" class="back-link">← 总览</a>
 <h1>创世Atom与nonce</h1>
-<div class="tags"><span class="tag">atom</span><span class="tag">p2ptalk</span><span class="tag">创世</span><span class="tag">Genesis</span><span class="tag">nonce</span></div>
+<div class="tags"><span class="tag">atom</span><span class="tag">p2ptalk</span><span class="tag">创世</span><span class="tag">Genesis</span><span class="tag">nonce</span>
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共6条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">Woo</span>
+
+<span class="msg-date">2025-12-30</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?Q?Re:_NONCE_=E5=88=9B=E4=B8=96=E5=8E=9F?=
+ =?UTF-8?Q?=E5=AD=90=EF=BC=8CGenesis_Atom?=</div><div class="msg-full">在p2pmarket里面找不到对应的广播激励是因为代码里面并没有声誉生产的机制。但是已经足够精彩。让人浮想联翩。 1. 在p2p market里面广播行为是针对与他人的行动，与自己激励无关。 广播自己并不会获得任何的atom。但是可以使用别人的声誉进行广播 可以结合最近nonce进行设计。 2. 难度调整算法需要用于流速的调整，以及创世原子的产生。 都到这里了，不做个工具出来计算我们组织的atom我觉得有点说不过去。 On Tuesday, December 30, 2025 at 5:06:28 PM UTC+8 Woo wrote: &gt; 1. 跳变的形式化带来广播的重要性，引出广播是带激励的，老史一直在广播其他人的块，其实是把计算的一部分声誉分到到广播的人身上。 &gt; &gt; 2. 难度调整在于组织内部个人觉得这个事情很难的时候出现新的难度。 &gt; &gt; 3. &gt; p2pmarket的声誉传播机制有pos影子，暂时先不讨论atom的通胀与币的关系，重点在于如何抹平p2p大声誉账户的优势，以及如何获得“币”的奖励，初始的点子是通过pow来“防女巫” &gt; aka干掉老史的声誉优势，让我们每个人公</div><div class="msg-rest" style="display:none;">平广播。 &gt; &gt; &gt; &gt; On Tuesday, December 30, 2025 at 4:40:20 PM UTC+8 jiyeyulie4b310 wrote: &gt; &gt;&gt; &gt;&gt; 1.从周一出nounce的过程，从“跳变”到“广播”上来，抽象到btc上来，为什么矿工出了“Nounce”之后为什么要快速的“广播”？这里的激励是什么？ &gt;&gt; &gt;&gt; &gt;&gt; 因为对于矿工来说，出了“nounce”之后进行快速广播可以获得下一次哈希计算的先发优势，再进行一层抽象，被广播的矿工也会进行广播然后快速进入下一次哈希计算，其实这里就是在竞争先发优势，这种先发优势也就有概率出下一个Nounce，也就是“激励”，而不仅仅是“币”。 &gt;&gt; &gt;&gt; 2.抽象到p2p &gt;&gt; market中的Atom，矿工为什么要广播Atom？这里的声誉是如何积累的？这里面的激励是什么？回到老矢做馄饨，老矢明明不是商家，为什么要替商家做馄饨而且要疯狂的宣传呢？ &gt;&gt; &gt;&gt; 因为广播，因为虽然老矢不是商家，但他疯狂的宣传馄饨，他收获了两样东西，他获得了声誉，买东西的人只记得老矢而不是记得商家了，所以老矢获得了声誉积累。所以p2p &gt;&gt; market中，你尽力的广播，获得了声誉，最终得到了是声誉积累。 &gt;&gt; &gt;&gt; On Tue, Dec 30, 2025 at 4:01 PM initsysctrl &lt;inits...@gmail.com&gt; wrote: &gt;&gt; &gt;&gt;&gt; 接收广播后的我的想法更新了： &gt;&gt;&gt; &gt;&gt;&gt; *1. 广播的激励* &gt;&gt;&gt; &gt;&gt;&gt; 之前的理解中，广播是没有任何激励的，没有任何节点通过广播(无论是广播自己的，还是转发别人的)，获得任何形式的奖励。但是广播的确是有隐藏的激励存在的，通过接收，验证，转发的过程，节点虽然没有获得比特币奖励，但是减少了自身算力的沉没成本，能提前投入有效算力到最长链的更新中。一句话理解就是，“虽然没有赚，但减少了亏损，这也算一种激励”。我给这种激励取了个名字，“负激励”。 &gt;&gt;&gt; &gt;&gt;&gt; *2. p2pmarket 、Atom与广播的关系* &gt;&gt;&gt; 在中本聪未完成的p2pmarket &gt;&gt;&gt; 中，核心是atom的广播。那么只要是广播，就需要考虑广播的激励是什么，即节点为什么要帮你广播，甚至放弃当前的其他事务，优先广播。这一点中本聪本人也没说清楚。 &gt;&gt;&gt; &gt;&gt;&gt; 如果能在atom的广播的过程中，着重考虑atom的激励问题（无论是正激励，还是负激励），那么将吸引节点自发的参与到atom的传播中去，最终形成一个新的自组织结构。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; ---- 回复的原邮件 ---- &gt;&gt;&gt; 发件人 矢孤&lt;shijin...@gmail.com&gt; &gt;&gt;&gt; 发送日期 2025年12月30日 15:01 &gt;&gt;&gt; 收件人 p2ptalk&lt;p2p...@googlegroups.com&gt; &gt;&gt;&gt; 主题 广播新nonce:广播和p2pmarket的关系 &gt;&gt;&gt; 我有点想明白中本聪的p2pmarket的设计原理了，想跟大家聊聊。 &gt;&gt;&gt; 我先说说我的直觉。 &gt;&gt;&gt; 我早上去吃馄饨摊儿，结果老板去准备中饭了人不在摊位上，我就问老板我可不可以自己煮。老板说可以。 &gt;&gt;&gt; 我自己煮的时候又来了两个顾客，我就帮忙煮了，我边做边在推广老板的东西。 &gt;&gt;&gt; &gt;&gt;&gt; 刚和老陶聊到这一段，我突然想到昨天woo说他感受到我的思维跳变后需要立马去广播，为什么呢，因为对于我们会议来说思维跳变就是出nonce，那么激励是什么，是会被后面的人引用，而他广播的时候已经在算下一个nonce，他广播</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">沄涣</span>
+
+<span class="msg-date">2025-12-30</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?Q?Re:_NONCE_=E5=88=9B=E4=B8=96=E5=8E=9F?=
+ =?UTF-8?Q?=E5=AD=90=EF=BC=8CGenesis_Atom?=</div><div class="msg-full">这里我已经看过了 我现在就是不太懂 这里的原子计算 为什么要 活跃度/信誉 ？ 他这里不是难度调整 ，只是计算原子的数量 “活跃度”是衡量用户接受和广播后新产生了多少“原子”，我理解这里是用户自己的参与度和影响力。 “信誉”是衡量一个用户发送出去多少“原子”，就是用户的贡献度 那这里的难度调整是为了让持有大量“原子”的先发优势抹平，所以要加入难度调整，保证公平广播。代码里没有，这里我也很meme。 On Tuesday, December 30, 2025 at 9:18:43 PM UTC+8 Woo wrote: &gt; 在p2pmarket里面找不到对应的广播激励是因为代码里面并没有声誉生产的机制。但是已经足够精彩。让人浮想联翩。 &gt; &gt; 1. 在p2p market里面广播行为是针对与他人的行动，与自己激励无关。 &gt; 广播自己并不会获得任何的atom。但是可以使用别人的声誉进行广播 &gt; 可以结合最近nonce进行设计。 &gt; 2. 难度调整算法需要用于流速的调整，以及创世原子的产生。 &gt; &gt; 都到这里了，不做个工具出来计算我们组织的atom我觉得有点说不过去。 &gt; &gt; On Tues</div><div class="msg-rest" style="display:none;">day, December 30, 2025 at 5:06:28 PM UTC+8 Woo wrote: &gt; &gt;&gt; 1. 跳变的形式化带来广播的重要性，引出广播是带激励的，老史一直在广播其他人的块，其实是把计算的一部分声誉分到到广播的人身上。 &gt;&gt; &gt;&gt; 2. 难度调整在于组织内部个人觉得这个事情很难的时候出现新的难度。 &gt;&gt; &gt;&gt; 3. &gt;&gt; p2pmarket的声誉传播机制有pos影子，暂时先不讨论atom的通胀与币的关系，重点在于如何抹平p2p大声誉账户的优势，以及如何获得“币”的奖励，初始的点子是通过pow来“防女巫” &gt;&gt; aka干掉老史的声誉优势，让我们每个人公平广播。 &gt;&gt; &gt;&gt; &gt;&gt; &gt;&gt; On Tuesday, December 30, 2025 at 4:40:20 PM UTC+8 jiyeyulie4b310 wrote: &gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 1.从周一出nounce的过程，从“跳变”到“广播”上来，抽象到btc上来，为什么矿工出了“Nounce”之后为什么要快速的“广播”？这里的激励是什么？ &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 因为对于矿工来说，出了“nounce”之后进行快速广播可以获得下一次哈希计算的先发优势，再进行一层抽象，被广播的矿工也会进行广播然后快速进入下一次哈希计算，其实这里就是在竞争先发优势，这种先发优势也就有概率出下一个Nounce，也就是“激励”，而不仅仅是“币”。 &gt;&gt;&gt; &gt;&gt;&gt; 2.抽象到p2p &gt;&gt;&gt; market中的Atom，矿工为什么要广播Atom？这里的声誉是如何积累的？这里面的激励是什么？回到老矢做馄饨，老矢明明不是商家，为什么要替商家做馄饨而且要疯狂的宣传呢？ &gt;&gt;&gt; &gt;&gt;&gt; 因为广播，因为虽然老矢不是商家，但他疯狂的宣传馄饨，他收获了两样东西，他获得了声誉，买东西的人只记得老矢而不是记得商家了，所以老矢获得了声誉积累。所以p2p &gt;&gt;&gt; market中，你尽力的广播，获得了声誉，最终得到了是声誉积累。 &gt;&gt;&gt; &gt;&gt;&gt; On Tue, Dec 30, 2025 at 4:01 PM initsysctrl &lt;inits...@gmail.com&gt; wrote: &gt;&gt;&gt; &gt;&gt;&gt;&gt; 接收广播后的我的想法更新了： &gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; *1. 广播的激励* &gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; 之前的理解中，广播是没有任何激励的，没有任何节点通过广播(无论是广播自己的，还是转发别人的)，获得任何形式的奖励。但是广播的确是有隐藏的激励存在的，通过接收，验证，转发的过程，节点虽然没有获得比特币奖励，但是减少了自身算力的沉没成本，能提前投入有效算力到最长链的更新中。一句话理解就是，“虽然没有赚，但减少了亏损，这也算一种激励”。我给这种激励取了个名字，“负激励”。 &gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; *2. p2pmarket 、Atom与广播的关系* &gt;&gt;&gt;&gt; 在中本聪未完成的p2pmarket &gt;&gt;&gt;&gt; 中，核心是atom的广播。那么只要是广播，就需要考虑广播的激励是什么，即节点为什么要帮你广播，甚至放弃当前的其他事务，优先广播。这一点中本聪本人也没说清楚。 &gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; 如果能在atom的广播的过程中，着重考虑atom的激励问题（无论是正激励，还是负激励），那么将吸引节点自发的参与到atom的传播中去，最终形成一个新的自组织结构。 &gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; ---- 回复的原邮件 ---- &gt;&gt;&gt;&gt; 发件人 矢孤&lt;shijin...@gmail.com&gt; &gt;&gt;&gt;&gt; 发送日期 2025年12月30日 15:01 &gt;&gt;&gt;&gt; 收件人</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">文博</span>
+
+<span class="msg-date">2025-12-30</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?Q?Re:_NONCE_=E5=88=9B=E4=B8=96=E5=8E=9F?=
+ =?UTF-8?Q?=E5=AD=90=EF=BC=8CGenesis_Atom?=</div><div class="msg-full">比特币 market 部分代码，实际上存在一个因为随机的使用而带来的不一致问题，在第一次传播时，会产生进入 atomOut 原子不一致的问题，而第二次传播时，则会因为 atomOut 带来评价实际的影响力在不同节点表现不同的问题。 首先在 market 部分，原子随着评论进行广播，当节点接收到某条评论时，他会在本地的用户数据库中查询评论发送人的 vAtomsOut，然后将其传递给 AddAtomsAndPropagate，而这个过程完全在节点本地发生，特别是其中涉及一个随机挑选 atom 进入接收人 vAtomsOut 的过程。 我们设想一个拥有非 0 原子的用户发送评论的场景，假设 userA 的 vAtomsOut 为[50,51,52,100]，他给 userB 发出评论，因为随机挑选原子进入 userB 的 vAtomsOut 在每个节点上进行，这时候就有可能出现在 X 节点 userB 的 vAtomsOut 为 [51] 而在 Y 节点的 vAtomsOut 为 [100]，假设这时候 B 给 vAtomsIn 为 [0,59,100] 的 C 发出评论，那么在 X 和 Y</div><div class="msg-rest" style="display:none;"> 节点中 C 的原子数量将会实际上不同。 [image: unnamed.jpg] 在2025年12月30日星期二 UTC+8 21:35:47&lt;jiyeyulie4b310&gt; 写道： &gt; 这里我已经看过了 我现在就是不太懂 这里的原子计算 为什么要 活跃度/信誉 ？ &gt; 他这里不是难度调整 ，只是计算原子的数量 &gt; “活跃度”是衡量用户接受和广播后新产生了多少“原子”，我理解这里是用户自己的参与度和影响力。 &gt; “信誉”是衡量一个用户发送出去多少“原子”，就是用户的贡献度 &gt; &gt; 那这里的难度调整是为了让持有大量“原子”的先发优势抹平，所以要加入难度调整，保证公平广播。代码里没有，这里我也很meme。 &gt; &gt; On Tuesday, December 30, 2025 at 9:18:43 PM UTC+8 Woo wrote: &gt; &gt;&gt; 在p2pmarket里面找不到对应的广播激励是因为代码里面并没有声誉生产的机制。但是已经足够精彩。让人浮想联翩。 &gt;&gt; &gt;&gt; 1. 在p2p market里面广播行为是针对与他人的行动，与自己激励无关。 &gt;&gt; 广播自己并不会获得任何的atom。但是可以使用别人的声誉进行广播 &gt;&gt; 可以结合最近nonce进行设计。 &gt;&gt; 2. 难度调整算法需要用于流速的调整，以及创世原子的产生。 &gt;&gt; &gt;&gt; 都到这里了，不做个工具出来计算我们组织的atom我觉得有点说不过去。 &gt;&gt; &gt;&gt; On Tuesday, December 30, 2025 at 5:06:28 PM UTC+8 Woo wrote: &gt;&gt; &gt;&gt;&gt; 1. 跳变的形式化带来广播的重要性，引出广播是带激励的，老史一直在广播其他人的块，其实是把计算的一部分声誉分到到广播的人身上。 &gt;&gt;&gt; &gt;&gt;&gt; 2. 难度调整在于组织内部个人觉得这个事情很难的时候出现新的难度。 &gt;&gt;&gt; &gt;&gt;&gt; 3. &gt;&gt;&gt; p2pmarket的声誉传播机制有pos影子，暂时先不讨论atom的通胀与币的关系，重点在于如何抹平p2p大声誉账户的优势，以及如何获得“币”的奖励，初始的点子是通过pow来“防女巫” &gt;&gt;&gt; aka干掉老史的声誉优势，让我们每个人公平广播。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; On Tuesday, December 30, 2025 at 4:40:20 PM UTC+8 jiyeyulie4b310 wrote: &gt;&gt;&gt; &gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; 1.从周一出nounce的过程，从“跳变”到“广播”上来，抽象到btc上来，为什么矿工出了“Nounce”之后为什么要快速的“广播”？这里的激励是什么？ &gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; 因为对于矿工来说，出了“nounce”之后进行快速广播可以获得下一次哈希计算的先发优势，再进行一层抽象，被广播的矿工也会进行广播然后快速进入下一次哈希计算，其实这里就是在竞争先发优势，这种先发优势也就有概率出下一个Nounce，也就是“激励”，而不仅仅是“币”。 &gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; 2.抽象到p2p &gt;&gt;&gt;&gt; market中的Atom，矿工为什么要广播Atom？这里的声誉是如何积累的？这里面的激励是什么？回到老矢做馄饨，老矢明明不是商家，为什么要替商家做馄饨而且要疯狂的宣传呢？ &gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; 因为广播，因为虽然老矢不是商家，但他疯狂的宣传馄饨，他收获了两样东西，他获得了声誉，买东西的人只记得老矢而不是记得商家了，所以老矢获得了声誉积累。所以p2p &gt;&gt;&gt;&gt; market中，你尽力的广播，获得了声誉，最终得到了是声誉积累。 &gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; On</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-03-24</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOW3suiOt+W+l+iAgeWPsnJldmlld+S5i+eJm+mAvOS5i+S4reacrOiBquWcqHAycA==?=
+	=?UTF-8?B?IG1hcmtldOeahOWwkeeIt+aAnee7tO+8muaIkeS4jeWcqOS5juS9oOeahOWVhuWTgeaYr+aAjuS5iA==?=
+	=?UTF-8?B?6YCg55qE77yM5oiR6L+Z5biC5Zy66YeM55qE6YO95piv6aG25bCW55qE44CC?=</div><div class="msg-full">atom的传播本身就是一种再传播权力，这种权力是否就是POW产生的？ 首先权力的来源是POW，比特币通过POW产生新的比特币，并伴随一种打包交易的权力，如果pow的过程也产生新的atom，也就是获得atom传播的权力。 对于atom来说，如果一个节点没有通过POW挖到矿，它也有权力，只要挖到矿的节点主动引用了它，和它建立了链接，它就能第一时间收到atom，虽然因为流量控制导致能传播的atom会减半，但节点获得了再传播atom的权力，如果大部分能挖到矿的节点都引用了某一个节点，和这个节点建立了链接，那么该节点能传播的atom的总量有可能大于那些通过POW产生atom的节点。 所以权力的最初来源是POW，如果POW的结果也就是能挖出矿的节点是一个节点，那么这个节点的权力是最大的。如果POW是比较分散的，那么被这些能挖到矿的节点直接引用(建立链接)的节点将获得最多的再传播权力。 昨天老史发的那个文章很有意思，我觉得它给了两个模型，一个是任何一个链的创世区块都可以是其他链的某一个区块，有点像分叉的逻辑，但是分叉的两个链可以是功能完全不同的两个链，也就是以分叉的视角来看待链的能力的平行拓展。第二</div><div class="msg-rest" style="display:none;">个是链的合并，如果再某一个区块以后的区块这个链都将处理两个链的所有状态，那么这两个链就可以直接进行合并，这个需要多计算一下，感觉需要补充的点有点多，不过这两种方式是否是atom和比特币的另外一种结合方案呢？需要计算一下。 lei lei &lt;spaceminer2011@gmail.com&gt; 于2026年3月22日周日 01:29写道： &gt; 图结构本身代表的计算和激励 &gt; &gt; 1. review的连接关系是一个多边连接的图结构，这个连接结构本身就是计算的一部分，同时也是激励的一部分。 &gt; &gt; &gt; 2. 计算的部分体现在atom每经过一个节点，就必须进入一次AtomsNew 缓冲区，并接受一次随机抽样（GetRand）。这个是系统内生的 &gt; 衰减 &gt; 计算。同时，图结构越复杂，路径越长，atom的衰减越多，这个相当于系统通过这种图结构在不断的自动计算一个商家距离信誉源头的商业距离。这里的重点是传统对于信用的计算里，要么有信用，要么没有信用，这里的信用有强度。 &gt; &gt; &gt; 3. 激励的部分在这里不是说直接给钱，而是给传播权。比如。0原子直接出现在矿工的vAtomsOut &gt; 里，并顺着图结构传播给连接的所有人，相当于获得了即时传播权。同时，当你的review和被review越多，那么向外发射原子的频率就越高，意味着系统赋予你更高的传播权力。这里传播权带来的价值大于原子本身的激励价值。 &gt; &gt; 这个是图结构本身赋予系统的计算和激励，下个问题是图结构外部的机制对于系统声誉权重的影响有多大。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年3月19日周四 17:25写道： &gt; &gt;&gt; atom的传播模型 &gt;&gt; &gt;&gt; &gt;&gt; 首先，acceptblock的时候，新生成的atom是根据挖矿人的vLinkOut进行传播的，即挖矿人挖到的atom不止发给他一个人，还会根据他的vLinkOut进行广播出去。 &gt;&gt; &gt;&gt; &gt;&gt; acceptreview的时候是将所有的atomOut里面的内容广播出去。acceptreview的时候会建立用户和接收review的用户的链接，发送用户的所有的atom传给接收的用户，接收的用户会根据自己的vLinkOut将atom继续传递下去。 &gt;&gt; &gt;&gt; &gt;&gt; 由于atom是不损耗的，对于用户来说，什么时候被别的用户链接都是可以获得该用户所有的atom的，只不过早链接的时候早获得，晚链接的用户有后发优势，一次性获得之前所有的atom。 &gt;&gt; &gt;&gt; &gt;&gt; 综上，atom的数量并不是user之间差异性的体现，因为user总能通过一些方法获得所有的atom。但是，如果你和那些产出atom的user没有直接链接，你获得atom的时候会因为你上一个链接的流量控制而砍半，而且，你获得atom以后你能传播的atom也是砍半的。 &gt;&gt; &gt;&gt; &gt;&gt; 所以在atom的模型中，最重要的就是网络结构，user离产出atom的user越近，它获得的atom越块，而且它能传递出去的atom越多。流量控制实际控制了atom再传出的一种权力。 &gt;&gt; &gt;&gt; 如果流量控制最终导致的是一种再传播权力的生成，那这个地方就有一点meme了，这个后续再计算吧。 &gt;&gt; &gt;&gt; Woo c &lt;godfrey9802@gmail.com&gt; 于2026年3月18日周三 08:20写道： &gt;&gt; &gt;&gt;&gt; 中本聪造比特币的时候服务的一直都是矿工，考虑consumer怎么用atom是没有意义的，因为服务的对象不是consumer。 &gt;&gt;&gt; &gt;&gt;&gt; 中本聪造了一个货币，下一个要造</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-03-27</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOW3suiOt+W+l+iAgeWPsnJldmlld+S5i+eJm+mAvOS5i+S4reacrOiBquWcqHAycA==?=
+	=?UTF-8?B?IG1hcmtldOeahOWwkeeIt+aAnee7tO+8muaIkeS4jeWcqOS5juS9oOeahOWVhuWTgeaYr+aAjuS5iA==?=
+	=?UTF-8?B?6YCg55qE77yM5oiR6L+Z5biC5Zy66YeM55qE6YO95piv6aG25bCW55qE44CC?=</div><div class="msg-full">突然有一个很meme的想法哈，如果比特币上面有一个高度上同时挖出两个块，这两个块里面的所有transaction都不冲突，那么这样的两个块能不能同时被链给接纳？ 目前觉得这个方案也许是链上拓展的一个选项，关键是要保证同时出的两个块不产生任何冲突。 保证两个块的transaction不冲突是有办法的，比如分区间打包，一部分矿工打包最近一段时间进入mempool的交易，还有一部分矿工打包4个小时前进入mempool的交易，把交易根据时间区间先做一下区分，这样就可以基本保证大家打包的交易是不同的，这样同一个高度上面挖到两个互不冲突的区块。 再拓展一下，如果对业务进行区分，一部分矿工打包btc的交易业务，一部分矿工打包atom的流转业务，这样的两个区块上面的交易就能保证不会冲突。 如果链可以同时接纳两个互不冲突的区块，那么链的计算能力是否就能横向拓展了呢？目前还是很meme。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年3月24日周二 14:55写道： &gt; atom的传播本身就是一种再传播权力，这种权力是否就是POW产生的？ &gt; &gt; 首先权力的来源是POW，比特币通过P</div><div class="msg-rest" style="display:none;">OW产生新的比特币，并伴随一种打包交易的权力，如果pow的过程也产生新的atom，也就是获得atom传播的权力。 &gt; &gt; &gt; 对于atom来说，如果一个节点没有通过POW挖到矿，它也有权力，只要挖到矿的节点主动引用了它，和它建立了链接，它就能第一时间收到atom，虽然因为流量控制导致能传播的atom会减半，但节点获得了再传播atom的权力，如果大部分能挖到矿的节点都引用了某一个节点，和这个节点建立了链接，那么该节点能传播的atom的总量有可能大于那些通过POW产生atom的节点。 &gt; &gt; &gt; 所以权力的最初来源是POW，如果POW的结果也就是能挖出矿的节点是一个节点，那么这个节点的权力是最大的。如果POW是比较分散的，那么被这些能挖到矿的节点直接引用(建立链接)的节点将获得最多的再传播权力。 &gt; &gt; &gt; 昨天老史发的那个文章很有意思，我觉得它给了两个模型，一个是任何一个链的创世区块都可以是其他链的某一个区块，有点像分叉的逻辑，但是分叉的两个链可以是功能完全不同的两个链，也就是以分叉的视角来看待链的能力的平行拓展。第二个是链的合并，如果再某一个区块以后的区块这个链都将处理两个链的所有状态，那么这两个链就可以直接进行合并，这个需要多计算一下，感觉需要补充的点有点多，不过这两种方式是否是atom和比特币的另外一种结合方案呢？需要计算一下。 &gt; &gt; lei lei &lt;spaceminer2011@gmail.com&gt; 于2026年3月22日周日 01:29写道： &gt; &gt;&gt; 图结构本身代表的计算和激励 &gt;&gt; &gt;&gt; 1. review的连接关系是一个多边连接的图结构，这个连接结构本身就是计算的一部分，同时也是激励的一部分。 &gt;&gt; &gt;&gt; &gt;&gt; 2. 计算的部分体现在atom每经过一个节点，就必须进入一次AtomsNew 缓冲区，并接受一次随机抽样（GetRand）。这个是系统内生的 &gt;&gt; 衰减 &gt;&gt; 计算。同时，图结构越复杂，路径越长，atom的衰减越多，这个相当于系统通过这种图结构在不断的自动计算一个商家距离信誉源头的商业距离。这里的重点是传统对于信用的计算里，要么有信用，要么没有信用，这里的信用有强度。 &gt;&gt; &gt;&gt; &gt;&gt; 3. 激励的部分在这里不是说直接给钱，而是给传播权。比如。0原子直接出现在矿工的vAtomsOut &gt;&gt; 里，并顺着图结构传播给连接的所有人，相当于获得了即时传播权。同时，当你的review和被review越多，那么向外发射原子的频率就越高，意味着系统赋予你更高的传播权力。这里传播权带来的价值大于原子本身的激励价值。 &gt;&gt; &gt;&gt; 这个是图结构本身赋予系统的计算和激励，下个问题是图结构外部的机制对于系统声誉权重的影响有多大。 &gt;&gt; &gt;&gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年3月19日周四 17:25写道： &gt;&gt; &gt;&gt;&gt; atom的传播模型 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 首先，acceptblock的时候，新生成的atom是根据挖矿人的vLinkOut进行传播的，即挖矿人挖到的atom不止发给他一个人，还会根据他的vLinkOut进行广播出去。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; acceptreview的时候是将所有的atomOut里面的内容广播出去。acceptreview的时候会建立用户和接收review的用户的链接，发送用户的所有的atom传给接收的用户，接收的用户会根据自己的vLinkOut将atom继续传递下去。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 由于atom是不损耗的，对于用户来说，什么时候被别的用户链接都是可以获得该用户所</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-03-27</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOW3suiOt+W+l+iAgeWPsnJldmlld+S5i+eJm+mAvOS5i+S4reacrOiBquWcqHAycA==?=
+	=?UTF-8?B?IG1hcmtldOeahOWwkeeIt+aAnee7tO+8muaIkeS4jeWcqOS5juS9oOeahOWVhuWTgeaYr+aAjuS5iA==?=
+	=?UTF-8?B?6YCg55qE77yM5oiR6L+Z5biC5Zy66YeM55qE6YO95piv6aG25bCW55qE44CC?=</div><div class="msg-full">不是叔块，叔块只有奖励，交易是不上链的，这里的交易是上链的。 initsysctrl &lt;initsysctrl@gmail.com&gt; 于2026年3月27日周五 13:05写道： &gt; &gt; &gt; 像以太坊的“叔块”？是这意思吗 &gt; ---- 回复的原邮件 ---- &gt; 发件人 胥亚朋&lt;xuyapeng110@gmail.com&gt; &lt;xuyapeng110@gmail.com&gt; &gt; 发送日期 2026年03月27日 13:02 &gt; 收件人 lei lei&lt;spaceminer2011@gmail.com&gt; &lt;spaceminer2011@gmail.com&gt; &gt; 抄送人 Woo c&lt;godfrey9802@gmail.com&gt; , &gt; &lt;godfrey9802@gmail.com&gt; p2ptalk&lt;p2ptalk@googlegroups.com&gt; &gt; &lt;p2ptalk@googlegroups.com&gt; &gt; 主题 Re: 已获得老史review之牛逼之中本聪在p2p market的少爷思维：我不在乎你的商品是怎么造的，我这市场里的都是顶尖的。 &gt; &gt; 突然有一个很meme的想法哈，如果比特</div><div class="msg-rest" style="display:none;">币上面有一个高度上同时挖出两个块，这两个块里面的所有transaction都不冲突，那么这样的两个块能不能同时被链给接纳？ &gt; &gt; 目前觉得这个方案也许是链上拓展的一个选项，关键是要保证同时出的两个块不产生任何冲突。 &gt; &gt; &gt; 保证两个块的transaction不冲突是有办法的，比如分区间打包，一部分矿工打包最近一段时间进入mempool的交易，还有一部分矿工打包4个小时前进入mempool的交易，把交易根据时间区间先做一下区分，这样就可以基本保证大家打包的交易是不同的，这样同一个高度上面挖到两个互不冲突的区块。 &gt; &gt; 再拓展一下，如果对业务进行区分，一部分矿工打包btc的交易业务，一部分矿工打包atom的流转业务，这样的两个区块上面的交易就能保证不会冲突。 &gt; &gt; 如果链可以同时接纳两个互不冲突的区块，那么链的计算能力是否就能横向拓展了呢？目前还是很meme。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年3月24日周二 14:55写道： &gt; &gt;&gt; atom的传播本身就是一种再传播权力，这种权力是否就是POW产生的？ &gt;&gt; &gt;&gt; 首先权力的来源是POW，比特币通过POW产生新的比特币，并伴随一种打包交易的权力，如果pow的过程也产生新的atom，也就是获得atom传播的权力。 &gt;&gt; &gt;&gt; &gt;&gt; 对于atom来说，如果一个节点没有通过POW挖到矿，它也有权力，只要挖到矿的节点主动引用了它，和它建立了链接，它就能第一时间收到atom，虽然因为流量控制导致能传播的atom会减半，但节点获得了再传播atom的权力，如果大部分能挖到矿的节点都引用了某一个节点，和这个节点建立了链接，那么该节点能传播的atom的总量有可能大于那些通过POW产生atom的节点。 &gt;&gt; &gt;&gt; &gt;&gt; 所以权力的最初来源是POW，如果POW的结果也就是能挖出矿的节点是一个节点，那么这个节点的权力是最大的。如果POW是比较分散的，那么被这些能挖到矿的节点直接引用(建立链接)的节点将获得最多的再传播权力。 &gt;&gt; &gt;&gt; &gt;&gt; 昨天老史发的那个文章很有意思，我觉得它给了两个模型，一个是任何一个链的创世区块都可以是其他链的某一个区块，有点像分叉的逻辑，但是分叉的两个链可以是功能完全不同的两个链，也就是以分叉的视角来看待链的能力的平行拓展。第二个是链的合并，如果再某一个区块以后的区块这个链都将处理两个链的所有状态，那么这两个链就可以直接进行合并，这个需要多计算一下，感觉需要补充的点有点多，不过这两种方式是否是atom和比特币的另外一种结合方案呢？需要计算一下。 &gt;&gt; &gt;&gt; lei lei &lt;spaceminer2011@gmail.com&gt; 于2026年3月22日周日 01:29写道： &gt;&gt; &gt;&gt;&gt; 图结构本身代表的计算和激励 &gt;&gt;&gt; &gt;&gt;&gt; 1. review的连接关系是一个多边连接的图结构，这个连接结构本身就是计算的一部分，同时也是激励的一部分。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 2. 计算的部分体现在atom每经过一个节点，就必须进入一次AtomsNew &gt;&gt;&gt; 缓冲区，并接受一次随机抽样（GetRand）。这个是系统内生的衰减 &gt;&gt;&gt; 计算。同时，图结构越复杂，路径越长，atom的衰减越多，这个相当于系统通过这种图结构在不断的自动计算一个商家距离信誉源头的商业距离。这里的重点是传统对于信用的计算里，要么有信用，要么没有信用，这里的信用有强度。 &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; 3. 激励的部分在这里不是说直接给钱，而是给传播权。比如。0原子直接出现在矿工的vAtomsOu</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
+</div>
 <h1>创世Atom与nonce</h1>
 <h2>创世 Atom</h2>
 <p>创世 Atom = Atom 系统的起点，类似 Bitcoin 的 Genesis Block。</p>
@@ -236,7 +338,15 @@ header .subtitle a:hover { text-decoration: underline; }
 <ul>
 <li><a href="../consensus/hashcash与POW.html" class="wiki-link">consensus/hashcash与POW</a></li>
 <li><a href="Atom数据结构.html" class="wiki-link">atom/Atom数据结构</a></li>
-</ul><div class="people-section"><h3>👥 参与讨论的人</h3><div class="person-block"><div class="person-header"><a href="../person_胥亚朋.html" class="person-name">胥亚朋</a><span class="person-count">3条</span><span class="person-months">2026-03</span></div><div class="person-msgs"><div class="p-preview">不是叔块，叔块只有奖励，交易是不上链的，这里的交易是上链的。 initsysctrl <initsysctrl@gmail.com> 于2026年3月27日周五 13:05写道： > > > 像以太坊的“叔块”？是这意思吗 > ---- 回...</div><div class="p-preview">突然有一个很meme的想法哈，如果比特币上面有一个高度上同时挖出两个块，这两个块里面的所有transaction都不冲突，那么这样的两个块能不能同时被链给接纳？ 目前觉得这个方案也许是链上拓展的一个选项，关键是要保证同时出的两个块不产生任何...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_Woo.html" class="person-name">Woo</a><span class="person-count">1条</span><span class="person-months">2025-12</span></div><div class="person-msgs"><div class="p-preview">在p2pmarket里面找不到对应的广播激励是因为代码里面并没有声誉生产的机制。但是已经足够精彩。让人浮想联翩。 1. 在p2p market里面广播行为是针对与他人的行动，与自己激励无关。 广播自己并不会获得任何的atom。但是可以使用别...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_沄涣.html" class="person-name">沄涣</a><span class="person-count">1条</span><span class="person-months">2025-12</span></div><div class="person-msgs"><div class="p-preview">这里我已经看过了 我现在就是不太懂 这里的原子计算 为什么要 活跃度/信誉 ？ 他这里不是难度调整 ，只是计算原子的数量 “活跃度”是衡量用户接受和广播后新产生了多少“原子”，我理解这里是用户自己的参与度和影响力。 “信誉”是衡量一个用户发...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_文博.html" class="person-name">文博</a><span class="person-count">1条</span><span class="person-months">2025-12</span></div><div class="person-msgs"><div class="p-preview">比特币 market 部分代码，实际上存在一个因为随机的使用而带来的不一致问题，在第一次传播时，会产生进入 atomOut 原子不一致的问题，而第二次传播时，则会因为 atomOut 带来评价实际的影响力在不同节点表现不同的问题。 首先在 ...</div></div></div></div>
+</ul><div class="people-section"><h3>👥 参与讨论的人</h3>
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_胥亚朋.html" class="p-tag">胥亚朋<span class="p-msg-count">(3条)</span></a>
+<a href="../person_文博.html" class="p-tag">文博<span class="p-msg-count">(1条)</span></a>
+<a href="../person_沄涣.html" class="p-tag">沄涣<span class="p-msg-count">(1条)</span></a>
+<a href="../person_Woo.html" class="p-tag">Woo<span class="p-msg-count">(1条)</span></a>
+</div>
+<div class="person-block"><div class="person-header"><a href="../person_胥亚朋.html" class="person-name">胥亚朋</a><span class="person-count">3条</span><span class="person-months">2026-03</span></div><div class="person-msgs"><div class="p-preview">不是叔块，叔块只有奖励，交易是不上链的，这里的交易是上链的。 initsysctrl <initsysctrl@gmail.com> 于2026年3月27日周五 13:05写道： > > > 像以太坊的“叔块”？是这意思吗 > ---- 回...</div><div class="p-preview">突然有一个很meme的想法哈，如果比特币上面有一个高度上同时挖出两个块，这两个块里面的所有transaction都不冲突，那么这样的两个块能不能同时被链给接纳？ 目前觉得这个方案也许是链上拓展的一个选项，关键是要保证同时出的两个块不产生任何...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_Woo.html" class="person-name">Woo</a><span class="person-count">1条</span><span class="person-months">2025-12</span></div><div class="person-msgs"><div class="p-preview">在p2pmarket里面找不到对应的广播激励是因为代码里面并没有声誉生产的机制。但是已经足够精彩。让人浮想联翩。 1. 在p2p market里面广播行为是针对与他人的行动，与自己激励无关。 广播自己并不会获得任何的atom。但是可以使用别...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_沄涣.html" class="person-name">沄涣</a><span class="person-count">1条</span><span class="person-months">2025-12</span></div><div class="person-msgs"><div class="p-preview">这里我已经看过了 我现在就是不太懂 这里的原子计算 为什么要 活跃度/信誉 ？ 他这里不是难度调整 ，只是计算原子的数量 “活跃度”是衡量用户接受和广播后新产生了多少“原子”，我理解这里是用户自己的参与度和影响力。 “信誉”是衡量一个用户发...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_文博.html" class="person-name">文博</a><span class="person-count">1条</span><span class="person-months">2025-12</span></div><div class="person-msgs"><div class="p-preview">比特币 market 部分代码，实际上存在一个因为随机的使用而带来的不一致问题，在第一次传播时，会产生进入 atomOut 原子不一致的问题，而第二次传播时，则会因为 atomOut 带来评价实际的影响力在不同节点表现不同的问题。 首先在 ...</div></div></div></div>
 </div></div></div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
@@ -303,4 +413,28 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
 </body></html>

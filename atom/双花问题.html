@@ -129,6 +129,30 @@ header .subtitle a:hover { text-decoration: underline; }
 .p-msg-wrapper{display:block;}
 .p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
 
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
 </style>
 </head>
 <body>
@@ -202,7 +226,27 @@ header .subtitle a:hover { text-decoration: underline; }
 <div class="page">
 <a href="../index.html" class="back-link">← 总览</a>
 <h1>双花问题</h1>
-<div class="tags"><span class="tag">atom</span><span class="tag">p2ptalk</span><span class="tag">双花</span><span class="tag">可复制</span><span class="tag">共识</span></div>
+<div class="tags"><span class="tag">atom</span><span class="tag">p2ptalk</span><span class="tag">双花</span><span class="tag">可复制</span><span class="tag">共识</span>
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共1条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">Bin Ma</span>
+
+<span class="msg-date">2025-11-19</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IEdvb2dsZSBncm91cCDlkowg5q+U54m55biB55qEIFAyUCDpg73mnaXoh6ogVXNlbg==?=
+	=?UTF-8?B?ZXQ=?=</div><div class="msg-full">&gt; &gt; https://medium.com/coinmonks/craig-wright-the-wei-dai-lies-d03ad9c32a87 Satoshi Nakamoto replied to Dr Back on 21 August 2008 as follows: “*Thanks, I wasn’t aware of the b-money page, but my ideas start from exactly that point. I’ll e-mail him to confirm the year of publication so I can credit him. The main thing my system adds is to also use proof-of-work to support a distributed timestamp server. While users are generating proof-of-work to make new coins for themselves, the same proof-of-w</div><div class="msg-rest" style="display:none;">ork is also supporting the network timestamping. This is instead of Usenet.*” 在这里讨论 中本聪一开始说的是要替代usenet的时间戳功能 因为之前usenet被密码学当作存在性证明。所以看起来时间戳的需求一直存在，并且在被使用中本聪找了一个更好的办法来解决了这个问题，因为解决双花问题需要时间戳 usenet 时间戳具体用法 90年代末，为了对抗由于出口管制带来的审查，密码朋克们非常依赖匿名网络。 为了证明某个匿名声明（比如漏洞披露或政治宣言）是在特定时间发出的，而不暴露身份，发帖者会： - 1. 对消息签名并哈希。 2. 通过 Mixmaster（混淆网络）发送到 alt.anonymous.messages。 3. Usenet 的服务器会自动打上 Date 头信息。 4. 这个 Date 加上全网可见的哈希，就构成了*匿名但可验证的时间证明 *</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
+</div>
 <h1>双花问题</h1>
 <blockquote>
 <p>"抽象出来的问题是，比特币系统的防双花需求和 Atom 天然的冲突，但是中本聪又没有设计另一套通讯系统和 mempool 给 Atom，但是要向 Atom 提出使用需求，目前方向是放在 mempool 如何实现。"
@@ -246,7 +290,12 @@ header .subtitle a:hover { text-decoration: underline; }
 <li><a href="可组合与可复制.html" class="wiki-link">atom/可组合与可复制</a> — Atom 可复制属性的来源</li>
 <li><a href="IP与品牌.html" class="wiki-link">atom/IP与品牌</a> — 双花悖论的一个解法思路</li>
 <li><a href="../security/女巫攻击防护.html" class="wiki-link">security/女巫攻击防护</a> — 双花与女巫攻击共享的防御框架</li>
-</ul><div class="people-section"><h3>👥 参与讨论的人</h3><div class="person-block"><div class="person-header"><a href="../person_Bin Ma.html" class="person-name">Bin Ma</a><span class="person-count">1条</span><span class="person-months">2025-11</span></div><div class="person-msgs"><div class="p-preview">> > https://medium.com/coinmonks/craig-wright-the-wei-dai-lies-d03ad9c32a87 Satoshi Nakamoto replied to Dr Back on 21 Au...</div></div></div></div>
+</ul><div class="people-section"><h3>👥 参与讨论的人</h3>
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_Bin_Ma.html" class="p-tag">Bin Ma<span class="p-msg-count">(1条)</span></a>
+</div>
+<div class="person-block"><div class="person-header"><a href="../person_Bin Ma.html" class="person-name">Bin Ma</a><span class="person-count">1条</span><span class="person-months">2025-11</span></div><div class="person-msgs"><div class="p-preview">> > https://medium.com/coinmonks/craig-wright-the-wei-dai-lies-d03ad9c32a87 Satoshi Nakamoto replied to Dr Back on 21 Au...</div></div></div></div>
 </div></div></div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
@@ -313,4 +362,28 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
 </body></html>
