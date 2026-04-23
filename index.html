@@ -25,6 +25,7 @@ header .subtitle a { color: var(--accent); text-decoration: none; }
 header .subtitle a:hover { text-decoration: underline; }
 .container { display: flex; flex: 1; overflow: hidden; height: calc(100vh - 45px); }
 .sidebar { width: 240px; background: var(--sidebar-bg); border-right: 1px solid var(--border); overflow-y: auto; padding: 16px 0; flex-shrink: 0; }
+.sidebar-graph-link { display: block; padding: 8px 12px; margin: 0 8px 10px; background: rgba(233,69,96,0.15); color: var(--accent); border-radius: 6px; font-size: 12px; text-decoration: none; text-align: center; border: 1px solid rgba(233,69,96,0.3); } .sidebar-graph-link:hover { background: rgba(233,69,96,0.3); }
 .sidebar h2 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-muted); padding: 10px 16px 4px; display: flex; justify-content: space-between; align-items: center; }
 .sidebar h2 .cat-count { color: var(--text-muted); font-size: 10px; }
 .sidebar a { display: block; padding: 4px 16px; color: var(--text); text-decoration: none; font-size: 12px; border-left: 2px solid transparent; }
@@ -48,6 +49,7 @@ header .subtitle a:hover { text-decoration: underline; }
 .page tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
 .page a.wiki-link { color: var(--accent); text-decoration: none; background: rgba(233,69,96,0.12); padding: 1px 5px; border-radius: 4px; font-size: 13px; }
 .page a.wiki-link:hover
+.graph-btn { display: inline-block; margin: 16px 0 8px; padding: 10px 24px; background: var(--accent); color: #fff; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity 0.15s; } .graph-btn:hover { opacity: 0.85; }
 .person-intro { background: var(--accent2); border-radius: 12px; padding: 16px 20px; margin: 20px 0; border: 1px solid var(--border); }
 .person-intro h2 { font-size: 14px; color: var(--accent); margin-bottom: 12px; }
 .person-links { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -93,7 +95,7 @@ header .subtitle a:hover { text-decoration: underline; }
   <span class="subtitle">知识图谱 · <a href="https://github.com/dapingzui/p2ptalk-wiki" target="_blank">50概念页</a> · 333条讨论</span>
 </header>
 <div class="container">
-<div class="sidebar">
+<div class="sidebar"><a href="graph.html" class="sidebar-graph-link">🔮 知识图谱</a>
 <h2>ai <span class="cat-count">4</span></h2>
 <a href="../ai/AI与女巫攻击.html" class="">AI与女巫攻击</a>
 <a href="../ai/AI与生产关系.html" class="">AI与生产关系</a>
@@ -158,7 +160,7 @@ header .subtitle a:hover { text-decoration: underline; }
 <div class="index-page">
 <h1>P2PTalk 知识图谱</h1>
 <p style="color:#a0a0a0;font-size:13px;margin-top:4px;margin-bottom:20px;">基于真实讨论提炼的概念知识图谱。每个概念页含：核心引述 + 讨论要点 + 相关链接。</p>
-<div class="stats"><div class="stat"><div class="num">50</div><div class="label">概念页</div></div><div class="stat"><div class="num">333</div><div class="label">原始消息</div></div><div class="stat"><div class="num">68</div><div class="label">讨论线程</div></div><div class="stat"><div class="num">18</div><div class="label">参与者</div></div></div>
+<div class="stats"><div class="stat"><div class="num">50</div><div class="label">概念页</div></div><div class="stat"><div class="num">333</div><div class="label">原始消息</div></div><div class="stat"><div class="num">68</div><div class="label">讨论线程</div></div><div class="stat"><div class="num">18</div><div class="label">参与者</div></div></div><a href="graph.html" class="graph-btn">🔮 交互图谱</a>
 
 <div class="person-intro">
   <h2>👥 人物视角</h2>
