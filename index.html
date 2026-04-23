@@ -47,7 +47,12 @@ header .subtitle a:hover { text-decoration: underline; }
 .page td { padding: 7px 12px; border: 1px solid var(--border); }
 .page tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
 .page a.wiki-link { color: var(--accent); text-decoration: none; background: rgba(233,69,96,0.12); padding: 1px 5px; border-radius: 4px; font-size: 13px; }
-.page a.wiki-link:hover { background: rgba(233,69,96,0.25); text-decoration: none; }
+.page a.wiki-link:hover
+.person-intro { background: var(--accent2); border-radius: 12px; padding: 16px 20px; margin: 20px 0; border: 1px solid var(--border); }
+.person-intro h2 { font-size: 14px; color: var(--accent); margin-bottom: 12px; }
+.person-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.person-tag { background: rgba(233,69,96,0.15); color: var(--accent); padding: 5px 12px; border-radius: 16px; font-size: 12px; text-decoration: none; border: 1px solid rgba(233,69,96,0.3); transition: all 0.2s; }
+.person-tag:hover { background: rgba(233,69,96,0.3); text-decoration: none; } { background: rgba(233,69,96,0.25); text-decoration: none; }
 .backlinks { margin-top: 32px; border-top: 1px solid var(--border); padding-top: 16px; }
 .backlinks h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px; }
 .backlink-list { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -154,6 +159,12 @@ header .subtitle a:hover { text-decoration: underline; }
 <h1>P2PTalk 知识图谱</h1>
 <p style="color:#a0a0a0;font-size:13px;margin-top:4px;margin-bottom:20px;">基于真实讨论提炼的概念知识图谱。每个概念页含：核心引述 + 讨论要点 + 相关链接。</p>
 <div class="stats"><div class="stat"><div class="num">50</div><div class="label">概念页</div></div><div class="stat"><div class="num">333</div><div class="label">原始消息</div></div><div class="stat"><div class="num">68</div><div class="label">讨论线程</div></div><div class="stat"><div class="num">18</div><div class="label">参与者</div></div></div>
+
+<div class="person-intro">
+  <h2>👥 人物视角</h2>
+  <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">追踪每个人的思考轨迹 · 注意力分布 · 团队关联</p>
+  <div class="person-links"><a href="person_矢孤.html" class="person-tag">矢孤</a><a href="person_胥亚朋.html" class="person-tag">胥亚朋</a><a href="person_沄涣.html" class="person-tag">沄涣</a><a href="person_Woo.html" class="person-tag">Woo</a><a href="person_文博.html" class="person-tag">文博</a><a href="person_叶鹏.html" class="person-tag">叶鹏</a><a href="person_Bin Ma.html" class="person-tag">Bin Ma</a><a href="person_雷雷.html" class="person-tag">雷雷</a></div>
+</div>
 <div class="cat-section">
 <h2>ai <span class="count">4</span></h2>
 <div class="page-list">

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>沄涣 — P2PTalk 人物</title>
+<style>
+:root {
+  --bg: #1a1a2e;
+  --sidebar-bg: #16213e;
+  --accent: #e94560;
+  --accent2: #0f3460;
+  --text: #eaeaea;
+  --text-muted: #a0a0a0;
+  --border: #2a2a4a;
+  --code-bg: #0d1117;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
+body { display: flex; flex-direction: column; }
+.back-link { color: var(--accent); font-size: 12px; margin-bottom: 16px; display: inline-block; text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+header { background: var(--sidebar-bg); border-bottom: 1px solid var(--border); padding: 12px 20px; }
+header h1 { font-size: 18px; color: var(--accent); margin-bottom: 4px; }
+header .subtitle { color: var(--text-muted); font-size: 13px; }
+.container { display: flex; flex: 1; overflow: hidden; height: calc(100vh - 52px); }
+.sidebar { width: 200px; background: var(--sidebar-bg); border-right: 1px solid var(--border); overflow-y: auto; padding: 16px 0; flex-shrink: 0; }
+.sidebar h2 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-muted); padding: 10px 16px 4px; }
+.sidebar a { display: block; padding: 4px 16px; color: var(--text); text-decoration: none; font-size: 12px; border-left: 2px solid transparent; }
+.sidebar a:hover { background: var(--accent2); border-left-color: var(--accent); }
+.sidebar a.active { background: var(--accent2); border-left-color: var(--accent); }
+.main { flex: 1; overflow-y: auto; padding: 24px 32px; max-width: 900px; }
+.section { margin-bottom: 36px; }
+.section h2 { font-size: 14px; color: var(--accent); margin-bottom: 14px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.stat-row { display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+.stat { background: var(--accent2); padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); min-width: 80px; }
+.stat .num { font-size: 22px; color: var(--accent); font-weight: 600; }
+.stat .label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-top: 2px; }
+.bar-chart { margin: 12px 0; }
+.bar-row { display: flex; align-items: center; margin: 6px 0; font-size: 12px; }
+.bar-label { width: 130px; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; }
+.bar-track { flex: 1; height: 6px; background: var(--accent2); border-radius: 3px; margin: 0 8px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.3s; }
+.bar-count { width: 30px; text-align: right; color: var(--text-muted); font-size: 10px; }
+.msg-list { list-style: none; }
+.msg-item { background: var(--accent2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; }
+.msg-date { font-size: 10px; color: var(--text-muted); margin-bottom: 4px; }
+.msg-subject { font-size: 12px; color: var(--accent); margin-bottom: 6px; }
+.msg-body { font-size: 12px; color: var(--text); line-height: 1.6; max-height: 80px; overflow: hidden; }
+.msg-concepts { margin-top: 6px; }
+.msg-concept-tag { background: rgba(233,69,96,0.2); color: var(--accent); padding: 1px 6px; border-radius: 4px; font-size: 10px; margin-right: 4px; display: inline-block; }
+.question-badge { background: var(--accent); color: #fff; padding: 1px 6px; border-radius: 4px; font-size: 10px; margin-left: 6px; }
+.timeline { margin-top: 12px; }
+.timeline-item { margin-bottom: 16px; padding-left: 8px; border-left: 2px solid var(--border); position: relative; }
+.timeline-item::before { content: ''; position: absolute; left: -5px; top: 2px; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+.timeline-month { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+.timeline-count { color: var(--accent); margin-left: 8px; }
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="back-link">← P2PTalk 总览</a>
+  <h1>沄涣</h1>
+  <span class="subtitle">53 条消息 · 5 个月活跃</span>
+</header>
+<div class="container">
+<div class="sidebar"><h2>👥 参与者</h2><a href="person_矢孤.html" class="">矢孤 (73)</a><a href="person_胥亚朋.html" class="">胥亚朋 (56)</a><a href="person_沄涣.html" class="active">沄涣 (53)</a><a href="person_Woo.html" class="">Woo (41)</a><a href="person_文博.html" class="">文博 (37)</a><a href="person_叶鹏.html" class="">叶鹏 (35)</a><a href="person_Bin Ma.html" class="">Bin Ma (21)</a><a href="person_雷雷.html" class="">雷雷 (17)</a><h2>🗂️ 概念</h2><a href="index.html">← 概念总览</a></div>
+<div class="main">
+  <div class="section">
+    <div class="stat-row">
+      <div class="stat"><div class="num">53</div><div class="label">总消息</div></div>
+      <div class="stat"><div class="num">11</div><div class="label">涉及概念</div></div>
+      <div class="stat"><div class="num">2026-01</div><div class="label">最活跃月</div></div>
+      <div class="stat"><div class="num">18</div><div class="label">提问数</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📊 注意力分布（按月）</h2>
+    <div class="timeline"><div class="timeline-item">
+  <div class="timeline-month">2025-12 <span class="timeline-count">10条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:55.55555555555556%"></div></div>
+</div><div class="timeline-item">
+  <div class="timeline-month">2026-01 <span class="timeline-count">18条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:100.0%"></div></div>
+</div><div class="timeline-item">
+  <div class="timeline-month">2026-02 <span class="timeline-count">15条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:83.33333333333334%"></div></div>
+</div><div class="timeline-item">
+  <div class="timeline-month">2026-03 <span class="timeline-count">7条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:38.88888888888889%"></div></div>
+</div><div class="timeline-item">
+  <div class="timeline-month">2026-04 <span class="timeline-count">3条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:16.666666666666664%"></div></div>
+</div></div>
+  </div>
+
+  <div class="section">
+    <h2>🧠 关注概念分布</h2>
+    <div class="bar-chart"><div class="bar-row">
+  <div class="bar-label">Atom与Bitcoin关系</div>
+  <div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div>
+  <div class="bar-count">19</div>
+</div><div class="bar-row">
+  <div class="bar-label">Atom是什么</div>
+  <div class="bar-track"><div class="bar-fill" style="width:94.73684210526315%"></div></div>
+  <div class="bar-count">18</div>
+</div><div class="bar-row">
+  <div class="bar-label">难度调整</div>
+  <div class="bar-track"><div class="bar-fill" style="width:52.63157894736842%"></div></div>
+  <div class="bar-count">10</div>
+</div><div class="bar-row">
+  <div class="bar-label">BitDNS与P2P市场</div>
+  <div class="bar-track"><div class="bar-fill" style="width:47.368421052631575%"></div></div>
+  <div class="bar-count">9</div>
+</div><div class="bar-row">
+  <div class="bar-label">谓词</div>
+  <div class="bar-track"><div class="bar-fill" style="width:26.31578947368421%"></div></div>
+  <div class="bar-count">5</div>
+</div><div class="bar-row">
+  <div class="bar-label">Atom数据结构</div>
+  <div class="bar-track"><div class="bar-fill" style="width:15.789473684210526%"></div></div>
+  <div class="bar-count">3</div>
+</div><div class="bar-row">
+  <div class="bar-label">洪泛atom的激励问题</div>
+  <div class="bar-track"><div class="bar-fill" style="width:15.789473684210526%"></div></div>
+  <div class="bar-count">3</div>
+</div><div class="bar-row">
+  <div class="bar-label">预信任节点</div>
+  <div class="bar-track"><div class="bar-fill" style="width:10.526315789473683%"></div></div>
+  <div class="bar-count">2</div>
+</div><div class="bar-row">
+  <div class="bar-label">中间会面机制</div>
+  <div class="bar-track"><div class="bar-fill" style="width:10.526315789473683%"></div></div>
+  <div class="bar-count">2</div>
+</div><div class="bar-row">
+  <div class="bar-label">节点与SPV轻节点</div>
+  <div class="bar-track"><div class="bar-fill" style="width:5.263157894736842%"></div></div>
+  <div class="bar-count">1</div>
+</div></div>
+  </div>
+
+  <div class="section">
+    <h2>❓ 提出过的问题 <span style="color:var(--text-muted);font-size:12px">(18条)</span></h2>
+    <div class="msg-item">
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOW8uuWItuWQjOatpeacgOmVv+mTvg==?=</div>
+  <div class="msg-body">形式化问题： 1.atom与memepool 假设作为插件不在共识内，那么如果保证网络中“共识”（和谐）一致， atom怎么进入“共识”？ 2.Atom到底是什么，怎么产生的，先后顺序是 先产生atom进入“共识”，还是“共识”中产生atom？ 3.btc软分叉采用的“速战速决”中，尽快开始，尽快停止都比较好理解，关于第三点 “延迟激活”，锁定阈值达到峰值后，一旦达到目标位置，taproot就一定...</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">Atom是什么</span></div>
+</div><div class="msg-item">
+  <div class="msg-date">2026-02 · =?UTF-8?B?MjAyNjAyMjQg5Yy56YWN5Lya6K6u5raI5oGv5bm/5pKt?=</div>
+  <div class="msg-body">0213会议停机后的问题整理 1.atom是提供给买家与节点使用的，如果不是P2P市场则没有这些问题 2.用户与节点可以随时加入退出，节点只有长时间在线，对于atom的数量计算的越准确 3.对于卖方已有的atom，可不可以更换出售的“商品”，此时卖方已有的atom数量能否作为“新商品”的声誉？这一点老史的停机称为“互联网摆摊”。 4.中本聪称每种交易类型都需要特殊的支持代码和数据字段，交易双方可以...</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">BitDNS与P2P市场</span><span class="msg-concept-tag">谓词</span></div>
+</div><div class="msg-item">
+  <div class="msg-date">2026-04 · =?UTF-8?B?YnRj5Lit5a+55LqO6Zq+5bqm6LCD5pW044CB56ym5ZCI6Zq+5b</div>
+  <div class="msg-body">btc中对于难度调整、符合难度与会议之间的联系 难度调整、符合难度，那什么叫符合难度？代码中怎么体现的 1.对于btc中难度调整相关的内容，由亚鹏通过代码与讲解，有代码提供证据，btc网络中，假设说现在有我和亚鹏两个节点，亚鹏出了一个块，首先亚鹏得算出nounce组成区块，进行哈希，前面要保持多少个0，才能符合难度，然后2016个区块后进行难度调整。那怎么才叫符合难度呢，我需要对亚鹏计算出来的no...</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">节点与SPV轻节点</span><span class="msg-concept-tag">难度调整</span></div>
+</div><div class="msg-item">
+  <div class="msg-date">2026-01 · =?UTF-8?Q?Re:_=E5=B9=BF=E6=92=AD:po?=
+ =?UTF-8?Q?w=E5=92=8C</div>
+  <div class="msg-body">我看完上述的问题 我抽象下问题 个人停机 1.eos质押获得资源模型，前提是已经有了一个“假”的代币eos ，进行质押，获得了系统资源 2.而Atom是可以复制的，复制完同样获得Atom的，所有拥有Atom的账户权重是怎么样的？ 3.无论是Atom产生、复制、防女巫，首先得聊清楚 Atom的产生，怎么产生了这种“真”？ On Saturday, January 3, 2026 at 4:22:17...</div>
+  <div class="msg-concepts"></div>
+</div><div class="msg-item">
+  <div class="msg-date">2026-01 · =?UTF-8?Q?Re:_=E5=B9=BF=E6=92=AD:po?=
+ =?UTF-8?Q?w=E5=92=8C</div>
+  <div class="msg-body">https://meet.google.com/cvg-wguo-ccf On Saturday, January 3, 2026 at 4:12:18 PM UTC+8 胡志伟 wrote: > 那天跟woo聊完，其实指引我 “发币”，币是从哪来的？ > 所以我想 atom 这个理解就是一个凭证，谁获得凭证 谁才有资格发币 > > On Saturday, January 3, 2026 at ...</div>
+  <div class="msg-concepts"></div>
+</div><div class="msg-item">
+  <div class="msg-date">2026-01 · =?UTF-8?Q?Re:_=E5=B9=BF=E6=92=AD:po?=
+ =?UTF-8?Q?w=E5=92=8C</div>
+  <div class="msg-body">那天跟woo聊完，其实指引我 “发币”，币是从哪来的？ 所以我想 atom 这个理解就是一个凭证，谁获得凭证 谁才有资格发币 On Saturday, January 3, 2026 at 4:06:07 PM UTC+8 shijingyao123 wrote: > 我先说结论，有可能是eos的质押获得资源模式。 > 在比特币和其他的区块链中，本质上是手续费模型，系统生产的是货币。 > 但是at...</div>
+  <div class="msg-concepts"></div>
+</div><div class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI</div>
+  <div class="msg-body">通过文博与亚鹏的对话，发现两个人的难度好像是同一个难度， 亚鹏觉得比特币很纯粹，交易信息本身决定了（utxo状态），atom的消息与状态是分离的，导致atom只能是局部共识。 在聊到“谓词”与btc脚本这里，等式和谓词我没看明白，文博是觉得，谓词就是布尔函数，拼接执行出个真假就行，根本没什么等式。这里我觉得你们可以开会讨论一下。 根据你们聊得内容，我看到了一个词“状态量”，亚鹏提到比特币传递的状态...</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">谓词</span><span class="msg-concept-tag">Atom与Bitcoin关系</span></div>
+</div><div class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body">老史：review三颗星 ：关于局部共识的 review之间建立的关系拓扑网 On Mon, Mar 16, 2026 at 4:37 PM 胥亚朋 <xuyapeng110@gmail.com> wrote: > > 目前的计算引用文博的计算内容，是之前我看代码忽视的点，即atom在acceptblock的时候就已经开始传播了，这样atom的传播模型和之前了解到的已经不太一样了。目前个人有mem...</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">Atom与Bitcoin关系</span></div>
+</div>
+  </div>
+
+  <div class="section">
+    <h2>📬 最新消息</h2>
+    <ul class="msg-list"><li class="msg-item">
+  <div class="msg-date">2026-04 · </div>
+  <div class="msg-body">会议规则分为必要规则和选用测试规则，会议的核心之一是组织的效率问题， 会议必要规则是需要每个节点遵守的，如果没有遵守则默认排除在了会议之外， 开启会议遵循必要规则后，如果觉得有自己的想法规则可以帮助提升会议效率，可以进行测试，决定能否用在正式的会议规则上来。邮件发送后，如果不清楚或者有疑问可以发起会议 会议必要规则 1.周一线下 2.会议规则更新需要邮件说明（强同步） 3.有进展邮件说明，并发起会</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">Atom是什么</span></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-04 · =?UTF-8?B?YnRj5Lit5a+55LqO6Zq+5bqm6LCD5pW044CB56ym5ZCI6Zq+5bqm5LiO5Lya6K6u5LmL?=</div>
+  <div class="msg-body">btc中对于难度调整、符合难度与会议之间的联系 难度调整、符合难度，那什么叫符合难度？代码中怎么体现的 1.对于btc中难度调整相关的内容，由亚鹏通过代码与讲解，有代码提供证据，btc网络中，假设说现在有我和亚鹏两个节点，亚鹏出了一个块，首先亚鹏得算出nounce组成区块，进行哈希，前面要保持多少个0，才能符合难度，然后2016个区块后进行难度调整。那怎么才叫符合难度呢，我需要对亚鹏计算出来的no</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">节点与SPV轻节点</span><span class="msg-concept-tag">难度调整</span></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-04 · =?UTF-8?B?UmU6IOS7o+eggeWIhuS6q+S8mg==?=</div>
+  <div class="msg-body">邀请我下 矢孤 <shijingyao123@gmail.com>于2026年4月1日 周三16:57写道： > 今天六点到9点在线交流代码阅读，有时间的的在邮件下面回复。 > > -- > You received this message because you are subscribed to the Google Groups > p2ptalk group. > To unsubscr</div>
+  <div class="msg-concepts"></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body">老史：review三颗星 ：关于局部共识的 review之间建立的关系拓扑网 马师傅：不review 叶鹏：不review. 文博：不review woo：不review 老史：不review 小胖：不review 雷雷：不review 个人注意力：系统内货币流转与货币产生 On Mon, Mar 16, 2026 at 4:53 PM 胥亚朋 <xuyapeng110@gmail.com> wr</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">Atom与Bitcoin关系</span></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body">老史：review三颗星 ：关于局部共识的 review之间建立的关系拓扑网 On Mon, Mar 16, 2026 at 4:37 PM 胥亚朋 <xuyapeng110@gmail.com> wrote: > > 目前的计算引用文博的计算内容，是之前我看代码忽视的点，即atom在acceptblock的时候就已经开始传播了，这样atom的传播模型和之前了解到的已经不太一样了。目前个人有mem</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">Atom与Bitcoin关系</span></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?MjAyNjAzMTMg5Lya5YmN5ZCM5q2l?=</div>
+  <div class="msg-body"></div>
+  <div class="msg-concepts"></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOWtpOefouS4quS6uuacgOmVv+mTvuabtOaWsCbkvJrorq7osIPmlbQ=?=</div>
+  <div class="msg-body">好的 小会讨论、计算都需要单独发一个会议链接给我 谢谢 shijingyao123 <shijingyao123@gmail.com>于2026年3月12日 周四20:37写道： > 一：个人最长链更新 > atom是流速累积到二就触发，atom是不是在实时流动的，如何做到实时流动呢？ > > 实时流动这个特性导致，不能像比特币一样十分钟处理一次，当然我现在脑子里有个新的想法，就是每个用户实时流动</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">难度调整</span></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpITnkIY=?=</div>
+  <div class="msg-body">通过文博与亚鹏的对话，发现两个人的难度好像是同一个难度， 亚鹏觉得比特币很纯粹，交易信息本身决定了（utxo状态），atom的消息与状态是分离的，导致atom只能是局部共识。 在聊到“谓词”与btc脚本这里，等式和谓词我没看明白，文博是觉得，谓词就是布尔函数，拼接执行出个真假就行，根本没什么等式。这里我觉得你们可以开会讨论一下。 根据你们聊得内容，我看到了一个词“状态量”，亚鹏提到比特币传递的状态</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">谓词</span><span class="msg-concept-tag">Atom与Bitcoin关系</span></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IDIwMjYwMzAyIOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body">频道这里，刚跟雷雷 亚鹏 woo聊到全局共识和局部共识 对于btc来说 ，交易的“结果”，这一种 消息类型的数据结构，系统处理这一种结果就行，所以能够有全局共识 而对于atom中间会面机制来说，发布与订阅双方的交易是否能够达成是不一定的，而节点是负责匹配，所以发布订阅的结果系统并不关心，系统只会关心 达成交易后 atom的复制流转，所以这里的共识只能是局部共识 会议中也是一样，假如 老史与亚鹏匹配</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">中间会面机制</span><span class="msg-concept-tag">Atom数据结构</span></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?MjAyNjAzMDIg5Lya5YmN5ZCM5q2l?=</div>
+  <div class="msg-body"></div>
+  <div class="msg-concepts"></div>
+</li></ul>
+  </div>
+</div>
+</div>
+</body>
+</html>

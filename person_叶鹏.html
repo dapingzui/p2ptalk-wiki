@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>叶鹏 — P2PTalk 人物</title>
+<style>
+:root {
+  --bg: #1a1a2e;
+  --sidebar-bg: #16213e;
+  --accent: #e94560;
+  --accent2: #0f3460;
+  --text: #eaeaea;
+  --text-muted: #a0a0a0;
+  --border: #2a2a4a;
+  --code-bg: #0d1117;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
+body { display: flex; flex-direction: column; }
+.back-link { color: var(--accent); font-size: 12px; margin-bottom: 16px; display: inline-block; text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+header { background: var(--sidebar-bg); border-bottom: 1px solid var(--border); padding: 12px 20px; }
+header h1 { font-size: 18px; color: var(--accent); margin-bottom: 4px; }
+header .subtitle { color: var(--text-muted); font-size: 13px; }
+.container { display: flex; flex: 1; overflow: hidden; height: calc(100vh - 52px); }
+.sidebar { width: 200px; background: var(--sidebar-bg); border-right: 1px solid var(--border); overflow-y: auto; padding: 16px 0; flex-shrink: 0; }
+.sidebar h2 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-muted); padding: 10px 16px 4px; }
+.sidebar a { display: block; padding: 4px 16px; color: var(--text); text-decoration: none; font-size: 12px; border-left: 2px solid transparent; }
+.sidebar a:hover { background: var(--accent2); border-left-color: var(--accent); }
+.sidebar a.active { background: var(--accent2); border-left-color: var(--accent); }
+.main { flex: 1; overflow-y: auto; padding: 24px 32px; max-width: 900px; }
+.section { margin-bottom: 36px; }
+.section h2 { font-size: 14px; color: var(--accent); margin-bottom: 14px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.stat-row { display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+.stat { background: var(--accent2); padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); min-width: 80px; }
+.stat .num { font-size: 22px; color: var(--accent); font-weight: 600; }
+.stat .label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-top: 2px; }
+.bar-chart { margin: 12px 0; }
+.bar-row { display: flex; align-items: center; margin: 6px 0; font-size: 12px; }
+.bar-label { width: 130px; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; }
+.bar-track { flex: 1; height: 6px; background: var(--accent2); border-radius: 3px; margin: 0 8px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.3s; }
+.bar-count { width: 30px; text-align: right; color: var(--text-muted); font-size: 10px; }
+.msg-list { list-style: none; }
+.msg-item { background: var(--accent2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; }
+.msg-date { font-size: 10px; color: var(--text-muted); margin-bottom: 4px; }
+.msg-subject { font-size: 12px; color: var(--accent); margin-bottom: 6px; }
+.msg-body { font-size: 12px; color: var(--text); line-height: 1.6; max-height: 80px; overflow: hidden; }
+.msg-concepts { margin-top: 6px; }
+.msg-concept-tag { background: rgba(233,69,96,0.2); color: var(--accent); padding: 1px 6px; border-radius: 4px; font-size: 10px; margin-right: 4px; display: inline-block; }
+.question-badge { background: var(--accent); color: #fff; padding: 1px 6px; border-radius: 4px; font-size: 10px; margin-left: 6px; }
+.timeline { margin-top: 12px; }
+.timeline-item { margin-bottom: 16px; padding-left: 8px; border-left: 2px solid var(--border); position: relative; }
+.timeline-item::before { content: ''; position: absolute; left: -5px; top: 2px; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+.timeline-month { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+.timeline-count { color: var(--accent); margin-left: 8px; }
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="back-link">← P2PTalk 总览</a>
+  <h1>叶鹏</h1>
+  <span class="subtitle">35 条消息 · 5 个月活跃</span>
+</header>
+<div class="container">
+<div class="sidebar"><h2>👥 参与者</h2><a href="person_矢孤.html" class="">矢孤 (73)</a><a href="person_胥亚朋.html" class="">胥亚朋 (56)</a><a href="person_沄涣.html" class="">沄涣 (53)</a><a href="person_Woo.html" class="">Woo (41)</a><a href="person_文博.html" class="">文博 (37)</a><a href="person_叶鹏.html" class="active">叶鹏 (35)</a><a href="person_Bin Ma.html" class="">Bin Ma (21)</a><a href="person_雷雷.html" class="">雷雷 (17)</a><h2>🗂️ 概念</h2><a href="index.html">← 概念总览</a></div>
+<div class="main">
+  <div class="section">
+    <div class="stat-row">
+      <div class="stat"><div class="num">35</div><div class="label">总消息</div></div>
+      <div class="stat"><div class="num">10</div><div class="label">涉及概念</div></div>
+      <div class="stat"><div class="num">2026-01</div><div class="label">最活跃月</div></div>
+      <div class="stat"><div class="num">0</div><div class="label">提问数</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📊 注意力分布（按月）</h2>
+    <div class="timeline"><div class="timeline-item">
+  <div class="timeline-month">2025-12 <span class="timeline-count">7条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:63.63636363636363%"></div></div>
+</div><div class="timeline-item">
+  <div class="timeline-month">2026-01 <span class="timeline-count">11条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:100.0%"></div></div>
+</div><div class="timeline-item">
+  <div class="timeline-month">2026-02 <span class="timeline-count">6条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:54.54545454545454%"></div></div>
+</div><div class="timeline-item">
+  <div class="timeline-month">2026-03 <span class="timeline-count">10条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:90.9090909090909%"></div></div>
+</div><div class="timeline-item">
+  <div class="timeline-month">2026-04 <span class="timeline-count">1条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:9.090909090909092%"></div></div>
+</div></div>
+  </div>
+
+  <div class="section">
+    <h2>🧠 关注概念分布</h2>
+    <div class="bar-chart"><div class="bar-row">
+  <div class="bar-label">Atom与Bitcoin关系</div>
+  <div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div>
+  <div class="bar-count">8</div>
+</div><div class="bar-row">
+  <div class="bar-label">Atom是什么</div>
+  <div class="bar-track"><div class="bar-fill" style="width:62.5%"></div></div>
+  <div class="bar-count">5</div>
+</div><div class="bar-row">
+  <div class="bar-label">元胞自动机</div>
+  <div class="bar-track"><div class="bar-fill" style="width:50.0%"></div></div>
+  <div class="bar-count">4</div>
+</div><div class="bar-row">
+  <div class="bar-label">Atom数据结构</div>
+  <div class="bar-track"><div class="bar-fill" style="width:37.5%"></div></div>
+  <div class="bar-count">3</div>
+</div><div class="bar-row">
+  <div class="bar-label">中间会面机制</div>
+  <div class="bar-track"><div class="bar-fill" style="width:25.0%"></div></div>
+  <div class="bar-count">2</div>
+</div><div class="bar-row">
+  <div class="bar-label">谓词</div>
+  <div class="bar-track"><div class="bar-fill" style="width:12.5%"></div></div>
+  <div class="bar-count">1</div>
+</div><div class="bar-row">
+  <div class="bar-label">难度调整</div>
+  <div class="bar-track"><div class="bar-fill" style="width:12.5%"></div></div>
+  <div class="bar-count">1</div>
+</div><div class="bar-row">
+  <div class="bar-label">节点与SPV轻节点</div>
+  <div class="bar-track"><div class="bar-fill" style="width:12.5%"></div></div>
+  <div class="bar-count">1</div>
+</div><div class="bar-row">
+  <div class="bar-label">洪泛atom的激励问题</div>
+  <div class="bar-track"><div class="bar-fill" style="width:12.5%"></div></div>
+  <div class="bar-count">1</div>
+</div><div class="bar-row">
+  <div class="bar-label">Atom流转机制</div>
+  <div class="bar-track"><div class="bar-fill" style="width:12.5%"></div></div>
+  <div class="bar-count">1</div>
+</div></div>
+  </div>
+
+  <div class="section">
+    <h2>❓ 提出过的问题 <span style="color:var(--text-muted);font-size:12px">(0条)</span></h2>
+    
+  </div>
+
+  <div class="section">
+    <h2>📬 最新消息</h2>
+    <ul class="msg-list"><li class="msg-item">
+  <div class="msg-date">2026-04 · =?UTF-8?B?6Zq+5bqm44CB5pe26Ze044CBYXRvbeOAgeS4reacrOiBquWFseivhg==?=</div>
+  <div class="msg-body">引用：xuyapeng110 今天和老史开会，更新几条会议规则: 会议规则一，有进展就邮件讲重点，发起跟老史的会议 会议规则二，更新会议规则的时候需要邮件说明 会议规则三，涉及到比特币的内容，拿代码证据 进展重点： *1. 我目前理解的中本聪共识* 从重写比特币中获得的灵感。假设所有人都来fork中本聪的源码，然后自己修改，这么多版本的代码如何才能正常的通讯，形成一个稳定网络。所有版本的比特币的“</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">Atom是什么</span><span class="msg-concept-tag">Atom与Bitcoin关系</span><span class="msg-concept-tag">Atom数据结构</span></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?utf-8?B?5Zue5aSN77yaIOW3suiOt+W+l+iAgeWPsnJldmlld+S5i+eJmw==?=
+ =?utf-8?B?6YC</div>
+  <div class="msg-body"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-height: 1.6; } ul,ol{ padding-left: 20px; list-style-position: inside; } </style> <d</div>
+  <div class="msg-concepts"></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?utf-8?B?5Zue5aSN77yaIOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYs=?=
+ =?utf-8?B?5ZC</div>
+  <div class="msg-body"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-height: 1.6; } ul,ol{ padding-left: 20px; list-style-position: inside; } </style> <d</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">元胞自动机</span></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?utf-8?B?5Zue5aSN77yaIOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYs=?=
+ =?utf-8?B?5ZC</div>
+  <div class="msg-body"></div>
+  <div class="msg-concepts"></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?utf-8?B?5Zue5aSN77yaIOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYs=?=
+ =?utf-8?B?5ZC</div>
+  <div class="msg-body"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-height: 1.6; } ul,ol{ padding-left: 20px; list-style-position: inside; } </style> <d</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">元胞自动机</span></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?utf-8?B?5Zue5aSN77yaIOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body"></div>
+  <div class="msg-concepts"></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?utf-8?B?5Zue5aSN77yaIOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-height: 1.6; } ul,ol{ padding-left: 20px; list-style-position: inside; } </style> <d</div>
+  <div class="msg-concepts"></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?utf-8?B?5Zue5aSN77yaIOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-height: 1.6; } ul,ol{ padding-left: 20px; list-style-position: inside; } </style> <d</div>
+  <div class="msg-concepts"></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?utf-8?B?5Zue5aSN77ya5Lya5YmN5ZCM5q2l?=</div>
+  <div class="msg-body"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-height: 1.6; } ul,ol{ padding-left: 20px; list-style-position: inside; } </style> <d</div>
+  <div class="msg-concepts"></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?utf-8?B?5Zue5aSN77yaIOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYs=?=
+ =?utf-8?B?5ZC</div>
+  <div class="msg-body"><html> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> </head> <body> <style> font{ line-height: 1.6; } ul,ol{ padding-left: 20px; list-style-position: inside; } </style> <d</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">中间会面机制</span><span class="msg-concept-tag">Atom与Bitcoin关系</span></div>
+</li></ul>
+  </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文博 — P2PTalk 人物</title>
+<style>
+:root {
+  --bg: #1a1a2e;
+  --sidebar-bg: #16213e;
+  --accent: #e94560;
+  --accent2: #0f3460;
+  --text: #eaeaea;
+  --text-muted: #a0a0a0;
+  --border: #2a2a4a;
+  --code-bg: #0d1117;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
+body { display: flex; flex-direction: column; }
+.back-link { color: var(--accent); font-size: 12px; margin-bottom: 16px; display: inline-block; text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+header { background: var(--sidebar-bg); border-bottom: 1px solid var(--border); padding: 12px 20px; }
+header h1 { font-size: 18px; color: var(--accent); margin-bottom: 4px; }
+header .subtitle { color: var(--text-muted); font-size: 13px; }
+.container { display: flex; flex: 1; overflow: hidden; height: calc(100vh - 52px); }
+.sidebar { width: 200px; background: var(--sidebar-bg); border-right: 1px solid var(--border); overflow-y: auto; padding: 16px 0; flex-shrink: 0; }
+.sidebar h2 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-muted); padding: 10px 16px 4px; }
+.sidebar a { display: block; padding: 4px 16px; color: var(--text); text-decoration: none; font-size: 12px; border-left: 2px solid transparent; }
+.sidebar a:hover { background: var(--accent2); border-left-color: var(--accent); }
+.sidebar a.active { background: var(--accent2); border-left-color: var(--accent); }
+.main { flex: 1; overflow-y: auto; padding: 24px 32px; max-width: 900px; }
+.section { margin-bottom: 36px; }
+.section h2 { font-size: 14px; color: var(--accent); margin-bottom: 14px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.stat-row { display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+.stat { background: var(--accent2); padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); min-width: 80px; }
+.stat .num { font-size: 22px; color: var(--accent); font-weight: 600; }
+.stat .label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-top: 2px; }
+.bar-chart { margin: 12px 0; }
+.bar-row { display: flex; align-items: center; margin: 6px 0; font-size: 12px; }
+.bar-label { width: 130px; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; }
+.bar-track { flex: 1; height: 6px; background: var(--accent2); border-radius: 3px; margin: 0 8px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.3s; }
+.bar-count { width: 30px; text-align: right; color: var(--text-muted); font-size: 10px; }
+.msg-list { list-style: none; }
+.msg-item { background: var(--accent2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; }
+.msg-date { font-size: 10px; color: var(--text-muted); margin-bottom: 4px; }
+.msg-subject { font-size: 12px; color: var(--accent); margin-bottom: 6px; }
+.msg-body { font-size: 12px; color: var(--text); line-height: 1.6; max-height: 80px; overflow: hidden; }
+.msg-concepts { margin-top: 6px; }
+.msg-concept-tag { background: rgba(233,69,96,0.2); color: var(--accent); padding: 1px 6px; border-radius: 4px; font-size: 10px; margin-right: 4px; display: inline-block; }
+.question-badge { background: var(--accent); color: #fff; padding: 1px 6px; border-radius: 4px; font-size: 10px; margin-left: 6px; }
+.timeline { margin-top: 12px; }
+.timeline-item { margin-bottom: 16px; padding-left: 8px; border-left: 2px solid var(--border); position: relative; }
+.timeline-item::before { content: ''; position: absolute; left: -5px; top: 2px; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+.timeline-month { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+.timeline-count { color: var(--accent); margin-left: 8px; }
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="back-link">← P2PTalk 总览</a>
+  <h1>文博</h1>
+  <span class="subtitle">37 条消息 · 6 个月活跃</span>
+</header>
+<div class="container">
+<div class="sidebar"><h2>👥 参与者</h2><a href="person_矢孤.html" class="">矢孤 (73)</a><a href="person_胥亚朋.html" class="">胥亚朋 (56)</a><a href="person_沄涣.html" class="">沄涣 (53)</a><a href="person_Woo.html" class="">Woo (41)</a><a href="person_文博.html" class="active">文博 (37)</a><a href="person_叶鹏.html" class="">叶鹏 (35)</a><a href="person_Bin Ma.html" class="">Bin Ma (21)</a><a href="person_雷雷.html" class="">雷雷 (17)</a><h2>🗂️ 概念</h2><a href="index.html">← 概念总览</a></div>
+<div class="main">
+  <div class="section">
+    <div class="stat-row">
+      <div class="stat"><div class="num">37</div><div class="label">总消息</div></div>
+      <div class="stat"><div class="num">11</div><div class="label">涉及概念</div></div>
+      <div class="stat"><div class="num">2026-03</div><div class="label">最活跃月</div></div>
+      <div class="stat"><div class="num">2</div><div class="label">提问数</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📊 注意力分布（按月）</h2>
+    <div class="timeline"><div class="timeline-item">
+  <div class="timeline-month">2025-11 <span class="timeline-count">3条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:30.0%"></div></div>
+</div><div class="timeline-item">
+  <div class="timeline-month">2025-12 <span class="timeline-count">4条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:40.0%"></div></div>
+</div><div class="timeline-item">
+  <div class="timeline-month">2026-01 <span class="timeline-count">9条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:90.0%"></div></div>
+</div><div class="timeline-item">
+  <div class="timeline-month">2026-02 <span class="timeline-count">9条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:90.0%"></div></div>
+</div><div class="timeline-item">
+  <div class="timeline-month">2026-03 <span class="timeline-count">10条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:100.0%"></div></div>
+</div><div class="timeline-item">
+  <div class="timeline-month">2026-04 <span class="timeline-count">2条</span></div>
+  <div class="bar-track" style="width:200px"><div class="bar-fill" style="width:20.0%"></div></div>
+</div></div>
+  </div>
+
+  <div class="section">
+    <h2>🧠 关注概念分布</h2>
+    <div class="bar-chart"><div class="bar-row">
+  <div class="bar-label">Atom与Bitcoin关系</div>
+  <div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div>
+  <div class="bar-count">18</div>
+</div><div class="bar-row">
+  <div class="bar-label">Atom是什么</div>
+  <div class="bar-track"><div class="bar-fill" style="width:50.0%"></div></div>
+  <div class="bar-count">9</div>
+</div><div class="bar-row">
+  <div class="bar-label">BitDNS与P2P市场</div>
+  <div class="bar-track"><div class="bar-fill" style="width:50.0%"></div></div>
+  <div class="bar-count">9</div>
+</div><div class="bar-row">
+  <div class="bar-label">难度调整</div>
+  <div class="bar-track"><div class="bar-fill" style="width:27.77777777777778%"></div></div>
+  <div class="bar-count">5</div>
+</div><div class="bar-row">
+  <div class="bar-label">中间会面机制</div>
+  <div class="bar-track"><div class="bar-fill" style="width:27.77777777777778%"></div></div>
+  <div class="bar-count">5</div>
+</div><div class="bar-row">
+  <div class="bar-label">谓词</div>
+  <div class="bar-track"><div class="bar-fill" style="width:16.666666666666664%"></div></div>
+  <div class="bar-count">3</div>
+</div><div class="bar-row">
+  <div class="bar-label">发布订阅机制</div>
+  <div class="bar-track"><div class="bar-fill" style="width:11.11111111111111%"></div></div>
+  <div class="bar-count">2</div>
+</div><div class="bar-row">
+  <div class="bar-label">脚本是谓词</div>
+  <div class="bar-track"><div class="bar-fill" style="width:5.555555555555555%"></div></div>
+  <div class="bar-count">1</div>
+</div><div class="bar-row">
+  <div class="bar-label">Atom数据结构</div>
+  <div class="bar-track"><div class="bar-fill" style="width:5.555555555555555%"></div></div>
+  <div class="bar-count">1</div>
+</div><div class="bar-row">
+  <div class="bar-label">节点与SPV轻节点</div>
+  <div class="bar-track"><div class="bar-fill" style="width:5.555555555555555%"></div></div>
+  <div class="bar-count">1</div>
+</div></div>
+  </div>
+
+  <div class="section">
+    <h2>❓ 提出过的问题 <span style="color:var(--text-muted);font-size:12px">(2条)</span></h2>
+    <div class="msg-item">
+  <div class="msg-date">2026-01 · =?UTF-8?B?UmU6IOW8uuWItuWQjOatpeacgOmVv+mTvg==?=</div>
+  <div class="msg-body">1. 尝试描述一个为 atom 使用的 mempool 的共识系统，这里需要设计 atom 的数据格式，生命周期，如何同步，以及这个系统的作用。 2. 了解比特币的速战速决升级流程，如何为会议所用 3. ASIC boost 如何加速挖矿 在2026年1月8日星期四 UTC+8 14:18:30<胡志伟> 写道： > 形式化问题： > 1.atom与memepool 假设作为插件不在共识内，那么如...</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">Atom是什么</span></div>
+</div><div class="msg-item">
+  <div class="msg-date">2025-11 · =?UTF-8?B?UmU6IOS4gOS6m+WFs+S6jiBtYXJr?=
+ =?UTF-8?B?ZXQg6YO</div>
+  <div class="msg-body">邮件的可读性有点差，可以看 notion <https://www.notion.so/chenmoonmo/1120-market-2b19b737b3f080359c9fdf6cb8dda3f7?source=copy_link> 在2025年11月20日星期四 UTC+8 15:45:13<chenmoonmo> 写道： > 关于 market 部分，中本聪与之相关的邮件 > > <asid...</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">BitDNS与P2P市场</span></div>
+</div>
+  </div>
+
+  <div class="section">
+    <h2>📬 最新消息</h2>
+    <ul class="msg-list"><li class="msg-item">
+  <div class="msg-date">2026-04 · =?UTF-8?B?5YWz5LqO4oCcIHRocm91Z2hSYXRl5Y+q5Y+W5Yaz?=
+ =?UTF-8?B?5LqO5oiR5pS25Yi</div>
+  <div class="msg-body">周一老史提到一个对于 atom 系统的思考，即如何理解 throughRate 这个值，他说“*throughRate 控制从 atomNew 到 atomOut 的速率，和对外传播的关系不大，只取决于我收到了几个想给其他人的多少，进而他认为既然这里是‘我决定给别人多少’那么是不是可以交给用户自己定义*”。 我当时在回答这个问题的时候并没有回答前面的问题，而是从后面的推广入手，说明这样会造成挖出 </div>
+  <div class="msg-concepts"><span class="msg-concept-tag">Atom与Bitcoin关系</span></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-04 · =?UTF-8?B?UmU6IOS7o+eggeWIhuS6q+S8mg==?=</div>
+  <div class="msg-body">在2026年4月1日星期三 UTC+8 17:59:33<胡志伟> 写道： > 邀请我下 > > 矢孤 <shijin...@gmail.com>于2026年4月1日 周三16:57写道： > >> 今天六点到9点在线交流代码阅读，有时间的的在邮件下面回复。 >> >> -- >> You received this message because you are subscribed to th</div>
+  <div class="msg-concepts"></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body">[image: image.png] initsysctrl <initsysctrl@gmail.com> 于2026年3月16日周一 18:42写道： > 传播前的用户状态： > sjy: > atom_in: {1, 2} > atom_new: set() > atom_out: {1, 2} > linkout: set() > xyp: > atom_in: {3, 4} > atom</div>
+  <div class="msg-concepts"></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body">[image: image.png] initsysctrl <initsysctrl@gmail.com> 于2026年3月16日周一 18:23写道： > 模仿hzw 评论sjy > 模拟老史 评论yp, lwb, hzw, laotao > 模拟lwb评论 sjy,yp > 模拟xyp评价mb,lwb,sjy > 模拟yp 评价mb,lwb > 模拟leilei 评价mb,lwb,xyp ></div>
+  <div class="msg-concepts"></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body">老史：review三颗星：从 atom 的流转出发，将其视为一种可以随时发币而不需要等待系统结算的货币，以这个视角来进行进一步思考。 马师傅：不review 叶鹏：review三颗星：在邮件中，从 pow + atom 出发，将系统发展为竞争 atom 传播后的默克尔树的结果，进而将其发展为全局共识，比较具体，属于将 p2pmarket 系统直接按 bitcoin 的方式设计，但是这里竞争的不是对</div>
+  <div class="msg-concepts"></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body">目前注意力放在，atom 可以被看作是一种激励，存在某种稀缺性，甚至通过 review 进行流转的过程具有随时发币的可能，是否可以将其看作是一种货币，并且在此基础上其如何行使货币的功能。如果不能，设想 atom 这种特性如何让矿工干活。 在2026年3月16日星期一 UTC+8 16:49:22<文博> 写道： > 老史：review三颗星：从 atom 的流转出发，将其视为一种可以随时发币而不需</div>
+  <div class="msg-concepts"></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IDIwMjYwMzEzIOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body">这个部分代码是在 AddAtomsAndPropagate 触发，而这个函数在 AcceptReview，AcceptBlock 时都会触发 胥亚朋 <xuyapeng110@gmail.com> 于2026年3月13日周五 16:44写道： > > 这个机制在我的理解里面只有AcceptReview也就是主动给别人atom的时候才会触发，而不会在AcceptBlock的时候触发。如果在Accep</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">Atom与Bitcoin关系</span></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IDIwMjYwMzEzIOS8muWJjeWQjOatpQ==?=</div>
+  <div class="msg-body">这里我所说的“触发后续的传递”，是指在代码中存在的一个双缓存机制，它会按层向下触发更新。 for (int side = 0; !pmapPropagate[side].empty(); side = 1 - side) { map<uint256, vector<unsigned short> >& mapFrom = pmapPropagate[side]; map<uint256, vect</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">Atom与Bitcoin关系</span></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?Q?Re:_20260313_=E4=BC=9A=E5=89=8D=E5=90=8C=E6=AD=A5?=</div>
+  <div class="msg-body">1. 这里老史提到的“实时流动”实际上是一种 “事件驱动”，这里把数据本身的更迭形式看得太重了，在 marketplace 这套系统中，用户提交 review 并广播后，节点收到 review 后进入Acceptreview，将评论入库并给发送者增加一条从发送者到接收者的边（在 LinksOut 中增加接受者），随后调用 AddAtomsAndPropagate，将发送者的 atomOut 传递给</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">Atom与Bitcoin关系</span></div>
+</li><li class="msg-item">
+  <div class="msg-date">2026-03 · =?UTF-8?B?UmU6IOS4juKAnOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpIQ=?=</div>
+  <div class="msg-body">你说比特币重定义了等号操作符，但我要直接指出： *比特币从来没有用等号将锁定脚本和解锁脚本这两部分连接起来，也没有通过覆写等号操作符来实现脚本的拼接和执行。* 不是等号被重定义了，而是等号根本没有在这两部分之间扮演过任何角色。没有任何一个操作码、没有任何一个协议层的机制，是把锁定脚本和解锁脚本作为整体用等号连接起来的。你说的操作符重定义是你自己加进去的，比特币的实现里找不到对应物。 这里的问题不是</div>
+  <div class="msg-concepts"><span class="msg-concept-tag">Atom是什么</span><span class="msg-concept-tag">脚本是谓词</span><span class="msg-concept-tag">谓词</span></div>
+</li></ul>
+  </div>
+</div>
+</div>
+</body>
+</html>
