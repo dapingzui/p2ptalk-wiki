@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的贡献 — P2PTalk Wiki</title>
+<style>
+:root {
+  --bg: #0d1117; --surface: #161b22; --border: #30363d;
+  --text: #e6edf3; --muted: #8b949e;
+  --accent: #e94560; --blue: #58a6ff;
+  --gold: #f0b429; --green: #3fb950;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg); color: var(--text);
+  padding: 2rem; max-width: 800px; margin: 0 auto;
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.back { color: var(--muted); font-size: 0.85rem; margin-bottom: 1.5rem; display: inline-block; }
+h1 { font-size: 1.3rem; margin-bottom: 0.2rem; }
+.sub { color: var(--muted); font-size: 0.82rem; margin-bottom: 1.5rem; }
+
+/* Person selector */
+.person-picker { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+.person-btn {
+  padding: 0.4rem 0.9rem; border-radius: 20px;
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--muted); cursor: pointer; font-size: 0.82rem;
+  transition: all 0.15s;
+}
+.person-btn:hover { color: var(--text); border-color: var(--muted); }
+.person-btn.active { background: rgba(233,69,96,0.15); color: var(--accent); border-color: var(--accent); }
+
+/* Quality tiers */
+.quality-stats { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.q-stat {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+}
+.q-star { background: rgba(240,180,41,0.12); color: var(--gold); }
+.q-bubble { background: rgba(88,166,255,0.1); color: var(--blue); }
+.q-eye { background: rgba(139,148,158,0.1); color: var(--muted); }
+
+/* Section */
+.section { margin-bottom: 2rem; }
+.section-title {
+  font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--muted);
+  margin-bottom: 0.75rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+
+/* Quote cards */
+.quote-list { display: flex; flex-direction: column; gap: 0.6rem; }
+.quote-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-left: 3px solid var(--gold); border-radius: 8px;
+  padding: 0.9rem 1rem;
+}
+.quote-concept { font-size: 0.72rem; color: var(--blue); margin-bottom: 0.4rem; }
+.quote-text { font-size: 0.88rem; color: var(--text); line-height: 1.5; font-style: italic; }
+
+/* Concept list */
+.concept-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.concept-item {
+  display: flex; align-items: center; gap: 0.6rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 0.7rem 1rem;
+  transition: border-color 0.15s;
+}
+.concept-item:hover { border-color: var(--muted); }
+.concept-cat { font-size: 0.7rem; color: var(--muted); background: rgba(88,166,255,0.1); padding: 0.15rem 0.4rem; border-radius: 4px; }
+.concept-name { font-size: 0.88rem; color: var(--text); }
+.concept-link { font-size: 0.75rem; color: var(--muted); margin-left: auto; }
+
+/* Empty state */
+.empty { text-align: center; padding: 2.5rem; color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← 返回总览</a>
+<h1>👤 我的贡献</h1>
+<p class="sub">选择你的名字，查看在知识图谱中的贡献质量分级</p>
+
+<div class="person-picker" id="person-picker"></div>
+
+<div id="content">
+  <div class="empty">↑ 从上方选择你的名字</div>
+</div>
+
+<script>
+const PEOPLE_DATA = {"Woo": {"quotes": [{"quote": "比特币系统里，传播算法决定生产关系。", "concept": "传播算法与生产关系", "category": "consensus"}, {"quote": "ATOM 跟比特币有本质上的区别。atom本身不存在业务需求，所以atom本身不应该进入mempool。", "concept": "Atom与Mempool", "category": "atom"}, {"quote": "在市场里面，IP就是成交的最后一环，当一个商品在市场占有一定份额，而且这个份额跟对手趋于平衡的时候，那个贴有米奇老鼠的商品会卖的更好。", "concept": "IP与品牌", "category": "atom"}, {"quote": "这个米奇老鼠是可以复制的，可以双花的。就像Atom一样。", "concept": "IP与品牌", "category": "atom"}, {"quote": "我觉得ATOM跟比特币有本质上的区别。atom本身不存在业务需求，所以atom本身不应该进入mempool。", "concept": "Atom是什么", "category": "atom"}, {"quote": "AI 时代的生产关系类似闪电贷——有业务需求时，同时调用多个接口付费。", "concept": "AI与生产关系", "category": "ai"}, {"quote": "atom的机制里完成5个跳的泛洪几乎能完成全网广播。", "concept": "泛洪与5跳", "category": "broadcast"}], "concepts": [{"name": "传播算法与生产关系", "category": "consensus"}, {"name": "Atom与Mempool", "category": "atom"}, {"name": "IP与品牌", "category": "atom"}, {"name": "Atom是什么", "category": "atom"}, {"name": "AI与生产关系", "category": "ai"}, {"name": "泛洪与5跳", "category": "broadcast"}]}, "文博": {"quotes": [{"quote": "谓词是基于某个条件返回真值或假值的函数。", "concept": "谓词（Predicate）", "category": "atom"}, {"quote": "市场需要声誉，还是声誉需要市场？", "concept": "声誉与市场", "category": "market"}], "concepts": [{"name": "谓词（Predicate）", "category": "atom"}, {"name": "声誉与市场", "category": "market"}]}, "shijingyao123": {"quotes": [{"quote": "难度调整算法是 DAA（difficulty adjustment algorithm），具体流程：\n> 1. 检查区块高度是否2016的倍数\n> 2. 计算总花费时长：用最新区块往前数2016个区块，用最新区块时间戳减去第一个区块时间戳，得到实际花费时间（actualtimespan）\n> 3. 限制时间范围在 0.5x~2x 之间\n> 4. 用目标时间（2016×10分钟）除以实际时间，得到新的难度", "concept": "难度调整", "category": "consensus"}, {"quote": "用图论来表示拥有 atom 的用户的联系是不够的……增加一个 atom 等于增加一个向量，向量在空间里面的变化会导致形状改变，矩阵能在3维完成这个工作。", "concept": "可组合与可复制", "category": "atom"}], "concepts": [{"name": "难度调整", "category": "consensus"}, {"name": "可组合与可复制", "category": "atom"}]}, "initsysctrl": {"quotes": [{"quote": "和 Woo 聊了会面机制，我觉得传播机制和计算还是分不开的，之前我认为传播不等于计算是站在图灵机视角下的理解，这个理解应该是错误的。我应该从元胞自动机的思路下去理解传播和计算，在这个模型下，传播机制是计算的一部分。", "concept": "元胞自动机", "category": "consensus"}, {"quote": "雷雷今天对我产生了一个订阅行为，我作为桥梁节点，执行中间会面机制。我的谓词是同步了历史的停机内容，还有更新雷雷的难度，nonce符合范围。雷雷可以验证我的谓词为真。", "concept": "谓词（Predicate）", "category": "atom"}, {"quote": "关于比特币、atom 的拓扑结构大家基本有了共识，但这是静态数据结构，至于使用矩阵来表示计算过程，是存在重大难度的。涉及到存储空间、线性/非线性转化。", "concept": "向量空间模型", "category": "math"}, {"quote": "雷雷今天对我产生了一个订阅行为，我作为桥梁节点，执行中间会面机制。", "concept": "中间会面机制", "category": "broadcast"}, {"quote": "无验证不广播，无邻居不路由。", "concept": "中间会面机制", "category": "broadcast"}], "concepts": [{"name": "元胞自动机", "category": "consensus"}, {"name": "谓词（Predicate）", "category": "atom"}, {"name": "向量空间模型", "category": "math"}, {"name": "中间会面机制", "category": "broadcast"}]}, "leilei": {"quotes": [{"quote": "比特币的共识是在解决女巫问题后出现的。", "concept": "中本聪共识原理", "category": "consensus"}, {"quote": "比特币的共识是在解决女巫问题后出现的。", "concept": "女巫攻击防护", "category": "security"}, {"quote": "agent具体业务还需要考虑能力的真实性，结果的正确性，以及计算的正确性。这几个问题可能与之前聊的脚本的谓词有关系。", "concept": "谓词（Predicate）", "category": "atom"}, {"quote": "最近意识到 AI agent 的爆发会带来新的生产关系的变革。", "concept": "AI与生产关系", "category": "ai"}, {"quote": "首要问题类似女巫攻击，我怎么知道某个 agent 是可信靠谱的？", "concept": "AI与女巫攻击", "category": "ai"}], "concepts": [{"name": "中本聪共识原理", "category": "consensus"}, {"name": "女巫攻击防护", "category": "security"}, {"name": "谓词（Predicate）", "category": "atom"}, {"name": "AI与生产关系", "category": "ai"}, {"name": "AI与女巫攻击", "category": "ai"}]}, "沄涣": {"quotes": [{"quote": "mempool 并不是比特币系统中唯一的业务来源。", "concept": "Mempool不是唯一业务来源", "category": "atom"}, {"quote": "当 B 再次评论时，将其 atomOut 复制给 C，那么在 C 的视角里，看到的 atomOut 可能和 B 不一致。", "concept": "Atom流转机制", "category": "atom"}, {"quote": "atom的 new、in、out 对应 memepool 中的交易过程，最终通过 atom 的流转跟流向，会产生关系图谱。", "concept": "Atom数据结构", "category": "atom"}, {"quote": "抽象出来的问题是，比特币系统的防双花需求和 Atom 天然的冲突，但是中本聪又没有设计另一套通讯系统和 mempool 给 Atom，但是要向 Atom 提出使用需求，目前方向是放在 mempool 如何实现。", "concept": "双花问题", "category": "atom"}, {"quote": "关于 Atom 在一个良好的网络拓扑中的传递机制分析。\n> 1. 收到 Atom 后会向每个 vLinksOut 中的地址进行传播。\n> 2. 流量控制，除了第一个收到 Atom 的 CUser 对象，其他对象收到 Atom 以后会进行减半传播。", "concept": "网络拓扑与衰减因子", "category": "broadcast"}], "concepts": [{"name": "Mempool不是唯一业务来源", "category": "atom"}, {"name": "Atom流转机制", "category": "atom"}, {"name": "Atom数据结构", "category": "atom"}, {"name": "双花问题", "category": "atom"}, {"name": "网络拓扑与衰减因子", "category": "broadcast"}]}, "雷雷": {"quotes": [], "concepts": []}, "icekernel": {"quotes": [], "concepts": []}, "胥亚朋": {"quotes": [], "concepts": []}, "叶鹏": {"quotes": [], "concepts": []}, "Bin Ma": {"quotes": [], "concepts": []}};
+
+const catColors = {
+  atom: '#e94560', consensus: '#0f9b8e', broadcast: '#9b59b6',
+  market: '#f39c12', ai: '#3498db', security: '#e67e22', math: '#1abc9c'
+};
+
+const allPeople = Object.keys(PEOPLE_DATA);
+const picker = document.getElementById('person-picker');
+const content = document.getElementById('content');
+
+allPeople.forEach(person => {
+  const btn = document.createElement('button');
+  btn.className = 'person-btn';
+  btn.textContent = person;
+  btn.onclick = () => showPerson(person, btn);
+  picker.appendChild(btn);
+});
+
+function slugify(name) {
+  return name.replace(/（.*?）/, '').replace(/\s+/g, '_');
+}
+
+function showPerson(person, btn) {
+  document.querySelectorAll('.person-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const data = PEOPLE_DATA[person];
+  const quotes = data.quotes || [];
+  const concepts = data.concepts || [];
+
+  // Determine quality tiers
+  // ⭐ 核心引述: quoted
+  // 💬 有价值: participated but not quoted (all concepts - quoted ones)
+  const quotedConcepts = new Set(quotes.map(q => q.concept));
+  const valuableConcepts = concepts.filter(c => !quotedConcepts.has(c.name));
+
+  let html = `
+    <div class="quality-stats">
+      <div class="q-stat q-star">⭐ 核心引述 <strong>${quotes.length}</strong> 条</div>
+      <div class="q-stat q-bubble">💬 有价值 <strong>${valuableConcepts.length}</strong> 条</div>
+      <div class="q-stat q-eye">👀 参与 <strong>${concepts.length}</strong> 个概念</div>
+    </div>`;
+
+  if (quotes.length > 0) {
+    html += `
+    <div class="section">
+      <div class="section-title">⭐ 核心引述 — 被直接引用到概念页的原话</div>
+      <div class="quote-list">
+        ${quotes.map(q => `
+          <div class="quote-card">
+            <div class="quote-concept" style="color:${catColors[q.category]||'var(--blue)'}">[${q.category}] ${q.concept}</div>
+            <div class="quote-text">"${q.quote.replace(/\n/g,' ').slice(0,200)}"</div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+  }
+
+  if (valuableConcepts.length > 0) {
+    html += `
+    <div class="section">
+      <div class="section-title">💬 有价值 — 参与讨论的概念</div>
+      <div class="concept-list">
+        ${valuableConcepts.map(c => `
+          <div class="concept-item">
+            <span class="concept-cat" style="color:${catColors[c.category]||'var(--blue)'};background:${catColors[c.category]||'var(--blue)'}20">${c.category}</span>
+            <span class="concept-name">${c.name}</span>
+            <a class="concept-link" href="concepts/${c.category}/${encodeURIComponent(c.name)}.html">→ 查看</a>
+          </div>`).join('')}
+      </div>
+    </div>`;
+  }
+
+  if (quotes.length === 0 && concepts.length === 0) {
+    html = '<div class="empty">暂无贡献记录。<br>继续参与讨论，你的发言会被记录到知识图谱中。</div>';
+  }
+
+  content.innerHTML = html;
+}
+</script>
+</body>
+</html>
