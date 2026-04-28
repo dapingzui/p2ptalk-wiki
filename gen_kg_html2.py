@@ -145,7 +145,12 @@ header .subtitle a:hover { text-decoration: underline; }
 }
 """
 
-def resolve_wiki_links(body, pages):
+def href_for(page, is_index=False):
+    prefix = '' if is_index else '../'
+    return f'{prefix}{page["category"]}/{page["name"]}.html'
+
+
+def resolve_wiki_links(body, pages, is_index=False):
     """Replace [[category/name]] or [[name]] with proper HTML links"""
     def replace_link(m):
         raw = m.group(1).strip()
@@ -164,17 +169,17 @@ def resolve_wiki_links(body, pages):
                     break
         if target and target in pages:
             tp = pages[target]
-            return f'<a href="{tp["category"]}/{tp["name"]}.html" class="wiki-link">{raw}</a>'
+            return f'<a href="{href_for(tp, is_index=is_index)}" class="wiki-link">{raw}</a>'
         return raw
     return re.sub(r'\[\[([^\]]+)\]\]', replace_link, body)
 
-def build_sidebar(cats, current=None):
+def build_sidebar(cats, current=None, is_index=False):
     html = '<div class="sidebar">\n'
     for cat, items in cats.items():
         html += f'<h2>{cat} <span class="cat-count">{len(items)}</span></h2>\n'
         for slug, p in items:
             cls = 'active' if slug == current else ''
-            html += f'<a href="{p["category"]}/{p["name"]}.html" class="{cls}">{p["name"]}</a>\n'
+            html += f'<a href="{href_for(p, is_index=is_index)}" class="{cls}">{p["name"]}</a>\n'
     html += '</div>\n'
     return html
 
@@ -202,13 +207,13 @@ def page_template(title, content, sidebar, is_index=False):
 
 # Pre-process: make wiki links clickable in body
 for slug, p in pages.items():
-    p['body_html'] = resolve_wiki_links(p['body'], pages)
+    p['body_html'] = resolve_wiki_links(p['body'], pages, is_index=False)
 
 # Generate each concept page
 for slug, p in pages.items():
     title = p['meta'].get('subject', p['name'])
-    sidebar = build_sidebar(cats, slug)
-    content = f'<a href="index.html" class="back-link">← 总览</a>\n'
+    sidebar = build_sidebar(cats, slug, is_index=False)
+    content = f'<a href="../index.html" class="back-link">← 总览</a>\n'
     content += f'<h1>{title}</h1>\n'
     
     if p['meta'].get('tags'):
@@ -226,7 +231,7 @@ for slug, p in pages.items():
         content += '<div class="backlink-list">\n'
         for src_slug in sorted(all_wiki_links[slug]):
             sp = pages[src_slug]
-            content += f'<div class="backlink-item"><a href="{sp["category"]}/{sp["name"]}.html">{sp["name"]}</a> <span class="src-cat">in {sp["category"]}</span></div>\n'
+            content += f'<div class="backlink-item"><a href="../{sp["category"]}/{sp["name"]}.html">{sp["name"]}</a> <span class="src-cat">in {sp["category"]}</span></div>\n'
         content += '</div>\n</div>\n'
 
     html = page_template(title, content, sidebar)
@@ -236,7 +241,7 @@ for slug, p in pages.items():
         f.write(html)
 
 # Generate index page
-sidebar = build_sidebar(cats, None)
+sidebar = build_sidebar(cats, None, is_index=True)
 content = '<h1>P2PTalk 知识图谱</h1>\n'
 content += '<p style="color:#a0a0a0;font-size:13px;margin-top:4px;margin-bottom:20px;">基于真实讨论提炼的概念知识图谱。每个概念页含：核心引述 + 讨论要点 + 相关链接。</p>\n'
 content += '<div class="stats">'
