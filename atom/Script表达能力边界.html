@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>网络拓扑与衰减因子 — P2PTalk Wiki</title>
+<title>Script表达能力边界 — P2PTalk Wiki</title>
 <style>
 :root {
   --bg: #1a1a2e;
@@ -105,7 +105,7 @@ header .subtitle a:hover { text-decoration: underline; }
 <a href="atom/CUser与CReview数据结构.html" class="">CUser与CReview数据结构</a>
 <a href="atom/IP与品牌.html" class="">IP与品牌</a>
 <a href="atom/Mempool不是唯一业务来源.html" class="">Mempool不是唯一业务来源</a>
-<a href="atom/Script表达能力边界.html" class="">Script表达能力边界</a>
+<a href="atom/Script表达能力边界.html" class="active">Script表达能力边界</a>
 <a href="atom/创世Atom与nonce.html" class="">创世Atom与nonce</a>
 <a href="atom/双花问题.html" class="">双花问题</a>
 <a href="atom/可组合与可复制.html" class="">可组合与可复制</a>
@@ -119,7 +119,7 @@ header .subtitle a:hover { text-decoration: underline; }
 <a href="broadcast/发布订阅机制.html" class="">发布订阅机制</a>
 <a href="broadcast/泛洪与5跳.html" class="">泛洪与5跳</a>
 <a href="broadcast/洪泛atom的激励问题.html" class="">洪泛atom的激励问题</a>
-<a href="broadcast/网络拓扑与衰减因子.html" class="active">网络拓扑与衰减因子</a>
+<a href="broadcast/网络拓扑与衰减因子.html" class="">网络拓扑与衰减因子</a>
 <a href="broadcast/节点与SPV轻节点.html" class="">节点与SPV轻节点</a>
 <h2>consensus <span class="cat-count">11</span></h2>
 <a href="consensus/BitDNS与P2P市场.html" class="">BitDNS与P2P市场</a>
@@ -153,43 +153,80 @@ header .subtitle a:hover { text-decoration: underline; }
 <div class="main">
 <div class="page">
 <a href="index.html" class="back-link">← 总览</a>
-<h1>网络拓扑与衰减因子</h1>
-<div class="tags"><span class="tag">atom</span><span class="tag">p2ptalk</span><span class="tag">网络拓扑</span><span class="tag">衰减因子</span><span class="tag">局部共识</span><span class="tag">全域共识</span></div>
-<h1>网络拓扑与衰减因子</h1>
-<h2>胥亚朋的分析</h2>
+<h1>Script表达能力边界</h1>
+<div class="tags"><span class="tag">atom</span><span class="tag">p2ptalk</span><span class="tag">Bitcoin</span><span class="tag">script</span><span class="tag">图灵完备</span><span class="tag">阿克曼函数</span></div>
+<h1>Script表达能力边界</h1>
+<h2>核心结论</h2>
+<p>Bitcoin Script 的重点不是“像不像通用计算机”，而是：
+- 能否稳定停机
+- 能否被快速验证
+- 能否作为共识系统里的约束条件执行</p>
+<p>所以它首先是 <strong>验证语言 / 谓词系统</strong>，而不是为了追求最大表达能力而设计的计算模型。</p>
+<h2>为什么“阿克曼函数”不能直接推出图灵完备</h2>
+<p>文博批判了一个常见跳步：</p>
 <blockquote>
-<p>"关于 Atom 在一个良好的网络拓扑中的传递机制分析。
-1. 收到 Atom 后会向每个 vLinksOut 中的地址进行传播。
-2. 流量控制，除了第一个收到 Atom 的 CUser 对象，其他对象收到 Atom 以后会进行减半传播。"</p>
+<p>"能写出阿克曼函数，不等于它就是图灵完备。"
+— <strong>文博</strong></p>
 </blockquote>
-<h2>衰减因子的影响</h2>
+<p>这里至少要分清四层概念：</p>
+<ol>
+<li><strong>原始递归</strong></li>
+<li>一类受限但结构清晰的可计算过程</li>
+<li><strong>超出原始递归</strong></li>
+<li>只能说明表达力比更弱系统强</li>
+<li><strong>图灵可计算 / 全可计算</strong></li>
+<li>涉及一般意义上的无界可计算过程</li>
+<li><strong>图灵完备</strong></li>
+<li>系统自身可以模拟通用计算</li>
+</ol>
+<p>因此：
+- “能表达增长极快的函数” ≠ “能模拟任意程序”
+- “某个例子看起来很复杂” ≠ “系统具备无界控制流与无界存储”</p>
+<p>Ackermann function 最多只能被用来说明某种表达能力，不足以单独证明 Bitcoin Script 图灵完备。</p>
+<h2>对“假本聪 / 全图灵机”论证的批判</h2>
+<p>文博批判的核心，是把外部能力偷记到协议本体上：</p>
 <blockquote>
-<p>"Atom 的传播主要受流量控制的影响，导致 Atom 的传播并不普遍和均匀，在随机信号源和随机路径下差异较大，中心 User 和中心 User 的 Atom 差异较小。Atom 很难跨区域传播。"</p>
+<p>"把外部展开、外部随机源、外部无限纸带，算成 Script 自己的能力，这是偷换。"
+— <strong>文博</strong></p>
 </blockquote>
-<p>关键发现：
-- Atom 传播<strong>不普遍、不均匀</strong>
-- <strong>中心节点聚集</strong>更多 Atom
-- 边缘节点难以获得 Atom
-- 衰减因子导致跨区域传播困难</p>
-<h2>解决方案</h2>
-<blockquote>
-<p>"调节衰减因子能显著改善全网流转情况，在分布不均的网络拓扑中更易形成区域不一致。"</p>
-</blockquote>
-<h2>局部共识 vs 全域共识</h2>
-<blockquote>
-<p>"所以流量控制的作用应该单独进行思考，接下来需要考虑的是局部共识和全域共识之间的关系，进一步探究 Atom 的使用场景。"
-— <strong>沄涣</strong></p>
-</blockquote>
+<p>典型偷换包括：
+- <strong>外部展开</strong>：由外部程序把很多步骤预先展开，再喂给 Script
+- <strong>外部状态机</strong>：把记忆和状态转移放在链外系统里
+- <strong>外部随机源</strong>：把随机性放在外面，再把结果塞进脚本
+- <strong>外部无限纸带</strong>：把不受限存储能力放到脚本外部</p>
+<p>这些都不能算作 Bitcoin Script 的<strong>原生能力</strong>。</p>
+<h2>为什么矿工不需要一个“更强的计算机”</h2>
+<p>从矿工/节点视角，真正重要的是：
+- 可停机
+- 可预测资源开销
+- 易验证
+- 不把共识层变成任意程序执行器</p>
+<p>所以脚本越接近“验证某个条件是否成立”，越符合共识系统需求。</p>
+<p>这也是为什么“脚本是谓词”比“脚本是不是图灵完备”更抓住本质。</p>
+<h2>对 Atom / P2PTalk 的启发</h2>
+<p>如果 Atom 以后引入复杂业务逻辑，需要先区分三层：</p>
+<ol>
+<li><strong>协议原生验证层</strong></li>
+<li>哪些条件是系统自身可验证的</li>
+<li><strong>链外辅助层</strong></li>
+<li>哪些步骤只是外部工具帮忙展开</li>
+<li><strong>业务编排层</strong></li>
+<li>哪些复杂性来自外围 agent / workflow，而不是共识本体</li>
+</ol>
+<p>如果不分清，就会把外围系统的能力误判成协议本体能力。</p>
 <hr />
 <h2>相关概念</h2>
 <ul>
-<li><a href="broadcast/泛洪与5跳.html" class="wiki-link">broadcast/泛洪与5跳</a></li>
-<li><a href="atom/Atom流转机制.html" class="wiki-link">atom/Atom流转机制</a></li>
+<li><a href="atom/脚本是谓词.html" class="wiki-link">atom/脚本是谓词</a></li>
+<li><a href="atom/谓词.html" class="wiki-link">atom/谓词</a></li>
+<li><a href="consensus/中本聪共识原理.html" class="wiki-link">consensus/中本聪共识原理</a></li>
+<li><a href="consensus/BitDNS与P2P市场.html" class="wiki-link">consensus/BitDNS与P2P市场</a></li>
 </ul>
 <div class="backlinks">
-<h3>↩ 被引用 (1 页)</h3>
+<h3>↩ 被引用 (2 页)</h3>
 <div class="backlink-list">
-<div class="backlink-item"><a href="atom/CUser与CReview数据结构.html">CUser与CReview数据结构</a> <span class="src-cat">in atom</span></div>
+<div class="backlink-item"><a href="atom/脚本是谓词.html">脚本是谓词</a> <span class="src-cat">in atom</span></div>
+<div class="backlink-item"><a href="consensus/BitDNS与P2P市场.html">BitDNS与P2P市场</a> <span class="src-cat">in consensus</span></div>
 </div>
 </div>
 
