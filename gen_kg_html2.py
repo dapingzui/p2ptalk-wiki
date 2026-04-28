@@ -183,7 +183,7 @@ def build_sidebar(cats, current=None, is_index=False):
     html += '</div>\n'
     return html
 
-def page_template(title, content, sidebar, is_index=False):
+def page_template(title, content, sidebar, concept_count, wiki_link_count, is_index=False):
     cls = 'index-page' if is_index else 'page'
     return f"""<!DOCTYPE html>
 <html>
@@ -196,7 +196,7 @@ def page_template(title, content, sidebar, is_index=False):
 <body>
 <header>
   <h1>P2PTalk Wiki</h1>
-  <span class="subtitle">知识图谱 · <a href="https://github.com/dapingzui/p2ptalk-wiki" target="_blank">50概念页</a> · 333条讨论</span>
+  <span class="subtitle">知识图谱 · <a href="https://github.com/dapingzui/p2ptalk-wiki" target="_blank">{concept_count}概念页</a> · {wiki_link_count}条链接</span>
 </header>
 <div class="container">
 {sidebar}
@@ -234,21 +234,23 @@ for slug, p in pages.items():
             content += f'<div class="backlink-item"><a href="../{sp["category"]}/{sp["name"]}.html">{sp["name"]}</a> <span class="src-cat">in {sp["category"]}</span></div>\n'
         content += '</div>\n</div>\n'
 
-    html = page_template(title, content, sidebar)
+    html = page_template(title, content, sidebar, len(pages), sum(len(v) for v in all_wiki_links.values()))
     cat_dir = os.path.join(out, p['category'])
     os.makedirs(cat_dir, exist_ok=True)
     with open(os.path.join(cat_dir, f'{p["name"]}.html'), 'w') as f:
         f.write(html)
+
+backlink_counts = {k: len(v) for k, v in all_wiki_links.items() if v}
 
 # Generate index page
 sidebar = build_sidebar(cats, None, is_index=True)
 content = '<h1>P2PTalk 知识图谱</h1>\n'
 content += '<p style="color:#a0a0a0;font-size:13px;margin-top:4px;margin-bottom:20px;">基于真实讨论提炼的概念知识图谱。每个概念页含：核心引述 + 讨论要点 + 相关链接。</p>\n'
 content += '<div class="stats">'
-content += '<div class="stat"><div class="num">50</div><div class="label">概念页</div></div>'
-content += '<div class="stat"><div class="num">333</div><div class="label">原始消息</div></div>'
-content += '<div class="stat"><div class="num">68</div><div class="label">讨论线程</div></div>'
-content += '<div class="stat"><div class="num">18</div><div class="label">参与者</div></div>'
+content += f'<div class="stat"><div class="num">{len(pages)}</div><div class="label">概念页</div></div>'
+content += f'<div class="stat"><div class="num">{sum(len(v) for v in all_wiki_links.values())}</div><div class="label">知识链接</div></div>'
+content += f'<div class="stat"><div class="num">{len(backlink_counts)}</div><div class="label">被引用页面</div></div>'
+content += '<div class="stat"><div class="num">9</div><div class="label">参与者</div></div>'
 content += '</div>\n'
 
 for cat, items in cats.items():
@@ -262,13 +264,12 @@ for cat, items in cats.items():
         content += f'<div class="page-card"><a href="{p["category"]}/{p["name"]}.html"><div class="card-title">{p["name"]}{bl_tag}</div><div class="card-desc">{title}</div></a></div>\n'
     content += '</div>\n</div>\n'
 
-html = page_template('P2PTalk Wiki', content, sidebar, is_index=True)
+html = page_template('P2PTalk Wiki', content, sidebar, len(pages), sum(len(v) for v in all_wiki_links.values()), is_index=True)
 with open(os.path.join(out, 'index.html'), 'w') as f:
     f.write(html)
 
 print(f'Generated: {out}')
 print(f'Files: {len(pages) + 1} HTML pages')
-backlink_counts = {k: len(v) for k, v in all_wiki_links.items() if v}
 top = sorted(backlink_counts.items(), key=lambda x: -x[1])[:5]
 print('Top linked pages:')
 for slug, n in top:
