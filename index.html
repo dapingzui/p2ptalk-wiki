@@ -20,14 +20,11 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Sego
 body { display: flex; flex-direction: column; }
 header { background: var(--sidebar-bg); border-bottom: 1px solid var(--border); padding: 12px 20px; display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
 header h1 { font-size: 16px; color: var(--accent); font-weight: 600; }
-header .logo { font-size: 15px; color: var(--accent); text-decoration: none; font-weight: 700; background: rgba(233,69,96,0.15); padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(233,69,96,0.3); }
-header .logo:hover { background: rgba(233,69,96,0.25); }
 header .subtitle { color: var(--text-muted); font-size: 13px; }
 header .subtitle a { color: var(--accent); text-decoration: none; }
 header .subtitle a:hover { text-decoration: underline; }
 .container { display: flex; flex: 1; overflow: hidden; height: calc(100vh - 45px); }
 .sidebar { width: 240px; background: var(--sidebar-bg); border-right: 1px solid var(--border); overflow-y: auto; padding: 16px 0; flex-shrink: 0; }
-.sidebar-graph-link { display: block; padding: 8px 12px; margin: 0 8px 10px; background: rgba(233,69,96,0.15); color: var(--accent); border-radius: 6px; font-size: 12px; text-decoration: none; text-align: center; border: 1px solid rgba(233,69,96,0.3); } .sidebar-graph-link:hover { background: rgba(233,69,96,0.3); }
 .sidebar h2 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-muted); padding: 10px 16px 4px; display: flex; justify-content: space-between; align-items: center; }
 .sidebar h2 .cat-count { color: var(--text-muted); font-size: 10px; }
 .sidebar a { display: block; padding: 4px 16px; color: var(--text); text-decoration: none; font-size: 12px; border-left: 2px solid transparent; }
@@ -50,13 +47,7 @@ header .subtitle a:hover { text-decoration: underline; }
 .page td { padding: 7px 12px; border: 1px solid var(--border); }
 .page tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
 .page a.wiki-link { color: var(--accent); text-decoration: none; background: rgba(233,69,96,0.12); padding: 1px 5px; border-radius: 4px; font-size: 13px; }
-.page a.wiki-link:hover
-.graph-btn { display: inline-block; margin: 16px 0 8px; padding: 10px 24px; background: var(--accent); color: #fff; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity 0.15s; } .graph-btn:hover { opacity: 0.85; }
-.person-intro { background: var(--accent2); border-radius: 12px; padding: 16px 20px; margin: 20px 0; border: 1px solid var(--border); }
-.person-intro h2 { font-size: 14px; color: var(--accent); margin-bottom: 12px; }
-.person-links { display: flex; flex-wrap: wrap; gap: 8px; }
-.person-tag { background: rgba(233,69,96,0.15); color: var(--accent); padding: 5px 12px; border-radius: 16px; font-size: 12px; text-decoration: none; border: 1px solid rgba(233,69,96,0.3); transition: all 0.2s; }
-.person-tag:hover { background: rgba(233,69,96,0.3); text-decoration: none; } { background: rgba(233,69,96,0.25); text-decoration: none; }
+.page a.wiki-link:hover { background: rgba(233,69,96,0.25); text-decoration: none; }
 .backlinks { margin-top: 32px; border-top: 1px solid var(--border); padding-top: 16px; }
 .backlinks h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px; }
 .backlink-list { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -93,85 +84,76 @@ header .subtitle a:hover { text-decoration: underline; }
 </head>
 <body>
 <header>
-  <a href="index.html" class="logo">P2PTalk Wiki</a>
+  <h1>P2PTalk Wiki</h1>
   <span class="subtitle">知识图谱 · <a href="https://github.com/dapingzui/p2ptalk-wiki" target="_blank">50概念页</a> · 333条讨论</span>
 </header>
 <div class="container">
-<div class="sidebar"><a href="search.html" class="sidebar-graph-link" style="background:rgba(88,166,255,0.15);border-color:rgba(88,166,255,0.3);">🔍 搜索</a>
-  <a href="graph.html" class="sidebar-graph-link">🔮 知识图谱</a>
-  <a href="issues.html" class="sidebar-graph-link" style="background:rgba(210,153,34,0.15);border-color:rgba(210,153,34,0.3);">🔴 问题追踪</a>
-  <a href="contributions.html" class="sidebar-graph-link" style="background:rgba(63,185,80,0.1);border-color:rgba(63,185,80,0.3);">👤 我的贡献</a>
+<div class="sidebar">
 <h2>ai <span class="cat-count">4</span></h2>
-<a href="../ai/AI与女巫攻击.html" class="">AI与女巫攻击</a>
-<a href="../ai/AI与生产关系.html" class="">AI与生产关系</a>
-<a href="../ai/自驱系统.html" class="">自驱系统</a>
-<a href="../ai/闪电贷模式.html" class="">闪电贷模式</a>
+<a href="ai/AI与女巫攻击.html" class="">AI与女巫攻击</a>
+<a href="ai/AI与生产关系.html" class="">AI与生产关系</a>
+<a href="ai/自驱系统.html" class="">自驱系统</a>
+<a href="ai/闪电贷模式.html" class="">闪电贷模式</a>
 <h2>atom <span class="cat-count">18</span></h2>
-<a href="../atom/Atom与Bitcoin关系.html" class="">Atom与Bitcoin关系</a>
-<a href="../atom/Atom与Mempool.html" class="">Atom与Mempool</a>
-<a href="../atom/Atom数据结构.html" class="">Atom数据结构</a>
-<a href="../atom/Atom是什么.html" class="">Atom是什么</a>
-<a href="../atom/Atom流转机制.html" class="">Atom流转机制</a>
-<a href="../atom/Atom的信号属性.html" class="">Atom的信号属性</a>
-<a href="../atom/Atom的独立性.html" class="">Atom的独立性</a>
-<a href="../atom/CUser与CReview数据结构.html" class="">CUser与CReview数据结构</a>
-<a href="../atom/IP与品牌.html" class="">IP与品牌</a>
-<a href="../atom/Mempool不是唯一业务来源.html" class="">Mempool不是唯一业务来源</a>
-<a href="../atom/创世Atom与nonce.html" class="">创世Atom与nonce</a>
-<a href="../atom/双花问题.html" class="">双花问题</a>
-<a href="../atom/可组合与可复制.html" class="">可组合与可复制</a>
-<a href="../atom/挖矿必然有Mempool.html" class="">挖矿必然有Mempool</a>
-<a href="../atom/比特币块出块时间作为atom.html" class="">比特币块出块时间作为atom</a>
-<a href="../atom/脚本是谓词.html" class="">脚本是谓词</a>
-<a href="../atom/观测值与节点行为.html" class="">观测值与节点行为</a>
-<a href="../atom/谓词.html" class="">谓词</a>
+<a href="atom/Atom与Bitcoin关系.html" class="">Atom与Bitcoin关系</a>
+<a href="atom/Atom与Mempool.html" class="">Atom与Mempool</a>
+<a href="atom/Atom数据结构.html" class="">Atom数据结构</a>
+<a href="atom/Atom是什么.html" class="">Atom是什么</a>
+<a href="atom/Atom流转机制.html" class="">Atom流转机制</a>
+<a href="atom/Atom的信号属性.html" class="">Atom的信号属性</a>
+<a href="atom/Atom的独立性.html" class="">Atom的独立性</a>
+<a href="atom/CUser与CReview数据结构.html" class="">CUser与CReview数据结构</a>
+<a href="atom/IP与品牌.html" class="">IP与品牌</a>
+<a href="atom/Mempool不是唯一业务来源.html" class="">Mempool不是唯一业务来源</a>
+<a href="atom/创世Atom与nonce.html" class="">创世Atom与nonce</a>
+<a href="atom/双花问题.html" class="">双花问题</a>
+<a href="atom/可组合与可复制.html" class="">可组合与可复制</a>
+<a href="atom/挖矿必然有Mempool.html" class="">挖矿必然有Mempool</a>
+<a href="atom/比特币块出块时间作为atom.html" class="">比特币块出块时间作为atom</a>
+<a href="atom/脚本是谓词.html" class="">脚本是谓词</a>
+<a href="atom/观测值与节点行为.html" class="">观测值与节点行为</a>
+<a href="atom/谓词.html" class="">谓词</a>
 <h2>broadcast <span class="cat-count">6</span></h2>
-<a href="../broadcast/中间会面机制.html" class="">中间会面机制</a>
-<a href="../broadcast/发布订阅机制.html" class="">发布订阅机制</a>
-<a href="../broadcast/泛洪与5跳.html" class="">泛洪与5跳</a>
-<a href="../broadcast/洪泛atom的激励问题.html" class="">洪泛atom的激励问题</a>
-<a href="../broadcast/网络拓扑与衰减因子.html" class="">网络拓扑与衰减因子</a>
-<a href="../broadcast/节点与SPV轻节点.html" class="">节点与SPV轻节点</a>
+<a href="broadcast/中间会面机制.html" class="">中间会面机制</a>
+<a href="broadcast/发布订阅机制.html" class="">发布订阅机制</a>
+<a href="broadcast/泛洪与5跳.html" class="">泛洪与5跳</a>
+<a href="broadcast/洪泛atom的激励问题.html" class="">洪泛atom的激励问题</a>
+<a href="broadcast/网络拓扑与衰减因子.html" class="">网络拓扑与衰减因子</a>
+<a href="broadcast/节点与SPV轻节点.html" class="">节点与SPV轻节点</a>
 <h2>consensus <span class="cat-count">11</span></h2>
-<a href="../consensus/BitDNS与P2P市场.html" class="">BitDNS与P2P市场</a>
-<a href="../consensus/Bitcoin难度调整三问.html" class="">Bitcoin难度调整三问</a>
-<a href="../consensus/hashcash与POW.html" class="">hashcash与POW</a>
-<a href="../consensus/不可逆性与激励.html" class="">不可逆性与激励</a>
-<a href="../consensus/中本聪共识原理.html" class="">中本聪共识原理</a>
-<a href="../consensus/传播算法与生产关系.html" class="">传播算法与生产关系</a>
-<a href="../consensus/元胞自动机.html" class="">元胞自动机</a>
-<a href="../consensus/比特币升级参考.html" class="">比特币升级参考</a>
-<a href="../consensus/研究推动与洞察迭代.html" class="">研究推动与洞察迭代</a>
-<a href="../consensus/竞争与押注.html" class="">竞争与押注</a>
-<a href="../consensus/难度调整.html" class="">难度调整</a>
+<a href="consensus/BitDNS与P2P市场.html" class="">BitDNS与P2P市场</a>
+<a href="consensus/Bitcoin难度调整三问.html" class="">Bitcoin难度调整三问</a>
+<a href="consensus/hashcash与POW.html" class="">hashcash与POW</a>
+<a href="consensus/不可逆性与激励.html" class="">不可逆性与激励</a>
+<a href="consensus/中本聪共识原理.html" class="">中本聪共识原理</a>
+<a href="consensus/传播算法与生产关系.html" class="">传播算法与生产关系</a>
+<a href="consensus/元胞自动机.html" class="">元胞自动机</a>
+<a href="consensus/比特币升级参考.html" class="">比特币升级参考</a>
+<a href="consensus/研究推动与洞察迭代.html" class="">研究推动与洞察迭代</a>
+<a href="consensus/竞争与押注.html" class="">竞争与押注</a>
+<a href="consensus/难度调整.html" class="">难度调整</a>
 <h2>market <span class="cat-count">4</span></h2>
-<a href="../market/匹配系统.html" class="">匹配系统</a>
-<a href="../market/商品与声誉.html" class="">商品与声誉</a>
-<a href="../market/声誉与市场.html" class="">声誉与市场</a>
-<a href="../market/算力市场.html" class="">算力市场</a>
+<a href="market/匹配系统.html" class="">匹配系统</a>
+<a href="market/商品与声誉.html" class="">商品与声誉</a>
+<a href="market/声誉与市场.html" class="">声誉与市场</a>
+<a href="market/算力市场.html" class="">算力市场</a>
 <h2>math <span class="cat-count">2</span></h2>
-<a href="../math/向量空间模型.html" class="">向量空间模型</a>
-<a href="../math/图论与集聚性.html" class="">图论与集聚性</a>
+<a href="math/向量空间模型.html" class="">向量空间模型</a>
+<a href="math/图论与集聚性.html" class="">图论与集聚性</a>
 <h2>meeting <span class="cat-count">2</span></h2>
-<a href="../meeting/会议共识.html" class="">会议共识</a>
-<a href="../meeting/会议规则与激励闭环.html" class="">会议规则与激励闭环</a>
+<a href="meeting/会议共识.html" class="">会议共识</a>
+<a href="meeting/会议规则与激励闭环.html" class="">会议规则与激励闭环</a>
 <h2>security <span class="cat-count">3</span></h2>
-<a href="../security/女巫攻击防护.html" class="">女巫攻击防护</a>
-<a href="../security/时间锁与多签机制.html" class="">时间锁与多签机制</a>
-<a href="../security/预信任节点.html" class="">预信任节点</a>
+<a href="security/女巫攻击防护.html" class="">女巫攻击防护</a>
+<a href="security/时间锁与多签机制.html" class="">时间锁与多签机制</a>
+<a href="security/预信任节点.html" class="">预信任节点</a>
 </div>
 
 <div class="main">
 <div class="index-page">
 <h1>P2PTalk 知识图谱</h1>
 <p style="color:#a0a0a0;font-size:13px;margin-top:4px;margin-bottom:20px;">基于真实讨论提炼的概念知识图谱。每个概念页含：核心引述 + 讨论要点 + 相关链接。</p>
-<div class="stats"><div class="stat"><div class="num">50</div><div class="label">概念页</div></div><div class="stat"><div class="num">333</div><div class="label">原始消息</div></div><div class="stat"><div class="num">68</div><div class="label">讨论线程</div></div><div class="stat"><div class="num">18</div><div class="label">参与者</div></div></div><a href="graph.html" class="graph-btn">🔮 交互图谱</a>
-
-<div class="person-intro">
-  <h2>👥 人物视角</h2>
-  <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">追踪每个人的思考轨迹 · 注意力分布 · 团队关联</p>
-  <div class="person-links"><a href="person_ShiGu.html" class="person-tag">矢孤</a><a href="person_XuYapeng.html" class="person-tag">胥亚朋</a><a href="person_YunHuan.html" class="person-tag">沄涣</a><a href="person_Woo.html" class="person-tag">Woo</a><a href="person_WenBo.html" class="person-tag">文博</a><a href="person_YePeng.html" class="person-tag">叶鹏</a><a href="person_Bin Ma.html" class="person-tag">Bin Ma</a><a href="person_LeiLei.html" class="person-tag">雷雷</a></div>
-</div>
+<div class="stats"><div class="stat"><div class="num">50</div><div class="label">概念页</div></div><div class="stat"><div class="num">333</div><div class="label">原始消息</div></div><div class="stat"><div class="num">68</div><div class="label">讨论线程</div></div><div class="stat"><div class="num">18</div><div class="label">参与者</div></div></div>
 <div class="cat-section">
 <h2>ai <span class="count">4</span></h2>
 <div class="page-list">

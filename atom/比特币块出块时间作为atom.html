@@ -49,15 +49,6 @@ header .subtitle a:hover { text-decoration: underline; }
 .page a.wiki-link { color: var(--accent); text-decoration: none; background: rgba(233,69,96,0.12); padding: 1px 5px; border-radius: 4px; font-size: 13px; }
 .page a.wiki-link:hover { background: rgba(233,69,96,0.25); text-decoration: none; }
 .backlinks { margin-top: 32px; border-top: 1px solid var(--border); padding-top: 16px; }
-.people-section { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 16px; }
-.people-section h3 { font-size: 13px; color: var(--accent); margin-bottom: 14px; }
-.person-block { background: var(--accent2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 10px; }
-.person-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-.person-name { color: var(--accent); font-weight: 600; font-size: 13px; text-decoration: none; }
-.person-name:hover { text-decoration: underline; }
-.person-count { background: rgba(233,69,96,0.3); color: var(--accent); padding: 1px 6px; border-radius: 10px; font-size: 10px; }
-.person-months { font-size: 10px; color: var(--text-muted); margin-left: auto; }
-.p-preview { font-size: 11px; color: var(--text); line-height: 1.5; margin: 3px 0; padding-left: 8px; border-left: 2px solid var(--border); }
 .backlinks h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px; }
 .backlink-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .backlink-item { background: var(--accent2); padding: 6px 12px; border-radius: 6px; font-size: 12px; border: 1px solid var(--border); }
@@ -89,142 +80,6 @@ header .subtitle a:hover { text-decoration: underline; }
   .sidebar { display: none; }
   .main { padding: 20px; }
 }
-
-/* Q→A Status Section */
-.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
-.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
-.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
-.qa-body{padding:0;}
-.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
-.qa-item:last-child{border-bottom:none;}
-.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
-.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
-.qa-item .qa-question.open{color:#ff6b6b;}
-.qa-item .qa-question.pending{color:#ffd93d;}
-.qa-item .qa-question.resolved{color:#6bcb77;}
-.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
-/* Expand/Collapse */
-.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
-.p-expand-btn:hover{text-decoration:underline;}
-.p-msg-wrapper{display:block;}
-.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
-
-
-/* Q→A Status Section */
-.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
-.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
-.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
-.qa-body{padding:0;}
-.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
-.qa-item:last-child{border-bottom:none;}
-.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
-.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
-.qa-item .qa-question.open{color:#ff6b6b;}
-.qa-item .qa-question.pending{color:#ffd93d;}
-.qa-item .qa-question.resolved{color:#6bcb77;}
-.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
-/* Expand/Collapse */
-.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
-.p-expand-btn:hover{text-decoration:underline;}
-.p-msg-wrapper{display:block;}
-.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
-
-.all-msgs-section{margin:0 0 24px 0;}
-.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
-.all-msgs-header:hover{border-color:var(--accent);}
-.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
-.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
-.all-msgs-list{display:none;}
-.all-msgs-list.open{display:block;}
-.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
-.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
-.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
-.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
-.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
-.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
-.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
-.msg-thread-body.open{display:block;}
-.msg-full{white-space:pre-wrap;word-break:break-word;}
-.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
-.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
-.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
-.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
-.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
-.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
-.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
-.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
-.all-msgs-section{margin:0 0 24px 0;}
-.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
-.all-msgs-header:hover{border-color:var(--accent);}
-.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
-.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
-.all-msgs-list{display:none;}
-.all-msgs-list.open{display:block;}
-.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
-.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
-.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
-.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
-.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
-.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
-.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
-.msg-thread-body.open{display:block;}
-.msg-full{white-space:pre-wrap;word-break:break-word;}
-.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
-.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
-.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
-.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
-.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
-.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
-.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
-.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
-.all-msgs-section{margin:0 0 24px 0;}
-.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
-.all-msgs-header:hover{border-color:var(--accent);}
-.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
-.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
-.all-msgs-list{display:none;}
-.all-msgs-list.open{display:block;}
-.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
-.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
-.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
-.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
-.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
-.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
-.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
-.msg-thread-body.open{display:block;}
-.msg-full{white-space:pre-wrap;word-break:break-word;}
-.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
-.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
-.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
-.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
-.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
-.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
-.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
-.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
-.all-msgs-section{margin:0 0 24px 0;}
-.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
-.all-msgs-header:hover{border-color:var(--accent);}
-.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
-.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
-.all-msgs-list{display:none;}
-.all-msgs-list.open{display:block;}
-.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
-.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
-.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
-.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
-.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
-.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
-.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
-.msg-thread-body.open{display:block;}
-.msg-full{white-space:pre-wrap;word-break:break-word;}
-.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
-.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
-.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
-.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
-.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
-.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
-.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
-.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
 </style>
 </head>
 <body>
@@ -235,68 +90,68 @@ header .subtitle a:hover { text-decoration: underline; }
 <div class="container">
 <div class="sidebar">
 <h2>ai <span class="cat-count">4</span></h2>
-<a href="../ai/AI与女巫攻击.html" class="">AI与女巫攻击</a>
-<a href="../ai/AI与生产关系.html" class="">AI与生产关系</a>
-<a href="../ai/自驱系统.html" class="">自驱系统</a>
-<a href="../ai/闪电贷模式.html" class="">闪电贷模式</a>
+<a href="ai/AI与女巫攻击.html" class="">AI与女巫攻击</a>
+<a href="ai/AI与生产关系.html" class="">AI与生产关系</a>
+<a href="ai/自驱系统.html" class="">自驱系统</a>
+<a href="ai/闪电贷模式.html" class="">闪电贷模式</a>
 <h2>atom <span class="cat-count">18</span></h2>
-<a href="Atom与Bitcoin关系.html" class="">Atom与Bitcoin关系</a>
-<a href="Atom与Mempool.html" class="">Atom与Mempool</a>
-<a href="Atom数据结构.html" class="">Atom数据结构</a>
-<a href="Atom是什么.html" class="">Atom是什么</a>
-<a href="Atom流转机制.html" class="">Atom流转机制</a>
-<a href="Atom的信号属性.html" class="">Atom的信号属性</a>
-<a href="Atom的独立性.html" class="">Atom的独立性</a>
-<a href="CUser与CReview数据结构.html" class="">CUser与CReview数据结构</a>
-<a href="IP与品牌.html" class="">IP与品牌</a>
-<a href="Mempool不是唯一业务来源.html" class="">Mempool不是唯一业务来源</a>
-<a href="创世Atom与nonce.html" class="">创世Atom与nonce</a>
-<a href="双花问题.html" class="">双花问题</a>
-<a href="可组合与可复制.html" class="">可组合与可复制</a>
-<a href="挖矿必然有Mempool.html" class="">挖矿必然有Mempool</a>
-<a href="比特币块出块时间作为atom.html" class="active">比特币块出块时间作为atom</a>
-<a href="脚本是谓词.html" class="">脚本是谓词</a>
-<a href="观测值与节点行为.html" class="">观测值与节点行为</a>
-<a href="谓词.html" class="">谓词</a>
+<a href="atom/Atom与Bitcoin关系.html" class="">Atom与Bitcoin关系</a>
+<a href="atom/Atom与Mempool.html" class="">Atom与Mempool</a>
+<a href="atom/Atom数据结构.html" class="">Atom数据结构</a>
+<a href="atom/Atom是什么.html" class="">Atom是什么</a>
+<a href="atom/Atom流转机制.html" class="">Atom流转机制</a>
+<a href="atom/Atom的信号属性.html" class="">Atom的信号属性</a>
+<a href="atom/Atom的独立性.html" class="">Atom的独立性</a>
+<a href="atom/CUser与CReview数据结构.html" class="">CUser与CReview数据结构</a>
+<a href="atom/IP与品牌.html" class="">IP与品牌</a>
+<a href="atom/Mempool不是唯一业务来源.html" class="">Mempool不是唯一业务来源</a>
+<a href="atom/创世Atom与nonce.html" class="">创世Atom与nonce</a>
+<a href="atom/双花问题.html" class="">双花问题</a>
+<a href="atom/可组合与可复制.html" class="">可组合与可复制</a>
+<a href="atom/挖矿必然有Mempool.html" class="">挖矿必然有Mempool</a>
+<a href="atom/比特币块出块时间作为atom.html" class="active">比特币块出块时间作为atom</a>
+<a href="atom/脚本是谓词.html" class="">脚本是谓词</a>
+<a href="atom/观测值与节点行为.html" class="">观测值与节点行为</a>
+<a href="atom/谓词.html" class="">谓词</a>
 <h2>broadcast <span class="cat-count">6</span></h2>
-<a href="../broadcast/中间会面机制.html" class="">中间会面机制</a>
-<a href="../broadcast/发布订阅机制.html" class="">发布订阅机制</a>
-<a href="../broadcast/泛洪与5跳.html" class="">泛洪与5跳</a>
-<a href="../broadcast/洪泛atom的激励问题.html" class="">洪泛atom的激励问题</a>
-<a href="../broadcast/网络拓扑与衰减因子.html" class="">网络拓扑与衰减因子</a>
-<a href="../broadcast/节点与SPV轻节点.html" class="">节点与SPV轻节点</a>
+<a href="broadcast/中间会面机制.html" class="">中间会面机制</a>
+<a href="broadcast/发布订阅机制.html" class="">发布订阅机制</a>
+<a href="broadcast/泛洪与5跳.html" class="">泛洪与5跳</a>
+<a href="broadcast/洪泛atom的激励问题.html" class="">洪泛atom的激励问题</a>
+<a href="broadcast/网络拓扑与衰减因子.html" class="">网络拓扑与衰减因子</a>
+<a href="broadcast/节点与SPV轻节点.html" class="">节点与SPV轻节点</a>
 <h2>consensus <span class="cat-count">11</span></h2>
-<a href="../consensus/BitDNS与P2P市场.html" class="">BitDNS与P2P市场</a>
-<a href="../consensus/Bitcoin难度调整三问.html" class="">Bitcoin难度调整三问</a>
-<a href="../consensus/hashcash与POW.html" class="">hashcash与POW</a>
-<a href="../consensus/不可逆性与激励.html" class="">不可逆性与激励</a>
-<a href="../consensus/中本聪共识原理.html" class="">中本聪共识原理</a>
-<a href="../consensus/传播算法与生产关系.html" class="">传播算法与生产关系</a>
-<a href="../consensus/元胞自动机.html" class="">元胞自动机</a>
-<a href="../consensus/比特币升级参考.html" class="">比特币升级参考</a>
-<a href="../consensus/研究推动与洞察迭代.html" class="">研究推动与洞察迭代</a>
-<a href="../consensus/竞争与押注.html" class="">竞争与押注</a>
-<a href="../consensus/难度调整.html" class="">难度调整</a>
+<a href="consensus/BitDNS与P2P市场.html" class="">BitDNS与P2P市场</a>
+<a href="consensus/Bitcoin难度调整三问.html" class="">Bitcoin难度调整三问</a>
+<a href="consensus/hashcash与POW.html" class="">hashcash与POW</a>
+<a href="consensus/不可逆性与激励.html" class="">不可逆性与激励</a>
+<a href="consensus/中本聪共识原理.html" class="">中本聪共识原理</a>
+<a href="consensus/传播算法与生产关系.html" class="">传播算法与生产关系</a>
+<a href="consensus/元胞自动机.html" class="">元胞自动机</a>
+<a href="consensus/比特币升级参考.html" class="">比特币升级参考</a>
+<a href="consensus/研究推动与洞察迭代.html" class="">研究推动与洞察迭代</a>
+<a href="consensus/竞争与押注.html" class="">竞争与押注</a>
+<a href="consensus/难度调整.html" class="">难度调整</a>
 <h2>market <span class="cat-count">4</span></h2>
-<a href="../market/匹配系统.html" class="">匹配系统</a>
-<a href="../market/商品与声誉.html" class="">商品与声誉</a>
-<a href="../market/声誉与市场.html" class="">声誉与市场</a>
-<a href="../market/算力市场.html" class="">算力市场</a>
+<a href="market/匹配系统.html" class="">匹配系统</a>
+<a href="market/商品与声誉.html" class="">商品与声誉</a>
+<a href="market/声誉与市场.html" class="">声誉与市场</a>
+<a href="market/算力市场.html" class="">算力市场</a>
 <h2>math <span class="cat-count">2</span></h2>
-<a href="../math/向量空间模型.html" class="">向量空间模型</a>
-<a href="../math/图论与集聚性.html" class="">图论与集聚性</a>
+<a href="math/向量空间模型.html" class="">向量空间模型</a>
+<a href="math/图论与集聚性.html" class="">图论与集聚性</a>
 <h2>meeting <span class="cat-count">2</span></h2>
-<a href="../meeting/会议共识.html" class="">会议共识</a>
-<a href="../meeting/会议规则与激励闭环.html" class="">会议规则与激励闭环</a>
+<a href="meeting/会议共识.html" class="">会议共识</a>
+<a href="meeting/会议规则与激励闭环.html" class="">会议规则与激励闭环</a>
 <h2>security <span class="cat-count">3</span></h2>
-<a href="../security/女巫攻击防护.html" class="">女巫攻击防护</a>
-<a href="../security/时间锁与多签机制.html" class="">时间锁与多签机制</a>
-<a href="../security/预信任节点.html" class="">预信任节点</a>
+<a href="security/女巫攻击防护.html" class="">女巫攻击防护</a>
+<a href="security/时间锁与多签机制.html" class="">时间锁与多签机制</a>
+<a href="security/预信任节点.html" class="">预信任节点</a>
 </div>
 
 <div class="main">
 <div class="page">
-<a href="../index.html" class="back-link">← 总览</a>
+<a href="index.html" class="back-link">← 总览</a>
 <h1>比特币块出块时间作为atom</h1>
 <div class="tags"><span class="tag">atom</span><span class="tag">p2ptalk</span><span class="tag">比特币</span><span class="tag">出块时间</span><span class="tag">atom本质</span></div>
 <h1>比特币块出块时间作为atom</h1>
@@ -348,169 +203,7 @@ header .subtitle a:hover { text-decoration: underline; }
 <hr />
 <h2>相关概念</h2>
 <ul>
-<li><a href="Atom是什么.html" class="wiki-link">atom/Atom是什么</a></li>
-<li><a href="../consensus/难度调整.html" class="wiki-link">consensus/难度调整</a></li>
+<li><a href="atom/Atom是什么.html" class="wiki-link">atom/Atom是什么</a></li>
+<li><a href="consensus/难度调整.html" class="wiki-link">consensus/难度调整</a></li>
 </ul>
-</div></div></div>
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  // Expand/collapse for .p-preview
-  document.querySelectorAll('.p-preview').forEach(function(preview){
-    var wrapper=document.createElement('div');
-    wrapper.className='p-msg-wrapper';
-    preview.parentNode.insertBefore(wrapper,preview);
-    wrapper.appendChild(preview);
-    var btn=document.createElement('button');
-    btn.className='p-expand-btn';
-    btn.textContent='展开 ▾';
-    btn.style.display='inline-block';
-    preview.parentNode.insertBefore(btn,preview.nextSibling);
-    preview.style.maxHeight='60px';
-    preview.style.overflow='hidden';
-    preview.style.transition='max-height 0.3s ease';
-    btn.addEventListener('click',function(){
-      var isExpanded=preview.dataset.expanded==='1';
-      if(isExpanded){
-        preview.style.maxHeight='60px';
-        preview.dataset.expanded='0';
-        btn.textContent='展开 ▾';
-      }else{
-        preview.style.maxHeight='none';
-        preview.dataset.expanded='1';
-        btn.textContent='收起 ▴';
-      }
-    });
-  });
-});
-</script>
-
-
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  // Expand/collapse for .p-preview
-  document.querySelectorAll('.p-preview').forEach(function(preview){
-    var wrapper=document.createElement('div');
-    wrapper.className='p-msg-wrapper';
-    preview.parentNode.insertBefore(wrapper,preview);
-    wrapper.appendChild(preview);
-    var btn=document.createElement('button');
-    btn.className='p-expand-btn';
-    btn.textContent='展开 ▾';
-    btn.style.display='inline-block';
-    preview.parentNode.insertBefore(btn,preview.nextSibling);
-    preview.style.maxHeight='60px';
-    preview.style.overflow='hidden';
-    preview.style.transition='max-height 0.3s ease';
-    btn.addEventListener('click',function(){
-      var isExpanded=preview.dataset.expanded==='1';
-      if(isExpanded){
-        preview.style.maxHeight='60px';
-        preview.dataset.expanded='0';
-        btn.textContent='展开 ▾';
-      }else{
-        preview.style.maxHeight='none';
-        preview.dataset.expanded='1';
-        btn.textContent='收起 ▴';
-      }
-    });
-  });
-});
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  var h=document.querySelector('.all-msgs-header');
-  var l=document.querySelector('.all-msgs-list');
-  if(h&&l){h.addEventListener('click',function(){
-    var o=l.classList.contains('open');
-    l.classList.toggle('open');
-    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
-  });}
-  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
-    hd.addEventListener('click',function(){
-      var b=hd.nextElementSibling;
-      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
-    });
-  });
-  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
-    btn.addEventListener('click',function(e){e.stopPropagation();
-      var full=btn.previousElementSibling;
-      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
-      btn.style.display='none';
-    });
-  });
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  var h=document.querySelector('.all-msgs-header');
-  var l=document.querySelector('.all-msgs-list');
-  if(h&&l){h.addEventListener('click',function(){
-    var o=l.classList.contains('open');
-    l.classList.toggle('open');
-    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
-  });}
-  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
-    hd.addEventListener('click',function(){
-      var b=hd.nextElementSibling;
-      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
-    });
-  });
-  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
-    btn.addEventListener('click',function(e){e.stopPropagation();
-      var full=btn.previousElementSibling;
-      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
-      btn.style.display='none';
-    });
-  });
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  var h=document.querySelector('.all-msgs-header');
-  var l=document.querySelector('.all-msgs-list');
-  if(h&&l){h.addEventListener('click',function(){
-    var o=l.classList.contains('open');
-    l.classList.toggle('open');
-    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
-  });}
-  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
-    hd.addEventListener('click',function(){
-      var b=hd.nextElementSibling;
-      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
-    });
-  });
-  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
-    btn.addEventListener('click',function(e){e.stopPropagation();
-      var full=btn.previousElementSibling;
-      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
-      btn.style.display='none';
-    });
-  });
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  var h=document.querySelector('.all-msgs-header');
-  var l=document.querySelector('.all-msgs-list');
-  if(h&&l){h.addEventListener('click',function(){
-    var o=l.classList.contains('open');
-    l.classList.toggle('open');
-    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
-  });}
-  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
-    hd.addEventListener('click',function(){
-      var b=hd.nextElementSibling;
-      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
-    });
-  });
-  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
-    btn.addEventListener('click',function(e){e.stopPropagation();
-      var full=btn.previousElementSibling;
-      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
-      btn.style.display='none';
-    });
-  });
-});
-</script>
-</body></html>
+</div></div></div></body></html>
