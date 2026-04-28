@@ -49,6 +49,15 @@ header .subtitle a:hover { text-decoration: underline; }
 .page a.wiki-link { color: var(--accent); text-decoration: none; background: rgba(233,69,96,0.12); padding: 1px 5px; border-radius: 4px; font-size: 13px; }
 .page a.wiki-link:hover { background: rgba(233,69,96,0.25); text-decoration: none; }
 .backlinks { margin-top: 32px; border-top: 1px solid var(--border); padding-top: 16px; }
+.people-section { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 16px; }
+.people-section h3 { font-size: 13px; color: var(--accent); margin-bottom: 14px; }
+.person-block { background: var(--accent2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 10px; }
+.person-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.person-name { color: var(--accent); font-weight: 600; font-size: 13px; text-decoration: none; }
+.person-name:hover { text-decoration: underline; }
+.person-count { background: rgba(233,69,96,0.3); color: var(--accent); padding: 1px 6px; border-radius: 10px; font-size: 10px; }
+.person-months { font-size: 10px; color: var(--text-muted); margin-left: auto; }
+.p-preview { font-size: 11px; color: var(--text); line-height: 1.5; margin: 3px 0; padding-left: 8px; border-left: 2px solid var(--border); }
 .backlinks h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px; }
 .backlink-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .backlink-item { background: var(--accent2); padding: 6px 12px; border-radius: 6px; font-size: 12px; border: 1px solid var(--border); }
@@ -80,6 +89,142 @@ header .subtitle a:hover { text-decoration: underline; }
   .sidebar { display: none; }
   .main { padding: 20px; }
 }
+
+/* Q→A Status Section */
+.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
+.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
+.qa-body{padding:0;}
+.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.qa-item:last-child{border-bottom:none;}
+.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
+.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
+.qa-item .qa-question.open{color:#ff6b6b;}
+.qa-item .qa-question.pending{color:#ffd93d;}
+.qa-item .qa-question.resolved{color:#6bcb77;}
+.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
+/* Expand/Collapse */
+.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
+.p-expand-btn:hover{text-decoration:underline;}
+.p-msg-wrapper{display:block;}
+.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
+
+
+/* Q→A Status Section */
+.qa-section{margin:0 0 24px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.qa-header{background:var(--accent2);padding:10px 16px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--accent);}
+.qa-header .qa-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;}
+.qa-body{padding:0;}
+.qa-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.qa-item:last-child{border-bottom:none;}
+.qa-item .qa-status{font-size:14px;flex-shrink:0;width:20px;text-align:center;padding-top:2px;}
+.qa-item .qa-question{font-size:13px;color:var(--text);line-height:1.5;}
+.qa-item .qa-question.open{color:#ff6b6b;}
+.qa-item .qa-question.pending{color:#ffd93d;}
+.qa-item .qa-question.resolved{color:#6bcb77;}
+.qa-empty{padding:12px 16px;font-size:12px;color:var(--text-muted);font-style:italic;}
+/* Expand/Collapse */
+.p-expand-btn{background:none;border:none;color:var(--accent);font-size:11px;cursor:pointer;padding:2px 6px;margin-top:2px;display:inline-block;}
+.p-expand-btn:hover{text-decoration:underline;}
+.p-msg-wrapper{display:block;}
+.p-preview{font-size:11px;color:var(--text);line-height:1.5;margin:3px 0;padding-left:8px;border-left:2px solid var(--border);}
+
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
+.all-msgs-section{margin:0 0 24px 0;}
+.all-msgs-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:var(--accent2);border-radius:8px;border:1px solid var(--border);margin-bottom:12px;}
+.all-msgs-header:hover{border-color:var(--accent);}
+.all-msgs-header h3{font-size:13px;color:var(--accent);font-weight:600;margin:0;}
+.all-msgs-header .toggle-icon{color:var(--accent);font-size:16px;margin-left:auto;}
+.all-msgs-list{display:none;}
+.all-msgs-list.open{display:block;}
+.msg-thread{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;}
+.msg-thread-header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);cursor:pointer;}
+.msg-thread-header:hover{background:rgba(233,69,96,0.06);}
+.msg-thread-header .msg-person{color:var(--accent);font-size:12px;font-weight:600;}
+.msg-thread-header .msg-date{color:var(--text-muted);font-size:10px;margin-left:auto;}
+.msg-q-badge{background:#ff6b6b;color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:4px;}
+.msg-thread-body{padding:10px 12px;font-size:12px;line-height:1.65;color:var(--text);display:none;background:rgba(255,255,255,0.02);}
+.msg-thread-body.open{display:block;}
+.msg-full{white-space:pre-wrap;word-break:break-word;}
+.msg-email-header{font-size:10px;color:var(--text-muted);margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--border);}
+.msg-expand-btn{background:none;border:1px solid var(--accent);color:var(--accent);font-size:11px;cursor:pointer;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block;}
+.msg-expand-btn:hover{background:rgba(233,69,96,0.1);}
+.people-summary{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;padding:10px 12px;background:rgba(233,69,96,0.05);border-radius:8px;border:1px solid var(--border);}
+.people-summary-label{font-size:10px;color:var(--text-muted);width:100%;margin-bottom:4px;}
+.people-summary .p-tag{background:var(--accent2);color:var(--text);font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--border);cursor:pointer;text-decoration:none;transition:border-color 0.15s;}
+.people-summary .p-tag:hover{border-color:var(--accent);color:var(--accent);}
+.people-summary .p-tag .p-msg-count{color:var(--text-muted);margin-left:3px;}
 </style>
 </head>
 <body>
@@ -90,70 +235,194 @@ header .subtitle a:hover { text-decoration: underline; }
 <div class="container">
 <div class="sidebar">
 <h2>ai <span class="cat-count">4</span></h2>
-<a href="ai/AI与女巫攻击.html" class="">AI与女巫攻击</a>
-<a href="ai/AI与生产关系.html" class="">AI与生产关系</a>
-<a href="ai/自驱系统.html" class="">自驱系统</a>
-<a href="ai/闪电贷模式.html" class="">闪电贷模式</a>
+<a href="../ai/AI与女巫攻击.html" class="">AI与女巫攻击</a>
+<a href="../ai/AI与生产关系.html" class="">AI与生产关系</a>
+<a href="../ai/自驱系统.html" class="">自驱系统</a>
+<a href="../ai/闪电贷模式.html" class="">闪电贷模式</a>
 <h2>atom <span class="cat-count">18</span></h2>
-<a href="atom/Atom与Bitcoin关系.html" class="">Atom与Bitcoin关系</a>
-<a href="atom/Atom与Mempool.html" class="">Atom与Mempool</a>
-<a href="atom/Atom数据结构.html" class="">Atom数据结构</a>
-<a href="atom/Atom是什么.html" class="">Atom是什么</a>
-<a href="atom/Atom流转机制.html" class="">Atom流转机制</a>
-<a href="atom/Atom的信号属性.html" class="">Atom的信号属性</a>
-<a href="atom/Atom的独立性.html" class="">Atom的独立性</a>
-<a href="atom/CUser与CReview数据结构.html" class="">CUser与CReview数据结构</a>
-<a href="atom/IP与品牌.html" class="">IP与品牌</a>
-<a href="atom/Mempool不是唯一业务来源.html" class="">Mempool不是唯一业务来源</a>
-<a href="atom/创世Atom与nonce.html" class="">创世Atom与nonce</a>
-<a href="atom/双花问题.html" class="">双花问题</a>
-<a href="atom/可组合与可复制.html" class="">可组合与可复制</a>
-<a href="atom/挖矿必然有Mempool.html" class="">挖矿必然有Mempool</a>
-<a href="atom/比特币块出块时间作为atom.html" class="">比特币块出块时间作为atom</a>
-<a href="atom/脚本是谓词.html" class="active">脚本是谓词</a>
-<a href="atom/观测值与节点行为.html" class="">观测值与节点行为</a>
-<a href="atom/谓词.html" class="">谓词</a>
+<a href="Atom与Bitcoin关系.html" class="">Atom与Bitcoin关系</a>
+<a href="Atom与Mempool.html" class="">Atom与Mempool</a>
+<a href="Atom数据结构.html" class="">Atom数据结构</a>
+<a href="Atom是什么.html" class="">Atom是什么</a>
+<a href="Atom流转机制.html" class="">Atom流转机制</a>
+<a href="Atom的信号属性.html" class="">Atom的信号属性</a>
+<a href="Atom的独立性.html" class="">Atom的独立性</a>
+<a href="CUser与CReview数据结构.html" class="">CUser与CReview数据结构</a>
+<a href="IP与品牌.html" class="">IP与品牌</a>
+<a href="Mempool不是唯一业务来源.html" class="">Mempool不是唯一业务来源</a>
+<a href="创世Atom与nonce.html" class="">创世Atom与nonce</a>
+<a href="双花问题.html" class="">双花问题</a>
+<a href="可组合与可复制.html" class="">可组合与可复制</a>
+<a href="挖矿必然有Mempool.html" class="">挖矿必然有Mempool</a>
+<a href="比特币块出块时间作为atom.html" class="">比特币块出块时间作为atom</a>
+<a href="脚本是谓词.html" class="active">脚本是谓词</a>
+<a href="观测值与节点行为.html" class="">观测值与节点行为</a>
+<a href="谓词.html" class="">谓词</a>
 <h2>broadcast <span class="cat-count">6</span></h2>
-<a href="broadcast/中间会面机制.html" class="">中间会面机制</a>
-<a href="broadcast/发布订阅机制.html" class="">发布订阅机制</a>
-<a href="broadcast/泛洪与5跳.html" class="">泛洪与5跳</a>
-<a href="broadcast/洪泛atom的激励问题.html" class="">洪泛atom的激励问题</a>
-<a href="broadcast/网络拓扑与衰减因子.html" class="">网络拓扑与衰减因子</a>
-<a href="broadcast/节点与SPV轻节点.html" class="">节点与SPV轻节点</a>
+<a href="../broadcast/中间会面机制.html" class="">中间会面机制</a>
+<a href="../broadcast/发布订阅机制.html" class="">发布订阅机制</a>
+<a href="../broadcast/泛洪与5跳.html" class="">泛洪与5跳</a>
+<a href="../broadcast/洪泛atom的激励问题.html" class="">洪泛atom的激励问题</a>
+<a href="../broadcast/网络拓扑与衰减因子.html" class="">网络拓扑与衰减因子</a>
+<a href="../broadcast/节点与SPV轻节点.html" class="">节点与SPV轻节点</a>
 <h2>consensus <span class="cat-count">11</span></h2>
-<a href="consensus/BitDNS与P2P市场.html" class="">BitDNS与P2P市场</a>
-<a href="consensus/Bitcoin难度调整三问.html" class="">Bitcoin难度调整三问</a>
-<a href="consensus/hashcash与POW.html" class="">hashcash与POW</a>
-<a href="consensus/不可逆性与激励.html" class="">不可逆性与激励</a>
-<a href="consensus/中本聪共识原理.html" class="">中本聪共识原理</a>
-<a href="consensus/传播算法与生产关系.html" class="">传播算法与生产关系</a>
-<a href="consensus/元胞自动机.html" class="">元胞自动机</a>
-<a href="consensus/比特币升级参考.html" class="">比特币升级参考</a>
-<a href="consensus/研究推动与洞察迭代.html" class="">研究推动与洞察迭代</a>
-<a href="consensus/竞争与押注.html" class="">竞争与押注</a>
-<a href="consensus/难度调整.html" class="">难度调整</a>
+<a href="../consensus/BitDNS与P2P市场.html" class="">BitDNS与P2P市场</a>
+<a href="../consensus/Bitcoin难度调整三问.html" class="">Bitcoin难度调整三问</a>
+<a href="../consensus/hashcash与POW.html" class="">hashcash与POW</a>
+<a href="../consensus/不可逆性与激励.html" class="">不可逆性与激励</a>
+<a href="../consensus/中本聪共识原理.html" class="">中本聪共识原理</a>
+<a href="../consensus/传播算法与生产关系.html" class="">传播算法与生产关系</a>
+<a href="../consensus/元胞自动机.html" class="">元胞自动机</a>
+<a href="../consensus/比特币升级参考.html" class="">比特币升级参考</a>
+<a href="../consensus/研究推动与洞察迭代.html" class="">研究推动与洞察迭代</a>
+<a href="../consensus/竞争与押注.html" class="">竞争与押注</a>
+<a href="../consensus/难度调整.html" class="">难度调整</a>
 <h2>market <span class="cat-count">4</span></h2>
-<a href="market/匹配系统.html" class="">匹配系统</a>
-<a href="market/商品与声誉.html" class="">商品与声誉</a>
-<a href="market/声誉与市场.html" class="">声誉与市场</a>
-<a href="market/算力市场.html" class="">算力市场</a>
+<a href="../market/匹配系统.html" class="">匹配系统</a>
+<a href="../market/商品与声誉.html" class="">商品与声誉</a>
+<a href="../market/声誉与市场.html" class="">声誉与市场</a>
+<a href="../market/算力市场.html" class="">算力市场</a>
 <h2>math <span class="cat-count">2</span></h2>
-<a href="math/向量空间模型.html" class="">向量空间模型</a>
-<a href="math/图论与集聚性.html" class="">图论与集聚性</a>
+<a href="../math/向量空间模型.html" class="">向量空间模型</a>
+<a href="../math/图论与集聚性.html" class="">图论与集聚性</a>
 <h2>meeting <span class="cat-count">2</span></h2>
-<a href="meeting/会议共识.html" class="">会议共识</a>
-<a href="meeting/会议规则与激励闭环.html" class="">会议规则与激励闭环</a>
+<a href="../meeting/会议共识.html" class="">会议共识</a>
+<a href="../meeting/会议规则与激励闭环.html" class="">会议规则与激励闭环</a>
 <h2>security <span class="cat-count">3</span></h2>
-<a href="security/女巫攻击防护.html" class="">女巫攻击防护</a>
-<a href="security/时间锁与多签机制.html" class="">时间锁与多签机制</a>
-<a href="security/预信任节点.html" class="">预信任节点</a>
+<a href="../security/女巫攻击防护.html" class="">女巫攻击防护</a>
+<a href="../security/时间锁与多签机制.html" class="">时间锁与多签机制</a>
+<a href="../security/预信任节点.html" class="">预信任节点</a>
 </div>
 
 <div class="main">
 <div class="page">
-<a href="index.html" class="back-link">← 总览</a>
+<a href="../index.html" class="back-link">← 总览</a>
 <h1>脚本是谓词</h1>
-<div class="tags"><span class="tag">atom</span><span class="tag">p2ptalk</span><span class="tag">脚本</span><span class="tag">谓词</span><span class="tag">Bitcoin</span><span class="tag">script</span></div>
+<div class="tags"><span class="tag">atom</span><span class="tag">p2ptalk</span><span class="tag">脚本</span><span class="tag">谓词</span><span class="tag">Bitcoin</span><span class="tag">script</span>
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共2条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">文博</span>
+
+<span class="msg-date">2026-03-03</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOS4juKAnOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpIQ=?=
+	=?UTF-8?B?55CG4oCd55u45YWz55qE56eB5Lq65biW5a2Q?=</div><div class="msg-full">你说比特币重定义了等号操作符，但我要直接指出： *比特币从来没有用等号将锁定脚本和解锁脚本这两部分连接起来，也没有通过覆写等号操作符来实现脚本的拼接和执行。* 不是等号被重定义了，而是等号根本没有在这两部分之间扮演过任何角色。没有任何一个操作码、没有任何一个协议层的机制，是把锁定脚本和解锁脚本作为整体用等号连接起来的。你说的&quot;操作符重定义&quot;是你自己加进去的，比特币的实现里找不到对应物。 这里的问题不是创新解释和教条主义之争，而是*你的论证顺序反了*： 你先断定&quot;这是一个等式&quot;，然后发现等式需要一个等号，再去设想比特币重定义了这个等号来自圆其说。这是在用结论推导前提，而不是从事实推导结论。 如果你是从执行过程出发去观察，你会看到的是：两段脚本拼接，压栈，顺序执行，看栈顶。这个过程里没有任何一步在&quot;比较左边和右边是否相等&quot;。等式这个框架不是被比特币用新方式实现了，而是从一开始就没有出现过。 ------------------------------ 回到谓词本身的定义。谓词在数学和计算机科学里的含义是明确的：*一个以某些变量为输入、返回布尔值的函数*。你代码里写的 isNull(x)、 </div><div class="msg-rest" style="display:none;">isNumber(x) 就是谓词，没有任何歧义。中本聪说比特币脚本是谓词，意思也很直接：锁定脚本就是一个函数，解锁脚本提供的数据是它的输入，执行结果是 true 或 false。 这个定义从来没有要求谓词是一个等式，谓词就是布尔值函数，仅此而已。你说&quot;比特币把谓词扩展了，谓词不再是布尔值函数而是一个等式&quot;——但谓词扩展成等式，它就不再是谓词了。你不能一边说这是谓词，一边说谓词在这里是等式，因为等式本身不产生布尔值，你自己也承认了这一点。 ------------------------------ 另外我之前说的&quot;锁定脚本作为布尔值函数，input 和交易上下文作为参数&quot;，这个描述也有问题，需要收回来。 准确的描述应该是： ValidSpend=Execute(scriptSig∥scriptPubKey)∈{true,false} 锁定脚本不是独立的布尔值函数，解锁脚本也不只是它的参数。两者拼接后作为一个整体被执行，执行的结果才是布尔值。UTXO 本身是纯粹的，它只携带锁定脚本，不依赖任何外部上下文。把交易上下文拉进来作为参数，破坏了这个纯粹性，是我表述不当。 你真正观察到的是条件的发布和证明的提供在时间上分离，这个洞察是对的，但它撑不起等式这个词，也不需要去修改谓词的定义来容纳它。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年3月3日周二 14:28写道： &gt; 什么叫做等式，用等号连接的表达式。什么是等号，等号就是一个符号，就是一个操作符。 &gt; 在C++里面有一个功能是覆写操作符，也就是同样的符号，在我这个场景下我可以给它一些额外的操作或功能。 &gt; &gt; &gt; 基于此去理解比特币的谓词逻辑，它的锁定脚本和解锁脚本就是一个等式，一个将锁定脚本和解锁脚本连接起来经过操作符的处理逻辑最终的到一个true或false功能的一个表达式。 &gt; &gt; &gt; 这里为什么用这个视角去看呢？首先锁定脚本和解锁脚本在比特币上面出现的时间是不一样的，一定是锁定脚本先上链，然后有解锁脚本和它&quot;相等&quot;才能解锁一笔UTXO，而相等这个功能，它不是锁定脚本定义的，也不是解锁脚本定义的，它就是比特币自身去定义的。相当于比特币定义了操作符，锁定脚本提供了等式的左侧，需要提供等式右侧的人提供合适的解锁脚本才能让等式成立。如果用函数的视角来看，那么锁定脚本和解锁脚本同时作为参数应该是同时出现的。 &gt; &gt; 这里很讨厌教条主义，因为对任何问题的抽象和创新解释一定是和之前历史的解释不同的，一味拿历史的解释去对照的话一定能挑出毛病的。 &gt; &gt; 还有一句不太理解 “锁定脚本作为布尔值函数，而 input 和 交易上下文作为其参数，最终得到一个布尔值来决定其是否能花费。” &gt; &gt; &gt; 这里我不认为锁定脚本是那个函数，而且我不理解交易上下文是什么，因为在我的理解里面UTXO是存粹的，没有被环境中的上下文所污染的一个结构，所以我不理解这个上下文是什么。 &gt; &gt; 陈默 &lt;chenmoonmo@gmail.com&gt; 于2026年3月2日周一 17:50写道： &gt; &gt;&gt; 什么叫做等式，也就是左边和右边相等，又如何定义相等。例如 P2PKH 脚本， &gt;&gt; &gt;&gt; input script: &gt;&gt; PUSHDATA(Sig) // 将签名压入栈 &gt;&gt; PUSHDATA(PubKey) // 将公钥压入栈 &gt;&gt; output script: // 交易的来源 &gt;&gt; DUP // 把栈顶的元素（Pubkey）复制一遍 &gt;&gt; HASH160 // 把栈顶元素弹出并取哈希并压入栈 &gt;&gt; PUSHDAT</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-03-05</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOS4juKAnOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpIQ=?=
+	=?UTF-8?B?55CG4oCd55u45YWz55qE56eB5Lq65biW5a2Q?=</div><div class="msg-full">今天下午和文博，老史开会，总结一下会议结论，基于计算和一致性的需求暂时不是重点需求，重点是atom的流速控制产生的稀缺性和激励与业务增长的关联性。等我将本地计算告一断落以后会转到上面两个点进行计算。 陈默 &lt;chenmoonmo@gmail.com&gt; 于2026年3月3日周二 16:52写道： &gt; 你说比特币重定义了等号操作符，但我要直接指出： &gt; *比特币从来没有用等号将锁定脚本和解锁脚本这两部分连接起来，也没有通过覆写等号操作符来实现脚本的拼接和执行。* &gt; &gt; &gt; 不是等号被重定义了，而是等号根本没有在这两部分之间扮演过任何角色。没有任何一个操作码、没有任何一个协议层的机制，是把锁定脚本和解锁脚本作为整体用等号连接起来的。你说的&quot;操作符重定义&quot;是你自己加进去的，比特币的实现里找不到对应物。 &gt; &gt; 这里的问题不是创新解释和教条主义之争，而是*你的论证顺序反了*： &gt; &gt; 你先断定&quot;这是一个等式&quot;，然后发现等式需要一个等号，再去设想比特币重定义了这个等号来自圆其说。这是在用结论推导前提，而不是从事实推导结论。 &gt; &gt; &gt; 如果你是从执行过程出发去观察，你会看到的是：两段脚本拼接，压</div><div class="msg-rest" style="display:none;">栈，顺序执行，看栈顶。这个过程里没有任何一步在&quot;比较左边和右边是否相等&quot;。等式这个框架不是被比特币用新方式实现了，而是从一开始就没有出现过。 &gt; ------------------------------ &gt; &gt; 回到谓词本身的定义。谓词在数学和计算机科学里的含义是明确的：*一个以某些变量为输入、返回布尔值的函数*。你代码里写的 isNull(x)、 &gt; isNumber(x) &gt; 就是谓词，没有任何歧义。中本聪说比特币脚本是谓词，意思也很直接：锁定脚本就是一个函数，解锁脚本提供的数据是它的输入，执行结果是 true 或 &gt; false。 &gt; &gt; &gt; 这个定义从来没有要求谓词是一个等式，谓词就是布尔值函数，仅此而已。你说&quot;比特币把谓词扩展了，谓词不再是布尔值函数而是一个等式&quot;——但谓词扩展成等式，它就不再是谓词了。你不能一边说这是谓词，一边说谓词在这里是等式，因为等式本身不产生布尔值，你自己也承认了这一点。 &gt; ------------------------------ &gt; &gt; 另外我之前说的&quot;锁定脚本作为布尔值函数，input 和交易上下文作为参数&quot;，这个描述也有问题，需要收回来。 &gt; &gt; 准确的描述应该是： &gt; ValidSpend=Execute(scriptSig∥scriptPubKey)∈{true,false} &gt; &gt; 锁定脚本不是独立的布尔值函数，解锁脚本也不只是它的参数。两者拼接后作为一个整体被执行，执行的结果才是布尔值。UTXO &gt; 本身是纯粹的，它只携带锁定脚本，不依赖任何外部上下文。把交易上下文拉进来作为参数，破坏了这个纯粹性，是我表述不当。 &gt; &gt; 你真正观察到的是条件的发布和证明的提供在时间上分离，这个洞察是对的，但它撑不起等式这个词，也不需要去修改谓词的定义来容纳它。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年3月3日周二 14:28写道： &gt; &gt;&gt; 什么叫做等式，用等号连接的表达式。什么是等号，等号就是一个符号，就是一个操作符。 &gt;&gt; 在C++里面有一个功能是覆写操作符，也就是同样的符号，在我这个场景下我可以给它一些额外的操作或功能。 &gt;&gt; &gt;&gt; &gt;&gt; 基于此去理解比特币的谓词逻辑，它的锁定脚本和解锁脚本就是一个等式，一个将锁定脚本和解锁脚本连接起来经过操作符的处理逻辑最终的到一个true或false功能的一个表达式。 &gt;&gt; &gt;&gt; &gt;&gt; 这里为什么用这个视角去看呢？首先锁定脚本和解锁脚本在比特币上面出现的时间是不一样的，一定是锁定脚本先上链，然后有解锁脚本和它&quot;相等&quot;才能解锁一笔UTXO，而相等这个功能，它不是锁定脚本定义的，也不是解锁脚本定义的，它就是比特币自身去定义的。相当于比特币定义了操作符，锁定脚本提供了等式的左侧，需要提供等式右侧的人提供合适的解锁脚本才能让等式成立。如果用函数的视角来看，那么锁定脚本和解锁脚本同时作为参数应该是同时出现的。 &gt;&gt; &gt;&gt; 这里很讨厌教条主义，因为对任何问题的抽象和创新解释一定是和之前历史的解释不同的，一味拿历史的解释去对照的话一定能挑出毛病的。 &gt;&gt; &gt;&gt; 还有一句不太理解 “锁定脚本作为布尔值函数，而 input 和 交易上下文作为其参数，最终得到一个布尔值来决定其是否能花费。” &gt;&gt; &gt;&gt; &gt;&gt; 这里我不认为锁定脚本是那个函数，而且我不理解交易上下文是什么，因为在我的理解里面UTXO是存粹的，没有被环境中的上下文所污染的一个结构，所以我不理解这个上下文是什么。 &gt;&gt; &gt;&gt; 陈默 &lt;chenmoonmo@gmail.com&gt; 于202</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共2条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">文博</span>
+
+<span class="msg-date">2026-03-03</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOS4juKAnOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpIQ=?=
+	=?UTF-8?B?55CG4oCd55u45YWz55qE56eB5Lq65biW5a2Q?=</div><div class="msg-full">你说比特币重定义了等号操作符，但我要直接指出： *比特币从来没有用等号将锁定脚本和解锁脚本这两部分连接起来，也没有通过覆写等号操作符来实现脚本的拼接和执行。* 不是等号被重定义了，而是等号根本没有在这两部分之间扮演过任何角色。没有任何一个操作码、没有任何一个协议层的机制，是把锁定脚本和解锁脚本作为整体用等号连接起来的。你说的&quot;操作符重定义&quot;是你自己加进去的，比特币的实现里找不到对应物。 这里的问题不是创新解释和教条主义之争，而是*你的论证顺序反了*： 你先断定&quot;这是一个等式&quot;，然后发现等式需要一个等号，再去设想比特币重定义了这个等号来自圆其说。这是在用结论推导前提，而不是从事实推导结论。 如果你是从执行过程出发去观察，你会看到的是：两段脚本拼接，压栈，顺序执行，看栈顶。这个过程里没有任何一步在&quot;比较左边和右边是否相等&quot;。等式这个框架不是被比特币用新方式实现了，而是从一开始就没有出现过。 ------------------------------ 回到谓词本身的定义。谓词在数学和计算机科学里的含义是明确的：*一个以某些变量为输入、返回布尔值的函数*。你代码里写的 isNull(x)、 </div><div class="msg-rest" style="display:none;">isNumber(x) 就是谓词，没有任何歧义。中本聪说比特币脚本是谓词，意思也很直接：锁定脚本就是一个函数，解锁脚本提供的数据是它的输入，执行结果是 true 或 false。 这个定义从来没有要求谓词是一个等式，谓词就是布尔值函数，仅此而已。你说&quot;比特币把谓词扩展了，谓词不再是布尔值函数而是一个等式&quot;——但谓词扩展成等式，它就不再是谓词了。你不能一边说这是谓词，一边说谓词在这里是等式，因为等式本身不产生布尔值，你自己也承认了这一点。 ------------------------------ 另外我之前说的&quot;锁定脚本作为布尔值函数，input 和交易上下文作为参数&quot;，这个描述也有问题，需要收回来。 准确的描述应该是： ValidSpend=Execute(scriptSig∥scriptPubKey)∈{true,false} 锁定脚本不是独立的布尔值函数，解锁脚本也不只是它的参数。两者拼接后作为一个整体被执行，执行的结果才是布尔值。UTXO 本身是纯粹的，它只携带锁定脚本，不依赖任何外部上下文。把交易上下文拉进来作为参数，破坏了这个纯粹性，是我表述不当。 你真正观察到的是条件的发布和证明的提供在时间上分离，这个洞察是对的，但它撑不起等式这个词，也不需要去修改谓词的定义来容纳它。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年3月3日周二 14:28写道： &gt; 什么叫做等式，用等号连接的表达式。什么是等号，等号就是一个符号，就是一个操作符。 &gt; 在C++里面有一个功能是覆写操作符，也就是同样的符号，在我这个场景下我可以给它一些额外的操作或功能。 &gt; &gt; &gt; 基于此去理解比特币的谓词逻辑，它的锁定脚本和解锁脚本就是一个等式，一个将锁定脚本和解锁脚本连接起来经过操作符的处理逻辑最终的到一个true或false功能的一个表达式。 &gt; &gt; &gt; 这里为什么用这个视角去看呢？首先锁定脚本和解锁脚本在比特币上面出现的时间是不一样的，一定是锁定脚本先上链，然后有解锁脚本和它&quot;相等&quot;才能解锁一笔UTXO，而相等这个功能，它不是锁定脚本定义的，也不是解锁脚本定义的，它就是比特币自身去定义的。相当于比特币定义了操作符，锁定脚本提供了等式的左侧，需要提供等式右侧的人提供合适的解锁脚本才能让等式成立。如果用函数的视角来看，那么锁定脚本和解锁脚本同时作为参数应该是同时出现的。 &gt; &gt; 这里很讨厌教条主义，因为对任何问题的抽象和创新解释一定是和之前历史的解释不同的，一味拿历史的解释去对照的话一定能挑出毛病的。 &gt; &gt; 还有一句不太理解 “锁定脚本作为布尔值函数，而 input 和 交易上下文作为其参数，最终得到一个布尔值来决定其是否能花费。” &gt; &gt; &gt; 这里我不认为锁定脚本是那个函数，而且我不理解交易上下文是什么，因为在我的理解里面UTXO是存粹的，没有被环境中的上下文所污染的一个结构，所以我不理解这个上下文是什么。 &gt; &gt; 陈默 &lt;chenmoonmo@gmail.com&gt; 于2026年3月2日周一 17:50写道： &gt; &gt;&gt; 什么叫做等式，也就是左边和右边相等，又如何定义相等。例如 P2PKH 脚本， &gt;&gt; &gt;&gt; input script: &gt;&gt; PUSHDATA(Sig) // 将签名压入栈 &gt;&gt; PUSHDATA(PubKey) // 将公钥压入栈 &gt;&gt; output script: // 交易的来源 &gt;&gt; DUP // 把栈顶的元素（Pubkey）复制一遍 &gt;&gt; HASH160 // 把栈顶元素弹出并取哈希并压入栈 &gt;&gt; PUSHDAT</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-03-05</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOS4juKAnOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpIQ=?=
+	=?UTF-8?B?55CG4oCd55u45YWz55qE56eB5Lq65biW5a2Q?=</div><div class="msg-full">今天下午和文博，老史开会，总结一下会议结论，基于计算和一致性的需求暂时不是重点需求，重点是atom的流速控制产生的稀缺性和激励与业务增长的关联性。等我将本地计算告一断落以后会转到上面两个点进行计算。 陈默 &lt;chenmoonmo@gmail.com&gt; 于2026年3月3日周二 16:52写道： &gt; 你说比特币重定义了等号操作符，但我要直接指出： &gt; *比特币从来没有用等号将锁定脚本和解锁脚本这两部分连接起来，也没有通过覆写等号操作符来实现脚本的拼接和执行。* &gt; &gt; &gt; 不是等号被重定义了，而是等号根本没有在这两部分之间扮演过任何角色。没有任何一个操作码、没有任何一个协议层的机制，是把锁定脚本和解锁脚本作为整体用等号连接起来的。你说的&quot;操作符重定义&quot;是你自己加进去的，比特币的实现里找不到对应物。 &gt; &gt; 这里的问题不是创新解释和教条主义之争，而是*你的论证顺序反了*： &gt; &gt; 你先断定&quot;这是一个等式&quot;，然后发现等式需要一个等号，再去设想比特币重定义了这个等号来自圆其说。这是在用结论推导前提，而不是从事实推导结论。 &gt; &gt; &gt; 如果你是从执行过程出发去观察，你会看到的是：两段脚本拼接，压</div><div class="msg-rest" style="display:none;">栈，顺序执行，看栈顶。这个过程里没有任何一步在&quot;比较左边和右边是否相等&quot;。等式这个框架不是被比特币用新方式实现了，而是从一开始就没有出现过。 &gt; ------------------------------ &gt; &gt; 回到谓词本身的定义。谓词在数学和计算机科学里的含义是明确的：*一个以某些变量为输入、返回布尔值的函数*。你代码里写的 isNull(x)、 &gt; isNumber(x) &gt; 就是谓词，没有任何歧义。中本聪说比特币脚本是谓词，意思也很直接：锁定脚本就是一个函数，解锁脚本提供的数据是它的输入，执行结果是 true 或 &gt; false。 &gt; &gt; &gt; 这个定义从来没有要求谓词是一个等式，谓词就是布尔值函数，仅此而已。你说&quot;比特币把谓词扩展了，谓词不再是布尔值函数而是一个等式&quot;——但谓词扩展成等式，它就不再是谓词了。你不能一边说这是谓词，一边说谓词在这里是等式，因为等式本身不产生布尔值，你自己也承认了这一点。 &gt; ------------------------------ &gt; &gt; 另外我之前说的&quot;锁定脚本作为布尔值函数，input 和交易上下文作为参数&quot;，这个描述也有问题，需要收回来。 &gt; &gt; 准确的描述应该是： &gt; ValidSpend=Execute(scriptSig∥scriptPubKey)∈{true,false} &gt; &gt; 锁定脚本不是独立的布尔值函数，解锁脚本也不只是它的参数。两者拼接后作为一个整体被执行，执行的结果才是布尔值。UTXO &gt; 本身是纯粹的，它只携带锁定脚本，不依赖任何外部上下文。把交易上下文拉进来作为参数，破坏了这个纯粹性，是我表述不当。 &gt; &gt; 你真正观察到的是条件的发布和证明的提供在时间上分离，这个洞察是对的，但它撑不起等式这个词，也不需要去修改谓词的定义来容纳它。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年3月3日周二 14:28写道： &gt; &gt;&gt; 什么叫做等式，用等号连接的表达式。什么是等号，等号就是一个符号，就是一个操作符。 &gt;&gt; 在C++里面有一个功能是覆写操作符，也就是同样的符号，在我这个场景下我可以给它一些额外的操作或功能。 &gt;&gt; &gt;&gt; &gt;&gt; 基于此去理解比特币的谓词逻辑，它的锁定脚本和解锁脚本就是一个等式，一个将锁定脚本和解锁脚本连接起来经过操作符的处理逻辑最终的到一个true或false功能的一个表达式。 &gt;&gt; &gt;&gt; &gt;&gt; 这里为什么用这个视角去看呢？首先锁定脚本和解锁脚本在比特币上面出现的时间是不一样的，一定是锁定脚本先上链，然后有解锁脚本和它&quot;相等&quot;才能解锁一笔UTXO，而相等这个功能，它不是锁定脚本定义的，也不是解锁脚本定义的，它就是比特币自身去定义的。相当于比特币定义了操作符，锁定脚本提供了等式的左侧，需要提供等式右侧的人提供合适的解锁脚本才能让等式成立。如果用函数的视角来看，那么锁定脚本和解锁脚本同时作为参数应该是同时出现的。 &gt;&gt; &gt;&gt; 这里很讨厌教条主义，因为对任何问题的抽象和创新解释一定是和之前历史的解释不同的，一味拿历史的解释去对照的话一定能挑出毛病的。 &gt;&gt; &gt;&gt; 还有一句不太理解 “锁定脚本作为布尔值函数，而 input 和 交易上下文作为其参数，最终得到一个布尔值来决定其是否能花费。” &gt;&gt; &gt;&gt; &gt;&gt; 这里我不认为锁定脚本是那个函数，而且我不理解交易上下文是什么，因为在我的理解里面UTXO是存粹的，没有被环境中的上下文所污染的一个结构，所以我不理解这个上下文是什么。 &gt;&gt; &gt;&gt; 陈默 &lt;chenmoonmo@gmail.com&gt; 于202</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共2条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">文博</span>
+
+<span class="msg-date">2026-03-03</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOS4juKAnOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpIQ=?=
+	=?UTF-8?B?55CG4oCd55u45YWz55qE56eB5Lq65biW5a2Q?=</div><div class="msg-full">你说比特币重定义了等号操作符，但我要直接指出： *比特币从来没有用等号将锁定脚本和解锁脚本这两部分连接起来，也没有通过覆写等号操作符来实现脚本的拼接和执行。* 不是等号被重定义了，而是等号根本没有在这两部分之间扮演过任何角色。没有任何一个操作码、没有任何一个协议层的机制，是把锁定脚本和解锁脚本作为整体用等号连接起来的。你说的&quot;操作符重定义&quot;是你自己加进去的，比特币的实现里找不到对应物。 这里的问题不是创新解释和教条主义之争，而是*你的论证顺序反了*： 你先断定&quot;这是一个等式&quot;，然后发现等式需要一个等号，再去设想比特币重定义了这个等号来自圆其说。这是在用结论推导前提，而不是从事实推导结论。 如果你是从执行过程出发去观察，你会看到的是：两段脚本拼接，压栈，顺序执行，看栈顶。这个过程里没有任何一步在&quot;比较左边和右边是否相等&quot;。等式这个框架不是被比特币用新方式实现了，而是从一开始就没有出现过。 ------------------------------ 回到谓词本身的定义。谓词在数学和计算机科学里的含义是明确的：*一个以某些变量为输入、返回布尔值的函数*。你代码里写的 isNull(x)、 </div><div class="msg-rest" style="display:none;">isNumber(x) 就是谓词，没有任何歧义。中本聪说比特币脚本是谓词，意思也很直接：锁定脚本就是一个函数，解锁脚本提供的数据是它的输入，执行结果是 true 或 false。 这个定义从来没有要求谓词是一个等式，谓词就是布尔值函数，仅此而已。你说&quot;比特币把谓词扩展了，谓词不再是布尔值函数而是一个等式&quot;——但谓词扩展成等式，它就不再是谓词了。你不能一边说这是谓词，一边说谓词在这里是等式，因为等式本身不产生布尔值，你自己也承认了这一点。 ------------------------------ 另外我之前说的&quot;锁定脚本作为布尔值函数，input 和交易上下文作为参数&quot;，这个描述也有问题，需要收回来。 准确的描述应该是： ValidSpend=Execute(scriptSig∥scriptPubKey)∈{true,false} 锁定脚本不是独立的布尔值函数，解锁脚本也不只是它的参数。两者拼接后作为一个整体被执行，执行的结果才是布尔值。UTXO 本身是纯粹的，它只携带锁定脚本，不依赖任何外部上下文。把交易上下文拉进来作为参数，破坏了这个纯粹性，是我表述不当。 你真正观察到的是条件的发布和证明的提供在时间上分离，这个洞察是对的，但它撑不起等式这个词，也不需要去修改谓词的定义来容纳它。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年3月3日周二 14:28写道： &gt; 什么叫做等式，用等号连接的表达式。什么是等号，等号就是一个符号，就是一个操作符。 &gt; 在C++里面有一个功能是覆写操作符，也就是同样的符号，在我这个场景下我可以给它一些额外的操作或功能。 &gt; &gt; &gt; 基于此去理解比特币的谓词逻辑，它的锁定脚本和解锁脚本就是一个等式，一个将锁定脚本和解锁脚本连接起来经过操作符的处理逻辑最终的到一个true或false功能的一个表达式。 &gt; &gt; &gt; 这里为什么用这个视角去看呢？首先锁定脚本和解锁脚本在比特币上面出现的时间是不一样的，一定是锁定脚本先上链，然后有解锁脚本和它&quot;相等&quot;才能解锁一笔UTXO，而相等这个功能，它不是锁定脚本定义的，也不是解锁脚本定义的，它就是比特币自身去定义的。相当于比特币定义了操作符，锁定脚本提供了等式的左侧，需要提供等式右侧的人提供合适的解锁脚本才能让等式成立。如果用函数的视角来看，那么锁定脚本和解锁脚本同时作为参数应该是同时出现的。 &gt; &gt; 这里很讨厌教条主义，因为对任何问题的抽象和创新解释一定是和之前历史的解释不同的，一味拿历史的解释去对照的话一定能挑出毛病的。 &gt; &gt; 还有一句不太理解 “锁定脚本作为布尔值函数，而 input 和 交易上下文作为其参数，最终得到一个布尔值来决定其是否能花费。” &gt; &gt; &gt; 这里我不认为锁定脚本是那个函数，而且我不理解交易上下文是什么，因为在我的理解里面UTXO是存粹的，没有被环境中的上下文所污染的一个结构，所以我不理解这个上下文是什么。 &gt; &gt; 陈默 &lt;chenmoonmo@gmail.com&gt; 于2026年3月2日周一 17:50写道： &gt; &gt;&gt; 什么叫做等式，也就是左边和右边相等，又如何定义相等。例如 P2PKH 脚本， &gt;&gt; &gt;&gt; input script: &gt;&gt; PUSHDATA(Sig) // 将签名压入栈 &gt;&gt; PUSHDATA(PubKey) // 将公钥压入栈 &gt;&gt; output script: // 交易的来源 &gt;&gt; DUP // 把栈顶的元素（Pubkey）复制一遍 &gt;&gt; HASH160 // 把栈顶元素弹出并取哈希并压入栈 &gt;&gt; PUSHDAT</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-03-05</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOS4juKAnOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpIQ=?=
+	=?UTF-8?B?55CG4oCd55u45YWz55qE56eB5Lq65biW5a2Q?=</div><div class="msg-full">今天下午和文博，老史开会，总结一下会议结论，基于计算和一致性的需求暂时不是重点需求，重点是atom的流速控制产生的稀缺性和激励与业务增长的关联性。等我将本地计算告一断落以后会转到上面两个点进行计算。 陈默 &lt;chenmoonmo@gmail.com&gt; 于2026年3月3日周二 16:52写道： &gt; 你说比特币重定义了等号操作符，但我要直接指出： &gt; *比特币从来没有用等号将锁定脚本和解锁脚本这两部分连接起来，也没有通过覆写等号操作符来实现脚本的拼接和执行。* &gt; &gt; &gt; 不是等号被重定义了，而是等号根本没有在这两部分之间扮演过任何角色。没有任何一个操作码、没有任何一个协议层的机制，是把锁定脚本和解锁脚本作为整体用等号连接起来的。你说的&quot;操作符重定义&quot;是你自己加进去的，比特币的实现里找不到对应物。 &gt; &gt; 这里的问题不是创新解释和教条主义之争，而是*你的论证顺序反了*： &gt; &gt; 你先断定&quot;这是一个等式&quot;，然后发现等式需要一个等号，再去设想比特币重定义了这个等号来自圆其说。这是在用结论推导前提，而不是从事实推导结论。 &gt; &gt; &gt; 如果你是从执行过程出发去观察，你会看到的是：两段脚本拼接，压</div><div class="msg-rest" style="display:none;">栈，顺序执行，看栈顶。这个过程里没有任何一步在&quot;比较左边和右边是否相等&quot;。等式这个框架不是被比特币用新方式实现了，而是从一开始就没有出现过。 &gt; ------------------------------ &gt; &gt; 回到谓词本身的定义。谓词在数学和计算机科学里的含义是明确的：*一个以某些变量为输入、返回布尔值的函数*。你代码里写的 isNull(x)、 &gt; isNumber(x) &gt; 就是谓词，没有任何歧义。中本聪说比特币脚本是谓词，意思也很直接：锁定脚本就是一个函数，解锁脚本提供的数据是它的输入，执行结果是 true 或 &gt; false。 &gt; &gt; &gt; 这个定义从来没有要求谓词是一个等式，谓词就是布尔值函数，仅此而已。你说&quot;比特币把谓词扩展了，谓词不再是布尔值函数而是一个等式&quot;——但谓词扩展成等式，它就不再是谓词了。你不能一边说这是谓词，一边说谓词在这里是等式，因为等式本身不产生布尔值，你自己也承认了这一点。 &gt; ------------------------------ &gt; &gt; 另外我之前说的&quot;锁定脚本作为布尔值函数，input 和交易上下文作为参数&quot;，这个描述也有问题，需要收回来。 &gt; &gt; 准确的描述应该是： &gt; ValidSpend=Execute(scriptSig∥scriptPubKey)∈{true,false} &gt; &gt; 锁定脚本不是独立的布尔值函数，解锁脚本也不只是它的参数。两者拼接后作为一个整体被执行，执行的结果才是布尔值。UTXO &gt; 本身是纯粹的，它只携带锁定脚本，不依赖任何外部上下文。把交易上下文拉进来作为参数，破坏了这个纯粹性，是我表述不当。 &gt; &gt; 你真正观察到的是条件的发布和证明的提供在时间上分离，这个洞察是对的，但它撑不起等式这个词，也不需要去修改谓词的定义来容纳它。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年3月3日周二 14:28写道： &gt; &gt;&gt; 什么叫做等式，用等号连接的表达式。什么是等号，等号就是一个符号，就是一个操作符。 &gt;&gt; 在C++里面有一个功能是覆写操作符，也就是同样的符号，在我这个场景下我可以给它一些额外的操作或功能。 &gt;&gt; &gt;&gt; &gt;&gt; 基于此去理解比特币的谓词逻辑，它的锁定脚本和解锁脚本就是一个等式，一个将锁定脚本和解锁脚本连接起来经过操作符的处理逻辑最终的到一个true或false功能的一个表达式。 &gt;&gt; &gt;&gt; &gt;&gt; 这里为什么用这个视角去看呢？首先锁定脚本和解锁脚本在比特币上面出现的时间是不一样的，一定是锁定脚本先上链，然后有解锁脚本和它&quot;相等&quot;才能解锁一笔UTXO，而相等这个功能，它不是锁定脚本定义的，也不是解锁脚本定义的，它就是比特币自身去定义的。相当于比特币定义了操作符，锁定脚本提供了等式的左侧，需要提供等式右侧的人提供合适的解锁脚本才能让等式成立。如果用函数的视角来看，那么锁定脚本和解锁脚本同时作为参数应该是同时出现的。 &gt;&gt; &gt;&gt; 这里很讨厌教条主义，因为对任何问题的抽象和创新解释一定是和之前历史的解释不同的，一味拿历史的解释去对照的话一定能挑出毛病的。 &gt;&gt; &gt;&gt; 还有一句不太理解 “锁定脚本作为布尔值函数，而 input 和 交易上下文作为其参数，最终得到一个布尔值来决定其是否能花费。” &gt;&gt; &gt;&gt; &gt;&gt; 这里我不认为锁定脚本是那个函数，而且我不理解交易上下文是什么，因为在我的理解里面UTXO是存粹的，没有被环境中的上下文所污染的一个结构，所以我不理解这个上下文是什么。 &gt;&gt; &gt;&gt; 陈默 &lt;chenmoonmo@gmail.com&gt; 于202</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="all-msgs-section">
+<div class="all-msgs-header">
+<h3>💬 全部讨论（共2条）</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="all-msgs-list">
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">文博</span>
+
+<span class="msg-date">2026-03-03</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOS4juKAnOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpIQ=?=
+	=?UTF-8?B?55CG4oCd55u45YWz55qE56eB5Lq65biW5a2Q?=</div><div class="msg-full">你说比特币重定义了等号操作符，但我要直接指出： *比特币从来没有用等号将锁定脚本和解锁脚本这两部分连接起来，也没有通过覆写等号操作符来实现脚本的拼接和执行。* 不是等号被重定义了，而是等号根本没有在这两部分之间扮演过任何角色。没有任何一个操作码、没有任何一个协议层的机制，是把锁定脚本和解锁脚本作为整体用等号连接起来的。你说的&quot;操作符重定义&quot;是你自己加进去的，比特币的实现里找不到对应物。 这里的问题不是创新解释和教条主义之争，而是*你的论证顺序反了*： 你先断定&quot;这是一个等式&quot;，然后发现等式需要一个等号，再去设想比特币重定义了这个等号来自圆其说。这是在用结论推导前提，而不是从事实推导结论。 如果你是从执行过程出发去观察，你会看到的是：两段脚本拼接，压栈，顺序执行，看栈顶。这个过程里没有任何一步在&quot;比较左边和右边是否相等&quot;。等式这个框架不是被比特币用新方式实现了，而是从一开始就没有出现过。 ------------------------------ 回到谓词本身的定义。谓词在数学和计算机科学里的含义是明确的：*一个以某些变量为输入、返回布尔值的函数*。你代码里写的 isNull(x)、 </div><div class="msg-rest" style="display:none;">isNumber(x) 就是谓词，没有任何歧义。中本聪说比特币脚本是谓词，意思也很直接：锁定脚本就是一个函数，解锁脚本提供的数据是它的输入，执行结果是 true 或 false。 这个定义从来没有要求谓词是一个等式，谓词就是布尔值函数，仅此而已。你说&quot;比特币把谓词扩展了，谓词不再是布尔值函数而是一个等式&quot;——但谓词扩展成等式，它就不再是谓词了。你不能一边说这是谓词，一边说谓词在这里是等式，因为等式本身不产生布尔值，你自己也承认了这一点。 ------------------------------ 另外我之前说的&quot;锁定脚本作为布尔值函数，input 和交易上下文作为参数&quot;，这个描述也有问题，需要收回来。 准确的描述应该是： ValidSpend=Execute(scriptSig∥scriptPubKey)∈{true,false} 锁定脚本不是独立的布尔值函数，解锁脚本也不只是它的参数。两者拼接后作为一个整体被执行，执行的结果才是布尔值。UTXO 本身是纯粹的，它只携带锁定脚本，不依赖任何外部上下文。把交易上下文拉进来作为参数，破坏了这个纯粹性，是我表述不当。 你真正观察到的是条件的发布和证明的提供在时间上分离，这个洞察是对的，但它撑不起等式这个词，也不需要去修改谓词的定义来容纳它。 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年3月3日周二 14:28写道： &gt; 什么叫做等式，用等号连接的表达式。什么是等号，等号就是一个符号，就是一个操作符。 &gt; 在C++里面有一个功能是覆写操作符，也就是同样的符号，在我这个场景下我可以给它一些额外的操作或功能。 &gt; &gt; &gt; 基于此去理解比特币的谓词逻辑，它的锁定脚本和解锁脚本就是一个等式，一个将锁定脚本和解锁脚本连接起来经过操作符的处理逻辑最终的到一个true或false功能的一个表达式。 &gt; &gt; &gt; 这里为什么用这个视角去看呢？首先锁定脚本和解锁脚本在比特币上面出现的时间是不一样的，一定是锁定脚本先上链，然后有解锁脚本和它&quot;相等&quot;才能解锁一笔UTXO，而相等这个功能，它不是锁定脚本定义的，也不是解锁脚本定义的，它就是比特币自身去定义的。相当于比特币定义了操作符，锁定脚本提供了等式的左侧，需要提供等式右侧的人提供合适的解锁脚本才能让等式成立。如果用函数的视角来看，那么锁定脚本和解锁脚本同时作为参数应该是同时出现的。 &gt; &gt; 这里很讨厌教条主义，因为对任何问题的抽象和创新解释一定是和之前历史的解释不同的，一味拿历史的解释去对照的话一定能挑出毛病的。 &gt; &gt; 还有一句不太理解 “锁定脚本作为布尔值函数，而 input 和 交易上下文作为其参数，最终得到一个布尔值来决定其是否能花费。” &gt; &gt; &gt; 这里我不认为锁定脚本是那个函数，而且我不理解交易上下文是什么，因为在我的理解里面UTXO是存粹的，没有被环境中的上下文所污染的一个结构，所以我不理解这个上下文是什么。 &gt; &gt; 陈默 &lt;chenmoonmo@gmail.com&gt; 于2026年3月2日周一 17:50写道： &gt; &gt;&gt; 什么叫做等式，也就是左边和右边相等，又如何定义相等。例如 P2PKH 脚本， &gt;&gt; &gt;&gt; input script: &gt;&gt; PUSHDATA(Sig) // 将签名压入栈 &gt;&gt; PUSHDATA(PubKey) // 将公钥压入栈 &gt;&gt; output script: // 交易的来源 &gt;&gt; DUP // 把栈顶的元素（Pubkey）复制一遍 &gt;&gt; HASH160 // 把栈顶元素弹出并取哈希并压入栈 &gt;&gt; PUSHDAT</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+<div class="msg-thread">
+<div class="msg-thread-header">
+<span class="msg-person">胥亚朋</span>
+
+<span class="msg-date">2026-03-05</span>
+</div>
+<div class="msg-thread-body">
+<div class="msg-email-header">主题: =?UTF-8?B?UmU6IOS4juKAnOWFs+S6jmF0b23nmoTmlbDmja7nu5PmnoTkuYvlkI7mgI7kuYjlpIQ=?=
+	=?UTF-8?B?55CG4oCd55u45YWz55qE56eB5Lq65biW5a2Q?=</div><div class="msg-full">今天下午和文博，老史开会，总结一下会议结论，基于计算和一致性的需求暂时不是重点需求，重点是atom的流速控制产生的稀缺性和激励与业务增长的关联性。等我将本地计算告一断落以后会转到上面两个点进行计算。 陈默 &lt;chenmoonmo@gmail.com&gt; 于2026年3月3日周二 16:52写道： &gt; 你说比特币重定义了等号操作符，但我要直接指出： &gt; *比特币从来没有用等号将锁定脚本和解锁脚本这两部分连接起来，也没有通过覆写等号操作符来实现脚本的拼接和执行。* &gt; &gt; &gt; 不是等号被重定义了，而是等号根本没有在这两部分之间扮演过任何角色。没有任何一个操作码、没有任何一个协议层的机制，是把锁定脚本和解锁脚本作为整体用等号连接起来的。你说的&quot;操作符重定义&quot;是你自己加进去的，比特币的实现里找不到对应物。 &gt; &gt; 这里的问题不是创新解释和教条主义之争，而是*你的论证顺序反了*： &gt; &gt; 你先断定&quot;这是一个等式&quot;，然后发现等式需要一个等号，再去设想比特币重定义了这个等号来自圆其说。这是在用结论推导前提，而不是从事实推导结论。 &gt; &gt; &gt; 如果你是从执行过程出发去观察，你会看到的是：两段脚本拼接，压</div><div class="msg-rest" style="display:none;">栈，顺序执行，看栈顶。这个过程里没有任何一步在&quot;比较左边和右边是否相等&quot;。等式这个框架不是被比特币用新方式实现了，而是从一开始就没有出现过。 &gt; ------------------------------ &gt; &gt; 回到谓词本身的定义。谓词在数学和计算机科学里的含义是明确的：*一个以某些变量为输入、返回布尔值的函数*。你代码里写的 isNull(x)、 &gt; isNumber(x) &gt; 就是谓词，没有任何歧义。中本聪说比特币脚本是谓词，意思也很直接：锁定脚本就是一个函数，解锁脚本提供的数据是它的输入，执行结果是 true 或 &gt; false。 &gt; &gt; &gt; 这个定义从来没有要求谓词是一个等式，谓词就是布尔值函数，仅此而已。你说&quot;比特币把谓词扩展了，谓词不再是布尔值函数而是一个等式&quot;——但谓词扩展成等式，它就不再是谓词了。你不能一边说这是谓词，一边说谓词在这里是等式，因为等式本身不产生布尔值，你自己也承认了这一点。 &gt; ------------------------------ &gt; &gt; 另外我之前说的&quot;锁定脚本作为布尔值函数，input 和交易上下文作为参数&quot;，这个描述也有问题，需要收回来。 &gt; &gt; 准确的描述应该是： &gt; ValidSpend=Execute(scriptSig∥scriptPubKey)∈{true,false} &gt; &gt; 锁定脚本不是独立的布尔值函数，解锁脚本也不只是它的参数。两者拼接后作为一个整体被执行，执行的结果才是布尔值。UTXO &gt; 本身是纯粹的，它只携带锁定脚本，不依赖任何外部上下文。把交易上下文拉进来作为参数，破坏了这个纯粹性，是我表述不当。 &gt; &gt; 你真正观察到的是条件的发布和证明的提供在时间上分离，这个洞察是对的，但它撑不起等式这个词，也不需要去修改谓词的定义来容纳它。 &gt; &gt; 胥亚朋 &lt;xuyapeng110@gmail.com&gt; 于2026年3月3日周二 14:28写道： &gt; &gt;&gt; 什么叫做等式，用等号连接的表达式。什么是等号，等号就是一个符号，就是一个操作符。 &gt;&gt; 在C++里面有一个功能是覆写操作符，也就是同样的符号，在我这个场景下我可以给它一些额外的操作或功能。 &gt;&gt; &gt;&gt; &gt;&gt; 基于此去理解比特币的谓词逻辑，它的锁定脚本和解锁脚本就是一个等式，一个将锁定脚本和解锁脚本连接起来经过操作符的处理逻辑最终的到一个true或false功能的一个表达式。 &gt;&gt; &gt;&gt; &gt;&gt; 这里为什么用这个视角去看呢？首先锁定脚本和解锁脚本在比特币上面出现的时间是不一样的，一定是锁定脚本先上链，然后有解锁脚本和它&quot;相等&quot;才能解锁一笔UTXO，而相等这个功能，它不是锁定脚本定义的，也不是解锁脚本定义的，它就是比特币自身去定义的。相当于比特币定义了操作符，锁定脚本提供了等式的左侧，需要提供等式右侧的人提供合适的解锁脚本才能让等式成立。如果用函数的视角来看，那么锁定脚本和解锁脚本同时作为参数应该是同时出现的。 &gt;&gt; &gt;&gt; 这里很讨厌教条主义，因为对任何问题的抽象和创新解释一定是和之前历史的解释不同的，一味拿历史的解释去对照的话一定能挑出毛病的。 &gt;&gt; &gt;&gt; 还有一句不太理解 “锁定脚本作为布尔值函数，而 input 和 交易上下文作为其参数，最终得到一个布尔值来决定其是否能花费。” &gt;&gt; &gt;&gt; &gt;&gt; 这里我不认为锁定脚本是那个函数，而且我不理解交易上下文是什么，因为在我的理解里面UTXO是存粹的，没有被环境中的上下文所污染的一个结构，所以我不理解这个上下文是什么。 &gt;&gt; &gt;&gt; 陈默 &lt;chenmoonmo@gmail.com&gt; 于202</div><button class="msg-expand-btn" onclick="var r=this.previousElementSibling;r.style.display=r.style.display?'':'none';this.textContent=r.style.display?'展开全文 ▼':'收起 ▴';var f=r.previousElementSibling;if(f&&f.classList.contains('msg-full'))f.style.display=r.style.display?'none':'block';">展开全文 ▼</button>
+</div>
+</div>
+</div>
+</div>
+</div>
 <h1>脚本是谓词</h1>
 <h2>中本聪的观点</h2>
 <p>中本聪说：<strong>比特币脚本是谓词</strong>。</p>
@@ -214,7 +483,193 @@ header .subtitle a:hover { text-decoration: underline; }
 <hr />
 <h2>相关概念</h2>
 <ul>
-<li><a href="atom/谓词.html" class="wiki-link">atom/谓词</a></li>
-<li><a href="consensus/BitDNS与P2P市场.html" class="wiki-link">consensus/BitDNS与P2P市场</a></li>
-</ul>
-</div></div></div></body></html>
+<li><a href="谓词.html" class="wiki-link">atom/谓词</a></li>
+<li><a href="../consensus/BitDNS与P2P市场.html" class="wiki-link">consensus/BitDNS与P2P市场</a></li>
+</ul><div class="people-section"><h3>👥 参与讨论的人</h3>
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_XuYapeng.html" class="p-tag">胥亚朋<span class="p-msg-count">(1条)</span></a>
+<a href="../person_WenBo.html" class="p-tag">文博<span class="p-msg-count">(1条)</span></a>
+</div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_XuYapeng.html" class="p-tag">胥亚朋<span class="p-msg-count">(1条)</span></a>
+<a href="../person_WenBo.html" class="p-tag">文博<span class="p-msg-count">(1条)</span></a>
+</div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_XuYapeng.html" class="p-tag">胥亚朋<span class="p-msg-count">(1条)</span></a>
+<a href="../person_WenBo.html" class="p-tag">文博<span class="p-msg-count">(1条)</span></a>
+</div>
+
+<div class="people-summary">
+<div class="people-summary-label">参与讨论的人</div>
+<a href="../person_XuYapeng.html" class="p-tag">胥亚朋<span class="p-msg-count">(1条)</span></a>
+<a href="../person_WenBo.html" class="p-tag">文博<span class="p-msg-count">(1条)</span></a>
+</div>
+<div class="person-block"><div class="person-header"><a href="../person_XuYapeng.html" class="person-name">胥亚朋</a><span class="person-count">1条</span><span class="person-months">2026-03</span></div><div class="person-msgs"><div class="p-preview">今天下午和文博，老史开会，总结一下会议结论，基于计算和一致性的需求暂时不是重点需求，重点是atom的流速控制产生的稀缺性和激励与业务增长的关联性。等我将本地计算告一断落以后会转到上面两个点进行计算。 陈默 &lt;chenmoonmo@gmail…</div><div class="p-preview">今天下午和文博，老史开会，总结一下会议结论，基于计算和一致性的需求暂时不是重点需求，重点是atom的流速控制产生的稀缺性和激励与业务增长的关联性。等我将本地计算告一断落以后会转到上面两个点进行计算。 陈默 <chenmoonmo@gmail...</div></div></div><div class="person-block"><div class="person-header"><a href="../person_WenBo.html" class="person-name">文博</a><span class="person-count">1条</span><span class="person-months">2026-03</span></div><div class="person-msgs"><div class="p-preview">你说比特币重定义了等号操作符，但我要直接指出： *比特币从来没有用等号将锁定脚本和解锁脚本这两部分连接起来，也没有通过覆写等号操作符来实现脚本的拼接和执行。* 不是等号被重定义了，而是等号根本没有在这两部分之间扮演过任何角色。没有任何一个操…</div></div></div></div>
+</div></div></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Expand/collapse for .p-preview
+  document.querySelectorAll('.p-preview').forEach(function(preview){
+    var wrapper=document.createElement('div');
+    wrapper.className='p-msg-wrapper';
+    preview.parentNode.insertBefore(wrapper,preview);
+    wrapper.appendChild(preview);
+    var btn=document.createElement('button');
+    btn.className='p-expand-btn';
+    btn.textContent='展开 ▾';
+    btn.style.display='inline-block';
+    preview.parentNode.insertBefore(btn,preview.nextSibling);
+    preview.style.maxHeight='60px';
+    preview.style.overflow='hidden';
+    preview.style.transition='max-height 0.3s ease';
+    btn.addEventListener('click',function(){
+      var isExpanded=preview.dataset.expanded==='1';
+      if(isExpanded){
+        preview.style.maxHeight='60px';
+        preview.dataset.expanded='0';
+        btn.textContent='展开 ▾';
+      }else{
+        preview.style.maxHeight='none';
+        preview.dataset.expanded='1';
+        btn.textContent='收起 ▴';
+      }
+    });
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Expand/collapse for .p-preview
+  document.querySelectorAll('.p-preview').forEach(function(preview){
+    var wrapper=document.createElement('div');
+    wrapper.className='p-msg-wrapper';
+    preview.parentNode.insertBefore(wrapper,preview);
+    wrapper.appendChild(preview);
+    var btn=document.createElement('button');
+    btn.className='p-expand-btn';
+    btn.textContent='展开 ▾';
+    btn.style.display='inline-block';
+    preview.parentNode.insertBefore(btn,preview.nextSibling);
+    preview.style.maxHeight='60px';
+    preview.style.overflow='hidden';
+    preview.style.transition='max-height 0.3s ease';
+    btn.addEventListener('click',function(){
+      var isExpanded=preview.dataset.expanded==='1';
+      if(isExpanded){
+        preview.style.maxHeight='60px';
+        preview.dataset.expanded='0';
+        btn.textContent='展开 ▾';
+      }else{
+        preview.style.maxHeight='none';
+        preview.dataset.expanded='1';
+        btn.textContent='收起 ▴';
+      }
+    });
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.all-msgs-header');
+  var l=document.querySelector('.all-msgs-list');
+  if(h&&l){h.addEventListener('click',function(){
+    var o=l.classList.contains('open');
+    l.classList.toggle('open');
+    h.querySelector('.toggle-icon').textContent=o?'\u25b6':'\u25bc';
+  });}
+  document.querySelectorAll('.msg-thread-header').forEach(function(hd){
+    hd.addEventListener('click',function(){
+      var b=hd.nextElementSibling;
+      if(b&&b.classList.contains('msg-thread-body')){b.classList.toggle('open');}
+    });
+  });
+  document.querySelectorAll('.msg-expand-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){e.stopPropagation();
+      var full=btn.previousElementSibling;
+      if(full){full.style.whiteSpace='pre-wrap';full.style.wordBreak='break-word';full.style.maxHeight='none';}
+      btn.style.display='none';
+    });
+  });
+});
+</script>
+</body></html>
