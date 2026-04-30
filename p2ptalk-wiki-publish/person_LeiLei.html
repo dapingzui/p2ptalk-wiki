@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雷雷 - 参与者 · P2PTalk 知识图谱</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.person-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+.person-header h1 {
+    margin: 0 0 8px 0;
+    font-size: 28px;
+}
+.person-header .meta {
+    opacity: 0.85;
+    font-size: 14px;
+}
+.concept-tag {
+    display: inline-block;
+    background: rgba(102, 126, 234, 0.12);
+    color: #667eea;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin: 3px;
+    text-decoration: none;
+}
+.concept-tag:hover {
+    background: rgba(102, 126, 234, 0.22);
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<div class="sidebar"><div class="sidebar">\n<h2>导航</h2>\n<a href="graph.html">📊 知识图谱</a>\n<h2>人物 <span class="cat-count">9</span></h2>\n<a href="person_ShiGu.html" class="">矢孤</a>\n<a href="person_Woo.html" class="">Woo</a>\n<a href="person_XuYapeng.html" class="">胥亚朋</a>\n<a href="person_YunHuan.html" class="">沄涣</a>\n<a href="person_YePeng.html" class="">叶鹏</a>\n<a href="person_icekernel.html" class="">icekernel</a>\n<a href="person_WenBo.html" class="">文博</a>\n<a href="person_Bin Ma.html" class="">Bin Ma</a>\n<a href="person_LeiLei.html" class="active">雷雷</a>\n</div>\n</div>
+<main class="content">
+<div class="person-header">
+<h1>雷雷</h1>
+<div class="meta">17 条消息 · 8 个概念</div>
+</div>
+<h2>📌 参与的概念</h2>
+<div class="concept-list"><a href="atom/谓词" class="concept-tag">atom/谓词</a>
+<a href="consensus/传播算法与生产关系" class="concept-tag">consensus/传播算法与生产关系</a>
+<a href="broadcast/中间会面机制" class="concept-tag">broadcast/中间会面机制</a>
+<a href="broadcast/泛洪与5跳" class="concept-tag">broadcast/泛洪与5跳</a>
+<a href="security/女巫攻击防护" class="concept-tag">security/女巫攻击防护</a>
+<a href="consensus/难度调整" class="concept-tag">consensus/难度调整</a>
+<a href="market/声誉与市场" class="concept-tag">market/声誉与市场</a>
+<a href="consensus/hashcash与POW" class="concept-tag">consensus/hashcash与POW</a></div>
+<h2>💬 消息时间线 (17 条)</h2>
+<div class="ptl-month"><div class="ptl-month-label">📅 1970-01 · 17条</div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 请求计算</span><div class="ptl-body">1. 从计算到验证，再从验证到激励，这两个过程分别与难度调整算法及哈希计算的关系是什么？     2. “meme一下…..但是没有解决之前我就是没有解决“.这里预期解决和解决之后的视角是否一致，如果不一致，区别是什么？      矢孤 <shijingyao123@gmail.com> 于2025年12月26日周五 13:17写道：    >  > 挖矿的感觉是什么，是你手里有一个验证的标准，但...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 广播新nonce:广播和p2pmarket的关系</span><div class="ptl-body">接受广播后的想法；       1.     快速广播行为本身包含着激励。比特币的节点之所以要快速广播，他们是为了保护当前区块已经投入的算力成本，因为如果被别人抢先广播了，即使他先算出来，也会成为孤块，当前投入的算力成本就会归零。这关于当前算力是否具备生存优势，这是内生的收益，区别于外在的coinbase奖励。     2.     广播行为属于与其他节点的良性交互，快速的有效广播能让其他节点选择...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 强制同步最长链</span><div class="ptl-body">尝试描述atom机制采用memepool方式来处理“信用评分”的话，需要先参照比特币的memepool回答几个问题，最后再考虑这个新的memepool的形式。       1. 信用评分是否需要附带算力证明才能进入memepool？（类似memepool的1 sat每字节定价来防止女巫）     2. 当来自同一个节点的两个相反的信用评分进入memepool，选择哪个？（如何应对双花？）     ...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 强制同步最长链</span><div class="ptl-body">我理解到你的方案思路是把atom的memepool 设计成btc memepool的消息备注，且这两者同时存在。我的问题是*因为比特币网络是没有一个全局的  Mempool，但确具有全局的账本共识，因为比特币有最长链原则来作一致性冲突的裁决，*  那么atom也没有全局的mempool，但你的设计里是需要全局的共识，那当他出现一致性问题时候，靠什么来裁决呢？    胥亚朋 <xuyapeng110...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re:</span><div class="ptl-body">>  > 考虑如何设计atom机制的思维链：  >       1. p2p网络没有全局memepool。     2. 无法离开全局共识谈memepool如何设计。     3. 一个系统里，pow和atom不可兼得，除非一套系统里有两套算力消耗。     4. 目前btc系统里就存在隐形的声誉评分和隐形的激励，这部分是随着pow过程伴生的。     5. bittensor的底层是Yuma 共...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 请求同步周一会议内容</span><div class="ptl-body">周一会议理解       1. 之前对于atom的理解是声誉评分的抽象概念，会后的理解是一个量化指标。即：atom的暂存，流转和转发过程是设计atom机制的必要条件。     2. 在上述必要条件基础上，下一步需要思考的问题是什么。个人认为下一个问题是，atom的数据是否需要全局一致性？且我更倾向于不需要全局一致。     3. 那么，在不需要全局一致性的情况下，如何设计atom机制是当前问题。 ...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 周四会议同步</span><div class="ptl-body">信用本身可以当成货币使用的，atom不可重复的（同一个atom在同一个人那不能花两次）。在用户层面，跟btc不可双花有点像。这种观点的意思是直接用atom生成的信用本身当作货币去流通，思考在什么的情况下可以实现？    矢孤 <shijingyao123@gmail.com> 于2026年1月23日周五 16:29写道：    >  >  > 在我们会议改为会前同步后，发生了一个有趣的现象，就是，...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 周五会议同步</span><div class="ptl-body">周五会议讨论    1.关于atom矩阵和向量的讨论.yp采用向量描述是个不错的方法。yap对此观点不赞同。    2.个人meme认为：一、atom没法做全局共识，只能局部共识，二、所谓atom本质上是个权重，是指在不同的连接关系里它的atom分数不同，没有统一的绝对值。    shijingyao123 <shijingyao123@gmail.com> 于 2026年1月26日周一 下午3:...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 周一会议同步</span><div class="ptl-body">1. 从memepool跳变到传播算法，不同的传播算法意味可以组织不同的生产关系。     2. 从做项目的角度来看，memepool的机制设计与共识机制有直接的关联。共识机制的核心就是传播算法。     3. 如何在分布式环境下思考传播算法的设计。      shijingyao123 <shijingyao123@gmail.com> 于2026年1月27日周二 20:01写道：    > 我...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 强制返回计算结果</span><div class="ptl-body">不论什么传播算法，他们在p2p环境下设计时需要考虑的必要条件有哪些       1. 硬件，内存，带宽等物理结构，因为算法设计时不能假设节点具有无限能力，因此算法设计需要在有限的资源内更合理的运用资源，减少浪费。     2.     数据如何流通，如何连接。首先，p2p网络环境下节点可能随时掉线，当掉线时如何替代？其次，必须假设网络里混进了女巫攻击者，系统如何防范；最后，需要回答我为啥要帮你转发...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 2 月 2 日会议前置工作</span><div class="ptl-body">上次会议有事未能参加，同步个人思维链：       1. 硬件，内存，带宽等物理结构，因为算法设计时不能假设节点具有无限能力，因此算法设计需要在有限的资源内更合理的运用资源，减少浪费。     2.     数据如何流通，如何连接。首先，p2p网络环境下节点可能随时掉线，当掉线时如何替代？其次，必须假设网络里混进了女巫攻击者，系统如何防范；最后，需要回答我为啥要帮你转发消息，如何设计激励？    ...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 20260228会中同步</span><div class="ptl-body">跟woo聊了下最近的想法。       1.       最近意识到Ai     agent的爆发会带来新的生产关系的变革，这点跟woo从激励的角度分析Ai时代需要自驱系统的观点不谋而合。我们认为Ai时代的生产关系类似闪电贷那样有业务需求时，同时调用多个接口付费。（闪电贷是先借款，A     lp池买，B lp池卖，还款，这四个步骤在一个区块完成，同时给各个协议完成付手续费）     2.    ...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 20260302 会前同步</span><div class="ptl-body">1.     个人对于项目的思考是符合当下难度的。原因是：最近在讨论的谓词，流转阈值的具体实现貌似就是我在思考的具体业务里如何设计机制，能识别agent能力的真实性，和计算结果的正确性。按照亚peng的说法，中本聪给谓词加了等号，左边是锁定脚本，右边是解锁脚本。这让utxo传递了状态量，从而实现全局共识。而atom没有状态量，只传递消息量，因此只存在局部共识。     2. 现在会议的问题是，在局...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 会前同步</span><div class="ptl-body">review：    1. 马师傅，上下文压缩方案与atom 机制里引用的映射。不同的压缩方案适应不同的上下文场景。    2.  文博，google的那个pagerank的解释和atom的区别。重点问题是初始的权重来源问题，这个如果对应到机制设计上，需要考虑初始以及过程中人的权重和agent的权重问题。    3.  亚朋，关于流速控制每个节点是否都可以不一样。这个我理解的重点是atom这套机制...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 会前同步</span><div class="ptl-body">Review部分    马师傅 三颗星  文博 三颗星  亚鹏三颗星    lei lei <spaceminer2011@gmail.com>于2026年3月16日 周一17:01写道：    > review：  >  > 1. 马师傅，上下文压缩方案与atom 机制里引用的映射。不同的压缩方案适应不同的上下文场景。  >  > 2.  > 文博，google的那个pagerank的解释和at...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 已获得老史review之牛逼之中本聪在p2p market的少爷思维：我不在乎你的商品是怎么造的，我这市场里的都是顶尖的。</span><div class="ptl-body">图结构本身代表的计算和激励       1. review的连接关系是一个多边连接的图结构，这个连接结构本身就是计算的一部分，同时也是激励的一部分。         2. 计算的部分体现在atom每经过一个节点，就必须进入一次AtomsNew 缓冲区，并接受一次随机抽样（GetRand）。这个是系统内生的衰减     计算。同时，图结构越复杂，路径越长，atom的衰减越多，这个相当于系统通过这种图...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re:</span><div class="ptl-body">一、关于难度调整和激励的关系问题    对于比特币这套模型，不论yp理解的自组织，我认为的新的生产关系，Gavieguo认为的非确定性计算，这些对于比特币系统的抽象背后都需要面对一个共同的问题：难度调整和激励的关系是什么样的？    首先。要明确一点，在比特币这个系统里，区块链的部分是确定性的，不确定性的部分是共识，且是概率性共识。确定性的部分这里暂且不论。着重讨论概率性共识。而难度调整本属于维持...</div></div>
+</div>
+</main>
+</div>
+</body>
+</html>

@@ -2,7 +2,7 @@ import os, re, json
 from collections import defaultdict
 
 src = '/Users/ice/.openclaw/workspace/inbox/p2ptalk/KnowledgeGraph'
-out = '/Users/ice/Downloads/P2PTalk_KG_HTML'
+out = '/Users/ice/.openclaw/workspace/p2ptalk-wiki-publish'
 
 # Load pages
 pages = {}

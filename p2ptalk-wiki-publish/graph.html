@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P2PTalk 知识图谱 — 动态关系图</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; }
+#toolbar { position: fixed; top: 0; left: 0; right: 0; height: 52px; background: rgba(13,17,23,0.95); border-bottom: 1px solid #30363d; display: flex; align-items: center; padding: 0 20px; gap: 24px; z-index: 100; backdrop-filter: blur(8px); }
+#toolbar h1 { font-size: 15px; color: #e94560; font-weight: 600; }
+#toolbar .subtitle { font-size: 12px; color: #8b949e; }
+#toolbar .actions { margin-left: auto; display: flex; gap: 8px; }
+.btn { background: #21262d; border: 1px solid #30363d; color: #c9d1d9; font-size: 12px; padding: 5px 12px; border-radius: 6px; cursor: pointer; }
+.btn:hover { background: #30363d; border-color: #8b949e; }
+#graph-container { width: 100%; height: 100%; }
+svg { width: 100%; height: 100%; }
+circle { cursor: pointer; stroke: rgba(255,255,255,0.2); stroke-width: 1.5px; transition: r 0.15s; }
+circle:hover { stroke: rgba(255,255,255,0.6); stroke-width: 2px; }
+line { stroke: rgba(255,255,255,0.08); stroke-width: 1px; pointer-events: none; }
+text { pointer-events: none; font-size: 10px; fill: #8b949e; }
+#panel { position: fixed; top: 52px; right: 0; bottom: 0; width: 320px; background: rgba(13,17,23,0.97); border-left: 1px solid #30363d; overflow-y: auto; display: none; z-index: 99; backdrop-filter: blur(8px); }
+#panel.active { display: block; }
+#panel-header { padding: 16px; border-bottom: 1px solid #30363d; }
+#panel-header h2 { font-size: 15px; color: #e94560; margin-bottom: 4px; }
+#panel-header .cat-tag { font-size: 11px; background: #21262d; padding: 2px 8px; border-radius: 10px; color: #8b949e; }
+#panel-header .subject { font-size: 12px; color: #8b949e; margin-top: 8px; line-height: 1.5; }
+#panel-close { float: right; background: none; border: none; color: #8b949e; font-size: 18px; cursor: pointer; padding: 0 4px; }
+#panel-close:hover { color: #fff; }
+#panel-body { padding: 16px; }
+#panel-body h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #8b949e; margin: 16px 0 8px; }
+#panel-body .link-list { display: flex; flex-direction: column; gap: 6px; }
+#panel-body .link-item { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 8px 10px; font-size: 12px; cursor: pointer; transition: border-color 0.15s; }
+#panel-body .link-item:hover { border-color: #e94560; }
+#panel-body .link-item a { color: #c9d1d9; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+#panel-body .link-item .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+#panel-body .link-item.empty { color: #8b949e; font-style: italic; }
+#legend { position: fixed; bottom: 20px; left: 20px; background: rgba(13,17,23,0.92); border: 1px solid #30363d; border-radius: 8px; padding: 12px 14px; z-index: 50; backdrop-filter: blur(8px); }
+#legend h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #8b949e; margin-bottom: 8px; }
+.legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; margin: 4px 0; cursor: pointer; }
+.legend-item:hover { color: #fff; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+#stats { position: fixed; bottom: 20px; right: 20px; background: rgba(13,17,23,0.92); border: 1px solid #30363d; border-radius: 8px; padding: 10px 14px; z-index: 50; font-size: 11px; color: #8b949e; backdrop-filter: blur(8px); }
+#stats span { color: #e94560; font-weight: 600; }
+#search { background: #0d1117; border: 1px solid #30363d; color: #c9d1d9; font-size: 13px; padding: 6px 12px; border-radius: 6px; width: 200px; outline: none; }
+#search:focus { border-color: #e94560; }
+#search::placeholder { color: #484f58; }
+#filter-group { display: flex; align-items: center; gap: 6px; }
+.filter-btn { background: none; border: 1px solid #30363d; color: #8b949e; font-size: 11px; padding: 4px 8px; border-radius: 4px; cursor: pointer; }
+.filter-btn:hover { border-color: #8b949e; color: #c9d1d9; }
+.filter-btn.active { border-color: #e94560; color: #e94560; }
+</style>
+</head>
+<body>
+<div id="toolbar">
+  <h1>P2PTalk 知识图谱</h1>
+  <span class="subtitle">双向链接可视化 · 50概念 · 88条关系</span>
+  <div id="filter-group">
+    <input type="text" id="search" placeholder="搜索概念...">
+  </div>
+  <div class="actions">
+    <button class="btn" id="btn-reset">重置视图</button>
+    <button class="btn" id="btn-all">显示全部</button>
+  </div>
+</div>
+
+<div id="graph-container"></div>
+
+<div id="panel">
+  <div id="panel-header">
+    <button id="panel-close">×</button>
+    <h2 id="panel-title">—</h2>
+    <span class="cat-tag" id="panel-cat">—</span>
+    <p class="subject" id="panel-subject">—</p>
+  </div>
+  <div id="panel-body">
+    <h3>引用此页 ↩</h3>
+    <div class="link-list" id="panel-backlinks"></div>
+    <h3>此页引用 →</h3>
+    <div class="link-list" id="panel-links"></div>
+  </div>
+</div>
+
+<div id="legend">
+  <h4>分类</h4>
+  <div id="legend-items"></div>
+</div>
+
+<div id="stats">
+  <span id="stat-nodes">50</span> 节点 · <span id="stat-links">88</span> 关系
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": "ai/AI与女巫攻击", "name": "AI与女巫攻击", "category": "ai", "subject": "AI与女巫攻击", "url": "ai/AI与女巫攻击.html", "color": "#3498db"}, {"id": "ai/AI与生产关系", "name": "AI与生产关系", "category": "ai", "subject": "AI与生产关系", "url": "ai/AI与生产关系.html", "color": "#3498db"}, {"id": "ai/自驱系统", "name": "自驱系统", "category": "ai", "subject": "自驱系统", "url": "ai/自驱系统.html", "color": "#3498db"}, {"id": "ai/闪电贷模式", "name": "闪电贷模式", "category": "ai", "subject": "闪电贷模式", "url": "ai/闪电贷模式.html", "color": "#3498db"}, {"id": "atom/Atom与Bitcoin关系", "name": "Atom与Bitcoin关系", "category": "atom", "subject": "Atom与Bitcoin关系", "url": "atom/Atom与Bitcoin关系.html", "color": "#e94560"}, {"id": "atom/Atom与Mempool", "name": "Atom与Mempool", "category": "atom", "subject": "Atom与Mempool", "url": "atom/Atom与Mempool.html", "color": "#e94560"}, {"id": "atom/Atom数据结构", "name": "Atom数据结构", "category": "atom", "subject": "Atom数据结构", "url": "atom/Atom数据结构.html", "color": "#e94560"}, {"id": "atom/Atom是什么", "name": "Atom是什么", "category": "atom", "subject": "Atom是什么", "url": "atom/Atom是什么.html", "color": "#e94560"}, {"id": "atom/Atom流转机制", "name": "Atom流转机制", "category": "atom", "subject": "Atom流转机制", "url": "atom/Atom流转机制.html", "color": "#e94560"}, {"id": "atom/Atom的信号属性", "name": "Atom的信号属性", "category": "atom", "subject": "Atom的信号属性", "url": "atom/Atom的信号属性.html", "color": "#e94560"}, {"id": "atom/Atom的独立性", "name": "Atom的独立性", "category": "atom", "subject": "Atom的独立性", "url": "atom/Atom的独立性.html", "color": "#e94560"}, {"id": "atom/CUser与CReview数据结构", "name": "CUser与CReview数据结构", "category": "atom", "subject": "CUser与CReview数据结构", "url": "atom/CUser与CReview数据结构.html", "color": "#e94560"}, {"id": "atom/IP与品牌", "name": "IP与品牌", "category": "atom", "subject": "IP与品牌", "url": "atom/IP与品牌.html", "color": "#e94560"}, {"id": "atom/Mempool不是唯一业务来源", "name": "Mempool不是唯一业务来源", "category": "atom", "subject": "Mempool不是唯一业务来源", "url": "atom/Mempool不是唯一业务来源.html", "color": "#e94560"}, {"id": "atom/Script表达能力边界", "name": "Script表达能力边界", "category": "atom", "subject": "Script表达能力边界", "url": "atom/Script表达能力边界.html", "color": "#e94560"}, {"id": "atom/创世Atom与nonce", "name": "创世Atom与nonce", "category": "atom", "subject": "创世Atom与nonce", "url": "atom/创世Atom与nonce.html", "color": "#e94560"}, {"id": "atom/双花问题", "name": "双花问题", "category": "atom", "subject": "", "url": "atom/双花问题.html", "color": "#e94560"}, {"id": "atom/可组合与可复制", "name": "可组合与可复制", "category": "atom", "subject": "可组合与可复制", "url": "atom/可组合与可复制.html", "color": "#e94560"}, {"id": "atom/挖矿必然有Mempool", "name": "挖矿必然有Mempool", "category": "atom", "subject": "挖矿必然有Mempool", "url": "atom/挖矿必然有Mempool.html", "color": "#e94560"}, {"id": "atom/比特币块出块时间作为atom", "name": "比特币块出块时间作为atom", "category": "atom", "subject": "比特币块出块时间作为atom", "url": "atom/比特币块出块时间作为atom.html", "color": "#e94560"}, {"id": "atom/脚本是谓词", "name": "脚本是谓词", "category": "atom", "subject": "脚本是谓词", "url": "atom/脚本是谓词.html", "color": "#e94560"}, {"id": "atom/观测值与节点行为", "name": "观测值与节点行为", "category": "atom", "subject": "观测值与节点行为", "url": "atom/观测值与节点行为.html", "color": "#e94560"}, {"id": "atom/谓词", "name": "谓词", "category": "atom", "subject": "谓词", "url": "atom/谓词.html", "color": "#e94560"}, {"id": "broadcast/中间会面机制", "name": "中间会面机制", "category": "broadcast", "subject": "中间会面机制", "url": "broadcast/中间会面机制.html", "color": "#9b59b6"}, {"id": "broadcast/发布订阅机制", "name": "发布订阅机制", "category": "broadcast", "subject": "发布订阅机制", "url": "broadcast/发布订阅机制.html", "color": "#9b59b6"}, {"id": "broadcast/泛洪与5跳", "name": "泛洪与5跳", "category": "broadcast", "subject": "泛洪与5跳", "url": "broadcast/泛洪与5跳.html", "color": "#9b59b6"}, {"id": "broadcast/洪泛atom的激励问题", "name": "洪泛atom的激励问题", "category": "broadcast", "subject": "洪泛atom的激励问题", "url": "broadcast/洪泛atom的激励问题.html", "color": "#9b59b6"}, {"id": "broadcast/网络拓扑与衰减因子", "name": "网络拓扑与衰减因子", "category": "broadcast", "subject": "网络拓扑与衰减因子", "url": "broadcast/网络拓扑与衰减因子.html", "color": "#9b59b6"}, {"id": "broadcast/节点与SPV轻节点", "name": "节点与SPV轻节点", "category": "broadcast", "subject": "节点与SPV轻节点", "url": "broadcast/节点与SPV轻节点.html", "color": "#9b59b6"}, {"id": "consensus/BitDNS与P2P市场", "name": "BitDNS与P2P市场", "category": "consensus", "subject": "BitDNS与P2P市场", "url": "consensus/BitDNS与P2P市场.html", "color": "#0f9b8e"}, {"id": "consensus/Bitcoin难度调整三问", "name": "Bitcoin难度调整三问", "category": "consensus", "subject": "Bitcoin难度调整三问", "url": "consensus/Bitcoin难度调整三问.html", "color": "#0f9b8e"}, {"id": "consensus/hashcash与POW", "name": "hashcash与POW", "category": "consensus", "subject": "hashcash与POW", "url": "consensus/hashcash与POW.html", "color": "#0f9b8e"}, {"id": "consensus/不可逆性与激励", "name": "不可逆性与激励", "category": "consensus", "subject": "不可逆性与激励", "url": "consensus/不可逆性与激励.html", "color": "#0f9b8e"}, {"id": "consensus/中本聪共识原理", "name": "中本聪共识原理", "category": "consensus", "subject": "中本聪共识原理", "url": "consensus/中本聪共识原理.html", "color": "#0f9b8e"}, {"id": "consensus/传播算法与生产关系", "name": "传播算法与生产关系", "category": "consensus", "subject": "传播算法与生产关系", "url": "consensus/传播算法与生产关系.html", "color": "#0f9b8e"}, {"id": "consensus/元胞自动机", "name": "元胞自动机", "category": "consensus", "subject": "元胞自动机", "url": "consensus/元胞自动机.html", "color": "#0f9b8e"}, {"id": "consensus/比特币升级参考", "name": "比特币升级参考", "category": "consensus", "subject": "比特币升级参考", "url": "consensus/比特币升级参考.html", "color": "#0f9b8e"}, {"id": "consensus/研究推动与洞察迭代", "name": "研究推动与洞察迭代", "category": "consensus", "subject": "研究推动与洞察迭代", "url": "consensus/研究推动与洞察迭代.html", "color": "#0f9b8e"}, {"id": "consensus/竞争与押注", "name": "竞争与押注", "category": "consensus", "subject": "竞争与押注", "url": "consensus/竞争与押注.html", "color": "#0f9b8e"}, {"id": "consensus/难度调整", "name": "难度调整", "category": "consensus", "subject": "难度调整", "url": "consensus/难度调整.html", "color": "#0f9b8e"}, {"id": "market/匹配系统", "name": "匹配系统", "category": "market", "subject": "匹配系统", "url": "market/匹配系统.html", "color": "#f39c12"}, {"id": "market/商品与声誉", "name": "商品与声誉", "category": "market", "subject": "商品与声誉", "url": "market/商品与声誉.html", "color": "#f39c12"}, {"id": "market/声誉与市场", "name": "声誉与市场", "category": "market", "subject": "声誉与市场", "url": "market/声誉与市场.html", "color": "#f39c12"}, {"id": "market/算力市场", "name": "算力市场", "category": "market", "subject": "算力市场", "url": "market/算力市场.html", "color": "#f39c12"}, {"id": "math/向量空间模型", "name": "向量空间模型", "category": "math", "subject": "向量空间模型", "url": "math/向量空间模型.html", "color": "#1abc9c"}, {"id": "math/图论与集聚性", "name": "图论与集聚性", "category": "math", "subject": "图论与集聚性", "url": "math/图论与集聚性.html", "color": "#1abc9c"}, {"id": "meeting/会议共识", "name": "会议共识", "category": "meeting", "subject": "会议共识", "url": "meeting/会议共识.html", "color": "#95a5a6"}, {"id": "meeting/会议规则与激励闭环", "name": "会议规则与激励闭环", "category": "meeting", "subject": "会议规则与激励闭环", "url": "meeting/会议规则与激励闭环.html", "color": "#95a5a6"}, {"id": "security/女巫攻击防护", "name": "女巫攻击防护", "category": "security", "subject": "女巫攻击防护", "url": "security/女巫攻击防护.html", "color": "#e67e22"}, {"id": "security/时间锁与多签机制", "name": "时间锁与多签机制", "category": "security", "subject": "时间锁与多签机制", "url": "security/时间锁与多签机制.html", "color": "#e67e22"}, {"id": "security/预信任节点", "name": "预信任节点", "category": "security", "subject": "预信任节点", "url": "security/预信任节点.html", "color": "#e67e22"}, {"id": "person/雷雷", "name": "雷雷", "val": 20, "subject": "雷雷 · 8个概念 · 17条消息", "url": "person_LeiLei.html", "color": "#667eea"}, {"id": "person/Woo", "name": "Woo", "val": 20, "subject": "Woo · 12个概念 · 39条消息", "url": "person_Woo.html", "color": "#667eea"}, {"id": "person/胥亚朋", "name": "胥亚朋", "val": 20, "subject": "胥亚朋 · 11个概念 · 55条消息", "url": "person_XuYapeng.html", "color": "#667eea"}, {"id": "person/沄涣", "name": "沄涣", "val": 20, "subject": "沄涣 · 12个概念 · 53条消息", "url": "person_YunHuan.html", "color": "#667eea"}, {"id": "person/icekernel", "name": "icekernel", "val": 20, "subject": "icekernel · 4个概念 · 21条消息", "url": "person_icekernel.html", "color": "#667eea"}, {"id": "person/矢孤", "name": "矢孤", "val": 20, "subject": "矢孤 · 15个概念 · 73条消息", "url": "person_ShiGu.html", "color": "#667eea"}, {"id": "person/文博", "name": "文博", "val": 20, "subject": "文博 · 11个概念 · 37条消息", "url": "person_WenBo.html", "color": "#667eea"}, {"id": "person/叶鹏", "name": "叶鹏", "val": 20, "subject": "叶鹏 · 8个概念 · 32条消息", "url": "person_YePeng.html", "color": "#667eea"}], "links": [{"source": 0, "target": 1}, {"source": 0, "target": 48}, {"source": 1, "target": 0}, {"source": 1, "target": 22}, {"source": 2, "target": 1}, {"source": 3, "target": 1}, {"source": 4, "target": 7}, {"source": 4, "target": 31}, {"source": 5, "target": 7}, {"source": 6, "target": 8}, {"source": 6, "target": 46}, {"source": 7, "target": 9}, {"source": 7, "target": 31}, {"source": 8, "target": 6}, {"source": 8, "target": 23}, {"source": 9, "target": 7}, {"source": 9, "target": 6}, {"source": 10, "target": 7}, {"source": 11, "target": 6}, {"source": 11, "target": 27}, {"source": 12, "target": 17}, {"source": 12, "target": 42}, {"source": 13, "target": 5}, {"source": 13, "target": 11}, {"source": 14, "target": 20}, {"source": 14, "target": 22}, {"source": 14, "target": 33}, {"source": 14, "target": 29}, {"source": 15, "target": 31}, {"source": 15, "target": 6}, {"source": 16, "target": 12}, {"source": 16, "target": 17}, {"source": 16, "target": 48}, {"source": 17, "target": 7}, {"source": 17, "target": 44}, {"source": 18, "target": 5}, {"source": 19, "target": 7}, {"source": 19, "target": 39}, {"source": 20, "target": 14}, {"source": 20, "target": 22}, {"source": 20, "target": 29}, {"source": 20, "target": 33}, {"source": 21, "target": 6}, {"source": 21, "target": 28}, {"source": 22, "target": 23}, {"source": 22, "target": 1}, {"source": 23, "target": 22}, {"source": 23, "target": 25}, {"source": 24, "target": 23}, {"source": 24, "target": 40}, {"source": 25, "target": 23}, {"source": 26, "target": 23}, {"source": 26, "target": 42}, {"source": 27, "target": 25}, {"source": 27, "target": 8}, {"source": 28, "target": 23}, {"source": 29, "target": 14}, {"source": 29, "target": 34}, {"source": 29, "target": 42}, {"source": 30, "target": 39}, {"source": 30, "target": 31}, {"source": 31, "target": 39}, {"source": 31, "target": 48}, {"source": 32, "target": 31}, {"source": 32, "target": 39}, {"source": 33, "target": 31}, {"source": 33, "target": 39}, {"source": 34, "target": 23}, {"source": 34, "target": 1}, {"source": 35, "target": 44}, {"source": 35, "target": 12}, {"source": 35, "target": 34}, {"source": 35, "target": 23}, {"source": 36, "target": 31}, {"source": 37, "target": 46}, {"source": 38, "target": 34}, {"source": 39, "target": 31}, {"source": 40, "target": 23}, {"source": 40, "target": 42}, {"source": 41, "target": 42}, {"source": 42, "target": 40}, {"source": 42, "target": 23}, {"source": 43, "target": 42}, {"source": 43, "target": 46}, {"source": 44, "target": 35}, {"source": 44, "target": 17}, {"source": 45, "target": 44}, {"source": 46, "target": 23}, {"source": 47, "target": 46}, {"source": 47, "target": 43}, {"source": 48, "target": 0}, {"source": 48, "target": 31}, {"source": 49, "target": 48}, {"source": 49, "target": 0}, {"source": 50, "target": 48}, {"source": 50, "target": 28}, {"source": "person/雷雷", "target": "concept/atom/谓词", "value": 1}, {"source": "person/雷雷", "target": "concept/consensus/传播算法与生产关系", "value": 1}, {"source": "person/雷雷", "target": "concept/broadcast/中间会面机制", "value": 1}, {"source": "person/雷雷", "target": "concept/broadcast/泛洪与5跳", "value": 1}, {"source": "person/雷雷", "target": "concept/security/女巫攻击防护", "value": 1}, {"source": "person/雷雷", "target": "concept/consensus/难度调整", "value": 1}, {"source": "person/雷雷", "target": "concept/market/声誉与市场", "value": 1}, {"source": "person/雷雷", "target": "concept/consensus/hashcash与POW", "value": 1}, {"source": "person/Woo", "target": "concept/consensus/传播算法与生产关系", "value": 1}, {"source": "person/Woo", "target": "concept/broadcast/中间会面机制", "value": 1}, {"source": "person/Woo", "target": "concept/consensus/难度调整", "value": 1}, {"source": "person/Woo", "target": "concept/consensus/不可逆性与激励", "value": 1}, {"source": "person/Woo", "target": "concept/consensus/hashcash与POW", "value": 1}, {"source": "person/Woo", "target": "concept/market/声誉与市场", "value": 1}, {"source": "person/Woo", "target": "concept/atom/谓词", "value": 1}, {"source": "person/Woo", "target": "concept/consensus/元胞自动机", "value": 1}, {"source": "person/Woo", "target": "concept/atom/Atom数据结构", "value": 1}, {"source": "person/Woo", "target": "concept/broadcast/泛洪与5跳", "value": 1}, {"source": "person/Woo", "target": "concept/security/女巫攻击防护", "value": 1}, {"source": "person/Woo", "target": "concept/atom/Atom与Bitcoin关系", "value": 1}, {"source": "person/胥亚朋", "target": "concept/broadcast/中间会面机制", "value": 1}, {"source": "person/胥亚朋", "target": "concept/broadcast/泛洪与5跳", "value": 1}, {"source": "person/胥亚朋", "target": "concept/broadcast/洪泛atom的激励问题", "value": 1}, {"source": "person/胥亚朋", "target": "concept/broadcast/节点与SPV轻节点", "value": 1}, {"source": "person/胥亚朋", "target": "concept/consensus/难度调整", "value": 1}, {"source": "person/胥亚朋", "target": "concept/market/声誉与市场", "value": 1}, {"source": "person/胥亚朋", "target": "concept/atom/Atom数据结构", "value": 1}, {"source": "person/胥亚朋", "target": "concept/atom/谓词", "value": 1}, {"source": "person/胥亚朋", "target": "concept/consensus/hashcash与POW", "value": 1}, {"source": "person/胥亚朋", "target": "concept/security/女巫攻击防护", "value": 1}, {"source": "person/胥亚朋", "target": "concept/consensus/BitDNS与P2P市场", "value": 1}, {"source": "person/沄涣", "target": "concept/broadcast/中间会面机制", "value": 1}, {"source": "person/沄涣", "target": "concept/broadcast/泛洪与5跳", "value": 1}, {"source": "person/沄涣", "target": "concept/consensus/难度调整", "value": 1}, {"source": "person/沄涣", "target": "concept/atom/Atom数据结构", "value": 1}, {"source": "person/沄涣", "target": "concept/market/声誉与市场", "value": 1}, {"source": "person/沄涣", "target": "concept/consensus/Bitcoin难度调整三问", "value": 1}, {"source": "person/沄涣", "target": "concept/atom/谓词", "value": 1}, {"source": "person/沄涣", "target": "concept/consensus/hashcash与POW", "value": 1}, {"source": "person/沄涣", "target": "concept/security/女巫攻击防护", "value": 1}, {"source": "person/沄涣", "target": "concept/atom/Atom是什么", "value": 1}, {"source": "person/沄涣", "target": "concept/consensus/BitDNS与P2P市场", "value": 1}, {"source": "person/沄涣", "target": "concept/consensus/传播算法与生产关系", "value": 1}, {"source": "person/icekernel", "target": "concept/consensus/难度调整", "value": 1}, {"source": "person/icekernel", "target": "concept/market/声誉与市场", "value": 1}, {"source": "person/icekernel", "target": "concept/atom/Atom数据结构", "value": 1}, {"source": "person/icekernel", "target": "concept/consensus/hashcash与POW", "value": 1}, {"source": "person/矢孤", "target": "concept/consensus/难度调整", "value": 1}, {"source": "person/矢孤", "target": "concept/consensus/hashcash与POW", "value": 1}, {"source": "person/矢孤", "target": "concept/consensus/不可逆性与激励", "value": 1}, {"source": "person/矢孤", "target": "concept/broadcast/中间会面机制", "value": 1}, {"source": "person/矢孤", "target": "concept/market/声誉与市场", "value": 1}, {"source": "person/矢孤", "target": "concept/atom/Atom数据结构", "value": 1}, {"source": "person/矢孤", "target": "concept/consensus/Bitcoin难度调整三问", "value": 1}, {"source": "person/矢孤", "target": "concept/broadcast/洪泛atom的激励问题", "value": 1}, {"source": "person/矢孤", "target": "concept/broadcast/泛洪与5跳", "value": 1}, {"source": "person/矢孤", "target": "concept/broadcast/节点与SPV轻节点", "value": 1}, {"source": "person/矢孤", "target": "concept/atom/谓词", "value": 1}, {"source": "person/矢孤", "target": "concept/consensus/传播算法与生产关系", "value": 1}, {"source": "person/矢孤", "target": "concept/market/匹配系统", "value": 1}, {"source": "person/矢孤", "target": "concept/atom/Atom与Bitcoin关系", "value": 1}, {"source": "person/矢孤", "target": "concept/consensus/BitDNS与P2P市场", "value": 1}, {"source": "person/文博", "target": "concept/consensus/难度调整", "value": 1}, {"source": "person/文博", "target": "concept/consensus/hashcash与POW", "value": 1}, {"source": "person/文博", "target": "concept/broadcast/中间会面机制", "value": 1}, {"source": "person/文博", "target": "concept/market/声誉与市场", "value": 1}, {"source": "person/文博", "target": "concept/atom/Atom数据结构", "value": 1}, {"source": "person/文博", "target": "concept/broadcast/泛洪与5跳", "value": 1}, {"source": "person/文博", "target": "concept/broadcast/节点与SPV轻节点", "value": 1}, {"source": "person/文博", "target": "concept/consensus/传播算法与生产关系", "value": 1}, {"source": "person/文博", "target": "concept/atom/谓词", "value": 1}, {"source": "person/文博", "target": "concept/atom/Atom与Bitcoin关系", "value": 1}, {"source": "person/文博", "target": "concept/security/女巫攻击防护", "value": 1}, {"source": "person/叶鹏", "target": "concept/atom/Atom数据结构", "value": 1}, {"source": "person/叶鹏", "target": "concept/atom/谓词", "value": 1}, {"source": "person/叶鹏", "target": "concept/broadcast/中间会面机制", "value": 1}, {"source": "person/叶鹏", "target": "concept/broadcast/泛洪与5跳", "value": 1}, {"source": "person/叶鹏", "target": "concept/consensus/元胞自动机", "value": 1}, {"source": "person/叶鹏", "target": "concept/consensus/难度调整", "value": 1}, {"source": "person/叶鹏", "target": "concept/consensus/hashcash与POW", "value": 1}, {"source": "person/叶鹏", "target": "concept/consensus/中本聪共识原理", "value": 1}]};
+
+const catColors = {"atom": "#e94560", "consensus": "#0f9b8e", "broadcast": "#9b59b6", "market": "#f39c12", "ai": "#3498db", "security": "#e67e22", "math": "#1abc9c", "meeting": "#95a5a6"};
+const catOrder = ["atom", "consensus", "broadcast", "meeting", "market", "ai", "security", "math"];
+
+// Build adjacency FIRST, before forceLink touches anything
+const outLinks = {};
+const inLinks = {};
+DATA.nodes.forEach(n => { outLinks[n.id] = []; inLinks[n.id] = []; });
+DATA.links.forEach(l => {
+  // Handle all three possible types of source/target: number (index), object (node), or string (id)
+  const s = typeof l.source === 'number' ? DATA.nodes[l.source]?.id : (l.source?.id || l.source);
+  const t = typeof l.target === 'number' ? DATA.nodes[l.target]?.id : (l.target?.id || l.target);
+  outLinks[s] = outLinks[s] || [];
+  inLinks[t] = inLinks[t] || [];
+  outLinks[s].push(t);
+  inLinks[t].push(s);
+});
+
+// Convert ALL link source/target to string IDs before simulation
+DATA.links.forEach(l => {
+  if (typeof l.source === 'object') l.source = l.source.id;
+  if (typeof l.target === 'object') l.target = l.target.id;
+  if (typeof l.source === 'number') l.source = DATA.nodes[l.source]?.id || l.source;
+  if (typeof l.target === 'number') l.target = DATA.nodes[l.target]?.id || l.target;
+});
+
+const container = document.getElementById('graph-container');
+const W = window.innerWidth;
+const H = window.innerHeight - 52;
+const width = W;
+const height = H;
+
+// Simulation
+const simulation = d3.forceSimulation(DATA.nodes)
+  .force('link', d3.forceLink(DATA.links).id(d => d.id).distance(90).strength(0.4))
+  .force('charge', d3.forceManyBody().strength(-280))
+  .force('center', d3.forceCenter(W / 2, H / 2))
+  .force('collision', d3.forceCollide(18))
+  .alphaDecay(0.028);
+
+const svg = d3.select('#graph-container').append('svg')
+  .attr('width', W)
+  .attr('height', H);
+
+const g = svg.append('g');
+
+// Zoom
+const zoom = d3.zoom()
+  .scaleExtent([0.2, 4])
+  .on('zoom', e => g.attr('transform', e.transform));
+svg.call(zoom);
+svg.on('dblclick.zoom', null);
+
+// Links
+const link = g.append('g').selectAll('line')
+  .data(DATA.links)
+  .join('line')
+  .attr('class', 'link')
+  .attr('stroke', 'rgba(255,255,255,0.1)');
+
+// Node groups
+const node = g.append('g').selectAll('g')
+  .data(DATA.nodes)
+  .join('g')
+  .attr('class', 'node-group')
+  .call(d3.drag()
+    .on('start', (e, d) => {
+      if (!e.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x; d.fy = d.y;
+    })
+    .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
+    .on('end', (e, d) => {
+      if (!e.active) simulation.alphaTarget(0);
+      d.fx = null; d.fy = null;
+    }));
+
+// Circles
+const circle = node.append('circle')
+  .attr('r', d => {
+    const conn = (outLinks[d.id]?.length || 0) + (inLinks[d.id]?.length || 0);
+    return 8 + Math.min(conn * 1.5, 14);
+  })
+  .attr('fill', d => d.color)
+  .attr('opacity', 0.85);
+
+// Labels (only show for high-degree nodes by default)
+const label = node.append('text')
+  .text(d => d.name)
+  .attr('text-anchor', 'middle')
+  .attr('dy', d => {
+    const conn = (outLinks[d.id]?.length || 0) + (inLinks[d.id]?.length || 0);
+    return 8 + Math.min(conn * 1.5, 14) + 12;
+  })
+  .style('font-size', '10px')
+  .style('fill', '#8b949e')
+  .style('pointer-events', 'none');
+
+// Click to open panel
+node.on('click', (e, d) => {
+  e.stopPropagation();
+  openPanel(d);
+});
+
+// Click background to close
+svg.on('click', () => closePanel());
+
+// Tick
+simulation.on('tick', () => {
+  link
+    .attr('x1', d => d.source.x)
+    .attr('y1', d => d.source.y)
+    .attr('x2', d => d.target.x)
+    .attr('y2', d => d.target.y);
+  node.attr('transform', d => `translate(${d.x},${d.y})`);
+});
+
+// Panel
+function openPanel(d) {
+  document.getElementById('panel').classList.add('active');
+  document.getElementById('panel-title').textContent = d.name;
+  document.getElementById('panel-cat').textContent = d.category;
+  document.getElementById('panel-cat').style.background = d.color + '33';
+  document.getElementById('panel-cat').style.color = d.color;
+  document.getElementById('panel-subject').textContent = d.subject || '—';
+
+  const bl = document.getElementById('panel-backlinks');
+  const ol = document.getElementById('panel-links');
+  bl.innerHTML = '';
+  ol.innerHTML = '';
+
+  const inL = inLinks[d.id] || [];
+  const outL = outLinks[d.id] || [];
+
+  if (inL.length === 0) bl.innerHTML = '<div class="link-item empty">暂无反向引用</div>';
+  inL.forEach(tid => {
+    const n = DATA.nodes.find(x => x.id === tid);
+    if (!n) return;
+    bl.innerHTML += `<div class="link-item" onclick="jumpTo('${n.id}')"><span class="dot" style="background:${n.color}"></span><a href="${n.url}">${n.name}</a><span style="color:#8b949e;font-size:10px;margin-left:auto">in ${n.category}</span></div>`;
+  });
+
+  if (outL.length === 0) ol.innerHTML = '<div class="link-item empty">暂无引用</div>';
+  outL.forEach(tid => {
+    const n = DATA.nodes.find(x => x.id === tid);
+    if (!n) return;
+    ol.innerHTML += `<div class="link-item" onclick="jumpTo('${n.id}')"><span class="dot" style="background:${n.color}"></span><a href="${n.url}">${n.name}</a><span style="color:#8b949e;font-size:10px;margin-left:auto">in ${n.category}</span></div>`;
+  });
+
+  // Highlight
+  circle.attr('opacity', d => {
+    if (d.id === d.id || inL.includes(d.id) || outL.includes(d.id)) return 1;
+    return 0.2;
+  });
+  link.attr('stroke', l => {
+    const s = l.source.id || l.source;
+    const t = l.target.id || l.target;
+    if (s === d.id || t === d.id) return 'rgba(233,69,96,0.5)';
+    return 'rgba(255,255,255,0.04)';
+  }).attr('stroke-width', l => {
+    const s = l.source.id || l.source;
+    const t = l.target.id || l.target;
+    return (s === d.id || t === d.id) ? 2 : 1;
+  });
+}
+
+function closePanel() {
+  document.getElementById('panel').classList.remove('active');
+  circle.attr('opacity', 0.85);
+  link.attr('stroke', 'rgba(255,255,255,0.1)').attr('stroke-width', 1);
+}
+
+window.jumpTo = function(id) {
+  const n = DATA.nodes.find(x => x.id === id);
+  if (n) {
+    openPanel(n);
+    // Center view on node
+    svg.transition().duration(500).call(
+      zoom.transform,
+      d3.zoomIdentity.translate(width/2 - n.x, height/2 - n.y)
+    );
+  }
+};
+
+// Reset button
+document.getElementById('btn-reset').onclick = () => {
+  simulation.alpha(0.8).restart();
+  svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+  closePanel();
+};
+
+// Show all
+document.getElementById('btn-all').onclick = () => {
+  closePanel();
+  circle.attr('opacity', 0.85);
+  label.text(d => d.name);
+};
+
+// Search
+const searchInput = document.getElementById('search');
+searchInput.oninput = () => {
+  const q = searchInput.value.trim().toLowerCase();
+  if (!q) {
+    circle.attr('opacity', 0.85);
+    label.text(d => d.name).style('opacity', 1);
+    return;
+  }
+  circle.attr('opacity', d => {
+    const match = d.name.toLowerCase().includes(q) || (d.subject && d.subject.toLowerCase().includes(q));
+    return match ? 1 : 0.08;
+  });
+  label.text(d => {
+    const match = d.name.toLowerCase().includes(q) || (d.subject && d.subject.toLowerCase().includes(q));
+    return match ? d.name : '';
+  });
+};
+
+// Legend
+const legendEl = document.getElementById('legend-items');
+catOrder.forEach(cat => {
+  const count = DATA.nodes.filter(n => n.category === cat).length;
+  if (count === 0) return;
+  const color = catColors[cat];
+  const item = document.createElement('div');
+  item.className = 'legend-item';
+  item.innerHTML = `<span class="legend-dot" style="background:${color}"></span>${cat} (${count})`;
+  item.onclick = () => {
+    const others = DATA.nodes.filter(n => n.category !== cat);
+    circle.attr('opacity', d => d.category === cat ? 1 : 0.08);
+    label.text(d => d.category === cat ? d.name : '');
+  };
+  legendEl.appendChild(item);
+});
+
+// Stats
+document.getElementById('stat-nodes').textContent = DATA.nodes.length;
+document.getElementById('stat-links').textContent = DATA.links.length;
+
+// Center initially
+svg.call(zoom.transform, d3.zoomIdentity.translate(width*0.05, height*0.05).scale(0.85));
+</script>
+</body>
+</html>

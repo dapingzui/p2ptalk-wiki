@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Woo - 参与者 · P2PTalk 知识图谱</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.person-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+.person-header h1 {
+    margin: 0 0 8px 0;
+    font-size: 28px;
+}
+.person-header .meta {
+    opacity: 0.85;
+    font-size: 14px;
+}
+.concept-tag {
+    display: inline-block;
+    background: rgba(102, 126, 234, 0.12);
+    color: #667eea;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin: 3px;
+    text-decoration: none;
+}
+.concept-tag:hover {
+    background: rgba(102, 126, 234, 0.22);
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<div class="sidebar"><div class="sidebar">\n<h2>导航</h2>\n<a href="graph.html">📊 知识图谱</a>\n<h2>人物 <span class="cat-count">9</span></h2>\n<a href="person_ShiGu.html" class="">矢孤</a>\n<a href="person_Woo.html" class="active">Woo</a>\n<a href="person_XuYapeng.html" class="">胥亚朋</a>\n<a href="person_YunHuan.html" class="">沄涣</a>\n<a href="person_YePeng.html" class="">叶鹏</a>\n<a href="person_icekernel.html" class="">icekernel</a>\n<a href="person_WenBo.html" class="">文博</a>\n<a href="person_Bin Ma.html" class="">Bin Ma</a>\n<a href="person_LeiLei.html" class="">雷雷</a>\n</div>\n</div>
+<main class="content">
+<div class="person-header">
+<h1>Woo</h1>
+<div class="meta">39 条消息 · 12 个概念</div>
+</div>
+<h2>📌 参与的概念</h2>
+<div class="concept-list"><a href="consensus/传播算法与生产关系" class="concept-tag">consensus/传播算法与生产关系</a>
+<a href="broadcast/中间会面机制" class="concept-tag">broadcast/中间会面机制</a>
+<a href="consensus/难度调整" class="concept-tag">consensus/难度调整</a>
+<a href="consensus/不可逆性与激励" class="concept-tag">consensus/不可逆性与激励</a>
+<a href="consensus/hashcash与POW" class="concept-tag">consensus/hashcash与POW</a>
+<a href="market/声誉与市场" class="concept-tag">market/声誉与市场</a>
+<a href="atom/谓词" class="concept-tag">atom/谓词</a>
+<a href="consensus/元胞自动机" class="concept-tag">consensus/元胞自动机</a>
+<a href="atom/Atom数据结构" class="concept-tag">atom/Atom数据结构</a>
+<a href="broadcast/泛洪与5跳" class="concept-tag">broadcast/泛洪与5跳</a>
+<a href="security/女巫攻击防护" class="concept-tag">security/女巫攻击防护</a>
+<a href="atom/Atom与Bitcoin关系" class="concept-tag">atom/Atom与Bitcoin关系</a></div>
+<h2>💬 消息时间线 (39 条)</h2>
+<div class="ptl-month"><div class="ptl-month-label">📅 1970-01 · 39条</div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Broadcast: Project by Woo, Use Music as Timer</span><div class="ptl-body">Dear all,    Hope this email finds you well.    这个是我的项目，概念是现在还没有概念，动作是用一个钟单曲循环一首歌。    付出了工作量，达到表达目的，每一集都会换一首歌，内容就是音乐。    Here is the link. CCS1E1 <https://youtu.be/muAtpUfqHY4>  Hope you enjoy it.    ...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">比特币通讯规则实验，有激励！</span><div class="ptl-body">大家好，  在这里将试验执行比特币通讯规则，比特币是系统和节点的交互，节点和节点之间并没有交互，所以我理解本次发起交互是我作为系统向本地节点发送交互申请，激励是我做了一个组织的最长链记录，感兴趣可以完成工作量证明并提交（在下文会详细说明），验证后发送激励。    节点发出广播->节点接收广播->验证最重pow，交易，难度->计算nounce->添加区块->节点发出广播    为了防女巫，激励发送方...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 领取计算任务</span><div class="ptl-body">1.难度调整算法到底是怎么具体运行的  2.难度调整算法和哈希计算的关系是什么  3. 比特币提供的这种真的激励的感觉是来源于不可逆性吗，在现实中，在任务完成的那一刻，难度转变为零。这个过程发生了什么，这种状态转换是怎么完成的。    On Fri, Dec 26, 2025 at 3:57 PM 胥亚朋 <xuyapeng110@gmail.com> wrote:    > 1.哈希计算的真实性...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 领取计算任务</span><div class="ptl-body">前两个问题我看了一遍代码，难度调整算法是DAA difficulty adjustment algorithm。具体流程如下    1.难度调整算法到底是怎么具体运行的    A.得到难度   1.检查区块高度是否2016的倍数   2.  计算总花费时长用第最新区块往前数2016个区块，设为第一个区块，得到时间戳，用最新区块的时间戳减去第一个区块的时间戳，得到实际花费时间（actualtimes...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 领取计算任务</span><div class="ptl-body">补充 两个问题  1.哈希前的header的字段设计是不是跟计算成本有关系  2.计算出来的nonce在计算出来之前是不存在的，为什么计算出来就是真实存在      On Mon, Dec 29, 2025 at 1:36 PM Woo c <godfrey9802@gmail.com> wrote:    > 前两个问题我看了一遍代码，难度调整算法是DAA difficulty adjustme...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 广播新nonce:广播和p2pmarket的关系</span><div class="ptl-body">1. 跳变的形式化带来广播的重要性，引出广播是带激励的，老史一直在广播其他人的块，其实是把计算的一部分声誉分到到广播的人身上。  2. 难度调整在于组织内部个人觉得这个事情很难的时候出现新的难度。  3.  p2pmarket的声誉传播机制有pos影子，暂时先不讨论atom的通胀与币的关系，重点在于如何抹平p2p大声誉账户的优势，以及如何获得“币”的奖励，初始的点子是通过pow来“防女巫”  ak...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">p2p group 现实名称修改</span><div class="ptl-body">可以在这里修改自己在group里面显示的名字，都改一下吧 [image: 截屏2025-12-30 18.48.00.png]</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: NONCE 创世原子，Genesis Atom</span><div class="ptl-body">在p2pmarket里面找不到对应的广播激励是因为代码里面并没有声誉生产的机制。但是已经足够精彩。让人浮想联翩。  1. 在p2p market里面广播行为是针对与他人的行动，与自己激励无关。 广播自己并不会获得任何的atom。但是可以使用别人的声誉进行广播 可以结合最近nonce进行设计。 2. 难度调整算法需要用于流速的调整，以及创世原子的产生。  都到这里了，不做个工具出来计算我们组织的at...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 广播新nonce:广播和p2pmarket的关系</span><div class="ptl-body">首先文博的问题，这个传递的逻辑是这样的， A的AtomsOut 有[50,51,52,100] 这四个原子都会复制一份进入  B的AtomsNew，当B的AtomsIn的原子数量达到流速阈值或者B的AtomsOut为空时，会触发合并和原子的转移。  首先进行去重，去重后所有的原子会进入AtomsIn，去重后的原子会经过随机筛选后进入 B的AtomsOut，然后清空AtomsNew。  当A的原子进...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 广播新nonce:广播和p2pmarket的关系</span><div class="ptl-body">补充，关于谨慎类比那一部分，我认为market的设计跟BTC本身是有逻辑关系的，所以类比的时候会把它们当成是两个类似的设计，但可能他们之间有逻辑关系。代码里面还没有办法证明这个meme，所以是这样想的  On Wednesday, December 31, 2025 at 4:04:40 PM UTC+8 Woo wrote:  > 首先文博的问题，这个传递的逻辑是这样的， A的AtomsOut ...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 广播新nonce:广播和p2pmarket的关系</span><div class="ptl-body">我不知道他会不会在不同的节点执行这个操作，所以我没有考虑这个问题，这个计算应该不需要分布式节点来操作，我理解你这里是关于这个账本以谁为准的问题，按照比特币的逻辑是广播的为准，这里确实可以讨论，atom的账本应该怎么设计  On Wednesday, December 31, 2025 at 4:20:43 PM UTC+8 文博 wrote:  > 这个传递的逻辑是这样的，但是我想讲的部分是，A-...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">会议：讨论market与广播</span><div class="ptl-body">https://meet.google.com/bzt-yera-hur</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 强制同步最长链</span><div class="ptl-body">抽象出来的问题是，比特币系统的防双花需求和Atom天然的冲突，但是中本聪又没有设计另一套通讯系统和mempool给Atom，但是要向atom提出使用需求，目前方向是放在mempool如何实现，第一步是计算Atom机制如何在mempool这里呈现  根据速战速提案，无法引用本次nonce，原因如下 1，需要时间学习mempool 2，Atom在main.cpp和net.cpp的部分还没看完需要搞清楚...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re:</span><div class="ptl-body">阅读指南 灰色的是注释，黑色是正文，绿色是业务内容。红色是问题。  Atom=信用  信用在履约时产生，违约时销毁  无信用用户在需要信用时需要担保，担保人需要回报，被担保人需要成本。  以ATOM为锚的动态茶水费交易系统。  Atom=信用； Coin=面额； 交易应有周期性； 信用也应有周期性；  用户A和用户B需要建立交易的基础，矿工M（Miner）作为担保，A，B分别支付X茶水费给M，A，...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 强制同步最长链</span><div class="ptl-body">同意叶鹏观点，用图论来表示拥有atom的用户的联系是不够的，在一个空间里面计算向量，矩阵看起来确实是一个解，增加一个atom等于增加一个向量，向量在空间里面的变化会导致形状改变，矩阵能在3维完成这个工作，这里需要讨论的是，atom是不是无限维，是否可以压缩，是否可以计算。听懂的可以拉会讨论。  我觉得ATOM跟比特币有本质上的区别。所以，atom本身不存在业务需求，所以atom本身不应该进入mem...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 请求同步周一会议内容</span><div class="ptl-body">1. Atom是信用  2. Atom不进入mempool，Atom支持的业务进入mempool  3. Atom应该有周期性  4. 我提供的模型包含叶鹏昨天的内容    On Tue, Jan 20, 2026 at 7:40 PM shijingyao123 <shijingyao123@gmail.com>  wrote:    > 请参会者在这封邮件下同步个人昨天会议的内容的理解  > ...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 周四会议同步</span><div class="ptl-body">null  On Friday, January 23, 2026 at 4:35:35 PM UTC+8 xuyapeng110 wrote:  > 会前同步一定会带着自己现有的计算内容，这些计算内容就是自己的重点，每个人的重点肯定和自己的计算有关，所以会前同步的分歧会比会后同步要大,因为有夹私货。 > > 关于关系，最新进展在拓扑图中重要的节点和谁连接你多少无关，和你到其他节点的最短路径有关，...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 周五会议同步</span><div class="ptl-body">周五聊了三位工程各自对atom的设计 文博的观点在周五没有发表，这里不提及  我对于叶鹏和亚鹏的观点理解上市有难度的，因为我在他们的观点里面没有找到我自己的逻辑链路去理解他们在表达什么。 后来跟亚鹏对话，发现难度在于我并不知道造锤子的逻辑，需要理解他们的语言必须要有一点造锤子的基础知识/基本逻辑。  对话后得出结论 他们都是基于atom Cuser字段里面的linksout 在给linksout里...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 周一会议同步</span><div class="ptl-body">从btc到基础理论知识到工程，现在再回到btc的传播算法    lei lei <spaceminer2011@gmail.com>于2026年1月27日 周二20:11写道：    >  >    1. 从memepool跳变到传播算法，不同的传播算法意味可以组织不同的生产关系。  >    2. 从做项目的角度来看，memepool的机制设计与共识机制有直接的关联。共识机制的核心就是传播算法。...</div></div>
+<div class="ptl-msg"><span class="ptl-time">1970-01-01 08:00</span><span class="ptl-subj">Re: 2 月 2 日会议前置工作</span><div class="ptl-body">上周对于atom与比特币的类比发表了怀疑观点 atom应该是一个较完善的系统 On Monday, February 2, 2026 at 4:12:05 PM UTC+8 leilei wrote:  > 上次会议有事未能参加，同步个人思维链： > >    1. 硬件，内存，带宽等物理结构，因为算法设计时不能假设节点具有无限能力，因此算法设计需要在有限的资源内更合理的运用资源，减少浪费。  >...</div></div>
+</div>
+</main>
+</div>
+</body>
+</html>

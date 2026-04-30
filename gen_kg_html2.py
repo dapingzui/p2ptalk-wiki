@@ -1,7 +1,7 @@
 import os, re, markdown, shutil
 
 src = '/Users/ice/.openclaw/workspace/inbox/p2ptalk/KnowledgeGraph'
-out = '/Users/ice/Downloads/P2PTalk_KG_HTML'
+out = '/Users/ice/.openclaw/workspace/p2ptalk-wiki-publish'
 if os.path.exists(out):
     shutil.rmtree(out)
 os.makedirs(out)
@@ -175,14 +175,32 @@ def resolve_wiki_links(body, pages, is_index=False):
 
 def build_sidebar(cats, current=None, is_index=False):
     html = '<div class="sidebar">\n'
+    html += '<h2>导航</h2>\n'
+    is_graph = current == 'graph.html'
+    html += f'<a href="graph.html" class="{"active" if is_graph else ""}">📊 知识图谱</a>\n'
+    html += '<h2>人物 <span class="cat-count">9</span></h2>\n'
+    persons = [
+        ('person_ShiGu.html', '矢孤'),
+        ('person_Woo.html', 'Woo'),
+        ('person_XuYapeng.html', '胥亚朋'),
+        ('person_YunHuan.html', '沄涣'),
+        ('person_YePeng.html', '叶鹏'),
+        ('person_icekernel.html', 'icekernel'),
+        ('person_WenBo.html', '文博'),
+        ('person_Bin Ma.html', 'Bin Ma'),
+        ('person_LeiLei.html', '雷雷'),
+    ]
+    for slug, name in persons:
+        cl = 'active' if slug == current else ''
+        html += f'<a href="{slug}" class="{cl}">{name}</a>\n'
+    html += '<h2>概念分类</h2>\n'
     for cat, items in cats.items():
         html += f'<h2>{cat} <span class="cat-count">{len(items)}</span></h2>\n'
         for slug, p in items:
-            cls = 'active' if slug == current else ''
-            html += f'<a href="{href_for(p, is_index=is_index)}" class="{cls}">{p["name"]}</a>\n'
+            cl = 'active' if slug == current else ''
+            html += f'<a href="{href_for(p, is_index=is_index)}" class="{cl}">{p["name"]}</a>\n'
     html += '</div>\n'
     return html
-
 def page_template(title, content, sidebar, concept_count, wiki_link_count, is_index=False):
     cls = 'index-page' if is_index else 'page'
     return f"""<!DOCTYPE html>
