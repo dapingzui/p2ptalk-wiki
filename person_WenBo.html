@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+<base href="/p2ptalk-wiki/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>文博 — P2PTalk 人物</title>
@@ -47,6 +48,38 @@ h2{font-size:15px;font-weight:600;color:var(--acc);margin-bottom:14px;border-bot
 .ptl-tag{font-size:10px;background:rgba(233,69,96,.1);color:var(--acc);padding:2px 7px;border-radius:8px}
 .ptl-body{font-size:12px;color:var(--muted);line-height:1.5}
 .concept-tags{display:flex;flex-wrap:wrap;gap:6px}
+.person-timeline{margin:16px 0 24px 0;}
+.ptl-month{margin-bottom:18px;}
+.ptl-month-label{display:flex;align-items:center;gap:8px;margin-bottom:8px;color:var(--accent);font-size:12px;font-weight:600;}
+.ptl-month-label .ptl-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);}
+.ptl-month-label .ptl-year{color:var(--text-muted);font-size:10px;font-weight:400;margin-left:4px;}
+.ptl-month-label .ptl-msg-count{font-size:10px;color:var(--text-muted);margin-left:auto;}
+.ptl-msgs{margin-left:16px;border-left:2px solid var(--border);padding-left:14px;}
+.ptl-msg{margin-bottom:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px;border:1px solid var(--border);font-size:12px;line-height:1.5;}
+.ptl-msg:hover{border-color:var(--accent);}
+.ptl-msg-date{color:var(--text-muted);font-size:10px;margin-bottom:4px;}
+.ptl-msg-subject{color:var(--accent);margin-bottom:4px;font-weight:500;}
+.ptl-msg-body{color:var(--text);font-size:11px;line-height:1.5;display:none;}
+.ptl-msg-body.open{display:block;}
+.ptl-msg-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ptl-msg-concept{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
+.ptl-expand{background:none;border:1px solid var(--accent);color:var(--accent);font-size:10px;cursor:pointer;padding:2px 8px;border-radius:5px;margin-top:4px;display:inline-block;}
+.ptl-expand:hover{background:rgba(233,69,96,0.1);}
+.ptl-msg-hidden{display:none;}
+.ptl-show-all{text-align:center;padding:6px 0;}
+.ptl-show-all-btn{background:var(--accent2);border:1px solid var(--border);color:var(--text-muted);font-size:11px;cursor:pointer;padding:4px 14px;border-radius:12px;transition:all 0.2s;}
+.ptl-show-all-btn:hover{background:rgba(233,69,96,0.15);color:var(--accent);border-color:var(--accent);}
+.ptl-show-all-btn.open{background:rgba(233,69,96,0.15);color:var(--accent);border-color:var(--accent);}
+.ptl-bar{height:4px;background:var(--accent2);border-radius:2px;margin:4px 0 8px 0;overflow:hidden;}
+.ptl-bar-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.3s;}
+.interaction-section{margin:16px 0 24px 0;}
+.ita-person{display:flex;align-items:center;gap:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;cursor:pointer;text-decoration:none;color:var(--text);}
+.ita-person:hover{border-color:var(--accent);color:var(--accent);}
+.ita-person-name{font-weight:600;color:var(--accent);font-size:13px;}
+.ita-person-count{color:var(--text-muted);font-size:11px;}
+.ita-toggle{font-size:12px;color:var(--text-muted);margin-left:auto;}
+.ita-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ita-concept-tag{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
 </style>
 </head>
 <body>
@@ -159,6 +192,38 @@ h2{font-size:15px;font-weight:600;color:var(--acc);margin-bottom:14px;border-bot
 <style>
 #kg-wrap{margin:16px 0}
 #kg-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:8px;padding:8px 0}
+.person-timeline{margin:16px 0 24px 0;}
+.ptl-month{margin-bottom:18px;}
+.ptl-month-label{display:flex;align-items:center;gap:8px;margin-bottom:8px;color:var(--accent);font-size:12px;font-weight:600;}
+.ptl-month-label .ptl-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);}
+.ptl-month-label .ptl-year{color:var(--text-muted);font-size:10px;font-weight:400;margin-left:4px;}
+.ptl-month-label .ptl-msg-count{font-size:10px;color:var(--text-muted);margin-left:auto;}
+.ptl-msgs{margin-left:16px;border-left:2px solid var(--border);padding-left:14px;}
+.ptl-msg{margin-bottom:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px;border:1px solid var(--border);font-size:12px;line-height:1.5;}
+.ptl-msg:hover{border-color:var(--accent);}
+.ptl-msg-date{color:var(--text-muted);font-size:10px;margin-bottom:4px;}
+.ptl-msg-subject{color:var(--accent);margin-bottom:4px;font-weight:500;}
+.ptl-msg-body{color:var(--text);font-size:11px;line-height:1.5;display:none;}
+.ptl-msg-body.open{display:block;}
+.ptl-msg-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ptl-msg-concept{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
+.ptl-expand{background:none;border:1px solid var(--accent);color:var(--accent);font-size:10px;cursor:pointer;padding:2px 8px;border-radius:5px;margin-top:4px;display:inline-block;}
+.ptl-expand:hover{background:rgba(233,69,96,0.1);}
+.ptl-msg-hidden{display:none;}
+.ptl-show-all{text-align:center;padding:6px 0;}
+.ptl-show-all-btn{background:var(--accent2);border:1px solid var(--border);color:var(--text-muted);font-size:11px;cursor:pointer;padding:4px 14px;border-radius:12px;transition:all 0.2s;}
+.ptl-show-all-btn:hover{background:rgba(233,69,96,0.15);color:var(--accent);border-color:var(--accent);}
+.ptl-show-all-btn.open{background:rgba(233,69,96,0.15);color:var(--accent);border-color:var(--accent);}
+.ptl-bar{height:4px;background:var(--accent2);border-radius:2px;margin:4px 0 8px 0;overflow:hidden;}
+.ptl-bar-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.3s;}
+.interaction-section{margin:16px 0 24px 0;}
+.ita-person{display:flex;align-items:center;gap:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;cursor:pointer;text-decoration:none;color:var(--text);}
+.ita-person:hover{border-color:var(--accent);color:var(--accent);}
+.ita-person-name{font-weight:600;color:var(--accent);font-size:13px;}
+.ita-person-count{color:var(--text-muted);font-size:11px;}
+.ita-toggle{font-size:12px;color:var(--text-muted);margin-left:auto;}
+.ita-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ita-concept-tag{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
 </style>
 
   </section>
@@ -179,73 +244,372 @@ h2{font-size:15px;font-weight:600;color:var(--acc);margin-bottom:14px;border-bot
     <h2>📊 注意力分布（按月）</h2>
     <div class="person-timeline">
 <div class="ptl-month">
-<div class="ptl-month-label"><span class="ptl-dot"></span>2026年04月<span class="ptl-year">2条</span></div>
+<div class="ptl-month-label"><span class="ptl-dot"></span>2026年04月<span class="ptl-msg-count">2条消息</span></div>
 <div class="ptl-bar"><div class="ptl-bar-fill" style="width:20%"></div></div>
 <div class="ptl-msgs">
-<div class="ptl-msg"><div class="ptl-date">2026-04-16</div><div class="ptl-subject">关于“ throughRate只取决于我收到了几个想给其他人的多少...”</div><div class="ptl-tags"><span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">周一老史提到一个对于 atom 系统的思考，即如何理解 throughRate 这个值，他说“*throughRate 控制从 atomNew 到 atomOut 的速率，和对外传播的关系不大，只取决于我收到了几个想给其他人的多少，进而他认为既然这里是‘我决定给别人多少’那么是不是可以交给用户自己定义*”。 我当时在回答这个问题的时候并没有回答前面的问题，而是从后面的推广入手，说明这样会造成挖出 atom 的人本身能带来的权重不如将 throughRate 设定得更低的人，因为一旦有人将这个值设得低，那么他就会成为系统的突破口，可以通过这个点进行刷量。 但是回到前面的问题，关于 through</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-04-01</div><div class="ptl-subject">Re: 代码分享会</div><div class="ptl-body">在2026年4月1日星期三 UTC+8 17:59:33 写道： &gt; 邀请我下 &gt; &gt; 矢孤 于2026年4月1日 周三16:57写道： &gt; &gt;&gt; 今天六点到9点在线交流代码阅读，有时间的的在邮件下面回复。 &gt;&gt; &gt;&gt; -- &gt;&gt; You received this message because you are subscribed to the Google Groups &gt;&gt; &quot;p2ptalk&quot; group. &gt;&gt; To unsubscribe from this group and stop receiving emails from</div></div>
-</div></div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-04-16</div>
+<div class="ptl-msg-subject">关于“ throughRate只取决于我收到了几个想给其他人的多少...”</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">传播算法与生产关系</span>
+</div>
+<div class="ptl-msg-body">周一老史提到一个对于 atom 系统的思考，即如何理解 throughRate 这个值，他说“*throughRate 控制从 atomNew 到  atomOut  的速率，和对外传播的关系不大，只…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-04-01</div>
+<div class="ptl-msg-subject">Re: 代码分享会</div>
+<div class="ptl-msg-body">在2026年4月1日星期三 UTC+8 17:59:33&lt;胡志伟&gt; 写道：    &gt; 邀请我下  &gt;  &gt; 矢孤 &lt;shijin...@gmail.com&gt;于2026年4月1日 周三16:57写道： …</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+</div>
+</div>
 <div class="ptl-month">
-<div class="ptl-month-label"><span class="ptl-dot"></span>2026年03月<span class="ptl-year">10条</span></div>
+<div class="ptl-month-label"><span class="ptl-dot"></span>2026年03月<span class="ptl-msg-count">10条消息</span></div>
 <div class="ptl-bar"><div class="ptl-bar-fill" style="width:100%"></div></div>
 <div class="ptl-msgs">
-<div class="ptl-msg"><div class="ptl-date">2026-03-16</div><div class="ptl-subject">Re: 会前同步</div><div class="ptl-body">[image: image.png] initsysctrl  于2026年3月16日周一 18:42写道： &gt; 传播前的用户状态： &gt; sjy: &gt; atom_in: {1, 2} &gt; atom_new: set() &gt; atom_out: {1, 2} &gt; linkout: set() &gt; xyp: &gt; atom_in: {3, 4} &gt; atom_new: set() &gt; atom_out: {3, 4} &gt; linkout: set() &gt; hzw: &gt; atom_in: {5, 6} &gt; atom_new: set() &gt; atom_ou</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-16</div><div class="ptl-subject">Re: 会前同步</div><div class="ptl-body">[image: image.png] initsysctrl  于2026年3月16日周一 18:23写道： &gt; 模仿hzw 评论sjy &gt; 模拟老史 评论&quot;yp&quot;, &quot;lwb&quot;, &quot;hzw&quot;, &quot;laotao&quot; &gt; 模拟lwb评论 &quot;sjy&quot;,&quot;yp&quot; &gt; 模拟xyp评价&quot;mb&quot;,&quot;lwb&quot;,&quot;sjy&quot; &gt; 模拟yp 评价&quot;mb&quot;,&quot;lwb&quot; &gt; 模拟leilei 评价&quot;mb&quot;,&quot;lwb&quot;,&quot;xyp&quot; &gt; 模拟woo 评价&quot;yp&quot;,&quot;sjy&quot;,&quot;lwb&quot; &gt; &gt; 传播后的用户状态： &gt; sjy: &gt; atom_in: {1, 2, 3, 4, 7</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-16</div><div class="ptl-subject">Re: 会前同步</div><div class="ptl-body">老史：review三颗星：从 atom 的流转出发，将其视为一种可以随时发币而不需要等待系统结算的货币，以这个视角来进行进一步思考。 马师傅：不review 叶鹏：review三颗星：在邮件中，从 pow + atom 出发，将系统发展为竞争 atom 传播后的默克尔树的结果，进而将其发展为全局共识，比较具体，属于将 p2pmarket 系统直接按 bitcoin 的方式设计，但是这里竞争的不是对交易的排序，而是多个 getrandom 的结果，这个方案增强了计算和激励的耦合性。 woo：不review 亚朋：不review 小胖：不review 雷雷：不review 矢孤 &lt;shijingy</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-16</div><div class="ptl-subject">Re: 会前同步</div><div class="ptl-body">目前注意力放在，atom 可以被看作是一种激励，存在某种稀缺性，甚至通过 review 进行流转的过程具有随时发币的可能，是否可以将其看作是一种货币，并且在此基础上其如何行使货币的功能。如果不能，设想 atom 这种特性如何让矿工干活。 在2026年3月16日星期一 UTC+8 16:49:22 写道： &gt; 老史：review三颗星：从 atom 的流转出发，将其视为一种可以随时发币而不需要等待系统结算的货币，以这个视角来进行进一步思考。 &gt; 马师傅：不review &gt; 叶鹏：review三颗星：在邮件中，从 pow + atom 出发，将系统发展为竞争 atom &gt; 传播后的默克尔树</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-13</div><div class="ptl-subject">Re: 20260313 会前同步</div><div class="ptl-tags"><span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">这个部分代码是在 AddAtomsAndPropagate 触发，而这个函数在 AcceptReview，AcceptBlock 时都会触发 胥亚朋  于2026年3月13日周五 16:44写道： &gt; &gt; 这个机制在我的理解里面只有AcceptReview也就是主动给别人atom的时候才会触发，而不会在AcceptBlock的时候触发。如果在AcceptBlock的时候触发，那么很多主动的转账atom都不需要了。也不知道我的理解对不对，不对的地方麻烦指正一下。 &gt; &gt; 陈默  于2026年3月13日周五</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-13</div><div class="ptl-subject">Re: 20260313 会前同步</div><div class="ptl-tags"><span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">这里我所说的“触发后续的传递”，是指在代码中存在的一个双缓存机制，它会按层向下触发更新。 for (int side = 0; !pmapPropagate[side].empty(); side = 1 - side) { map &gt;&amp; mapFrom = pmapPropagate[side]; map &gt;&amp; mapTo = pmapPropagate[1 - side]; for (map &gt;::i</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-13</div><div class="ptl-subject">=?UTF-8?Q?Re:_20260313_会前同步?</div><div class="ptl-tags"><span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">1. 这里老史提到的“实时流动”实际上是一种 “事件驱动”，这里把数据本身的更迭形式看得太重了，在 marketplace 这套系统中，用户提交 review 并广播后，节点收到 review 后进入Acceptreview，将评论入库并给发送者增加一条从发送者到接收者的边（在 LinksOut 中增加接受者），随后调用 AddAtomsAndPropagate，将发送者的 atomOut 传递给接受者。而 AddAtomsAndPropagate 则读取用户的 atomIn、atomNew、atomOut，如果 atomNew 中的 atom 数量触发 throughRate，则将其随机添加</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-03</div><div class="ptl-subject">Re: 与“关于atom的数据结构之后怎么处理”相关的私人帖子</div><div class="ptl-tags"><span class="ptl-tag">Atom是什么</span> <span class="ptl-tag">脚本是谓词</span> <span class="ptl-tag">谓词</span></div><div class="ptl-body">你说比特币重定义了等号操作符，但我要直接指出： *比特币从来没有用等号将锁定脚本和解锁脚本这两部分连接起来，也没有通过覆写等号操作符来实现脚本的拼接和执行。* 不是等号被重定义了，而是等号根本没有在这两部分之间扮演过任何角色。没有任何一个操作码、没有任何一个协议层的机制，是把锁定脚本和解锁脚本作为整体用等号连接起来的。你说的&quot;操作符重定义&quot;是你自己加进去的，比特币的实现里找不到对应物。 这里的问题不是创新解释和教条主义之争，而是*你的论证顺序反了*： 你先断定&quot;这是一个等式&quot;，然后发现等式需要一个等号，再去设想比特币重定义了这个等号来自圆其说。这是在用结论推导前提，而不是从事实推导结论。 如果</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-02</div><div class="ptl-subject">Re: 与“关于atom的数据结构之后怎么处理”相关的私人帖子</div><div class="ptl-tags"><span class="ptl-tag">BitDNS与P2P市场</span> <span class="ptl-tag">节点与SPV轻节点</span> <span class="ptl-tag">谓词</span> <span class="ptl-tag">中间会面机制</span> <span class="ptl-tag">Atom数据结构</span></div><div class="ptl-body">什么叫做等式，也就是左边和右边相等，又如何定义相等。例如 P2PKH 脚本， input script: PUSHDATA(Sig) // 将签名压入栈 PUSHDATA(PubKey) // 将公钥压入栈 output script: // 交易的来源 DUP // 把栈顶的元素（Pubkey）复制一遍 HASH160 // 把栈顶元素弹出并取哈希并压入栈 PUSHDATA(PubkKeyHash) // 将公钥哈希值（来源输出脚本收款人的哈希，也就是输入脚本的付款人） // 压入栈 EQUALVERIFY // 弹出栈顶两个元素 比较是否相等 CHECKSIG // 弹出栈顶两个元素 用公</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-01</div><div class="ptl-subject">=?UTF-8?Q?Re:_20260302_会前同步?</div><div class="ptl-tags"><span class="ptl-tag">难度调整</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">上周老史发了几封邮件，首先是关于难度和频道的关系，这里类比了在会议中调整会议形式的过程来说明难度，最后得出难度，有竞争力、有意思、p2p 结构有社会意义。难度是大家在验证的时候的一个共同标准，但 review 这个频道没有对难度的需求，atom 也不会反过来影响难度本身。 第二封类比了流速控制和难度调整算法，提出了希望通过 pow 来影响 atom 传递中的流速控制值，认为这里存在一个“比较好的闭环”，这里看似是将话题转向，实际上是从前面的 “review 这个频道没有对难度的需求”而来，但是没有具体的方案，但在尝试补全方案时发现了很多矛盾。 上周只根据这些邮件内容进行了逻辑上的理解，产生了很</div></div>
-</div></div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-16</div>
+<div class="ptl-msg-subject">Re: 会前同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom数据结构</span>
+</div>
+<div class="ptl-msg-body">[image: image.png]    initsysctrl &lt;initsysctrl@gmail.com&gt; 于2026年3月16日周一 18:42写道：    &gt; 传播前的用户状态：  &gt; s…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-16</div>
+<div class="ptl-msg-subject">Re: 会前同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom数据结构</span>
+</div>
+<div class="ptl-msg-body">[image: image.png]    initsysctrl &lt;initsysctrl@gmail.com&gt; 于2026年3月16日周一 18:23写道：    &gt; 模仿hzw 评论sjy  &gt;…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-16</div>
+<div class="ptl-msg-subject">Re: 会前同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">hashcash与POW</span>
+</div>
+<div class="ptl-msg-body">老史：review三颗星：从 atom 的流转出发，将其视为一种可以随时发币而不需要等待系统结算的货币，以这个视角来进行进一步思考。  马师傅：不review  叶鹏：review三颗星：在邮件中，从…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-16</div>
+<div class="ptl-msg-subject">Re: 会前同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">hashcash与POW</span>
+</div>
+<div class="ptl-msg-body">目前注意力放在，atom 可以被看作是一种激励，存在某种稀缺性，甚至通过 review  进行流转的过程具有随时发币的可能，是否可以将其看作是一种货币，并且在此基础上其如何行使货币的功能。如果不能，设…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-13</div>
+<div class="ptl-msg-subject">Re: 20260313 会前同步</div>
+<div class="ptl-msg-body">这个部分代码是在 AddAtomsAndPropagate 触发，而这个函数在 AcceptReview，AcceptBlock 时都会触发    胥亚朋 &lt;xuyapeng110@gmail.com…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-03-13</div>
+<div class="ptl-msg-subject">Re: 20260313 会前同步</div>
+<div class="ptl-msg-body">这里我所说的“触发后续的传递”，是指在代码中存在的一个双缓存机制，它会按层向下触发更新。  for (int side = 0; !pmapPropagate[side].empty(); side …</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-03-13</div>
+<div class="ptl-msg-subject">Re: 20260313 会前同步</div>
+<div class="ptl-msg-body">1. 这里老史提到的“实时流动”实际上是一种 “事件驱动”，这里把数据本身的更迭形式看得太重了，在 marketplace 这套系统中，用户提交  review 并广播后，节点收到 review 后进…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-03-03</div>
+<div class="ptl-msg-subject">Re: 与“关于atom的数据结构之后怎么处理”相关的私人帖子</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom数据结构</span>
+<span class="ptl-msg-concept">谓词</span>
+</div>
+<div class="ptl-msg-body">你说比特币重定义了等号操作符，但我要直接指出：  *比特币从来没有用等号将锁定脚本和解锁脚本这两部分连接起来，也没有通过覆写等号操作符来实现脚本的拼接和执行。*    不是等号被重定义了，而是等号根本…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-03-02</div>
+<div class="ptl-msg-subject">Re: 与“关于atom的数据结构之后怎么处理”相关的私人帖子</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom数据结构</span>
+<span class="ptl-msg-concept">谓词</span>
+<span class="ptl-msg-concept">中间会面机制</span>
+<span class="ptl-msg-concept">节点与SPV轻节点</span>
+</div>
+<div class="ptl-msg-body">什么叫做等式，也就是左边和右边相等，又如何定义相等。例如 P2PKH 脚本，    input script:  	PUSHDATA(Sig) // 将签名压入栈  	PUSHDATA(PubKey)…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-03-01</div>
+<div class="ptl-msg-subject">Re: 20260302 会前同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">难度调整</span>
+<span class="ptl-msg-concept">hashcash与POW</span>
+</div>
+<div class="ptl-msg-body">上周老史发了几封邮件，首先是关于难度和频道的关系，这里类比了在会议中调整会议形式的过程来说明难度，最后得出难度，有竞争力、有意思、p2p  结构有社会意义。难度是大家在验证的时候的一个共同标准，但 r…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-show-all"><button class="ptl-show-all-btn" data-month="2026-03">展开全部 10 条 ▾</button></div>
+</div>
+</div>
 <div class="ptl-month">
-<div class="ptl-month-label"><span class="ptl-dot"></span>2026年02月<span class="ptl-year">9条</span></div>
+<div class="ptl-month-label"><span class="ptl-dot"></span>2026年02月<span class="ptl-msg-count">9条消息</span></div>
 <div class="ptl-bar"><div class="ptl-bar-fill" style="width:90%"></div></div>
 <div class="ptl-msgs">
-<div class="ptl-msg"><div class="ptl-date">2026-02-26</div><div class="ptl-subject">=?UTF-8?Q?Re:_20260227会前同步?</div><div class="ptl-tags"><span class="ptl-tag">BitDNS与P2P市场</span> <span class="ptl-tag">Atom是什么</span> <span class="ptl-tag">Atom与Bitcoin关系</span> <span class="ptl-tag">发布订阅机制</span> <span class="ptl-tag">中间会面机制</span></div><div class="ptl-body">1. 流速控制是 market 中整个系统都执行的规则（它并不是唯一的这样的规则，除此之外还有，0 原子传播，根据 review 关系建立 vLinksOut，…），虽然这个规则并不唯一，但不妨碍其与难度调整机制进行类比，但缺少强对应性。 2. “*我们在市场中的成交，有没有可能是买家和卖家的关系网络在某一瞬间接触了，产生了一笔交易*”，以这个作为思考的前提来说，“ *买家和卖家的关系网络在某一瞬间接触了*”似乎是换了句话描述中本聪的中间会面机制，但是后面提到“*那在atom里，流速控制似乎在做这件事*”，这里又在讲因为 review 产生的 vLinksOut 信任图以及其中的 atom 传</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-02-24</div><div class="ptl-subject">Re: 会前闲聊同步</div><div class="ptl-tags"><span class="ptl-tag">谓词</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">和我们在形式语言认识的谓词同级但表示含义不同，在计算机科学或数学中，谓词要么是一个关系，要么是具有布尔值的函数 ，等同于该关系的特征函数或指示函数。也就是谓词是一个基于某个条件返回真值或假值的函数，可见谓词-逻辑 &lt; &lt; is 开头的布尔变量，如 isNull，isNumber 就是一个谓词问题，而我们只是对这个术语</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-02-12</div><div class="ptl-subject">=?UTF-8?Q?Re:_20260213会后总结?</div><div class="ptl-tags"><span class="ptl-tag">BitDNS与P2P市场</span></div><div class="ptl-body">首先代码中只存在同时作为节点和用户的情况，当我们拓展到通过钱包用户发送商品，再让另一个钱包用户接受到商品消息再进行成交的情况时，我们这里天然的跳了一步，即发送固然可以这样玩，但是作为钱包用户，我们如何接收到节点的消息。 另外在原始的交易逻辑中：1.接受者连接到发布者 ip 2. 接受者向发布者请求 P2PK 3.接收者付款，即这里的交易时需要两端直接连接进行请求的，那么我们在上面那一步拓展时，并没有思考用户和用户如何交互，完成这个交易。 另外这样用户的身份也很奇怪，让系统冷启动困难，实质性封闭： 用户→不挖矿 →希望获得 atom → 挖矿或者获得 review → 没有 atom 发布不了商</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-02-10</div><div class="ptl-subject">=?UTF-8?Q?Re:_20260211会前同步?</div><div class="ptl-tags"><span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">在2026年2月11日星期三 UTC+8 11:46:58 写道： &gt; 看了文博的计算内容，在思考atom给矿工用来决定要不要转发信息会影响低atom节点发布信息的传播范围，这个影响有没有关系。 &gt; &gt; 代码里面实际的转发功能是全部一起转发，并没有这个按照atom排行或者挑选的逻辑。 &gt; &gt; 以下是meme，脱离代码逻辑的meme。 &gt; 在频道变得多的情况下，atom少的频道或者消息会因为转发变少，换句话是是没获得投票从而自然的被淘汰掉，这部分还没想太明白。 &gt; &gt; 参会主要接受信息 &gt;</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-02-10</div><div class="ptl-subject">=?UTF-8?Q?Re:_20260211会前同步?</div><div class="ptl-body">需先完成邮件同步再进入会议 在2026年2月11日星期三 UTC+8 11:38:02 写道： &gt; 因为 woo &gt; 的研究，所以我同时在看中本聪注释中的数值和公式是如何得出，想从这个角度来找到中本聪关于“中间会面”机制的理解。尝试推导之后发现这个公式是由伯努利试验推导得出，最终结果是一个超几何分布的近似值，因此中本聪在计算概率时将其pubsub &gt; 消息传播视为一个对于所有节点概率平均的随机抽样的重复试验。再回到“中间会面”机制本身是由高概率保证来避免向全体广播的节省带宽的策略。所以这里高概率消息能触达转向节省</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-02-10</div><div class="ptl-subject">=?UTF-8?Q?Re:_20260211会前同步?</div><div class="ptl-body">因为 woo 的研究，所以我同时在看中本聪注释中的数值和公式是如何得出，想从这个角度来找到中本聪关于“中间会面”机制的理解。尝试推导之后发现这个公式是由伯努利试验推导得出，最终结果是一个超几何分布的近似值，因此中本聪在计算概率时将其pubsub 消息传播视为一个对于所有节点概率平均的随机抽样的重复试验。再回到“中间会面”机制本身是由高概率保证来避免向全体广播的节省带宽的策略。所以这里高概率消息能触达转向节省带宽是一个思维链路，然后老史需要我验证的部分，我认为是进一步转向节省带宽，或防止垃圾邮件，但是我认为这部分会影响消息触达的保证，即对于所有节点概率平均的前提。 详细计算内容：https://</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-02-10</div><div class="ptl-subject">Re: 202602019 小会同步</div><div class="ptl-tags"><span class="ptl-tag">中间会面机制</span></div><div class="ptl-body">&gt; &gt; 中本聪关于中间会面机制的注释部分 &gt; &gt; // &gt; // Subscription methods for the broadcast and subscription system. &gt; // Channel numbers are message numbers, i.e. MSG_TABLE and MSG_PRODUCT. &gt; // &gt; // The subscription system uses a meet-in-the-middle strategy. &gt; // With 100,000 nodes, if senders broadcast to 1000 rando</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-02-07</div><div class="ptl-subject">Re: 20260207同步本会议前个人的最新进展及上下文</div><div class="ptl-body"><span style="color:var(--muted);font-style:italic">(无正文)</span></div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-02-02</div><div class="ptl-subject">=?UTF-8?Q?Re:_2_月_?= =?UTF-8?Q?2_日会? =?UTF-8?Q?议前置工作?</div><div class="ptl-tags"><span class="ptl-tag">Atom是什么</span> <span class="ptl-tag">发布订阅机制</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">1. 分析了atom 系统实际在比特币中新增的部分： 1. 拓展了比特币的消息类型用来传递 reviews 2. 增加本地数据库用来存储 reviews、linksout 和 atomIn、atomOut、atomNew 3. 增加发布订阅机制用来传递 product 4. 实际上 atom 的来源又将防女巫引向了 pow 2. 再依据中本聪对这个系统的描述，这里atom就是中本聪对于比特币应用的理解，或者说和比特币有所不同的一种产品形态，老史提出，需要从“ atom 系统和比特币系统的关系，这里是否可以任意做东西”的角度抽象，看看它和比特币类似的地方是哪里，共享的部分是什么。两者的前提都是p</div></div>
-</div></div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-26</div>
+<div class="ptl-msg-subject">Re: 20260227会前同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">难度调整</span>
+<span class="ptl-msg-concept">hashcash与POW</span>
+<span class="ptl-msg-concept">中间会面机制</span>
+</div>
+<div class="ptl-msg-body">1.         流速控制是 market 中整个系统都执行的规则（它并不是唯一的这样的规则，除此之外还有，0 原子传播，根据 review 关系建立     vLinksOut，…），虽然这个规…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-24</div>
+<div class="ptl-msg-subject">Re: 会前闲聊同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">谓词</span>
+</div>
+<div class="ptl-msg-body">和我们在形式语言认识的谓词同级但表示含义不同，在计算机科学或数学中，谓词要么是一个关系，要么是具有布尔值的函数  ，等同于该关系的特征函数或指示函数。也就是谓词是一个基于某个条件返回真值或假值的函数，…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-12</div>
+<div class="ptl-msg-subject">Re: 20260213会后总结</div>
+<div class="ptl-msg-body">首先代码中只存在同时作为节点和用户的情况，当我们拓展到通过钱包用户发送商品，再让另一个钱包用户接受到商品消息再进行成交的情况时，我们这里天然的跳了一步，即发送固然可以这样玩，但是作为钱包用户，我们如何…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-10</div>
+<div class="ptl-msg-subject">Re: 20260211会前同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">中间会面机制</span>
+</div>
+<div class="ptl-msg-body">http://wiki.aardrock.com/Wizard_Rabbit_Treasurer 在2026年2月11日星期三 UTC+8 11:46:58&lt;Woo&gt; 写道：  &gt; 看了文博的计算内容…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-10</div>
+<div class="ptl-msg-subject">Re: 20260211会前同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">中间会面机制</span>
+</div>
+<div class="ptl-msg-body">https://meet.google.com/oxt-bysm-big 需先完成邮件同步再进入会议  在2026年2月11日星期三 UTC+8 11:38:02&lt;文博&gt; 写道：  &gt; 因为 woo …</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-02-10</div>
+<div class="ptl-msg-subject">Re: 20260211会前同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">中间会面机制</span>
+</div>
+<div class="ptl-msg-body">因为 woo  的研究，所以我同时在看中本聪注释中的数值和公式是如何得出，想从这个角度来找到中本聪关于“中间会面”机制的理解。尝试推导之后发现这个公式是由伯努利试验推导得出，最终结果是一个超几何分布的…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-02-10</div>
+<div class="ptl-msg-subject">Re: 202602019 小会同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">中间会面机制</span>
+<span class="ptl-msg-concept">泛洪与5跳</span>
+</div>
+<div class="ptl-msg-body">&gt;  &gt; 中本聪关于中间会面机制的注释部分  &gt;  &gt; //  &gt; // Subscription methods for the broadcast and subscription system.…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-02-07</div>
+<div class="ptl-msg-subject">Re: 20260207同步本会议前个人的最新进展及上下文</div>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-02-02</div>
+<div class="ptl-msg-subject">Re: 2 月 2 日会议前置工作</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">hashcash与POW</span>
+</div>
+<div class="ptl-msg-body">1. 分析了atom 系统实际在比特币中新增的部分：       1. 拓展了比特币的消息类型用来传递 reviews       2. 增加本地数据库用来存储 reviews、linksout 和 …</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-show-all"><button class="ptl-show-all-btn" data-month="2026-02">展开全部 9 条 ▾</button></div>
+</div>
+</div>
 <div class="ptl-month">
-<div class="ptl-month-label"><span class="ptl-dot"></span>2026年01月<span class="ptl-year">9条</span></div>
+<div class="ptl-month-label"><span class="ptl-dot"></span>2026年01月<span class="ptl-msg-count">9条消息</span></div>
 <div class="ptl-bar"><div class="ptl-bar-fill" style="width:90%"></div></div>
 <div class="ptl-msgs">
-<div class="ptl-msg"><div class="ptl-date">2026-01-30</div><div class="ptl-subject">Re: 周四会议同步</div><div class="ptl-tags"><span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">理解叶鹏和亚鹏将 atom 系统中 atom 在 user 之间传播的过程与比特币的交易传播过程的类比，来自于对将 user 之间的关系网络发展为实质的 p2p 消息协议的基础之上。实际上也就是在假设 user 为一个个独立节点的基础下，对这个系统进行改造。在说明计算思路时需要清楚说明这是出于做项目的目的和自己对于这个项目的出发点，还是中本聪的思想，不可假借而不说明。 在2026年1月30日星期五 UTC+8 17:23:36 写道： &gt; 老规矩</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-28</div><div class="ptl-subject">Re: 强制返回计算结果</div><div class="ptl-tags"><span class="ptl-tag">难度调整</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">关于采用矩阵迭代： 首先，在 atom 系统中可以将 user 作为节点、将 vlinksout 作为有向边构建关系图。若将“存在边”记为 1、“不存在边”记为 0，则得到一个无权有向图，可用邻接矩阵A表示。该矩阵刻画的是“谁与谁存在连接关系”。 其次，系统实际关注的往往不是边本身，而是沿边传播的 atom（带唯一 ID 的最小信誉原子）。此时如果希望引入“权重”，需要先明确权重代表什么： - 若权重表示结构性的、相对稳定的参数（例如转发概率、边容量、信任倾向等），则可从 A 导出一个（可能经归一化的）转移矩阵，用于如求特征向量等线性分析。 - 但若权重直接定义为“在某轮或某时间窗口内 i→j</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-21</div><div class="ptl-subject">Re: 周二会议同步</div><div class="ptl-body">没参与会议，仅从老师的周二得同步邮件中捕捉到重点是，atom 词源具有不可分割的含义/属性，这个和我们说其作为这个系统最小的不可分割原子的用法有关。另外就是 atom 和比特币本身属性的区别和联系，这部分目前主要集中在和 tx 的对比中，也就是在使用层面的比较。 在2026年1月22日星期四 UTC+9 14:45:30 写道： &gt; 参会人员：老史、Woo、Yp、胡志伟、胥亚鹏、 &gt; 流程：大部分都忘了。 &gt; 相关结论： &gt; 1、比特币作为coin是可组合，不可复制的。atom是可组合，可复制的。 &gt; 2、a组合方式体现的是一种计算，目前看可以atom相关的计算可以抽象成向量的</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-20</div><div class="ptl-subject">Re: 请求同步周一会议内容</div><div class="ptl-tags"><span class="ptl-tag">Atom是什么</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">1. 比特币和atom都作为中本聪设计的产品，其具有一定相似性，对这种相似性做一个映射，叶鹏描述了一套映射的模型，首先将比特币中的几种交易类型，没有out的交易、coinbase 的交易、用户发起的交易类比为几种特殊的atom，零原子，原点原子，普通原子，同时将比特币的节点接受、存储和转发交易的行为类比为market中的Cuser数据对atom进行接收、暂存和流转。这套类比主要希望看看中本聪对交易的设计是否在atom中有所映射，但是对于atom而言缺少合法性检查，对atom的类默克尔树设计，挖矿的区块设计。如果认同叶鹏的抽象，那么需要补齐这部分内容，或则增强前面的atom分类和交易类型的映射关</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-18</div><div class="ptl-subject">Re:</div><div class="ptl-tags"><span class="ptl-tag">BitDNS与P2P市场</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">仅按照当前的设计来说，atom 不在不同的机器同步，而且运行这套系统意味着需要同时运行比特币的挖矿程序，而且在挖矿中断时，无法同步期间的评论，也就是无法关联在此期间新增的 Linksout 数据。 而 market 部分更像是一个黑市，但是作为新进入这个黑市的买家而言，所有人的 atom 都为 0，对于其他人的信任不能快速获取，需要在线接受一段时间的区块和评论，建立关系后才能有所参考。 如果要在不修改这个系统本身的前提上，我的想法是利用累计的数据优势，比如自己一直不间断的记录atom和评论的数据库，将接受到的商品 offer 、评论和其用户信誉（类似于一个 atom 的全节点），将其做成一个网</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-13</div><div class="ptl-subject">Re: 强制同步最长链</div><div class="ptl-tags"><span class="ptl-tag">BitDNS与P2P市场</span> <span class="ptl-tag">中间会面机制</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">在2026年1月13日星期二 UTC+8 21:24:51 写道： &gt; 好像确实光阅读我有点点没看懂，需要约个会议再听你讲一下 &gt; 根据会议规则，你返回计算结果的时候就可以发起会议了。 &gt; &gt; &gt; 在2026年1月13日星期二 UTC+8 14:07:47 写道： &gt; &gt;&gt; 市场需要声誉，还是声誉需要市场，个人观点声誉还是需要使用才能有价值，也就是需要依托于一个市场，首先市场（商品 &gt;&gt; offerbook）可以是不一致的点对点系统。但是声誉本身更需要一致性，于是关于商品 offer</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-12</div><div class="ptl-subject">Re: 强制同步最长链</div><div class="ptl-tags"><span class="ptl-tag">BitDNS与P2P市场</span> <span class="ptl-tag">中间会面机制</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">市场需要声誉，还是声誉需要市场，个人观点声誉还是需要使用才能有价值，也就是需要依托于一个市场，首先市场（商品 offerbook）可以是不一致的点对点系统。但是声誉本身更需要一致性，于是关于商品 offerbook 的传播完全继承比特币的发布订阅和中间会面机制。但在 atom 这里需要解决一致性问题，也就是让其被共识保证，为了达到这个目的需要： 1. atom 可重放，即每次执行结果一致 2. 可同步历史数据 这里我看到比特币的 atom 设计中，每个用户可以看作一个点，用户以 review 作为边来进行 atom 的传播，所以只需要能确定用户之间的 review 关系再确定 atom 的产生</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-12</div><div class="ptl-subject">Re: 强制同步最长链</div><div class="ptl-body">关于 AsicBoost 和 nVersion 字段 论文： 比特币大陆回应 *AsicBoost* 相关  关于修改 nVersion 保留位用于 *AsicBoost* 的提案  哈希算法简略过程：将输入按 64B 分块；在消息末尾做 padding（加 1 bit、补 0、再加 64-bit 长度）使总长度为 64B 的整数倍。初始化链值</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-07</div><div class="ptl-subject">Re: 强制同步最长链</div><div class="ptl-tags"><span class="ptl-tag">Atom是什么</span></div><div class="ptl-body">1. 尝试描述一个为 atom 使用的 mempool 的共识系统，这里需要设计 atom 的数据格式，生命周期，如何同步，以及这个系统的作用。 2. 了解比特币的速战速决升级流程，如何为会议所用 3. ASIC boost 如何加速挖矿 在2026年1月8日星期四 UTC+8 14:18:30 写道： &gt; 形式化问题： &gt; 1.atom与memepool 假设作为插件不在共识内，那么如果保证网络中“共识”（和谐）一致， atom怎么进入“共识”？ &gt; 2.Atom到底是什么，怎么产生的，先后顺序是 先产生atom进入“共识”，还是“共识”中产生atom？ &gt; 3.btc软分叉采用的</div></div>
-</div></div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-30</div>
+<div class="ptl-msg-subject">Re: 周四会议同步</div>
+<div class="ptl-msg-body">理解叶鹏和亚鹏将 atom 系统中 atom 在 user 之间传播的过程与比特币的交易传播过程的类比，来自于对将 user  之间的关系网络发展为实质的 p2p 消息协议的基础之上。实际上也就是在假…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-28</div>
+<div class="ptl-msg-subject">Re: 强制返回计算结果</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">难度调整</span>
+<span class="ptl-msg-concept">hashcash与POW</span>
+<span class="ptl-msg-concept">传播算法与生产关系</span>
+</div>
+<div class="ptl-msg-body">关于采用矩阵迭代：   首先，在 atom 系统中可以将 user 作为节点、将 vlinksout 作为有向边构建关系图。若将“存在边”记为 1、“不存在边”记为  0，则得到一个无权有向图，可用邻…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-21</div>
+<div class="ptl-msg-subject">Re: 周二会议同步</div>
+<div class="ptl-msg-body">没参与会议，仅从老师的周二得同步邮件中捕捉到重点是，atom   词源具有不可分割的含义/属性，这个和我们说其作为这个系统最小的不可分割原子的用法有关。另外就是 atom   和比特币本身属性的区别和…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-20</div>
+<div class="ptl-msg-subject">Re: 请求同步周一会议内容</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">声誉与市场</span>
+</div>
+<div class="ptl-msg-body">1.  比特币和atom都作为中本聪设计的产品，其具有一定相似性，对这种相似性做一个映射，叶鹏描述了一套映射的模型，首先将比特币中的几种交易类型，没有out的交易、coinbase  的交易、用户发起…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-18</div>
+<div class="ptl-msg-subject">(无主题)</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">hashcash与POW</span>
+<span class="ptl-msg-concept">声誉与市场</span>
+</div>
+<div class="ptl-msg-body">仅按照当前的设计来说，atom  不在不同的机器同步，而且运行这套系统意味着需要同时运行比特币的挖矿程序，而且在挖矿中断时，无法同步期间的评论，也就是无法关联在此期间新增的  Linksout 数据。…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-01-13</div>
+<div class="ptl-msg-subject">Re: 强制同步最长链</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">hashcash与POW</span>
+<span class="ptl-msg-concept">中间会面机制</span>
+<span class="ptl-msg-concept">声誉与市场</span>
+</div>
+<div class="ptl-msg-body">https://meet.google.com/qqk-jofm-vzb  在2026年1月13日星期二 UTC+8 21:24:51&lt;shijingyao123&gt; 写道：  &gt; 好像确实光阅读我有点…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-01-12</div>
+<div class="ptl-msg-subject">Re: 强制同步最长链</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">hashcash与POW</span>
+<span class="ptl-msg-concept">中间会面机制</span>
+<span class="ptl-msg-concept">声誉与市场</span>
+</div>
+<div class="ptl-msg-body">市场需要声誉，还是声誉需要市场，个人观点声誉还是需要使用才能有价值，也就是需要依托于一个市场，首先市场（商品  offerbook）可以是不一致的点对点系统。但是声誉本身更需要一致性，于是关于商品 o…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-01-12</div>
+<div class="ptl-msg-subject">Re: 强制同步最长链</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom数据结构</span>
+</div>
+<div class="ptl-msg-body">关于 AsicBoost 和 nVersion 字段   论文：https://arxiv.org/pdf/1604.00575  比特币大陆回应 *AsicBoost* 相关  https://bl…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-01-07</div>
+<div class="ptl-msg-subject">Re: 强制同步最长链</div>
+<div class="ptl-msg-body">1. 尝试描述一个为 atom 使用的 mempool 的共识系统，这里需要设计 atom 的数据格式，生命周期，如何同步，以及这个系统的作用。 2. 了解比特币的速战速决升级流程，如何为会议所用 3…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-show-all"><button class="ptl-show-all-btn" data-month="2026-01">展开全部 9 条 ▾</button></div>
+</div>
+</div>
 <div class="ptl-month">
-<div class="ptl-month-label"><span class="ptl-dot"></span>2025年12月<span class="ptl-year">4条</span></div>
+<div class="ptl-month-label"><span class="ptl-dot"></span>2025年12月<span class="ptl-msg-count">4条消息</span></div>
 <div class="ptl-bar"><div class="ptl-bar-fill" style="width:40%"></div></div>
 <div class="ptl-msgs">
-<div class="ptl-msg"><div class="ptl-date">2025-12-31</div><div class="ptl-subject">=?UTF-8?Q?Re:_广播新nonce:广? =?UTF-8?Q?播和p2pmarket的关系?</div><div class="ptl-tags"><span class="ptl-tag">BitDNS与P2P市场</span> <span class="ptl-tag">Atom是什么</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">这个传递的逻辑是这样的，但是我想讲的部分是，A-&gt;B-&gt;C 在 A 评论 B 之后，B 评论 C，这个过程会有一个原子的转移，但是当原子在 atomNew的数量大于流限制，转移到 atomOut 的时候，会有一个随机选择，而这个随机函数因为执行在不同的机器上，其随机来源不同，因此可能选择的不同的原子加入 atomOut，而当 B 再次评论时，将其的 atomOut 复制给 C，那么在 C 进行去重时，就有可能出现重复。我上面的图画的有问题，我也不是对这个过程有疑问，也没有说他在重复执行 review ，只是在设想一个原子经过两次传播的场景。[image: unnamed.jpg] 在2025年</div></div>
-<div class="ptl-msg"><div class="ptl-date">2025-12-30</div><div class="ptl-subject">=?UTF-8?Q?Re:_NONCE_创世原? =?UTF-8?Q?子，Genesis_Atom?</div><div class="ptl-tags"><span class="ptl-tag">Atom是什么</span> <span class="ptl-tag">创世Atom与nonce</span> <span class="ptl-tag">难度调整</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">比特币 market 部分代码，实际上存在一个因为随机的使用而带来的不一致问题，在第一次传播时，会产生进入 atomOut 原子不一致的问题，而第二次传播时，则会因为 atomOut 带来评价实际的影响力在不同节点表现不同的问题。 首先在 market 部分，原子随着评论进行广播，当节点接收到某条评论时，他会在本地的用户数据库中查询评论发送人的 vAtomsOut，然后将其传递给 AddAtomsAndPropagate，而这个过程完全在节点本地发生，特别是其中涉及一个随机挑选 atom 进入接收人 vAtomsOut 的过程。 我们设想一个拥有非 0 原子的用户发送评论的场景，假设 user</div></div>
-<div class="ptl-msg"><div class="ptl-date">2025-12-25</div><div class="ptl-subject">Re: 领取计算任务</div><div class="ptl-tags"><span class="ptl-tag">Atom是什么</span> <span class="ptl-tag">难度调整</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">1. 哈希算法的原像计算及其谜题友好性来源（最好是数学保证） 2. 比特币难度调整算法对此的应用 3. 比特币挖矿过程中这种验证和计算 nonce 的关系 在2025年12月26日星期五 UTC+8 13:31:25 写道： &gt; 1、需要对你的meme进行拆分，拆分成具体的几个子问题。 &gt; 2、需要对上述子问题结合源代码进行分析 &gt; 3、对所有子问题的解决方式进行抽象，并结合现实进行理解和拓展 &gt; 会议邀请 &gt; &gt; &gt; ---- 回复的原邮件 ---- &gt; 发件人 矢孤 &gt; 发送日期 2025年12月26日 13:17 &gt; 收</div></div>
-<div class="ptl-msg"><div class="ptl-date">2025-12-21</div><div class="ptl-subject">Re: 比特币通讯规则实验，有激励！</div><div class="ptl-tags"><span class="ptl-tag">Atom是什么</span></div><div class="ptl-body">[image: db067ff00b9f6e5b3cc514b8c5554f6a.png] 在2025年12月19日星期五 UTC+8 11:38:18 写道： &gt; &gt; &gt; 这份邮件最吸引我地方是“激励”，在激励的驱使下，总会让人做出一些莫名其妙的事情。甚至，在不理解激励是什么，只知道有可能有激励的情况下，也会产生“先做了再说”的决策效果。 &gt; ---- 回复的原邮件 ---- &gt; 发件人 Woo c &gt; 发送日期 2025年12月19日 03:32 &gt; 收件人  &gt; 主题 比特</div></div>
-</div></div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-12-31</div>
+<div class="ptl-msg-subject">Re: 广播新nonce:广播和p2pmarket的关系</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom与Bitcoin关系</span>
+<span class="ptl-msg-concept">难度调整</span>
+<span class="ptl-msg-concept">hashcash与POW</span>
+<span class="ptl-msg-concept">声誉与市场</span>
+</div>
+<div class="ptl-msg-body">这个传递的逻辑是这样的，但是我想讲的部分是，A-&gt;B-&gt;C 在 A 评论 B 之后，B 评论 C，这个过程会有一个原子的转移，但是当原子在  atomNew的数量大于流限制，转移到 atomOut  …</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-12-30</div>
+<div class="ptl-msg-subject">Re: NONCE 创世原子，Genesis Atom</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">难度调整</span>
+<span class="ptl-msg-concept">hashcash与POW</span>
+<span class="ptl-msg-concept">声誉与市场</span>
+</div>
+<div class="ptl-msg-body">比特币 market 部分代码，实际上存在一个因为随机的使用而带来的不一致问题，在第一次传播时，会产生进入 atomOut  原子不一致的问题，而第二次传播时，则会因为 atomOut 带来评价实际的…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-12-25</div>
+<div class="ptl-msg-subject">Re: 领取计算任务</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">难度调整</span>
+</div>
+<div class="ptl-msg-body">1. 哈希算法的原像计算及其谜题友好性来源（最好是数学保证） 2. 比特币难度调整算法对此的应用 3. 比特币挖矿过程中这种验证和计算 nonce 的关系  在2025年12月26日星期五 UTC+8…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-12-21</div>
+<div class="ptl-msg-subject">Re: 比特币通讯规则实验，有激励！</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">hashcash与POW</span>
+</div>
+<div class="ptl-msg-body">[image: db067ff00b9f6e5b3cc514b8c5554f6a.png]  在2025年12月19日星期五 UTC+8 11:38:18&lt;initsysctrl&gt; 写道：  &gt; &gt; …</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+</div>
+</div>
 <div class="ptl-month">
-<div class="ptl-month-label"><span class="ptl-dot"></span>2025年11月<span class="ptl-year">3条</span></div>
+<div class="ptl-month-label"><span class="ptl-dot"></span>2025年11月<span class="ptl-msg-count">3条消息</span></div>
 <div class="ptl-bar"><div class="ptl-bar-fill" style="width:30%"></div></div>
 <div class="ptl-msgs">
-<div class="ptl-msg"><div class="ptl-date">2025-11-19</div><div class="ptl-subject">Re: 一些关于 market 部分的邮件上下文补充</div><div class="ptl-tags"><span class="ptl-tag">BitDNS与P2P市场</span></div><div class="ptl-body">邮件的可读性有点差，可以看 notion  写道： &gt; 关于 market 部分，中本聪与之相关的邮件 &gt; &gt;  👉 &gt; &gt; 2009/04/14  &gt; &gt; I started implementing</div></div>
-<div class="ptl-msg"><div class="ptl-date">2025-11-19</div><div class="ptl-subject">一些关于 market 部分的邮件上下文补充</div><div class="ptl-tags"><span class="ptl-tag">BitDNS与P2P市场</span></div><div class="ptl-body">关于 market 部分，中本聪与之相关的邮件  👉 2009/04/14  I started implementing a marketplace feature earlier that facilitates offering things for sale and taking orders, it's only half done though. A bit like e-bay but without auctions, just &quot;buy now&quot;. Among</div></div>
-<div class="ptl-msg"><div class="ptl-date">2025-11-18</div><div class="ptl-subject">=?UTF-8?Q?Google_group_和_比特? =?UTF-8?Q?币的_P2P_都来自_Usenet?</div><div class="ptl-body">首先 Google group 是来自于谷歌收购的 Deja News，它是 Deja 的 Usenet 存档。而 Google group 的服务是一个通过电子邮件进行主题讨论的讨论组（discussion groups），电子邮件只是其实现方式，其还是脱胎于 Usnet。 另外在比特币白皮书、邮件列表、中本聪私人邮件和讨论组中都多次提到 Usenet 和其标准 NNTP。 - 首先在白皮书中提到：“A timestamp server works by taking a hash of a block of items to be timestamped and widely publis</div></div>
-</div></div>
-    </div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-11-19</div>
+<div class="ptl-msg-subject">Re: 一些关于 market 部分的邮件上下文补充</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">中间会面机制</span>
+</div>
+<div class="ptl-msg-body">邮件的可读性有点差，可以看 notion  &lt;https://www.notion.so/chenmoonmo/1120-market-2b19b737b3f080359c9fdf6cb8dda3f7…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-11-19</div>
+<div class="ptl-msg-subject">一些关于 market 部分的邮件上下文补充</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">中间会面机制</span>
+</div>
+<div class="ptl-msg-body">关于 market 部分，中本聪与之相关的邮件  &lt;aside&gt; 👉  2009/04/14 https://plan99.net/~mike/satoshi-emails/thread1.html …</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-11-18</div>
+<div class="ptl-msg-subject">Google group 和 比特币的 P2P 都来自 Usenet</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">泛洪与5跳</span>
+<span class="ptl-msg-concept">节点与SPV轻节点</span>
+</div>
+<div class="ptl-msg-body">首先 Google group 是来自于谷歌收购的 Deja News，它是 Deja 的 Usenet 存档。而 Google group  的服务是一个通过电子邮件进行主题讨论的讨论组（discu…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+</div>
+</div>
+</div>
+<!-- END_PERSON_TIMELINE -->
+
   </section>
 
   <section>
@@ -279,5 +643,43 @@ h2{font-size:15px;font-weight:600;color:var(--acc);margin-bottom:14px;border-bot
 })();
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.ptl-msg').forEach(function(msg){
+    var btn=msg.querySelector('.ptl-expand');
+    var body=msg.querySelector('.ptl-msg-body');
+    if(btn&&body){
+      btn.addEventListener('click',function(e){e.stopPropagation();
+        body.classList.toggle('open');
+        btn.textContent=body.classList.contains('open')?'收起 ▲':'展开 ▾';
+      });
+    }
+  });
+  document.querySelectorAll('.ptl-show-all-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var month=this.getAttribute('data-month');
+      var container=this.closest('.ptl-month');
+      if(container){
+        var hidden=container.querySelectorAll('.ptl-msg-hidden');
+        var isOpen=this.classList.contains('open');
+        hidden.forEach(function(msg){msg.style.display=isOpen?'none':'block';});
+        this.classList.toggle('open');
+        this.textContent=isOpen?('展开全部 '+hidden.length+' 条 ▾'):('收起 ▲');
+      }
+    });
+  });
+  document.querySelectorAll('.ita-person').forEach(function(card){
+    card.addEventListener('click',function(e){
+      e.preventDefault();
+      var detail=card.nextElementSibling;
+      if(detail&&detail.classList.contains('ita-detail')){
+        detail.style.display=detail.style.display?'none':'block';
+        var toggle=card.querySelector('.ita-toggle');
+        if(toggle)toggle.textContent=detail.style.display?'▼':'▲';
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+<base href="/p2ptalk-wiki/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>叶鹏 — P2PTalk 人物</title>
@@ -47,6 +48,38 @@ h2{font-size:15px;font-weight:600;color:var(--acc);margin-bottom:14px;border-bot
 .ptl-tag{font-size:10px;background:rgba(233,69,96,.1);color:var(--acc);padding:2px 7px;border-radius:8px}
 .ptl-body{font-size:12px;color:var(--muted);line-height:1.5}
 .concept-tags{display:flex;flex-wrap:wrap;gap:6px}
+.person-timeline{margin:16px 0 24px 0;}
+.ptl-month{margin-bottom:18px;}
+.ptl-month-label{display:flex;align-items:center;gap:8px;margin-bottom:8px;color:var(--accent);font-size:12px;font-weight:600;}
+.ptl-month-label .ptl-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);}
+.ptl-month-label .ptl-year{color:var(--text-muted);font-size:10px;font-weight:400;margin-left:4px;}
+.ptl-month-label .ptl-msg-count{font-size:10px;color:var(--text-muted);margin-left:auto;}
+.ptl-msgs{margin-left:16px;border-left:2px solid var(--border);padding-left:14px;}
+.ptl-msg{margin-bottom:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px;border:1px solid var(--border);font-size:12px;line-height:1.5;}
+.ptl-msg:hover{border-color:var(--accent);}
+.ptl-msg-date{color:var(--text-muted);font-size:10px;margin-bottom:4px;}
+.ptl-msg-subject{color:var(--accent);margin-bottom:4px;font-weight:500;}
+.ptl-msg-body{color:var(--text);font-size:11px;line-height:1.5;display:none;}
+.ptl-msg-body.open{display:block;}
+.ptl-msg-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ptl-msg-concept{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
+.ptl-expand{background:none;border:1px solid var(--accent);color:var(--accent);font-size:10px;cursor:pointer;padding:2px 8px;border-radius:5px;margin-top:4px;display:inline-block;}
+.ptl-expand:hover{background:rgba(233,69,96,0.1);}
+.ptl-msg-hidden{display:none;}
+.ptl-show-all{text-align:center;padding:6px 0;}
+.ptl-show-all-btn{background:var(--accent2);border:1px solid var(--border);color:var(--text-muted);font-size:11px;cursor:pointer;padding:4px 14px;border-radius:12px;transition:all 0.2s;}
+.ptl-show-all-btn:hover{background:rgba(233,69,96,0.15);color:var(--accent);border-color:var(--accent);}
+.ptl-show-all-btn.open{background:rgba(233,69,96,0.15);color:var(--accent);border-color:var(--accent);}
+.ptl-bar{height:4px;background:var(--accent2);border-radius:2px;margin:4px 0 8px 0;overflow:hidden;}
+.ptl-bar-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.3s;}
+.interaction-section{margin:16px 0 24px 0;}
+.ita-person{display:flex;align-items:center;gap:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;cursor:pointer;text-decoration:none;color:var(--text);}
+.ita-person:hover{border-color:var(--accent);color:var(--accent);}
+.ita-person-name{font-weight:600;color:var(--accent);font-size:13px;}
+.ita-person-count{color:var(--text-muted);font-size:11px;}
+.ita-toggle{font-size:12px;color:var(--text-muted);margin-left:auto;}
+.ita-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ita-concept-tag{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
 </style>
 </head>
 <body>
@@ -159,6 +192,38 @@ h2{font-size:15px;font-weight:600;color:var(--acc);margin-bottom:14px;border-bot
 <style>
 #kg-wrap{margin:16px 0}
 #kg-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:8px;padding:8px 0}
+.person-timeline{margin:16px 0 24px 0;}
+.ptl-month{margin-bottom:18px;}
+.ptl-month-label{display:flex;align-items:center;gap:8px;margin-bottom:8px;color:var(--accent);font-size:12px;font-weight:600;}
+.ptl-month-label .ptl-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);}
+.ptl-month-label .ptl-year{color:var(--text-muted);font-size:10px;font-weight:400;margin-left:4px;}
+.ptl-month-label .ptl-msg-count{font-size:10px;color:var(--text-muted);margin-left:auto;}
+.ptl-msgs{margin-left:16px;border-left:2px solid var(--border);padding-left:14px;}
+.ptl-msg{margin-bottom:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px;border:1px solid var(--border);font-size:12px;line-height:1.5;}
+.ptl-msg:hover{border-color:var(--accent);}
+.ptl-msg-date{color:var(--text-muted);font-size:10px;margin-bottom:4px;}
+.ptl-msg-subject{color:var(--accent);margin-bottom:4px;font-weight:500;}
+.ptl-msg-body{color:var(--text);font-size:11px;line-height:1.5;display:none;}
+.ptl-msg-body.open{display:block;}
+.ptl-msg-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ptl-msg-concept{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
+.ptl-expand{background:none;border:1px solid var(--accent);color:var(--accent);font-size:10px;cursor:pointer;padding:2px 8px;border-radius:5px;margin-top:4px;display:inline-block;}
+.ptl-expand:hover{background:rgba(233,69,96,0.1);}
+.ptl-msg-hidden{display:none;}
+.ptl-show-all{text-align:center;padding:6px 0;}
+.ptl-show-all-btn{background:var(--accent2);border:1px solid var(--border);color:var(--text-muted);font-size:11px;cursor:pointer;padding:4px 14px;border-radius:12px;transition:all 0.2s;}
+.ptl-show-all-btn:hover{background:rgba(233,69,96,0.15);color:var(--accent);border-color:var(--accent);}
+.ptl-show-all-btn.open{background:rgba(233,69,96,0.15);color:var(--accent);border-color:var(--accent);}
+.ptl-bar{height:4px;background:var(--accent2);border-radius:2px;margin:4px 0 8px 0;overflow:hidden;}
+.ptl-bar-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.3s;}
+.interaction-section{margin:16px 0 24px 0;}
+.ita-person{display:flex;align-items:center;gap:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;cursor:pointer;text-decoration:none;color:var(--text);}
+.ita-person:hover{border-color:var(--accent);color:var(--accent);}
+.ita-person-name{font-weight:600;color:var(--accent);font-size:13px;}
+.ita-person-count{color:var(--text-muted);font-size:11px;}
+.ita-toggle{font-size:12px;color:var(--text-muted);margin-left:auto;}
+.ita-concepts{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.ita-concept-tag{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
 </style>
 
   </section>
@@ -179,66 +244,258 @@ h2{font-size:15px;font-weight:600;color:var(--acc);margin-bottom:14px;border-bot
     <h2>📊 注意力分布（按月）</h2>
     <div class="person-timeline">
 <div class="ptl-month">
-<div class="ptl-month-label"><span class="ptl-dot"></span>2026年04月<span class="ptl-year">1条</span></div>
-<div class="ptl-bar"><div class="ptl-bar-fill" style="width:9%"></div></div>
+<div class="ptl-month-label"><span class="ptl-dot"></span>2026年04月<span class="ptl-msg-count">1条消息</span></div>
+<div class="ptl-bar"><div class="ptl-bar-fill" style="width:11%"></div></div>
 <div class="ptl-msgs">
-<div class="ptl-msg"><div class="ptl-date">2026-04-12</div><div class="ptl-subject">难度、时间、atom、中本聪共识</div><div class="ptl-tags"><span class="ptl-tag">Atom是什么</span> <span class="ptl-tag">Atom与Bitcoin关系</span> <span class="ptl-tag">Atom数据结构</span></div><div class="ptl-body">引用：xuyapeng110 今天和老史开会，更新几条会议规则: 会议规则一，有进展就邮件讲重点，发起跟老史的会议 会议规则二，更新会议规则的时候需要邮件说明 会议规则三，涉及到比特币的内容，拿代码证据 进展重点： *1. 我目前理解的中本聪共识* 从重写比特币中获得的灵感。假设所有人都来fork中本聪的源码，然后自己修改，这么多版本的代码如何才能正常的通讯，形成一个稳定网络。所有版本的比特币的“差集”，就是中本聪共识，至少是在代码层面的共识。 因此，我认为，在比特币中，中本聪共识如下： 0. 本网络为p2p网络，无任何可信第三方。 1. 本网络有且只能传递两种消息，交易和区块 2. 交易和区</div></div>
-</div></div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-04-12</div>
+<div class="ptl-msg-subject">难度、时间、atom、中本聪共识</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom数据结构</span>
+<span class="ptl-msg-concept">中本聪共识原理</span>
+</div>
+<div class="ptl-msg-body">引用：xuyapeng110 今天和老史开会，更新几条会议规则: 会议规则一，有进展就邮件讲重点，发起跟老史的会议 会议规则二，更新会议规则的时候需要邮件说明 会议规则三，涉及到比特币的内容，拿代码证…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+</div>
+</div>
 <div class="ptl-month">
-<div class="ptl-month-label"><span class="ptl-dot"></span>2026年03月<span class="ptl-year">10条</span></div>
-<div class="ptl-bar"><div class="ptl-bar-fill" style="width:90%"></div></div>
-<div class="ptl-msgs">
-<div class="ptl-msg"><div class="ptl-date">2026-03-27</div><div class="ptl-subject">回复： 已获得老史review之牛逼之中本聪在p2p market的少爷思维：我不在乎你的商品是怎么造的，我这市场里的都是顶尖的。</div><div class="ptl-body">&lt;sp</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-23</div><div class="ptl-subject">回复： 关于atom的数据结构之后怎么处理</div><div class="ptl-tags"><span class="ptl-tag">元胞自动机</span></div><div class="ptl-body">我试图从</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-18</div><div class="ptl-subject">回复： 关于atom的数据结构之后怎么处理</div><div class="ptl-body"><span style="color:var(--muted);font-style:italic">(无正文)</span></div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-18</div><div class="ptl-subject">回复： 关于atom的数据结构之后怎么处理</div><div class="ptl-tags"><span class="ptl-tag">元胞自动机</span></div><div class="ptl-body">&lt;di</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-16</div><div class="ptl-subject">回复： 会前同步</div><div class="ptl-body"><span style="color:var(--muted);font-style:italic">(无正文)</span></div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-16</div><div class="ptl-subject">回复： 会前同步</div><div class="ptl-body">传播前</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-16</div><div class="ptl-subject">回复： 会前同步</div><div class="ptl-body">模仿h</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-16</div><div class="ptl-subject">回复：会前同步</div><div class="ptl-body">&lt;sp</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-12</div><div class="ptl-subject">回复： 关于atom的数据结构之后怎么处理</div><div class="ptl-tags"><span class="ptl-tag">中间会面机制</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">&lt;sp</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-03-02</div><div class="ptl-subject">回复：20260302 会前同步</div><div class="ptl-tags"><span class="ptl-tag">Atom是什么</span> <span class="ptl-tag">节点与SPV轻节点</span> <span class="ptl-tag">难度调整</span></div><div class="ptl-body">关于组织</div></div>
-</div></div>
-<div class="ptl-month">
-<div class="ptl-month-label"><span class="ptl-dot"></span>2026年02月<span class="ptl-year">6条</span></div>
-<div class="ptl-bar"><div class="ptl-bar-fill" style="width:54%"></div></div>
-<div class="ptl-msgs">
-<div class="ptl-msg"><div class="ptl-date">2026-02-27</div><div class="ptl-subject">难度调整机制、atom、流转阈值</div><div class="ptl-body"><span style="color:var(--muted);font-style:italic">(无正文)</span></div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-02-25</div><div class="ptl-subject">p2p、图、集聚性</div><div class="ptl-body"><span style="color:var(--muted);font-style:italic">(无正文)</span></div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-02-24</div><div class="ptl-subject">回复：20260224 匹配会议消息广播</div><div class="ptl-tags"><span class="ptl-tag">Atom是什么</span> <span class="ptl-tag">中间会面机制</span> <span class="ptl-tag">谓词</span> <span class="ptl-tag">Atom数据结构</span></div><div class="ptl-body">&lt;st</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-02-11</div><div class="ptl-subject">回复： 20260211会前同步</div><div class="ptl-body"><span style="color:var(--muted);font-style:italic">(无正文)</span></div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-02-07</div><div class="ptl-subject">回复：20260207同步本会议前个人的最新进展及上下文</div><div class="ptl-tags"><span class="ptl-tag">元胞自动机</span></div><div class="ptl-body">和woo</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-02-02</div><div class="ptl-subject">回复：2 月 2 日会议前置工作</div><div class="ptl-tags"><span class="ptl-tag">元胞自动机</span> <span class="ptl-tag">Atom与Bitcoin关系</span> <span class="ptl-tag">Atom数据结构</span></div><div class="ptl-body">上次零散</div></div>
-</div></div>
-<div class="ptl-month">
-<div class="ptl-month-label"><span class="ptl-dot"></span>2026年01月<span class="ptl-year">11条</span></div>
+<div class="ptl-month-label"><span class="ptl-dot"></span>2026年03月<span class="ptl-msg-count">9条消息</span></div>
 <div class="ptl-bar"><div class="ptl-bar-fill" style="width:100%"></div></div>
 <div class="ptl-msgs">
-<div class="ptl-msg"><div class="ptl-date">2026-01-29</div><div class="ptl-subject">回复：强制返回计算结果</div><div class="ptl-body">抱歉，我</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-26</div><div class="ptl-subject">回复：周五会议同步</div><div class="ptl-tags"><span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">会议过程</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-23</div><div class="ptl-subject">回复：周四会议同步</div><div class="ptl-tags"><span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">前面的忘</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-22</div><div class="ptl-subject">回复：周二会议同步</div><div class="ptl-body">参会人员</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-20</div><div class="ptl-subject">回复：请求同步周一会议内容</div><div class="ptl-tags"><span class="ptl-tag">Atom流转机制</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">会议过程</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-20</div><div class="ptl-subject">回复： 强制同步最长链</div><div class="ptl-body"><span style="color:var(--muted);font-style:italic">(无正文)</span></div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-08</div><div class="ptl-subject">回复： 强制同步最长链</div><div class="ptl-body">牛逼。清</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-08</div><div class="ptl-subject">回复： 强制同步最长链</div><div class="ptl-body">雷雷这个</div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-08</div><div class="ptl-subject">回复： 强制同步最长链</div><div class="ptl-body"><span style="color:var(--muted);font-style:italic">(无正文)</span></div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-08</div><div class="ptl-subject">回复： 强制同步最长链</div><div class="ptl-body"><span style="color:var(--muted);font-style:italic">(无正文)</span></div></div>
-<div class="ptl-msg"><div class="ptl-date">2026-01-08</div><div class="ptl-subject">回复：强制同步最长链</div><div class="ptl-body"><span style="color:var(--muted);font-style:italic">(无正文)</span></div></div>
-</div></div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-27</div>
+<div class="ptl-msg-subject">回复： 已获得老史review之牛逼之中本聪在p2p market的少爷思维：我不在乎你的商品是怎么造的，我这市场里的都是顶尖的。</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-23</div>
+<div class="ptl-msg-subject">回复： 关于atom的数据结构之后怎么处理</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom数据结构</span>
+<span class="ptl-msg-concept">元胞自动机</span>
+</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-18</div>
+<div class="ptl-msg-subject">回复： 关于atom的数据结构之后怎么处理</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom数据结构</span>
+</div>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-18</div>
+<div class="ptl-msg-subject">回复： 关于atom的数据结构之后怎么处理</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom数据结构</span>
+<span class="ptl-msg-concept">元胞自动机</span>
+</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-03-16</div>
+<div class="ptl-msg-subject">回复： 会前同步</div>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-03-16</div>
+<div class="ptl-msg-subject">回复： 会前同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom数据结构</span>
+</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-03-16</div>
+<div class="ptl-msg-subject">回复：会前同步</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-03-12</div>
+<div class="ptl-msg-subject">回复： 关于atom的数据结构之后怎么处理</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom数据结构</span>
+<span class="ptl-msg-concept">hashcash与POW</span>
+<span class="ptl-msg-concept">中间会面机制</span>
+<span class="ptl-msg-concept">泛洪与5跳</span>
+</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-03-02</div>
+<div class="ptl-msg-subject">回复：20260302 会前同步</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">难度调整</span>
+</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-show-all"><button class="ptl-show-all-btn" data-month="2026-03">展开全部 9 条 ▾</button></div>
+</div>
+</div>
 <div class="ptl-month">
-<div class="ptl-month-label"><span class="ptl-dot"></span>2025年12月<span class="ptl-year">7条</span></div>
-<div class="ptl-bar"><div class="ptl-bar-fill" style="width:63%"></div></div>
+<div class="ptl-month-label"><span class="ptl-dot"></span>2026年02月<span class="ptl-msg-count">6条消息</span></div>
+<div class="ptl-bar"><div class="ptl-bar-fill" style="width:66%"></div></div>
 <div class="ptl-msgs">
-<div class="ptl-msg"><div class="ptl-date">2025-12-30</div><div class="ptl-subject">回复：广播新nonce:广播和p2pmarket的关系</div><div class="ptl-tags"><span class="ptl-tag">Atom是什么</span> <span class="ptl-tag">洪泛atom的激励问题</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">接收广播</div></div>
-<div class="ptl-msg"><div class="ptl-date">2025-12-26</div><div class="ptl-subject">回复：领取计算任务</div><div class="ptl-body"><span style="color:var(--muted);font-style:italic">(无正文)</span></div></div>
-<div class="ptl-msg"><div class="ptl-date">2025-12-25</div><div class="ptl-subject">Re: 广播Nounce-建立会议连贯性 （最新p2p会议规则调整）</div><div class="ptl-tags"><span class="ptl-tag">Atom是什么</span> <span class="ptl-tag">Atom与Bitcoin关系</span></div><div class="ptl-body">规则调整建议： 直接使用gmail容易造成信息的干扰，使用邮件组的web端更清晰一些，前提是邮件组中每一个主题需要写清楚。  在2025年12月26日星期五 UTC+8 14:36:31 写道： &gt; 最新会议规则调整（更新） &gt; 1.老矢发布公告，团队成员确认邮件后找老矢同步nounce（如果不需要同步noucne你自己能看明白，则可以直接进行抽象问题并回复） &gt; 2.找老矢同步后，抽象nounce是什么问题对老矢发送的邮件下面进行回复 &gt; 3.开始计算，计算后结果对老矢发送的邮件下进行回复</div></div>
-<div class="ptl-msg"><div class="ptl-date">2025-12-19</div><div class="ptl-subject">回复：比特币通讯规则实验，有激励！</div><div class="ptl-body"><span style="color:var(--muted);font-style:italic">(无正文)</span></div></div>
-<div class="ptl-msg"><div class="ptl-date">2025-12-15</div><div class="ptl-subject">回复：会议规则改动，周一全员线下开会，收到请回复收到。</div><div class="ptl-body">收到&lt;/</div></div>
-<div class="ptl-msg"><div class="ptl-date">2025-12-03</div><div class="ptl-subject">转发：回复：邀请：第三次广播 @ 2025年12月3日 (周三) 下午2:15 - 下午3:15 (GMT+8) (initsysctrl@gmail.com)</div><div class="ptl-body">&lt;sp</div></div>
-<div class="ptl-msg"><div class="ptl-date">2025-12-02</div><div class="ptl-subject">比特币代码研读</div><div class="ptl-body"><span style="color:var(--muted);font-style:italic">(无正文)</span></div></div>
-</div></div>
-    </div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-27</div>
+<div class="ptl-msg-subject">难度调整机制、atom、流转阈值</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">难度调整</span>
+</div>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-25</div>
+<div class="ptl-msg-subject">p2p、图、集聚性</div>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-24</div>
+<div class="ptl-msg-subject">回复：20260224 匹配会议消息广播</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom数据结构</span>
+<span class="ptl-msg-concept">谓词</span>
+<span class="ptl-msg-concept">中间会面机制</span>
+<span class="ptl-msg-concept">泛洪与5跳</span>
+</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-11</div>
+<div class="ptl-msg-subject">回复： 20260211会前同步</div>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-02-07</div>
+<div class="ptl-msg-subject">回复：20260207同步本会议前个人的最新进展及上下文</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">元胞自动机</span>
+</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-02-02</div>
+<div class="ptl-msg-subject">回复：2 月 2 日会议前置工作</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">Atom数据结构</span>
+<span class="ptl-msg-concept">元胞自动机</span>
+</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-show-all"><button class="ptl-show-all-btn" data-month="2026-02">展开全部 6 条 ▾</button></div>
+</div>
+</div>
+<div class="ptl-month">
+<div class="ptl-month-label"><span class="ptl-dot"></span>2026年01月<span class="ptl-msg-count">9条消息</span></div>
+<div class="ptl-bar"><div class="ptl-bar-fill" style="width:100%"></div></div>
+<div class="ptl-msgs">
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-29</div>
+<div class="ptl-msg-subject">回复：强制返回计算结果</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-26</div>
+<div class="ptl-msg-subject">回复：周五会议同步</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-23</div>
+<div class="ptl-msg-subject">回复：周四会议同步</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-22</div>
+<div class="ptl-msg-subject">回复：周二会议同步</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2026-01-20</div>
+<div class="ptl-msg-subject">回复：请求同步周一会议内容</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-01-20</div>
+<div class="ptl-msg-subject">回复： 强制同步最长链</div>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-01-08</div>
+<div class="ptl-msg-subject">回复： 强制同步最长链</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-01-08</div>
+<div class="ptl-msg-subject">回复： 强制同步最长链</div>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2026-01-08</div>
+<div class="ptl-msg-subject">回复：强制同步最长链</div>
+</div>
+<div class="ptl-show-all"><button class="ptl-show-all-btn" data-month="2026-01">展开全部 9 条 ▾</button></div>
+</div>
+</div>
+<div class="ptl-month">
+<div class="ptl-month-label"><span class="ptl-dot"></span>2025年12月<span class="ptl-msg-count">7条消息</span></div>
+<div class="ptl-bar"><div class="ptl-bar-fill" style="width:77%"></div></div>
+<div class="ptl-msgs">
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-12-30</div>
+<div class="ptl-msg-subject">回复：广播新nonce:广播和p2pmarket的关系</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-12-26</div>
+<div class="ptl-msg-subject">回复：领取计算任务</div>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-12-25</div>
+<div class="ptl-msg-subject">Re: 广播Nounce-建立会议连贯性 （最新p2p会议规则调整）</div>
+<div class="ptl-msg-concepts">
+<span class="ptl-msg-concept">难度调整</span>
+</div>
+<div class="ptl-msg-body">规则调整建议： 直接使用gmail容易造成信息的干扰，使用邮件组的web端更清晰一些，前提是邮件组中每一个主题需要写清楚。 https://groups.google.com/g/p2ptalk 在2…</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-12-19</div>
+<div class="ptl-msg-subject">回复：比特币通讯规则实验，有激励！</div>
+</div>
+<div class="ptl-msg">
+<div class="ptl-msg-date">2025-12-15</div>
+<div class="ptl-msg-subject">回复：会议规则改动，周一全员线下开会，收到请回复收到。</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2025-12-03</div>
+<div class="ptl-msg-subject">转发：回复：邀请：第三次广播 @ 2025年12月3日 (周三) 下午2:15 - 下午3:15 (GMT+8) (initsysctrl@gmail.com)</div>
+<div class="ptl-msg-body">&lt;div style = 'font-family:Helvetica,Helvetic</div>
+<button class="ptl-expand">展开 ▾</button>
+</div>
+<div class="ptl-msg ptl-msg-hidden">
+<div class="ptl-msg-date">2025-12-02</div>
+<div class="ptl-msg-subject">比特币代码研读</div>
+</div>
+<div class="ptl-show-all"><button class="ptl-show-all-btn" data-month="2025-12">展开全部 7 条 ▾</button></div>
+</div>
+</div>
+</div>
+<!-- END_PERSON_TIMELINE -->
+
   </section>
 
   <section>
@@ -272,5 +529,43 @@ h2{font-size:15px;font-weight:600;color:var(--acc);margin-bottom:14px;border-bot
 })();
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.ptl-msg').forEach(function(msg){
+    var btn=msg.querySelector('.ptl-expand');
+    var body=msg.querySelector('.ptl-msg-body');
+    if(btn&&body){
+      btn.addEventListener('click',function(e){e.stopPropagation();
+        body.classList.toggle('open');
+        btn.textContent=body.classList.contains('open')?'收起 ▲':'展开 ▾';
+      });
+    }
+  });
+  document.querySelectorAll('.ptl-show-all-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var month=this.getAttribute('data-month');
+      var container=this.closest('.ptl-month');
+      if(container){
+        var hidden=container.querySelectorAll('.ptl-msg-hidden');
+        var isOpen=this.classList.contains('open');
+        hidden.forEach(function(msg){msg.style.display=isOpen?'none':'block';});
+        this.classList.toggle('open');
+        this.textContent=isOpen?('展开全部 '+hidden.length+' 条 ▾'):('收起 ▲');
+      }
+    });
+  });
+  document.querySelectorAll('.ita-person').forEach(function(card){
+    card.addEventListener('click',function(e){
+      e.preventDefault();
+      var detail=card.nextElementSibling;
+      if(detail&&detail.classList.contains('ita-detail')){
+        detail.style.display=detail.style.display?'none':'block';
+        var toggle=card.querySelector('.ita-toggle');
+        if(toggle)toggle.textContent=detail.style.display?'▼':'▲';
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>

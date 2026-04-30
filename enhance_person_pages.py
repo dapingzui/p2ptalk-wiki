@@ -8,8 +8,8 @@ import json, re, quopri, email.header
 from pathlib import Path
 from collections import defaultdict
 
-REPO = Path('/tmp/p2ptalk-wiki')
-DATA_FILE = Path('/tmp/p2ptalk_processed.json')
+REPO = Path('/Users/ice/.openclaw/workspace/p2ptalk-wiki-publish')
+DATA_FILE = Path('/Users/ice/.openclaw/workspace/inbox/p2ptalk/p2ptalk_processed.json')
 
 with open(DATA_FILE) as f:
     data = json.load(f)
@@ -17,7 +17,13 @@ with open(DATA_FILE) as f:
 person_msgs = data.get('person_messages', {})
 person_monthly = data.get('person_monthly', {})
 person_concepts = data.get('person_concepts', {})
-all_msgs = data['all_messages']
+# Build flat all_msgs from person_messages (for interaction calculations)
+all_msgs = []
+for person, msgs in person_msgs.items():
+    for m in msgs:
+        m_copy = dict(m)
+        m_copy['person'] = person
+        all_msgs.append(m_copy)
 
 person_files = {}
 for f in REPO.glob('person_*.html'):
@@ -41,6 +47,11 @@ NEW_CSS = """.person-timeline{margin:16px 0 24px 0;}
 .ptl-msg-concept{background:var(--accent2);color:var(--text);font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);}
 .ptl-expand{background:none;border:1px solid var(--accent);color:var(--accent);font-size:10px;cursor:pointer;padding:2px 8px;border-radius:5px;margin-top:4px;display:inline-block;}
 .ptl-expand:hover{background:rgba(233,69,96,0.1);}
+.ptl-msg-hidden{display:none;}
+.ptl-show-all{text-align:center;padding:6px 0;}
+.ptl-show-all-btn{background:var(--accent2);border:1px solid var(--border);color:var(--text-muted);font-size:11px;cursor:pointer;padding:4px 14px;border-radius:12px;transition:all 0.2s;}
+.ptl-show-all-btn:hover{background:rgba(233,69,96,0.15);color:var(--accent);border-color:var(--accent);}
+.ptl-show-all-btn.open{background:rgba(233,69,96,0.15);color:var(--accent);border-color:var(--accent);}
 .ptl-bar{height:4px;background:var(--accent2);border-radius:2px;margin:4px 0 8px 0;overflow:hidden;}
 .ptl-bar-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.3s;}
 .interaction-section{margin:16px 0 24px 0;}
@@ -63,6 +74,19 @@ document.addEventListener('DOMContentLoaded',function(){
         btn.textContent=body.classList.contains('open')?'收起 ▲':'展开 ▾';
       });
     }
+  });
+  document.querySelectorAll('.ptl-show-all-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var month=this.getAttribute('data-month');
+      var container=this.closest('.ptl-month');
+      if(container){
+        var hidden=container.querySelectorAll('.ptl-msg-hidden');
+        var isOpen=this.classList.contains('open');
+        hidden.forEach(function(msg){msg.style.display=isOpen?'none':'block';});
+        this.classList.toggle('open');
+        this.textContent=isOpen?('展开全部 '+hidden.length+' 条 ▾'):('收起 ▲');
+      }
+    });
   });
   document.querySelectorAll('.ita-person').forEach(function(card){
     card.addEventListener('click',function(e){
@@ -152,7 +176,16 @@ def build_timeline(person):
         html += f'<div class="ptl-bar"><div class="ptl-bar-fill" style="width:{bar_pct}%"></div></div>\n'
         html += '<div class="ptl-msgs">\n'
 
-        for m in by_month[month][:5]:
+        msgs_this_month = by_month[month]
+        total = len(msgs_this_month)
+        visible_count = min(5, total)
+
+        for i, m in enumerate(msgs_this_month):
+            if i >= 5:
+                hidden_cls = ' ptl-msg-hidden'
+            else:
+                hidden_cls = ''
+
             date = m.get('date', '')[:10] if m.get('date') else ''
             subject = decode_subject(m.get('subject', ''))
             if subject.lower() in ['re:', '']:
@@ -168,7 +201,7 @@ def build_timeline(person):
                 except Exception:
                     concepts = []
 
-            html += '<div class="ptl-msg">\n'
+            html += f'<div class="ptl-msg{hidden_cls}">\n'
             html += f'<div class="ptl-msg-date">{esc(date)}</div>\n'
             html += f'<div class="ptl-msg-subject">{esc(subject)}</div>\n'
             if concepts:
@@ -182,12 +215,13 @@ def build_timeline(person):
                 html += '<button class="ptl-expand">展开 ▾</button>\n'
             html += '</div>\n'
 
-        if len(by_month[month]) > 5:
-            html += f'<div style="text-align:center;color:var(--text-muted);font-size:11px;padding:4px">还有{len(by_month[month])-5}条消息</div>\n'
+        if total > 5:
+            html += f'<div class="ptl-show-all"><button class="ptl-show-all-btn" data-month="{month}">展开全部 {total} 条 ▾</button></div>\n'
 
         html += '</div>\n</div>\n'
 
     html += '</div>\n'
+    html += '<!-- END_PERSON_TIMELINE -->\n'
     return html
 
 
@@ -262,8 +296,41 @@ def enhance_person_html(html_content, person):
 
     timeline_html = build_timeline(person)
     if timeline_html:
-        pattern = re.compile(r'<div class="person-timeline">.*?</div>\s*</div>', re.DOTALL)
-        html_content = pattern.sub(timeline_html.rstrip() + '\n', html_content)
+        # Find the timeline section and replace it entirely.
+        # Use a marker-based approach: start from <div class="person-timeline">
+        # and find where the next </section> or <h2> starts, then walk backwards
+        # through the markup to find the correct closing </div>.
+        start_tag = '<div class="person-timeline">'
+        idx_start = html_content.find(start_tag)
+        if idx_start >= 0:
+            search_from = idx_start + len(start_tag)
+            # Find earliest section or h2 boundary after the timeline
+            bound = len(html_content)
+            for m in ['</section>', '<h2>', '<div class="sidebar">', '</body>']:
+                idx = html_content.find(m, search_from)
+                if 0 < idx < bound:
+                    bound = idx
+            # Walk backwards from bound to find the pattern that closes the timeline container
+            # The timeline container ends with: </div></div> (inner msgs close + ptl-month close + outer close)
+            # Look for a </div> preceded by </div></div> (i.e., the container itself)
+            # Just find the last </div> snippet containing exactly the timeline's outermost close
+            snippet = html_content[idx_start:bound]
+            # Find the outermost container close: count how many extra </div> close the section
+            # The container itself adds 1 more </div> than opens (since the start tag isn't counted)
+            # Find the first </div> that doesn't have another </div> right before it (marking container close)
+            # Actually simpler: the person-timeline div is the outermost div that closes right before the section ends
+            # Find the LAST </div> in the snippet that's not part of the nested month divs
+            # Strategy: find '\n</div>\n</div>' - this marks the end of a ptl-month and the last one has an extra close
+            # The closing structure is exactly: </div>\n</div>\n</div> (for the last ptl-msg > ptl-msgs > ptl-month)
+            # Then the person-timeline's own </div> closes right before the next section
+            # 
+            # Better approach: just use the last </div> as the timeline end marker
+            end_marker_pos = html_content.rfind('</div>', idx_start, bound)
+            # Verify this </div> is followed by </section> or whitespace+</section>
+            strict_check = html_content[end_marker_pos:end_marker_pos+50]
+            close_end = end_marker_pos + len('</div>')
+            old_timeline = html_content[idx_start:close_end]
+            html_content = html_content.replace(old_timeline, timeline_html.rstrip() + '\n', 1)
 
     interaction_html = build_interactions(person)
     if interaction_html:
@@ -282,9 +349,16 @@ def enhance_person_html(html_content, person):
 
 def main():
     enhanced = 0
-    for person, html_file in person_files.items():
+    for _, html_file in person_files.items():
         try:
             content = html_file.read_text(encoding='utf-8')
+            # Extract Chinese name from <h1> tag (file names are romanized)
+            import re
+            m = re.search(r'<h1>(.*?)</h1>', content)
+            if not m:
+                print(f'  err {html_file.name}: no <h1> found')
+                continue
+            person = m.group(1).strip()
             enhanced_content = enhance_person_html(content, person)
             html_file.write_text(enhanced_content, encoding='utf-8')
             enhanced += 1
