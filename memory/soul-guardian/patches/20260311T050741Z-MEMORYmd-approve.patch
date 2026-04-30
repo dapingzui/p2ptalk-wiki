@@ -1,0 +1,24 @@
+--- approved/MEMORY.md
++++ MEMORY.md
+@@ -0,0 +1,21 @@
++# MEMORY.md - Long-term Memory
++
++This file stores curated long-term memories for the self-evolving agent.
++
++## Guidelines
++
++- Only load in main session (direct chats)
++- DO NOT load in shared contexts (Discord, group chats)
++- Write significant events, decisions, and lessons learned
++- Review and update periodically
++
++## Recent Memories
++
++### 2026-03-11
++- Installed ClawSec security suite (soul-guardian)
++- Created self-evolution quality framework based on 8 academic principles
++- Implemented source integrity protection for core files
++
++---
++
++_Last updated: 2026-03-11_

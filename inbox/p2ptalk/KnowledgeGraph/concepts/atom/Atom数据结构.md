@@ -6,7 +6,6 @@ tags: [atom, p2ptalk, 数据结构, atoms_in, atoms_out]
 related:
   - [[atom/Atom流转机制]]
   - [[atom/Atom是什么]]
-  - [[meeting/会前同步]]
 created: 2026-04-20
 ---
 
@@ -65,4 +64,4 @@ B 评论 C → B 的 atomsOut 复制给 C
 ## 相关概念
 
 - [[atom/Atom流转机制]]
-- [[meeting/会前同步]]
+- [[meeting/会议共识]]

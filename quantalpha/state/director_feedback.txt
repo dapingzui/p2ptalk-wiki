@@ -1,0 +1,18 @@
+# QuantAlpha Director Feedback
+- hit_rate: 0.0% (0/20)
+- best_ic: 0.0287 (factorlib_cc3a806ae89c)
+- infra_failed: 0
+- data_violation: 0
+- blocked: 0
+- warm_top: volume(avg=0.0254, n=7)
+- dead_top: N/A
+- bucket_top: N/A
+- blacklist: 0
+- reject_reasons: {}
+- knowledge_state: provisional=0, confirmed=1, expired=0
+- policy_ready: N/A
+- action: mutation > academic-verify > brand-new
+- action: avoid dead categories and blacklist patterns
+- action: every hypothesis must include expression_hint with allowed fields only
+- validation: after writing hypotheses.json, run `python /Users/ice/.openclaw/workspace/quantalpha/validator.py`
+- validation: if validator fails, fix hypotheses.json before finishing

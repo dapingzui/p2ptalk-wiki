@@ -1,0 +1,18 @@
+QuantAlpha Daily Report (2026-04-28 22:01)
+====================================
+sync_imported: 0
+sync_pool_total: 0
+sync_factorlib_total: 697
+sync_factorlib_start: 697
+results_new_evolved: 0
+results_total: 0
+hit_rate: 0.0% (0/20)
+best_ic: 0.0287 (factorlib_cc3a806ae89c)
+infra_failed: 0
+data_violation: 0
+blocked: 0
+learnings_active: 1
+knowledge_provisional: 0
+knowledge_confirmed: 1
+knowledge_expired: 0
+blacklist: 0

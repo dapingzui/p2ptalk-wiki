@@ -1,0 +1,116 @@
+{
+  "exploration_budget_pct": 0.2,
+  "budget_allocation": {
+    "high": 0.4,
+    "medium": 0.4,
+    "exploration": 0.2
+  },
+  "blacklist_patterns": [
+    "lookahead",
+    "$eps",
+    "$northbound",
+    "$analyst"
+  ],
+  "complexity": {
+    "max_symbol_length": 40,
+    "max_nesting_depth": 4,
+    "max_free_params": 6
+  },
+  "validation": {
+    "ic_pass_threshold": 0.03,
+    "ic_dead_threshold": 0.01,
+    "min_factors_for_stat_dedup": 50
+  },
+  "mechanism_buckets": {
+    "reversal": {
+      "prior_density": "high",
+      "patterns": [
+        "ref\\(\\s*\\$close\\s*,\\s*\\d+\\s*\\)\\s*/\\s*\\$close\\s*-\\s*1"
+      ],
+      "tag_hints": [
+        "reversal",
+        "mean_reversion"
+      ]
+    },
+    "illiquidity": {
+      "prior_density": "high",
+      "patterns": [
+        "mean\\(\\s*abs\\(\\s*\\$return\\s*\\)\\s*/\\s*\\(\\s*\\$amount\\s*\\+\\s*1\\s*\\)\\s*,\\s*\\d+\\s*\\)"
+      ],
+      "tag_hints": [
+        "illiquidity",
+        "liquidity"
+      ]
+    },
+    "close_position": {
+      "prior_density": "high",
+      "patterns": [
+        "\\(\\s*\\$close\\s*-\\s*\\$low\\s*\\)\\s*/\\s*\\(\\s*\\$high\\s*-\\s*\\$low\\s*\\)"
+      ],
+      "tag_hints": [
+        "close_position",
+        "intraday"
+      ]
+    },
+    "ma_cross": {
+      "prior_density": "high",
+      "patterns": [
+        "mean\\(\\s*\\$close\\s*,\\s*\\d+\\s*\\)\\s*/\\s*mean\\(\\s*\\$close\\s*,\\s*\\d+\\s*\\)\\s*-\\s*1"
+      ],
+      "tag_hints": [
+        "ma_cross",
+        "trend",
+        "momentum"
+      ]
+    },
+    "intraday_pattern": {
+      "prior_density": "high",
+      "patterns": [
+        "mean\\(\\s*\\$close\\s*/\\s*\\$open\\s*-\\s*1\\s*,\\s*\\d+\\s*\\)"
+      ],
+      "tag_hints": [
+        "intraday",
+        "intraday_pattern"
+      ]
+    },
+    "vol_ratio": {
+      "prior_density": "medium",
+      "patterns": [
+        "std\\(\\s*\\$return\\s*,\\s*\\d+\\s*\\)\\s*/\\s*std\\(\\s*\\$return\\s*,\\s*\\d+\\s*\\)"
+      ],
+      "tag_hints": [
+        "volatility",
+        "vol_ratio"
+      ]
+    },
+    "volume_price_corr": {
+      "prior_density": "medium",
+      "patterns": [
+        "ts_corr\\(\\s*\\$return\\s*,\\s*\\$volume\\s*,\\s*\\d+\\s*\\)"
+      ],
+      "tag_hints": [
+        "volume_price_corr",
+        "correlation"
+      ]
+    },
+    "overnight": {
+      "prior_density": "low",
+      "patterns": [
+        "mean\\(\\s*\\$open\\s*/\\s*ref\\(\\s*\\$close\\s*,\\s*1\\s*\\)\\s*-\\s*1\\s*,\\s*\\d+\\s*\\)"
+      ],
+      "tag_hints": [
+        "overnight",
+        "gap"
+      ]
+    },
+    "exploration": {
+      "prior_density": "unknown",
+      "patterns": [],
+      "tag_hints": [
+        "exploration",
+        "brand-new",
+        "novel"
+      ]
+    }
+  }
+}

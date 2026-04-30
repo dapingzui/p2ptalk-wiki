@@ -1,0 +1,49 @@
+{
+  "default": {
+    "input_domain": [
+      "state/hypotheses.json",
+      "state/results.json",
+      "state/evolution_memory.json",
+      "state/director_feedback.txt"
+    ],
+    "output_domain": [
+      "state/hypotheses.json"
+    ],
+    "forbidden_domain": [
+      "validator.py",
+      "evolution_memory schema"
+    ],
+    "tools_allow": [
+      "state_store",
+      "validator",
+      "dispatcher"
+    ],
+    "sandbox_writable_dir": [
+      "/Users/ice/.openclaw/workspace/quantalpha/state"
+    ]
+  },
+  "research_director": {
+    "input_domain": [
+      "state/director_feedback.txt",
+      "state/results.json",
+      "state/hypotheses.json",
+      "state/evolution_memory.json"
+    ],
+    "output_domain": [
+      "state/hypotheses.json"
+    ],
+    "forbidden_domain": [
+      "validator.py",
+      "evolution_memory structure",
+      "dispatcher.py"
+    ],
+    "tools_allow": [
+      "memory_search",
+      "state_store",
+      "validator"
+    ],
+    "sandbox_writable_dir": [
+      "/Users/ice/.openclaw/workspace/quantalpha/state"
+    ]
+  }
+}

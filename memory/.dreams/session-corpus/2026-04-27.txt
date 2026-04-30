@@ -1,0 +1,2 @@
+[main/sessions/3c36c161-9a7d-432d-989f-d00ef6bf077f.jsonl#L25] Assistant: SILENT
+[main/sessions/f7f5eb08-46b6-41f6-aa30-df13e3ec09d3.jsonl#L10] Assistant: SILENT

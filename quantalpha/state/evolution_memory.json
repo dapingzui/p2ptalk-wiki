@@ -1,0 +1,137 @@
+{
+  "memory_id": "mem_20260418_180836_362",
+  "learnings": [
+    {
+      "learning_id": "lrn_factorlib_b8e13e7b1c53",
+      "type": "mutation_effective",
+      "observation": "factorlib微弱: RankIC=0.0279, phase=unknown",
+      "confidence": 0.95,
+      "source_results": [
+        "factorlib_e20cb8e13e7b1c53",
+        "factorlib_bdc4663dc78c285f",
+        "factorlib_1838080f683480b5",
+        "factorlib_cc3a806ae89cbf90",
+        "factorlib_b6fa882d91efb666",
+        "factorlib_94feae8517736985",
+        "factorlib_e9a360f95c326c49",
+        "factorlib_75069b90d0eb3241",
+        "factorlib_38b34718bb73c50f",
+        "factorlib_0eedd1e9d75979d2",
+        "factorlib_009bfc24ac2dcd05",
+        "factorlib_8151994ef86864ad",
+        "factorlib_742d61591cd946b9",
+        "factorlib_6edd3f8ccd0e0cb1",
+        "factorlib_4703eae043ec63e2",
+        "factorlib_be61e34c083ad3ba",
+        "factorlib_a0ee26af96325aad",
+        "factorlib_07d33c6215bdddfd",
+        "factorlib_0db7d4f58a669e6a",
+        "factorlib_9f50dc1cca359882"
+      ],
+      "times_confirmed": 20,
+      "created_at": "2026-04-18T18:08:36.404193+08:00",
+      "updated_at": "2026-04-18T18:08:36.404392+08:00",
+      "knowledge_state": "confirmed"
+    }
+  ],
+  "stats": {
+    "total_generated": 0,
+    "total_executed": 20,
+    "total_infra_failed": 0,
+    "total_data_violation": 0,
+    "total_blocked": 0,
+    "total_passed_ic_003": 0,
+    "best_ic_ever": 0.02869696,
+    "best_hypothesis": "factorlib_cc3a806ae89c",
+    "hit_rate": 0.0,
+    "category_performance": {
+      "opening": {
+        "tested": 1,
+        "avg_ic": 0.02789498,
+        "best_ic": 0.02789498,
+        "verdict": "pending"
+      },
+      "midsession": {
+        "tested": 1,
+        "avg_ic": 0.02789498,
+        "best_ic": 0.02789498,
+        "verdict": "pending"
+      },
+      "volume": {
+        "tested": 7,
+        "avg_ic": 0.025354042857142857,
+        "best_ic": 0.02837405,
+        "verdict": "warm"
+      },
+      "lowvolume": {
+        "tested": 1,
+        "avg_ic": 0.02869696,
+        "best_ic": 0.02869696,
+        "verdict": "pending"
+      },
+      "gap": {
+        "tested": 1,
+        "avg_ic": 0.02683,
+        "best_ic": 0.02683,
+        "verdict": "pending"
+      },
+      "liquidity": {
+        "tested": 2,
+        "avg_ic": 0.023024615,
+        "best_ic": 0.02362649,
+        "verdict": "pending"
+      },
+      "amihud": {
+        "tested": 1,
+        "avg_ic": 0.02242274,
+        "best_ic": 0.02242274,
+        "verdict": "pending"
+      },
+      "industry": {
+        "tested": 1,
+        "avg_ic": 0.02542712,
+        "best_ic": 0.02542712,
+        "verdict": "pending"
+      },
+      "volatility": {
+        "tested": 1,
+        "avg_ic": 0.02555646,
+        "best_ic": 0.02555646,
+        "verdict": "pending"
+      },
+      "idd": {
+        "tested": 1,
+        "avg_ic": 0.02360305,
+        "best_ic": 0.02360305,
+        "verdict": "pending"
+      },
+      "density": {
+        "tested": 1,
+        "avg_ic": 0.02741673,
+        "best_ic": 0.02741673,
+        "verdict": "pending"
+      },
+      "grid": {
+        "tested": 1,
+        "avg_ic": 0.02456114,
+        "best_ic": 0.02456114,
+        "verdict": "pending"
+      },
+      "sector": {
+        "tested": 1,
+        "avg_ic": 0.02548397,
+        "best_ic": 0.02548397,
+        "verdict": "pending"
+      }
+    },
+    "bucket_performance": {},
+    "rejection_reason_counts": {},
+    "knowledge_provisional": 0,
+    "knowledge_confirmed": 1,
+    "knowledge_expired": 0
+  },
+  "blacklist": [],
+  "research_findings": [],
+  "created_at": "2026-04-18T18:08:36.362484+08:00",
+  "updated_at": "2026-04-28T22:01:43.961263+08:00"
+}

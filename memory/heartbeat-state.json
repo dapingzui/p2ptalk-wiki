@@ -1,0 +1,25 @@
+{
+  "lastChecks": {
+    "cron": 1777501020,
+    "main": 1777501020,
+    "quantaalpha": 1777501020,
+    "memory": 1777501020,
+    "heartbeat": 1777501020
+  },
+  "status": {
+    "cron": "4/4 tasks ok (all logs fresh at 06:00)",
+    "main": "ok (current session active at 06:17)",
+    "quantaalpha": "stale (A股 logs from Apr 29 20:04-20:11; session active but stuck on Qwen3-32B timeouts, recovered via fallback)",
+    "daemon": "dead (mine_daemon not running, per policy no auto-restart)",
+    "provider": "omlx/Qwen3-32B-4bit timeout at 05:40 and 06:10; openrouter image model failed; all fallback to deepseek-v4-flash recovers"
+  },
+  "notes": [
+    "All four cron logs refreshed at 06:00",
+    "main session active",
+    "quantaalpha had stuck cron session at 06:10 (Qwen3-32B timeout), trajectory wrote at 06:14 - likely recovered",
+    "ENOENT for quantalpha/SOUL.md is stale known path reference, not new issue",
+    "EMFILE last actual occurrence was before 03:00 today, not recurring currently",
+    "Desktop clean, disk 3% usage",
+    "SearXNG healthy, proxy responding"
+  ]
+}

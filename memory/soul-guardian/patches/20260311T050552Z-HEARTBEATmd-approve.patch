@@ -1,0 +1,38 @@
+--- approved/HEARTBEAT.md
++++ HEARTBEAT.md
+@@ -1,5 +1,33 @@
+ # HEARTBEAT.md
+ 
+-# Keep this file empty (or with only comments) to skip heartbeat API calls.
++# Security monitoring and periodic checks for self-evolving agent
+ 
+-# Add tasks below when you want the agent to check something periodically.
++---
++
++## 🔒 Soul Guardian Security Check
++
++**Purpose**: Detect unauthorized changes to core agent files (SOUL.md, AGENTS.md, etc.)
++
++**Command**:
++```bash
++cd /Users/ice/.openclaw/workspace && python3 /opt/homebrew/lib/node_modules/openclaw/skills/clawsec/skills/soul-guardian/scripts/soul_guardian.py check --actor heartbeat --output-format alert
++```
++
++**Action**:
++- If any output is produced → **Immediately relay to user as SECURITY ALERT**
++- Silent output → No drift detected, continue normally
++
++**Protected Files**:
++- SOUL.md (auto-restore)
++- AGENTS.md (auto-restore)
++- USER.md, TOOLS.md, IDENTITY.md, MEMORY.md (alert only)
++
++**Integration**: This check runs automatically during each heartbeat poll
++
++---
++
++## 📝 Notes
++
++- Keep other tasks below this security check
++- Soul Guardian baselines are stored in: `memory/soul-guardian/`
++- To approve intentional changes: `python3 soul_guardian.py approve --file <path> --actor user`

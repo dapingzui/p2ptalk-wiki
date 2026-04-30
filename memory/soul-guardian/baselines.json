@@ -1,0 +1,33 @@
+{
+  "files": {
+    "AGENTS.md": {
+      "approvedAt": "2026-03-11T05:04:58+00:00",
+      "sha256": "108ca8d14452fe0a88874f68e9bc5a842e826fdd9d56eac3a537063e8099c1d6"
+    },
+    "HEARTBEAT.md": {
+      "approvedAt": "2026-04-26T12:36:36+00:00",
+      "sha256": "9bccc8affebd733f6c9158157cb14e9974a9343426748a06238eee60f777231c"
+    },
+    "IDENTITY.md": {
+      "approvedAt": "2026-03-11T05:04:58+00:00",
+      "sha256": "2a89780e4979c5f2547a821db2ab672a6ae12e33f1a08fea24b0d7881de42d60"
+    },
+    "MEMORY.md": {
+      "approvedAt": "2026-04-25T11:47:36+00:00",
+      "sha256": "d042141342fd030fa47f1687fe66e6625085fad524b9b30deefc873a3eac79d8"
+    },
+    "SOUL.md": {
+      "approvedAt": "2026-03-11T05:04:58+00:00",
+      "sha256": "54c892ac50140aba327e2dce9c948f918e39d1bf4a65453620cbf7b5c41472d5"
+    },
+    "TOOLS.md": {
+      "approvedAt": "2026-04-26T12:36:36+00:00",
+      "sha256": "7eac3efda754302a945b9c1938450aaf3c40ca9dd68ade4754f0808383ebb118"
+    },
+    "USER.md": {
+      "approvedAt": "2026-03-11T05:04:58+00:00",
+      "sha256": "62ec0ee007b4d85b4beabd0e6ac796bd41cf361f91c2e5b06b07f4d3ede26ced"
+    }
+  },
+  "version": 1
+}
